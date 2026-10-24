@@ -269,7 +269,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <thead><tr><th>Ort</th><th>Was steht dort</th></tr></thead>
     <tbody>
       <tr><td>Probenbeutel / Glas</td><td>volle ID mit Tiefe, z. B. <code>EG-WZ-B-7-T2</code></td></tr>
-      <tr><td>Bohrloch-Foto</td><td>Schild mit Kern-ID im Bild, z. B. <code>EG-WZ-B-7</code></td></tr>
+      <tr><td>Bohrloch-Foto</td><td>Schild mit Kern-ID im Bild, z. B. <code>EG-WZ-B-7</code>; in FotoKit dieselbe ID unter „Probe-Nr.“</td></tr>
       <tr><td>Wandfoto</td><td>Schild mit Raum und Wand, z. B. <code>EG-WZ-B</code></td></tr>
       <tr><td>Laborauftrag</td><td>volle ID je Segment; Projektnummer im Kopf des Auftrags</td></tr>
       <tr><td>Protokoll</td><td>ID, Tiefe von–bis in cm, Material, Lage (Abstand Ecke, Höhe über OKFF), Status</td></tr>
@@ -359,7 +359,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="b5a"><label for="b5a">In der Projektzentrale „Fotos bearbeiten“ – FotoKit öffnet den Ordner „Fotos“.</label></li>
-        <li><input type="checkbox" id="b5b"><label for="b5b">Je Bild <b>Beschreibung</b>, optional <b>Abschnitt</b> (z. B. „Küche“, gilt für die folgenden Bilder) und <b>Probe-Nr.</b> (z. B. „P1“). Enter springt weiter.</label></li>
+        <li><input type="checkbox" id="b5b"><label for="b5b">Je Bild <b>Beschreibung</b>, optional <b>Abschnitt</b> (z. B. „Küche“, gilt für die folgenden Bilder) und <b>Probe-Nr.</b> (z. B. „P1“, bei Bohrkernen die Kern-ID wie „EG-WZ-B-7“). Enter springt weiter.</label></li>
         <li><input type="checkbox" id="b5c"><label for="b5c">Unbrauchbare Bilder <b>aussortieren</b> (Alt+X), schiefe <b>drehen</b> (Alt+R), Reihenfolge ziehen oder „nach Abschnitt“ sortieren.</label></li>
         <li><input type="checkbox" id="b5d"><label for="b5d"><b>Bilddokumentation erstellen …</b> → PDF (wird automatisch in Dateien ≤ 14 MB geteilt). <b>Umbenennen</b> ist ein eigener Schritt.</label></li>
       </ul>
@@ -505,6 +505,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="c3c"><label for="c3c">Lage messen: Abstand von der <b>linken</b> Wandecke und Höhe über Fußboden (OKFF).</label></li>
         <li><input type="checkbox" id="c3d"><label for="c3d">Kern nach den Tiefenstufen teilen. Jedes Segment in ein eigenes Gefäß: <b>Wandkennung + Endung + Tiefe</b>.</label></li>
         <li><input type="checkbox" id="c3e"><label for="c3e">In der Zeile des Punkts: Kernlänge, Material je Tiefe (P Putz, Z Ziegel …), Geruch (– / + / ++), <b>A oder R</b> einkreisen.</label></li>
+        <li><input type="checkbox" id="c3f"><label for="c3f"><b>Foto</b> vom Bohrloch mit Schild im Bild: Kern-ID, z. B. <code>EG-WZ-B-7</code>.</label></li>
       </ul>
       <div class="tipp achtung">Ist der Kern kürzer als die letzte Tiefenstufe, die fehlende Stufe einfach leer lassen. Nichts schätzen.</div>
     </div><div>
@@ -556,6 +557,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="c6b"><label for="c6b">In <b>PlanKit</b> den Prüfbericht einlesen – die Werte werden den Proben über die Probennummer zugeordnet.</label></li>
         <li><input type="checkbox" id="c6c"><label for="c6c"><b>Raumbuch</b> in PlanKit: die Räume kommen aus den Proben (z. B. „EG Wohnzimmer“). Maßnahme je Raum eintragen.</label></li>
         <li><input type="checkbox" id="c6d"><label for="c6d">Zurückgestellte Segmente nachbeauftragen, wenn die Ergebnisse es verlangen – die Bezeichnung bleibt gleich.</label></li>
+        <li><input type="checkbox" id="c6e"><label for="c6e"><b>FotoKit</b>: bei Bohrloch-Fotos unter „Probe-Nr.“ die Kern-ID eintragen (<code>EG-WZ-B-7</code>). Ergebnistabelle und PlanKit-Anlage ordnen das Foto über LabelKit allen analysierten Segmenten des Kerns zu; eine Segment-ID (<code>…-T2</code>) nur diesem.</label></li>
       </ul>
     </div><div>
       <div class="tipp achtung"><b>In Arbeit:</b> die Wandansicht mit Tiefenprofil je Wand für das Gutachten. Bis dahin: Raumbuch und Tabelle der Ergebnisse.</div>
@@ -576,7 +578,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.3.0';
+const VERSION = '0.3.1';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));

@@ -24,6 +24,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.3.1** – Bohrkern-Fotos: Kern-ID in FotoKit unter „Probe-Nr.“ (FotoKit 1.11.0, PlanKit 1.25.0 ordnen über LabelKit zu).
 - **0.3.0** – Ablauf „Brandschaden von A bis Z“ (Einrichten, Projekt, Vor Ort, Proben erfassen, Fotos, Plan, Laborbericht, Gutachten und Büro, Abrechnung); Ablauf-Kapitel nutzen einen gemeinsamen Baustein (Haken je Kapitel getrennt).
 - **0.2.0** – Ablauf „Bohrkerne: Schritt für Schritt“ (Vorbereiten, Begehung, Bohren und beschriften, Übertragen, Ans Labor, Ergebnisse und Bericht).
 - **0.1.0** – Erste Version: Start, Probenbezeichnung Bohrkerne (ID-Baukasten, Prüfung), Raumkürzel.
