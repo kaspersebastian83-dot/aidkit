@@ -58,6 +58,31 @@ const root = path.join(__dirname, '..');
     // Brandschaden von A bis Z: eigene Haken, Überblick springt zum Schritt, App-Knöpfe zeigen auf die Apps
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
+    // Apps Schritt für Schritt: jedes Kapitel per Adresse, Schrittleiste, eigene Haken, Übung und App-Knopf
+    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-plankit', 9, '../Probenplan/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/']]) {
+      await page.goto(base + '#' + id);
+      assert.equal(await page.locator(`#${id}`).isVisible(), true, id + ' sichtbar');
+      assert.equal(await page.locator(`#${id} .schritte button`).count(), n, id + ': Schritte');
+      assert.equal(await page.locator(`#${id} .app-kopf a.app-oeffnen`).getAttribute('href'), href);
+      assert.ok(await page.locator(`#${id} .quiz`).count() >= 1, id + ': mindestens eine Übung');
+      for (const q of await page.locator(`#${id} .quiz`).all()) assert.ok(await q.locator('[data-a]').count() >= 2, id + ': Übung hat Antworten');
+    }
+    // Übung BelegKit: einzelne Antwort, richtig → nächste Frage
+    await page.goto(base + '#app-belegkit'); await page.locator('#app-belegkit .schritte [data-geh="5"]').click();
+    const q = page.locator('[data-quiz="bk-proben"]');
+    await q.locator('[data-a="0"]').click(); assert.match(await q.locator('.antwort').innerText(), /Nicht ganz/);
+    await q.locator('[data-a="1"]').click(); assert.match(await q.locator('.antwort').innerText(), /Richtig\. Je Parameter/);
+    await q.locator('.quiz-weiter').click(); assert.match(await q.locator('.zaehler').innerText(), /Frage 2 von 4/);
+    // Übung LabelKit: mehrere Antworten mit „Prüfen“
+    await page.goto(base + '#app-labelkit'); await page.locator('#app-labelkit .schritte [data-geh="4"]').click();
+    const l = page.locator('[data-quiz="lk-pflicht"]');
+    for (const i of [0, 1]) await l.locator(`[data-a="${i}"]`).click();
+    await l.locator('.quiz-knopf button').click(); assert.match(await l.locator('.antwort').innerText(), /Nicht ganz/);
+    await l.locator('[data-a="2"]').click(); await l.locator('.quiz-knopf button').click(); assert.match(await l.locator('.antwort').innerText(), /Richtig/);
+    // Haken je Kapitel getrennt
+    await page.goto(base + '#app-fotokit'); for (const cb of await page.locator('#app-fotokit .schritt.aktiv .check input').all()) await cb.check();
+    await page.goto(base + '#app-plankit'); assert.doesNotMatch(await page.locator('#app-plankit .schritte button').first().innerText(), /✓/, 'Haken nur im eigenen Kapitel');
+    await page.goto(base + '#brandschaden');
     // Übung „Was ist Pflicht?“ (Schritt 2) – gleiche Liste wie PJ_PFLICHT in der Projektzentrale
     await page.locator('#brandschaden .schritte [data-geh="2"]').click();
     for (const n of ['Objekt / Adresse', 'Nutzung', 'Auftraggeber / Versicherung', 'Schadenereignis', 'Schadendatum', 'Ortstermin']) await page.locator('#pflicht-chips button', { hasText: n }).click();
