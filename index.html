@@ -57,11 +57,12 @@ tr:last-child td{border-bottom:none}
 .baukasten{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:22px}
 .zeile{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 12px}
 .zeile > .titel{width:100%;font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.03em}
-.zeile button{min-width:40px;padding:5px 10px;font-family:var(--mono);font-size:13px}
+.zeile button{min-width:40px;padding:5px 10px;font-size:13px}
+[data-geschoss],[data-flaeche],[data-tiefe]{font-family:var(--mono)}
 .tastatur{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;max-width:260px}
 .tastatur button{height:54px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:2px}
 .tastatur button b{font:600 18px var(--mono)}
-.tastatur button span{font-size:10.5px;opacity:.75}
+.tastatur button span{font:11px/1.25 var(--sans);opacity:.8}
 .ergebnis{background:var(--panel2);border:1px solid var(--line2);border-radius:10px;padding:14px 16px;margin-top:6px}
 .ergebnis .id{font:600 26px/1.2 var(--mono);letter-spacing:.02em;word-break:break-all}
 .ergebnis .id.leer{color:var(--muted);font-weight:400;font-size:16px}
@@ -159,11 +160,11 @@ tr:last-child td{border-bottom:none}
           <line id="w-B" x1="220" y1="40" x2="220" y2="190" stroke="var(--text)" stroke-width="3"/>
           <line id="w-C" x1="40" y1="190" x2="220" y2="190" stroke="var(--text)" stroke-width="3"/>
           <line id="w-D" x1="40" y1="40" x2="40" y2="190" stroke="var(--text)" stroke-width="3"/>
-          <rect id="w-A" x="40" y="38" width="180" height="4" fill="none"/>
+          <rect id="w-A" x="40" y="36" width="180" height="7" fill="none"/>
           <text x="130" y="28" text-anchor="middle">A</text><text x="234" y="120">B</text><text x="130" y="212" text-anchor="middle">C</text><text x="18" y="120">D</text>
           <text class="klein" x="130" y="72" text-anchor="middle">Tür</text>
-          <text class="klein" x="130" y="120" text-anchor="middle">im Uhrzeigersinn</text>
-          <path d="M150 130 A30 30 0 1 1 158 106" fill="none" stroke="var(--muted)" marker-end="url(#pfeil)"/>
+          <text class="klein" x="130" y="172" text-anchor="middle">im Uhrzeigersinn</text>
+          <path d="M146 136 A24 24 0 1 1 152 108" fill="none" stroke="var(--muted)" marker-end="url(#pfeil)"/>
           <defs><marker id="pfeil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="var(--muted)" stroke-width="1.5"/></marker></defs>
           <text class="klein" x="130" y="238" text-anchor="middle">Raum von oben gesehen</text>
         </svg>
@@ -241,6 +242,7 @@ function zeigeKapitel(){
 }
 window.addEventListener('hashchange', () => { zeigeKapitel(); window.scrollTo(0, 0); });
 zeigeKapitel();
+window.addEventListener('load', () => window.scrollTo(0, 0));   // Kapitel-Anker sollen nicht am Kopf vorbeispringen
 
 /* Raumkürzel-Tabelle */
 function raumTabelle(){
@@ -277,7 +279,7 @@ function zeige(){
   $('ergebnis-laenge').innerHTML = id ? `<span class="${id.length > K.MAX_LAENGE ? 'err' : 'ok'}">${id.length}/${K.MAX_LAENGE} Zeichen</span>` : '';
   $('kopieren').disabled = !id || !p?.ok;
   $('w-A').setAttribute('fill', S.flaeche === 'A' && !S.referenz ? 'var(--accent)' : 'none');
-  for (const w of ['B', 'C', 'D']) $('w-' + w).setAttribute('stroke', S.flaeche === w && !S.referenz ? 'var(--accent)' : 'var(--text)');
+  for (const w of ['B', 'C', 'D']){ const an = S.flaeche === w && !S.referenz; $('w-' + w).setAttribute('stroke', an ? 'var(--accent)' : 'var(--text)'); $('w-' + w).setAttribute('stroke-width', an ? '7' : '3'); }
 }
 document.querySelector('.baukasten').addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b) return;
