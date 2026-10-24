@@ -58,6 +58,22 @@ const root = path.join(__dirname, '..');
     // Brandschaden von A bis Z: eigene Haken, Überblick springt zum Schritt, App-Knöpfe zeigen auf die Apps
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
+    // Übung „Was ist Pflicht?“ (Schritt 2) – gleiche Liste wie PJ_PFLICHT in der Projektzentrale
+    await page.locator('#brandschaden .schritte [data-geh="2"]').click();
+    for (const n of ['Objekt / Adresse', 'Nutzung', 'Auftraggeber / Versicherung', 'Schadenereignis', 'Schadendatum', 'Ortstermin']) await page.locator('#pflicht-chips button', { hasText: n }).click();
+    await page.locator('#pflicht-chips button', { hasText: 'Notizen' }).click();
+    await page.locator('#pflicht-pruefen').click();
+    assert.match(await page.locator('#pflicht-antwort').innerText(), /1 Pflichtangabe fehlt, 1 ist keine Pflicht/);
+    await page.locator('#pflicht-chips button', { hasText: 'Notizen' }).click(); await page.locator('#pflicht-chips button', { hasText: 'Sachverständiger' }).click();
+    await page.locator('#pflicht-pruefen').click();
+    assert.match(await page.locator('#pflicht-antwort').innerText(), /Richtig – sieben Pflichtangaben/);
+    // Übung „Welche Skala gilt?“ (Schritt 7)
+    await page.locator('#brandschaden .schritte [data-geh="7"]').click();
+    assert.match(await page.locator('#skala-fall').innerText(), /Fall 1 von 4/);
+    await page.locator('[data-skala="eigen"]').click(); assert.match(await page.locator('#skala-antwort').innerText(), /Nicht ganz/);
+    await page.locator('[data-skala="vds"]').click(); assert.match(await page.locator('#skala-antwort').innerText(), /Richtig/);
+    await page.waitForFunction(() => /Fall 2 von 4/.test(document.getElementById('skala-fall').textContent));
+    await page.locator('[data-skala="eigen"]').click(); assert.match(await page.locator('#skala-antwort').innerText(), /keine VdS-Referenz/);
     await page.locator('#brandschaden .fluss [data-geh="5"]').click();
     assert.match(await page.locator('#brandschaden .schritt.aktiv h2').innerText(), /5 · Fotos/);
     assert.equal(await page.locator('#brandschaden .schritt.aktiv a.app-oeffnen').getAttribute('href'), '../Bildumbenenner/');
