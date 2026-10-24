@@ -113,6 +113,19 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 .uebung h3{margin:0 0 6px;font-size:14px}
 .uebung .frage{font-size:13px;margin:0 0 8px}
 .uebung .antwort{font-size:13px;min-height:20px;margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{font-size:13px;padding:5px 10px;border-radius:14px}
+.chips button[aria-pressed=true]{background:#fff8e1;border-color:#d9a400;color:#8a6500;box-shadow:inset 3px 0 0 #d9a400}
+.chips button.richtig{border-color:var(--ok);color:var(--ok)}
+.chips button.falsch{border-color:var(--err);color:var(--err)}
+@media (prefers-color-scheme:dark){.chips button[aria-pressed=true]{background:rgba(217,164,0,.14);color:#f0c850}}
+.pflicht-beispiel{display:inline-block;padding:1px 8px;border-radius:5px;border:1px solid #d9a400;background:#fff8e1;box-shadow:inset 3px 0 0 #d9a400;color:#8a6500;font-size:13px}
+@media (prefers-color-scheme:dark){.pflicht-beispiel{background:rgba(217,164,0,.14);color:#f0c850}}
+.regeln{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:8px 0 0}
+.regeln .karte{margin:0;padding:12px 14px}
+.regeln h3{margin:0 0 4px;font-size:14px}
+.regeln p{margin:0;font-size:13.5px}
+.skala-fall{font-size:13px;margin:0 0 8px;padding:8px 10px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
 .raum-svg{width:100%;max-width:270px;height:auto;display:block}
 .raum-svg .wand{cursor:pointer}
 .raum-svg .wand line{stroke:var(--text);stroke-width:5}
@@ -173,6 +186,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../reisekosten-pro/">SpesenKit</a></td><td>Spesenabrechnung für den Monat</td></tr>
     </tbody>
   </table>
+  <h2>Gilt in allen Apps</h2>
+  <div class="regeln">
+    <div class="karte"><h3>Gelb = Pflicht</h3><p>Ein <span class="pflicht-beispiel">gelbes Feld</span> fehlt noch und wird später gebraucht (Anlagen, Bewertung, Labor, Rechnung). Ausgefüllt ist es wieder normal. Speichern geht trotzdem immer.</p></div>
+    <div class="karte"><h3>Einmal eintragen</h3><p>Projektdaten nur in der <b>Projektzentrale</b> – alle Apps übernehmen sie. Bewertungsskalen und Mitarbeiterliste liegen im Archivordner und gelten fürs ganze Büro.</p></div>
+    <div class="karte"><h3>Nichts geht verloren</h3><p>Die Apps speichern in den Projektordner, Originale bleiben unverändert. Arbeiten zwei am selben Projekt, fragt die App nach, statt zu überschreiben – besser trotzdem eine Person je Projekt.</p></div>
+    <div class="karte"><h3>Etwas klemmt?</h3><p>Hilfe mit <b>?</b> oder F1 in jeder App. Fehler in FotoKit: „Problem melden“ kopiert einen Bericht. Sonst Screenshot und zwei Sätze, was passiert ist, an sebastian.kasper@dr-schiffers.de.</p></div>
+  </div>
+  <p class="wo">Neu im Team? Mit <a href="#brandschaden">Brandschaden von A bis Z</a> anfangen – Schritt 1 richtet den eigenen Rechner ein.</p>
   <h2>Abläufe</h2>
   <p><a href="#brandschaden"><b>Brandschaden von A bis Z</b></a> – der normale Weg durch alle Apps, vom Projekt bis zur Abrechnung</p>
   <p><a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a> – von der Vorbereitung im Büro bis zum Labor</p>
@@ -302,10 +323,12 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b1a"><label for="b1a">Auf dem Terminalserver <b>Chrome oder Edge</b> öffnen (Firefox kann keine Ordner beschreiben).</label></li>
         <li><input type="checkbox" id="b1b"><label for="b1b">Projektzentrale öffnen → <b>„Archivordner wählen …“</b> → <code>C:\daten\Mosaik Archivordner</code> → Zulassen.</label></li>
         <li><input type="checkbox" id="b1c"><label for="b1c">Im Browsermenü <b>„App installieren“</b> – die Projektzentrale startet dann wie ein Programm.</label></li>
-        <li><input type="checkbox" id="b1d"><label for="b1d">Das eigene <b>Kürzel</b> eintragen (in LabelKit „Ihr Kürzel“) – es gilt auch in BelegKit.</label></li>
+        <li><input type="checkbox" id="b1d"><label for="b1d">In der Projektzentrale oben <b>„Ich bin …“</b> wählen – LabelKit und BelegKit schlagen dann das eigene <b>Kürzel</b> vor („Meine Projekte“ filtert die Liste).</label></li>
+        <li><input type="checkbox" id="b1e"><label for="b1e">Auch <b>LabelKit, FotoKit, PlanKit und BelegKit</b> einmal öffnen und „App installieren“ – dann starten sie aus der Projektzentrale im richtigen Ordner.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Nach jedem Browserneustart einmal <b>„Zugriff erlauben“</b> klicken. Das ist eine Schutzregel des Browsers, kein Fehler.</div>
+      <div class="tipp">Einmal fürs ganze Büro (macht Basti): <b>👥 Mitarbeiter</b> in der Projektzentrale (Kürzel und Namen) und die BelegKit-Einstellungen (Positionen, Preise). Beides liegt im Archivordner und gilt für alle.</div>
       <a class="app-oeffnen" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a>
     </div></div>
   </div>
@@ -316,10 +339,18 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="b2a"><label for="b2a">In der Projektzentrale das <b>Projekt wählen</b> (Ordner „26.0123 Ort Kürzel“).</label></li>
         <li><input type="checkbox" id="b2b"><label for="b2b"><b>Projektdaten</b>: „Arbeitszettel einlesen …“ (jeder Wert wird vor dem Speichern gezeigt) oder Objekt, Auftraggeber, Schadendatum von Hand.</label></li>
-        <li><input type="checkbox" id="b2c"><label for="b2c"><b>Nutzung</b> wählen – Pflichtfeld, sie bestimmt die Bewertung nach VdS 2357 in der Ergebniskarte.</label></li>
-        <li><input type="checkbox" id="b2d"><label for="b2d">Rechts stehen die Aufgaben (LabelKit, FotoKit, PlanKit, BelegKit) – jede öffnet direkt den richtigen Ordner.</label></li>
+        <li><input type="checkbox" id="b2c"><label for="b2c"><b>Gelbe Felder</b> ausfüllen – das sind die Pflichtangaben. Oben auf der Karte steht „5 Pflichtangaben fehlen“; ein Klick darauf springt zum ersten leeren Feld.</label></li>
+        <li><input type="checkbox" id="b2e"><label for="b2e">Besonders die <b>Nutzung</b>: Sie bestimmt die Bewertung nach VdS 2357 in der Ergebniskarte.</label></li>
+        <li><input type="checkbox" id="b2d"><label for="b2d">Darunter stehen die Aufgaben (LabelKit, FotoKit, PlanKit, BelegKit) – jede öffnet direkt den richtigen Ordner. Die Leiste <b>Projektstand</b> zeigt, wie weit das Projekt ist (Ortstermin › Laborauftrag › Prüfbericht › Übergabe ans Büro › Versand › Abrechnung, je mit Datum).</label></li>
       </ul>
     </div><div>
+      <div class="uebung" id="uebung-pflicht">
+        <h3>Kurz üben: Was ist Pflicht?</h3>
+        <p class="frage">Tippe die Felder an, die in der Projektzentrale gelb sind, solange sie leer sind. Dann „Prüfen“.</p>
+        <div class="chips" id="pflicht-chips"></div>
+        <div style="margin-top:8px"><button type="button" id="pflicht-pruefen">Prüfen</button></div>
+        <p class="antwort" id="pflicht-antwort" aria-live="polite"></p>
+      </div>
       <div class="tipp">Alle Apps übernehmen die Projektdaten. Einmal hier eintragen, nirgends doppelt.</div>
       <a class="app-oeffnen" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a>
     </div></div>
@@ -345,11 +376,13 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="b4a"><label for="b4a">Projektnummer prüfen – sie kommt aus der Projektzentrale.</label></li>
         <li><input type="checkbox" id="b4b"><label for="b4b">Proben anlegen im passenden Reiter (PAK, Chlorid, Asbest, Sonstige, PN 98, Brandgeruch). „Raum / Ort“ schlägt die Räume des Projekts vor.</label></li>
+        <li><input type="checkbox" id="b4e"><label for="b4e"><b>Gelbe Zellen</b> ausfüllen: Projektnummer, Probenahmedatum, Raum/Ort (bei Bohrkernen die BK-Bezeichnung), bei „Sonstige Proben“ die <b>Untersuchungsparameter</b>.</label></li>
         <li><input type="checkbox" id="b4c"><label for="b4c"><b>Etiketten</b> drucken.</label></li>
         <li><input type="checkbox" id="b4d"><label for="b4d"><b>Probenerfassung abschließen</b> → „Alle EOL + Projektdatei speichern“: Laborübergaben und Projektdatei landen in „Laboraufträge“.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Zwischendurch genügt <b>Strg+S</b> (speichert nur die Projektdatei). Die Leiste unten führt durch: Projektnummer → Proben → Etiketten → Abschließen.</div>
+      <div class="tipp">Mehrere Parameter mit Komma trennen, z. B. <code>PCB, Schwermetalle</code> – BelegKit rechnet dann je Parameter ab. Ein Paket bleibt eins: <code>MKW (KW-Index C10–C40 und C10–C22)</code>, <code>Schwermetalle (As, Pb, Cd)</code>.</div>
       <a class="app-oeffnen" href="../labelkit/" target="labelkit" rel="noopener">LabelKit öffnen ↗</a>
     </div></div>
   </div>
@@ -361,7 +394,8 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b5a"><label for="b5a">In der Projektzentrale „Fotos bearbeiten“ – FotoKit öffnet den Ordner „Fotos“.</label></li>
         <li><input type="checkbox" id="b5b"><label for="b5b">Je Bild <b>Beschreibung</b>, optional <b>Abschnitt</b> (z. B. „Küche“, gilt für die folgenden Bilder) und <b>Probe-Nr.</b> (z. B. „P1“, bei Bohrkernen die Kern-ID wie „EG-WZ-B-7“). Enter springt weiter.</label></li>
         <li><input type="checkbox" id="b5c"><label for="b5c">Unbrauchbare Bilder <b>aussortieren</b> (Alt+X), schiefe <b>drehen</b> (Alt+R), Reihenfolge ziehen oder „nach Abschnitt“ sortieren.</label></li>
-        <li><input type="checkbox" id="b5d"><label for="b5d"><b>Bilddokumentation erstellen …</b> → PDF (wird automatisch in Dateien ≤ 14 MB geteilt). <b>Umbenennen</b> ist ein eigener Schritt.</label></li>
+        <li><input type="checkbox" id="b5e"><label for="b5e"><b>Projektdaten …</b> prüfen – die Zahl am Knopf zeigt, wie viele Pflichtangaben fürs Deckblatt fehlen (u. a. <b>Anlagen-Nr.</b>, z. B. „Anlage 3“).</label></li>
+        <li><input type="checkbox" id="b5d"><label for="b5d"><b>Bilddokumentation erstellen …</b> → PDF im Büro-Design (wird automatisch in Dateien ≤ 14 MB geteilt). <b>Umbenennen</b> ist ein eigener Schritt.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Originalbilder werden nur umbenannt oder nach „_aussortiert“ verschoben – nie verändert. Umbenennen lässt sich rückgängig machen.</div>
@@ -390,12 +424,20 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="b7a"><label for="b7a">Prüfbericht als <b>XML und PDF</b> in „Laborergebnisse“ ablegen.</label></li>
         <li><input type="checkbox" id="b7b"><label for="b7b">PlanKit: Bericht importieren, <b>„Alle Konflikte: Aktualisieren“</b> – die Messwerte hängen dann an den Proben.</label></li>
-        <li><input type="checkbox" id="b7c"><label for="b7c"><b>Ergebnisse</b> (Taste K): Ergebniskarte nach VdS 2357, passend zur Nutzung aus Schritt 2. Beim Export „Darstellung: Ergebniskarte“.</label></li>
+        <li><input type="checkbox" id="b7c"><label for="b7c"><b>Ergebnisse</b> (Taste K): Ergebniskarte. Bewertet wird nach VdS 2357, wenn es dafür eine Referenz gibt, sonst nach der eigenen Skala des Büros – beide lassen sich anpassen (Übung rechts). Beim Export „Darstellung: Ergebniskarte“.</label></li>
+        <li><input type="checkbox" id="b7f"><label for="b7f"><b>Vorläufiger Prüfbericht?</b> Die Karte trägt dann rot <b>VORLÄUFIG</b>, die Anlagen einen Hinweis. Kommt der endgültige Bericht: in „Laborergebnisse“ ablegen und in PlanKit erneut importieren – FotoKit nimmt automatisch den neuesten.</label></li>
         <li><input type="checkbox" id="b7d"><label for="b7d"><b>Raumbuch</b>: je Raum Maßnahme und Bemerkung; Räume ohne Probe mit Status. Als Word-Anlage oder CSV.</label></li>
-        <li><input type="checkbox" id="b7e"><label for="b7e"><b>Anlage Probenahme</b> (Word) aus PlanKit; FotoKit <b>„Ergebnistabelle …“</b> für die Tabelle im Gutachten.</label></li>
+        <li><input type="checkbox" id="b7e"><label for="b7e"><b>Anlage Probenahme</b> (Word) aus PlanKit – die <b>Bezeichnung der Anlage</b> mit Nummer ist Pflicht („Anlage 5“, nicht nur „Anlage“). FotoKit <b>„Ergebnistabelle …“</b> für die Tabelle im Gutachten.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Anlagen landen in „Mitteilungen“. In Word an der gewünschten Stelle: Einfügen › Objekt › Text aus Datei.</div>
+      <div class="uebung" id="uebung-skala">
+        <h3>Kurz üben: Welche Skala gilt?</h3>
+        <div class="skala-fall" id="skala-fall"></div>
+        <div class="chips"><button type="button" data-skala="vds">VdS 2357</button><button type="button" data-skala="eigen">Eigene Skala des Büros</button></div>
+        <p class="antwort" id="skala-antwort" aria-live="polite"></p>
+      </div>
+      <div class="tipp">Anlagen landen in „Mitteilungen“. In Word an der gewünschten Stelle: Einfügen › Objekt › Text aus Datei. Sie bringen keine eigenen Formatvorlagen mit und passen sich ins Gutachten ein.</div>
+      <div class="tipp">Eigene Skalen (z. B. für MKW) gelten fürs ganze Büro: Ändern in FotoKit oder PlanKit wirkt bei allen. Ein PlanKit-Projekt behält seine Skala, auch wenn sie später geändert wird.</div>
       <a class="app-oeffnen" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a>
     </div></div>
   </div>
@@ -419,9 +461,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>9 · Abrechnung</h2><span class="ort buero">Büro</span><span class="dauer">BelegKit → Ordner „Abrechnung“</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="b9a"><label for="b9a">Jede Person trägt unter <b>„Meine Zeiten“</b> ihre Ortstermine selbst ein: Stunden (Fahrzeit gehört dazu), km nur der Fahrer, Spesen, Übernachtung.</label></li>
+        <li><input type="checkbox" id="b9a"><label for="b9a">Jede Person trägt unter <b>„Meine Zeiten“</b> ihre Ortstermine selbst ein: <b>Datum und Stunden</b> (Pflicht, Fahrzeit gehört dazu), km nur der Fahrer, Spesen, Übernachtung.</label></li>
         <li><input type="checkbox" id="b9b"><label for="b9b">Auswertung und Bericht als eigene Tätigkeit „Auswertung / Bericht“.</label></li>
-        <li><input type="checkbox" id="b9c"><label for="b9c">Proben (aus LabelKit), Berichtsseiten und Fotos zählt BelegKit selbst – Hinweise prüfen.</label></li>
+        <li><input type="checkbox" id="b9c"><label for="b9c">Proben (aus LabelKit), Berichtsseiten und Fotos zählt BelegKit selbst – Hinweise prüfen. Sonstige Proben zählen <b>je Parameter</b>; ein neuer Parameter wird einmal unter „Proben“ einer Position zugeordnet (bis dahin markiert).</label></li>
         <li><input type="checkbox" id="b9d"><label for="b9d"><b>„Abrechnung“</b>: alle Positionen mit Nummern zum Übertragen ins Rechnungsprogramm; „Stand speichern“.</label></li>
       </ul>
     </div><div>
@@ -443,8 +485,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td>Mitteilungen</td><td>Gutachten, Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>PlanKit · LabelKit · Word</td></tr>
       <tr><td>Abrechnung</td><td>Zeiten je Person, gespeicherte Abrechnungsstände</td><td>BelegKit</td></tr>
       <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen (mit Prüfsumme)</td><td>LabelKit</td></tr>
+      <tr><td>_Projekt.json</td><td>Projektdaten (direkt im Projektordner) – nicht löschen</td><td>Projektzentrale · alle</td></tr>
     </tbody>
   </table></div>
+  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen. Nicht löschen oder umbenennen.</p>
   <p class="wo">Hilfe in jeder App: <b>?</b>-Knopf oder F1. Etwas klemmt? In FotoKit „Problem melden“, sonst Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
@@ -562,6 +606,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Die Lage (Abstand zur Ecke, Höhe über OKFF, Wandmaße) kommt aus dem Wandblatt – je sauberer gemessen, desto genauer die Zeichnung. Ohne Maße steht der Punkt nach dem Raster 1–9.</div>
+      <div class="tipp">Mit C10–C40 und C10–C22 zeigt die Tabelle den <b>Anteil C10–C22</b> (aus beiden Laborwerten gerechnet). Bewertet wird MKW nach der eigenen Skala des Büros. Vorläufiger Bericht? Die Anlage sagt es dazu.</div>
     </div></div>
   </div>
 
@@ -579,7 +624,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.4.0';
+const VERSION = '0.5.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -711,6 +756,37 @@ function zeigeBeutel(){
 }
 $('uebung-beutel').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; if (b.dataset.bp) BEUTEL.punkt = b.dataset.bp; if (b.dataset.bt) BEUTEL.tiefe = b.dataset.bt; zeigeBeutel(); });
 zeigeBeutel();
+
+/* Übung Pflicht: welche Projektdaten sind in der Projektzentrale Pflicht (gelb, solange leer)? Gleiche Liste wie PJ_PFLICHT dort. */
+const PFLICHT_FELDER = [['Objekt / Adresse', true], ['Nutzung', true], ['Auftraggeber / Versicherung', true], ['Schaden-Nr.', false], ['Schadenereignis', true],
+  ['Brandgut', false], ['Schadendatum', true], ['Ortstermin', true], ['Sachverständiger', true], ['Auftragsdatum', false], ['Notizen', false]];
+$('pflicht-chips').innerHTML = PFLICHT_FELDER.map(([n], i) => `<button type="button" data-pf="${i}" aria-pressed="false">${esc(n)}</button>`).join('');
+$('pflicht-chips').addEventListener('click', e => { const b = e.target.closest('[data-pf]'); if (!b) return; b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); b.classList.remove('richtig', 'falsch'); $('pflicht-antwort').textContent = ''; });
+$('pflicht-pruefen').onclick = () => {
+  let fehlt = 0, zuviel = 0;
+  document.querySelectorAll('#pflicht-chips [data-pf]').forEach(b => { const soll = PFLICHT_FELDER[+b.dataset.pf][1], ist = b.getAttribute('aria-pressed') === 'true';
+    b.classList.toggle('richtig', soll && ist); b.classList.toggle('falsch', soll !== ist); if (soll && !ist) fehlt++; if (!soll && ist) zuviel++; });
+  $('pflicht-antwort').innerHTML = !fehlt && !zuviel ? '<span class="ok">Richtig – sieben Pflichtangaben.</span> Sie stehen auf den Deckblättern der Anlagen, die Nutzung bestimmt die VdS-Bewertung.'
+    : `<span class="warn">${[fehlt ? `${fehlt} ${fehlt === 1 ? 'Pflichtangabe fehlt' : 'Pflichtangaben fehlen'}` : '', zuviel ? `${zuviel} ${zuviel === 1 ? 'ist' : 'sind'} keine Pflicht` : ''].filter(Boolean).join(', ')}.</span> Rot umrandet = falsch, grün = richtig erkannt.`;
+};
+
+/* Übung Skala: wie PlanKit scaleFor – VdS-Referenz nur für Σ16 EPA-PAK auf Oberflächen (µg/m²) und nur mit eingetragener Nutzung, sonst die eigene Skala des Büros */
+const SKALA_FAELLE = [
+  ['Wohnhaus, Nutzung „Wohnen“ eingetragen. Wischprobe, <b>Σ16 EPA-PAK in µg/m²</b>.', 'vds', 'Für PAK auf Oberflächen gibt es eine VdS-Referenz, und die Nutzung ist bekannt.'],
+  ['Heizölschaden, Bohrkern, <b>MKW C10–C40 in mg/kg TS</b>.', 'eigen', 'Für MKW ist in den Apps keine VdS-Referenz hinterlegt – es gilt die eigene Skala des Büros.'],
+  ['Büro, aber <b>Nutzung noch leer</b>. Wischprobe, Σ16 EPA-PAK in µg/m².', 'eigen', 'Ohne Nutzung weiß PlanKit nicht, welche VdS-Referenz gilt – deshalb ist die Nutzung Pflicht.'],
+  ['Schule, Nutzung „Öffentlich“. Materialprobe, <b>Σ16 EPA-PAK in mg/kg</b>.', 'eigen', 'Die VdS-Referenz in den Apps gilt nur für Oberflächen (µg/m²), nicht für Material in mg/kg.'],
+];
+let skalaFall = 0;
+function zeigeSkalaFall(){ $('skala-fall').innerHTML = `Fall ${skalaFall + 1} von ${SKALA_FAELLE.length}: ${SKALA_FAELLE[skalaFall][0]}`; $('skala-antwort').textContent = ''; document.querySelectorAll('[data-skala]').forEach(b => b.classList.remove('richtig', 'falsch')); }
+$('uebung-skala').addEventListener('click', e => {
+  const b = e.target.closest('[data-skala]'); if (!b) return;
+  const [, soll, warum] = SKALA_FAELLE[skalaFall], ok = b.dataset.skala === soll;
+  document.querySelectorAll('[data-skala]').forEach(x => x.classList.remove('richtig', 'falsch')); b.classList.add(ok ? 'richtig' : 'falsch');
+  $('skala-antwort').innerHTML = (ok ? '<span class="ok">Richtig.</span> ' : '<span class="warn">Nicht ganz.</span> ') + warum + (ok ? (skalaFall < SKALA_FAELLE.length - 1 ? ' Nächster Fall …' : ' Alle Fälle geschafft.') : '');
+  if (ok && skalaFall < SKALA_FAELLE.length - 1) setTimeout(() => { skalaFall++; zeigeSkalaFall(); }, 1400);
+});
+zeigeSkalaFall();
 
 /* ID prüfen */
 $('pruefen').addEventListener('input', () => {
