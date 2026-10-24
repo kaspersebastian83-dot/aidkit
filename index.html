@@ -125,6 +125,12 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 .regeln .karte{margin:0;padding:12px 14px}
 .regeln h3{margin:0 0 4px;font-size:14px}
 .regeln p{margin:0;font-size:13.5px}
+.quiz .chips{margin-top:2px}
+.quiz .zaehler{font-size:11.5px;color:var(--muted);margin:0 0 2px}
+.app-kopf{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.app-kopf .zweck{font-size:14px;color:var(--muted);flex:1 1 280px}
+.tasten{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px;margin:6px 0 0}
+.tasten kbd{font:12px var(--mono);border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--panel);white-space:nowrap}
 .skala-fall{font-size:13px;margin:0 0 8px;padding:8px 10px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
 .raum-svg{width:100%;max-width:270px;height:auto;display:block}
 .raum-svg .wand{cursor:pointer}
@@ -787,6 +793,39 @@ $('uebung-skala').addEventListener('click', e => {
   if (ok && skalaFall < SKALA_FAELLE.length - 1) setTimeout(() => { skalaFall++; zeigeSkalaFall(); }, 1400);
 });
 zeigeSkalaFall();
+
+/* Übungen in den App-Kapiteln: <div class="uebung quiz" data-quiz="id"> mit Fragen aus QUIZ[id].
+   Eine richtige Antwort = Tippen genügt; mehrere richtige = antippen und „Prüfen“. Nach einer richtigen Antwort kommt die nächste Frage. */
+const QUIZ = {};
+function initQuiz(el){
+  const fragen = QUIZ[el.dataset.quiz]; if (!fragen) return;
+  let n = 0;
+  el.insertAdjacentHTML('beforeend', '<p class="zaehler"></p><p class="frage"></p><div class="chips"></div><div class="quiz-knopf" style="margin-top:8px" hidden><button type="button">Prüfen</button></div><p class="antwort" aria-live="polite"></p>');
+  const q = c => el.querySelector(c);
+  const mehrere = f => f.richtig.length > 1;
+  function zeige(){
+    const f = fragen[n];
+    q('.zaehler').textContent = fragen.length > 1 ? `Frage ${n + 1} von ${fragen.length}` : '';
+    q('.frage').innerHTML = f.frage + (mehrere(f) ? ' <i>(mehrere richtig – antippen, dann „Prüfen“)</i>' : '');
+    q('.chips').innerHTML = f.antworten.map((a, i) => `<button type="button" data-a="${i}" aria-pressed="false">${a}</button>`).join('');
+    q('.quiz-knopf').hidden = !mehrere(f); q('.antwort').textContent = '';
+  }
+  function bewerte(gewaehlt){
+    const f = fragen[n], ok = gewaehlt.length === f.richtig.length && gewaehlt.every(i => f.richtig.includes(i));
+    el.querySelectorAll('[data-a]').forEach(b => { const i = +b.dataset.a, soll = f.richtig.includes(i), ist = gewaehlt.includes(i);
+      b.classList.toggle('richtig', ok ? soll : soll && ist); b.classList.toggle('falsch', !ok && ist !== soll && (ist || mehrere(f))); });
+    q('.antwort').innerHTML = (ok ? '<span class="ok">Richtig.</span> ' : '<span class="warn">Nicht ganz.</span> ') + (ok ? f.warum : (f.tipp || 'Noch einmal versuchen.'))
+      + (ok ? (n < fragen.length - 1 ? ' <button type="button" class="quiz-weiter">Nächste Frage →</button>' : ' Alle Fragen geschafft.') : '');
+  }
+  el.addEventListener('click', e => {
+    if (e.target.closest('.quiz-weiter')){ n++; zeige(); return; }
+    if (e.target.closest('.quiz-knopf button')){ bewerte([...el.querySelectorAll('[data-a][aria-pressed=true]')].map(b => +b.dataset.a)); return; }
+    const b = e.target.closest('[data-a]'); if (!b) return;
+    if (mehrere(fragen[n])){ b.setAttribute('aria-pressed', String(b.getAttribute('aria-pressed') !== 'true')); b.classList.remove('richtig', 'falsch'); q('.antwort').textContent = ''; }
+    else bewerte([+b.dataset.a]);
+  });
+  zeige();
+}
 
 /* ID prüfen */
 $('pruefen').addEventListener('input', () => {
