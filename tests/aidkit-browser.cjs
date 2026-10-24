@@ -37,9 +37,27 @@ const root = path.join(__dirname, '..');
     await page.locator('nav a[href="#raumkuerzel"]').click();
     await page.locator('#raum-suche').fill('heiz');
     assert.deepEqual(await page.locator('#raum-tabelle code').allTextContents(), ['HK']);
+    // Bohrkerne Schritt für Schritt: Schrittleiste, Haken, Übung Wand, Übung Gefäß
+    await page.goto(base + '#bohrkern-ablauf');
+    assert.equal(await page.locator('#schritte button').count(), 6);
+    assert.match(await page.locator('.schritt.aktiv h2').innerText(), /1 · Vorbereiten/);
+    for (const cb of await page.locator('.schritt.aktiv .check input').all()) await cb.check();
+    assert.match(await page.locator('#schritte button').first().innerText(), /✓/, 'erledigter Schritt bekommt einen Haken');
+    await page.locator('#schritt-weiter').click();
+    assert.match(await page.locator('.schritt.aktiv h2').innerText(), /2 · Begehung/);
+    await page.locator('#uebung-wand .wand[data-wand="B"] rect').click();
+    assert.match(await page.locator('#wand-antwort').innerText(), /Das ist Wand B/);
+    await page.locator('#uebung-wand .wand[data-wand="C"] rect').click();
+    assert.match(await page.locator('#wand-antwort').innerText(), /Richtig – das ist Wand C/);
+    await page.locator('[data-geh="3"]').click(); await page.locator('[data-bp="3"]').click(); await page.locator('[data-bt="1"]').click();
+    assert.equal(await page.locator('#beutel-id').innerText(), 'EG-WZ-B-3-T1');
+    await page.reload(); await page.locator('#schritte').waitFor();
+    assert.match(await page.locator('#schritte button').first().innerText(), /✓/, 'Haken bleiben im Browser erhalten');
+    await page.locator('#ablauf-zuruecksetzen').click();
+    assert.doesNotMatch(await page.locator('#schritte button').first().innerText(), /✓/);
     await page.setViewportSize({ width: 390, height: 800 }); await page.goto(base + '#bohrkern');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'kein waagerechtes Scrollen bei 390 px');
     assert.deepEqual(errors, []);
-    console.log(`OK ${name}: Kapitel, ID-Baukasten, Prüfung, Raumsuche, 390 px`);
+    console.log(`OK ${name}: Kapitel, ID-Baukasten, Prüfung, Raumsuche, Bohrkern-Ablauf, 390 px`);
   } finally { if (browser) await browser.close(); server.close(); }
 })().catch(e => { console.error(e); process.exit(1); });

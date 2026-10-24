@@ -9,6 +9,7 @@ Wie wir im Büro arbeiten: Abläufe über mehrere Apps und gemeinsame Regeln. Wi
 | Kapitel | Anker |
 |---|---|
 | Start, Übersicht der Apps | `#start` |
+| Bohrkerne: Schritt für Schritt – sechs Schritte mit Abhakliste, zwei Übungen, Spickzettel zum Drucken | `#bohrkern-ablauf` |
 | Probenbezeichnung Bohrkerne – mit ID-Baukasten und ID-Prüfung | `#bohrkern` |
 | Raumkürzel | `#raumkuerzel` |
 
@@ -22,4 +23,5 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.2.0** – Ablauf „Bohrkerne: Schritt für Schritt“ (Vorbereiten, Begehung, Bohren und beschriften, Übertragen, Ans Labor, Ergebnisse und Bericht).
 - **0.1.0** – Erste Version: Start, Probenbezeichnung Bohrkerne (ID-Baukasten, Prüfung), Raumkürzel.

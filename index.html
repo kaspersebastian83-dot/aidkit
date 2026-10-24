@@ -82,7 +82,57 @@ tr:last-child td{border-bottom:none}
   nav .gruppe{display:none}
   .baukasten{grid-template-columns:1fr}
 }
-@media print{ .appbar,nav,#wasserzeichen,.baukasten-karte{display:none} .layout{display:block;padding:0} main section{display:block} body{background:#fff} }
+.schritte{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px;padding:0;list-style:none}
+.schritte button{display:flex;align-items:center;gap:7px;padding:6px 11px;border-radius:999px;font-size:13px}
+.schritte button .nr{display:inline-flex;width:20px;height:20px;border-radius:50%;align-items:center;justify-content:center;background:var(--panel2);border:1px solid var(--line2);font:600 11px var(--mono)}
+.schritte button[aria-current=step]{background:var(--accent);border-color:var(--accent-2);color:#fff}
+.schritte button[aria-current=step] .nr{background:#fff;color:var(--accent);border-color:#fff}
+.schritte button.erledigt .nr{background:var(--ok);border-color:var(--ok);color:#fff}
+.schritt{display:none}
+.schritt.aktiv{display:block}
+.schritt-kopf{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:0 0 4px}
+.schritt-kopf h2{margin:0}
+.ort{font-size:12px;font-weight:600;border-radius:999px;padding:3px 10px;border:1px solid var(--line2)}
+.ort.buero{background:#e6f0fb;color:#24476d;border-color:#bcd3ee}
+.ort.vorort{background:#fff3df;color:#7a4b00;border-color:#f0c88a}
+.dauer{font-size:12px;color:var(--muted)}
+.schritt-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}
+.check{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:8px}
+.check li{display:flex;gap:10px;align-items:flex-start;max-width:none}
+.check input{width:18px;height:18px;margin-top:3px;flex-shrink:0;accent-color:var(--ok)}
+.check label{cursor:pointer}
+.check input:checked + label{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.tipp{background:var(--panel2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0;padding:9px 12px;font-size:14px;margin:12px 0 0}
+.achtung{border-left-color:var(--warn)}
+.wo{font-size:13px;color:var(--muted);margin:10px 0 0}
+.wo b{color:var(--text)}
+.nav-schritte{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+button.primaer{background:var(--accent);border-color:var(--accent-2);color:#fff;font-weight:600}
+button.primaer:hover{background:var(--accent-l);color:#fff}
+.uebung{background:var(--panel2);border:1px solid var(--line2);border-radius:10px;padding:12px 14px}
+.uebung h3{margin:0 0 6px;font-size:14px}
+.uebung .frage{font-size:13px;margin:0 0 8px}
+.uebung .antwort{font-size:13px;min-height:20px;margin-top:8px}
+.raum-svg{width:100%;max-width:270px;height:auto;display:block}
+.raum-svg .wand{cursor:pointer}
+.raum-svg .wand line{stroke:var(--text);stroke-width:5}
+.raum-svg .wand:hover line{stroke:var(--accent-l)}
+.raum-svg .wand.richtig line{stroke:var(--ok)}
+.raum-svg .wand.falsch line{stroke:var(--err)}
+.raum-svg text{font:600 13px var(--sans);fill:var(--text)}
+.raum-svg .klein{font:400 11px var(--sans);fill:var(--muted)}
+.beutel{display:flex;flex-direction:column;align-items:center;gap:4px;margin-top:8px}
+.beutel .etikett{font:600 20px var(--mono);border:2px dashed var(--line2);border-radius:8px;padding:10px 14px;background:var(--panel);letter-spacing:.02em}
+.mini-tastatur{display:grid;grid-template-columns:repeat(3,44px);gap:5px}
+.mini-tastatur button,.mini-tiefe button{padding:6px 0;font:600 15px var(--mono)}
+.mini-tiefe{display:flex;gap:5px;margin-top:6px}
+.mini-tiefe button{width:44px;font-size:13px}
+@media (max-width:820px){ .schritt-grid{grid-template-columns:1fr} }
+@media print{
+  .appbar,nav,#wasserzeichen,.baukasten-karte,.schritte,.nav-schritte,.uebung,.kein-druck{display:none!important} .layout{display:block;padding:0} main section{display:block} body{background:#fff}
+  body[data-druck] main section:not(.druckziel){display:none!important}
+  .schritt{display:block!important;break-inside:avoid;margin:0 0 12px} .schritt-grid{display:block} .check input{display:none} .check li::before{content:"☐";margin-right:6px}
+}
 </style>
 </head>
 <body>
@@ -91,6 +141,8 @@ tr:last-child td{border-bottom:none}
 <div class="layout">
 <nav aria-label="Kapitel">
   <a href="#start">Start</a>
+  <div class="gruppe">Abläufe</div>
+  <a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a>
   <div class="gruppe">Konventionen</div>
   <a href="#bohrkern">Probenbezeichnung Bohrkerne</a>
   <a href="#raumkuerzel">Raumkürzel</a>
@@ -112,6 +164,8 @@ tr:last-child td{border-bottom:none}
       <tr><td><a href="../reisekosten-pro/">SpesenKit</a></td><td>Spesenabrechnung für den Monat</td></tr>
     </tbody>
   </table>
+  <h2>Abläufe</h2>
+  <p><a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a> – von der Vorbereitung im Büro bis zum Labor</p>
   <h2>Konventionen</h2>
   <p><a href="#bohrkern">Probenbezeichnung Bohrkerne</a> – mit ID-Baukasten und Prüfung · <a href="#raumkuerzel">Raumkürzel</a></p>
 </section>
@@ -215,6 +269,123 @@ tr:last-child td{border-bottom:none}
   </table>
 </section>
 
+
+<section id="bohrkern-ablauf">
+  <h1>Bohrkerne: Schritt für Schritt</h1>
+  <p class="lead">Systematische Bohrkerne aus Wänden, z. B. nach einem Heizölschaden. Sechs Schritte, jeder mit kurzer Abhakliste. Die Probenbezeichnung entsteht vor Ort fast von selbst.</p>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" id="ablauf-drucken">Als Spickzettel drucken</button><button type="button" id="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" id="schritte" aria-label="Schritte"></ol>
+
+  <div class="karte schritt" data-schritt="1" data-titel="Vorbereiten">
+    <div class="schritt-kopf"><h2>1 · Vorbereiten</h2><span class="ort buero">Büro</span><span class="dauer">ca. 10 Minuten</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="c1a"><label for="c1a">LabelKit öffnen, Reiter <b>Bohrkerne</b> → <b>Wandblätter</b>.</label></li>
+        <li><input type="checkbox" id="c1b"><label for="c1b">Anzahl Wände eintragen – je Wand ein Blatt, zwei als Reserve.</label></li>
+        <li><input type="checkbox" id="c1c"><label for="c1c">Tiefenstufen und Untersuchung prüfen. Standard: <b>0–2 / 2–6 / 6–12 cm</b>, <b>MKW C10–C40 und C10–C22</b>.</label></li>
+        <li><input type="checkbox" id="c1d"><label for="c1d">Vorgabe A/R eintragen, z. B. „bodennah alle Tiefen A, sonst T1 A, Rest R“.</label></li>
+        <li><input type="checkbox" id="c1e"><label for="c1e">Drucken und einpacken: Wandblätter, Klebeband und Stift, Gläser oder Beutel, Zollstock oder Laser.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp"><b>A</b> = analysieren · <b>R</b> = Rückstellprobe: wird gesägt und aufbewahrt, aber erst analysiert, wenn nötig. Spart Laborkosten.</div>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="2" data-titel="Begehung">
+    <div class="schritt-kopf"><h2>2 · Begehung</h2><span class="ort vorort">vor Ort</span><span class="dauer">ca. 5 Minuten je Geschoss, vor der ersten Bohrung</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="c2a"><label for="c2a">Blatt 1, Abschnitt C: jeden Raum mit <b>Kürzel</b> eintragen (Liste unten auf dem Blatt, z. B. WZ, KUE, FL).</label></li>
+        <li><input type="checkbox" id="c2b"><label for="c2b"><b>Wand A</b> festlegen: die Wand mit der Zugangstür. Bei mehreren Türen: die Tür vom Flur.</label></li>
+        <li><input type="checkbox" id="c2c"><label for="c2c">Weiter <b>im Uhrzeigersinn</b>, von oben gesehen: B, C, D. Boden heißt BO, Decke DE.</label></li>
+        <li><input type="checkbox" id="c2d"><label for="c2d">Wandkennung auf Klebeband an jede Wand kleben, z. B. <code>EG-WZ-B</code>. Dann steht sie auf jedem Foto.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung" id="uebung-wand">
+        <h3>Kurz üben</h3>
+        <p class="frage" id="wand-frage"></p>
+        <svg class="raum-svg" viewBox="0 0 270 230" role="img" aria-label="Raum von oben, die Tür ist oben">
+          <path d="M105 40 A55 55 0 0 0 160 40" fill="none" stroke="var(--muted)" stroke-dasharray="3 3"/>
+          <g class="wand" data-wand="A" role="button" aria-label="Wand oben (mit Tür)"><rect x="28" y="28" width="214" height="24" fill="transparent"/><line x1="40" y1="40" x2="105" y2="40"/><line x1="160" y1="40" x2="230" y2="40"/></g>
+          <g class="wand" data-wand="B" role="button" aria-label="Wand rechts"><rect x="218" y="40" width="24" height="150" fill="transparent"/><line x1="230" y1="40" x2="230" y2="190"/></g>
+          <g class="wand" data-wand="C" role="button" aria-label="Wand unten"><rect x="40" y="178" width="190" height="24" fill="transparent"/><line x1="40" y1="190" x2="230" y2="190"/></g>
+          <g class="wand" data-wand="D" role="button" aria-label="Wand links"><rect x="28" y="40" width="24" height="150" fill="transparent"/><line x1="40" y1="40" x2="40" y2="190"/></g>
+          <text class="klein" x="132" y="28" text-anchor="middle">Tür zum Flur</text>
+          <text class="klein" x="135" y="120" text-anchor="middle">Raum von oben</text>
+        </svg>
+        <p class="antwort" id="wand-antwort" aria-live="polite"></p>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="3" data-titel="Bohren und beschriften">
+    <div class="schritt-kopf"><h2>3 · Bohren und beschriften</h2><span class="ort vorort">vor Ort</span><span class="dauer">je Wand ein Blatt</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="c3a"><label for="c3a">Neues Wandblatt: Geschoss und Fläche <b>ankreuzen</b>, Raumkürzel eintragen, <b>Wandkennung</b> groß oben eintragen.</label></li>
+        <li><input type="checkbox" id="c3b"><label for="c3b">Punkt im Raster wählen – wie eine <b>Telefontastatur</b>, von vorn auf die Wand gesehen: 1–3 oben, 7–9 bodennah.</label></li>
+        <li><input type="checkbox" id="c3c"><label for="c3c">Lage messen: Abstand von der <b>linken</b> Wandecke und Höhe über Fußboden (OKFF).</label></li>
+        <li><input type="checkbox" id="c3d"><label for="c3d">Kern nach den Tiefenstufen teilen. Jedes Segment in ein eigenes Gefäß: <b>Wandkennung + Endung + Tiefe</b>.</label></li>
+        <li><input type="checkbox" id="c3e"><label for="c3e">In der Zeile des Punkts: Kernlänge, Material je Tiefe (P Putz, Z Ziegel …), Geruch (– / + / ++), <b>A oder R</b> einkreisen.</label></li>
+      </ul>
+      <div class="tipp achtung">Ist der Kern kürzer als die letzte Tiefenstufe, die fehlende Stufe einfach leer lassen. Nichts schätzen.</div>
+    </div><div>
+      <div class="uebung" id="uebung-beutel">
+        <h3>Was steht auf dem Gefäß?</h3>
+        <p class="frage">Wandkennung oben auf dem Blatt: <code>EG-WZ-B</code>. Tippe Punkt und Tiefe.</p>
+        <div style="display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap">
+          <div><div class="mini-tastatur" id="beutel-punkt"></div><div class="mini-tiefe" id="beutel-tiefe"></div></div>
+        </div>
+        <div class="beutel"><span class="etikett" id="beutel-id">EG-WZ-B-7-T2</span><span class="antwort" id="beutel-text"></span></div>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="4" data-titel="Übertragen">
+    <div class="schritt-kopf"><h2>4 · Übertragen</h2><span class="ort buero">Büro</span><span class="dauer">ca. 2 Minuten je Wand</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="c4a"><label for="c4a">LabelKit, Reiter <b>Bohrkerne</b> → <b>＋ Bogen erfassen</b>. Formular-ID steht oben rechts auf dem Bogen (z. B. 26.0142-BK-01).</label></li>
+        <li><input type="checkbox" id="c4b"><label for="c4b">Werte <b>so eintragen, wie sie auf dem Bogen stehen</b>. Nicht lesbar? „unleserlich“ markieren statt raten.</label></li>
+        <li><input type="checkbox" id="c4c"><label for="c4c">Hinweise abarbeiten. Der Knopf <b>Proben anlegen</b> bleibt grau, solange eine Zeile unklar ist.</label></li>
+        <li><input type="checkbox" id="c4d"><label for="c4d"><b>Proben anlegen</b> – alle Segmente stehen dann unter „Sonstige Proben“ und im Reiter „Bohrkerne“.</label></li>
+        <li><input type="checkbox" id="c4e"><label for="c4e">Erfassung abschließen, Scan ablegen, zweite Person prüft („Übertragung geprüft“).</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Später etwas korrigiert? Im Bogen ändern, dann <b>Proben aktualisieren</b>. Der Reiter „Bohrkerne“ erinnert daran.</div>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="5" data-titel="Ans Labor">
+    <div class="schritt-kopf"><h2>5 · Ans Labor</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="c5a"><label for="c5a">Reiter <b>Bohrkerne</b>, Übersicht prüfen: stimmen je Wand Anzahl der Kerne und A/R?</label></li>
+        <li><input type="checkbox" id="c5b"><label for="c5b"><b>Schnittpläne</b> drucken – je Kern ein Blatt, <b>dem Kern beilegen</b>. Dort steht je Segment „analysieren“ oder „nur sägen und aufbewahren“.</label></li>
+        <li><input type="checkbox" id="c5c"><label for="c5c"><b>Etiketten</b> drucken und aufkleben.</label></li>
+        <li><input type="checkbox" id="c5d"><label for="c5d"><b>Übergabe</b> (Laborauftrag) erstellen, wie bei den sonstigen Proben.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Halber Kern als ungebrochene Rückstellung? Das steht auf Blatt 1 des Wandblatts und erscheint im Schnittplan.</div>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="6" data-titel="Ergebnisse und Bericht">
+    <div class="schritt-kopf"><h2>6 · Ergebnisse und Bericht</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="c6a"><label for="c6a">Prüfbericht des Labors (XML und PDF) im Projektordner unter „Laborergebnisse“ ablegen.</label></li>
+        <li><input type="checkbox" id="c6b"><label for="c6b">In <b>PlanKit</b> den Prüfbericht einlesen – die Werte werden den Proben über die Probennummer zugeordnet.</label></li>
+        <li><input type="checkbox" id="c6c"><label for="c6c"><b>Raumbuch</b> in PlanKit: die Räume kommen aus den Proben (z. B. „EG Wohnzimmer“). Maßnahme je Raum eintragen.</label></li>
+        <li><input type="checkbox" id="c6d"><label for="c6d">Zurückgestellte Segmente nachbeauftragen, wenn die Ergebnisse es verlangen – die Bezeichnung bleibt gleich.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp achtung"><b>In Arbeit:</b> die Wandansicht mit Tiefenprofil je Wand für das Gutachten. Bis dahin: Raumbuch und Tabelle der Ergebnisse.</div>
+    </div></div>
+  </div>
+
+  <div class="nav-schritte"><button type="button" id="schritt-zurueck">← Zurück</button><button type="button" id="schritt-weiter" class="primaer">Weiter →</button></div>
+</section>
 <section id="raumkuerzel">
   <h1>Raumkürzel</h1>
   <p class="lead">Für Probenbezeichnungen. Fehlt ein Raum, bitte melden – die Liste gilt dann für alle.</p>
@@ -227,7 +398,7 @@ tr:last-child td{border-bottom:none}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.1.0';
+const VERSION = '0.2.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -304,6 +475,55 @@ $('kopieren').onclick = async () => {
   setTimeout(() => { b.textContent = 'ID kopieren'; }, 1600);
 };
 zeige();
+
+/* Bohrkerne: Schritt für Schritt – Schrittleiste, Haken (nur in diesem Browser), zwei kleine Übungen, Spickzettel-Druck */
+const ABLAUF = { schritt: 1 };
+const schrittEls = [...document.querySelectorAll('#bohrkern-ablauf .schritt')];
+let haken = {};
+try { haken = JSON.parse(localStorage.getItem('aidkit-bohrkern-haken') || '{}') || {}; } catch { haken = {}; }
+const hakenSpeichern = () => { try { localStorage.setItem('aidkit-bohrkern-haken', JSON.stringify(haken)); } catch {} };
+document.querySelectorAll('#bohrkern-ablauf .check input').forEach(cb => { cb.checked = !!haken[cb.id]; cb.addEventListener('change', () => { haken[cb.id] = cb.checked; hakenSpeichern(); zeigeSchritt(ABLAUF.schritt); }); });
+function schrittErledigt(el){ const c = [...el.querySelectorAll('.check input')]; return c.length && c.every(x => x.checked); }
+function zeigeSchritt(n){
+  ABLAUF.schritt = Math.max(1, Math.min(schrittEls.length, n));
+  schrittEls.forEach(el => el.classList.toggle('aktiv', Number(el.dataset.schritt) === ABLAUF.schritt));
+  $('schritte').innerHTML = schrittEls.map(el => { const k = Number(el.dataset.schritt); return `<li><button type="button" data-geh="${k}" class="${schrittErledigt(el) ? 'erledigt' : ''}"${k === ABLAUF.schritt ? ' aria-current="step"' : ''}><span class="nr">${schrittErledigt(el) ? '✓' : k}</span>${esc(el.dataset.titel)}</button></li>`; }).join('');
+  $('schritt-zurueck').disabled = ABLAUF.schritt === 1;
+  $('schritt-weiter').textContent = ABLAUF.schritt === schrittEls.length ? 'Zum Anfang' : 'Weiter →';
+}
+$('schritte').addEventListener('click', e => { const b = e.target.closest('[data-geh]'); if (b) zeigeSchritt(Number(b.dataset.geh)); });
+$('schritt-zurueck').onclick = () => zeigeSchritt(ABLAUF.schritt - 1);
+$('schritt-weiter').onclick = () => zeigeSchritt(ABLAUF.schritt === schrittEls.length ? 1 : ABLAUF.schritt + 1);
+$('ablauf-zuruecksetzen').onclick = () => { haken = {}; hakenSpeichern(); document.querySelectorAll('#bohrkern-ablauf .check input').forEach(cb => { cb.checked = false; }); zeigeSchritt(1); };
+$('ablauf-drucken').onclick = () => { document.body.dataset.druck = '1'; $('bohrkern-ablauf').classList.add('druckziel'); window.print(); };
+window.addEventListener('afterprint', () => { delete document.body.dataset.druck; $('bohrkern-ablauf').classList.remove('druckziel'); });
+document.addEventListener('keydown', e => { if (location.hash !== '#bohrkern-ablauf' || /input|select|textarea/i.test(e.target.tagName)) return; if (e.key === 'ArrowRight') zeigeSchritt(ABLAUF.schritt + 1); if (e.key === 'ArrowLeft') zeigeSchritt(ABLAUF.schritt - 1); });
+zeigeSchritt(1);
+
+/* Übung Wand: Tür oben = Wand A, im Uhrzeigersinn B (rechts), C (unten), D (links) */
+const WAND_FRAGEN = ['C', 'B', 'D', 'A'];let wandFrage = 0;
+function stelleWandFrage(){ $('wand-frage').innerHTML = `Die Tür ist oben. Tippe auf <b>Wand ${WAND_FRAGEN[wandFrage]}</b>.`; $('wand-antwort').textContent = ''; document.querySelectorAll('#uebung-wand .wand').forEach(w => w.classList.remove('richtig', 'falsch')); }
+document.querySelectorAll('#uebung-wand .wand').forEach(w => w.addEventListener('click', () => {
+  const ziel = WAND_FRAGEN[wandFrage], ist = w.dataset.wand, out = $('wand-antwort');
+  document.querySelectorAll('#uebung-wand .wand').forEach(x => x.classList.remove('richtig', 'falsch'));
+  w.classList.add(ist === ziel ? 'richtig' : 'falsch');
+  if (ist === ziel){ out.innerHTML = `<span class="ok">Richtig – das ist Wand ${ziel}.</span> ` + (wandFrage < WAND_FRAGEN.length - 1 ? 'Nächste Frage …' : 'Alle vier geschafft.'); if (wandFrage < WAND_FRAGEN.length - 1) setTimeout(() => { wandFrage++; stelleWandFrage(); }, 1300); }
+  else out.innerHTML = `<span class="warn">Das ist Wand ${ist}.</span> Tipp: bei der Tür mit A anfangen, dann im Uhrzeigersinn weiterzählen.`;
+}));
+stelleWandFrage();
+
+/* Übung Gefäß: Wandkennung + Endung + Tiefe */
+const BEUTEL = { punkt: '7', tiefe: '2' };
+$('beutel-punkt').innerHTML = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(k => `<button type="button" data-bp="${k}" aria-label="Punkt ${k}, ${esc(K.RASTER[k])}">${k}</button>`).join('');
+$('beutel-tiefe').innerHTML = [1, 2, 3].map(t => `<button type="button" data-bt="${t}">T${t}</button>`).join('');
+function zeigeBeutel(){
+  document.querySelectorAll('[data-bp]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.bp === BEUTEL.punkt)));
+  document.querySelectorAll('[data-bt]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.bt === BEUTEL.tiefe)));
+  const id = K.bohrkernId({ geschoss: 'EG', raum: 'WZ', flaeche: 'B', punkt: BEUTEL.punkt, tiefe: BEUTEL.tiefe });
+  $('beutel-id').textContent = id; $('beutel-text').textContent = K.pruefeId(id).gesprochen;
+}
+$('uebung-beutel').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; if (b.dataset.bp) BEUTEL.punkt = b.dataset.bp; if (b.dataset.bt) BEUTEL.tiefe = b.dataset.bt; zeigeBeutel(); });
+zeigeBeutel();
 
 /* ID prüfen */
 $('pruefen').addEventListener('input', () => {
