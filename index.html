@@ -557,10 +557,11 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="c6b"><label for="c6b">In <b>PlanKit</b> den Prüfbericht einlesen – die Werte werden den Proben über die Probennummer zugeordnet.</label></li>
         <li><input type="checkbox" id="c6c"><label for="c6c"><b>Raumbuch</b> in PlanKit: die Räume kommen aus den Proben (z. B. „EG Wohnzimmer“). Maßnahme je Raum eintragen.</label></li>
         <li><input type="checkbox" id="c6d"><label for="c6d">Zurückgestellte Segmente nachbeauftragen, wenn die Ergebnisse es verlangen – die Bezeichnung bleibt gleich.</label></li>
+        <li><input type="checkbox" id="c6f"><label for="c6f">In <b>PlanKit</b> Liste → <b>Wandansichten (Bohrkerne) …</b>: je Wand eine Zeichnung mit Tiefensäule T1, T2 … je Kern und eine Tabelle. Wert wählen (Vorschlag MKW C10–C40, dazu C10–C22), dann <b>Word-Anlage speichern</b>. Die Kerne müssen dafür nicht im Plan platziert sein.</label></li>
         <li><input type="checkbox" id="c6e"><label for="c6e"><b>FotoKit</b>: bei Bohrloch-Fotos unter „Probe-Nr.“ die Kern-ID eintragen (<code>EG-WZ-B-7</code>). Ergebnistabelle und PlanKit-Anlage ordnen das Foto über LabelKit allen analysierten Segmenten des Kerns zu; eine Segment-ID (<code>…-T2</code>) nur diesem.</label></li>
       </ul>
     </div><div>
-      <div class="tipp achtung"><b>In Arbeit:</b> die Wandansicht mit Tiefenprofil je Wand für das Gutachten. Bis dahin: Raumbuch und Tabelle der Ergebnisse.</div>
+      <div class="tipp">Die Lage (Abstand zur Ecke, Höhe über OKFF, Wandmaße) kommt aus dem Wandblatt – je sauberer gemessen, desto genauer die Zeichnung. Ohne Maße steht der Punkt nach dem Raster 1–9.</div>
     </div></div>
   </div>
 
@@ -578,7 +579,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.3.1';
+const VERSION = '0.4.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
