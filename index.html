@@ -127,7 +127,15 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 .mini-tastatur button,.mini-tiefe button{padding:6px 0;font:600 15px var(--mono)}
 .mini-tiefe{display:flex;gap:5px;margin-top:6px}
 .mini-tiefe button{width:44px;font-size:13px}
-@media (max-width:820px){ .schritt-grid{grid-template-columns:1fr} }
+a.app-oeffnen{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 13px;border:1px solid var(--accent-2);border-radius:7px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+a.app-oeffnen:hover{background:var(--accent-l)}
+.fluss{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:0 0 16px}
+.fluss button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 10px;flex:1 1 104px;min-width:0;text-align:left;border-radius:9px}
+.fluss button b{font-size:13.5px}
+.fluss button span{font:11.5px var(--mono);color:var(--muted)}
+.fluss .pfeil{align-self:center;color:var(--muted);font-size:16px}
+.wo-tab td:first-child{font-family:var(--mono);white-space:nowrap}
+@media (max-width:820px){ .schritt-grid{grid-template-columns:1fr} .fluss .pfeil{display:none} .wo-tab td:first-child{white-space:normal} .layout{grid-template-columns:minmax(0,1fr)} th,td{padding:6px 8px} }
 @media print{
   .appbar,nav,#wasserzeichen,.baukasten-karte,.schritte,.nav-schritte,.uebung,.kein-druck{display:none!important} .layout{display:block;padding:0} main section{display:block} body{background:#fff}
   body[data-druck] main section:not(.druckziel){display:none!important}
@@ -142,6 +150,7 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 <nav aria-label="Kapitel">
   <a href="#start">Start</a>
   <div class="gruppe">Abläufe</div>
+  <a href="#brandschaden">Brandschaden von A bis Z</a>
   <a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a>
   <div class="gruppe">Konventionen</div>
   <a href="#bohrkern">Probenbezeichnung Bohrkerne</a>
@@ -165,6 +174,7 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
     </tbody>
   </table>
   <h2>Abläufe</h2>
+  <p><a href="#brandschaden"><b>Brandschaden von A bis Z</b></a> – der normale Weg durch alle Apps, vom Projekt bis zur Abrechnung</p>
   <p><a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a> – von der Vorbereitung im Büro bis zum Labor</p>
   <h2>Konventionen</h2>
   <p><a href="#bohrkern">Probenbezeichnung Bohrkerne</a> – mit ID-Baukasten und Prüfung · <a href="#raumkuerzel">Raumkürzel</a></p>
@@ -270,11 +280,179 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 </section>
 
 
-<section id="bohrkern-ablauf">
+<section id="brandschaden" class="ablauf" data-speicher="aidkit-brandschaden-haken">
+  <h1>Brandschaden von A bis Z</h1>
+  <p class="lead">Der normale Weg durch die Spektron-Apps – vom Projekt bis zur Abrechnung. Neun Schritte, jeder mit kurzer Abhakliste. Gespeichert wird immer im Projektordner im Archiv; die Apps laden nichts hoch.</p>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <p class="wo" style="margin:0 0 8px">Überblick – tippen springt zum Schritt. Darunter steht, in welchen Ordner die App speichert.</p>
+  <div class="fluss kein-druck" role="group" aria-label="Apps und Ordner">
+    <button type="button" data-geh="2"><b>Projektzentrale</b><span>_Projekt.json</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="4"><b>LabelKit</b><span>Laboraufträge</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="5"><b>FotoKit</b><span>Fotos</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="6"><b>PlanKit</b><span>Pläne · Mitteilungen</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="8"><b>Büro</b><span>Übergabe · Versand</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="9"><b>BelegKit</b><span>Abrechnung</span></button>
+  </div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+
+  <div class="karte schritt" data-schritt="1" data-titel="Einrichten">
+    <div class="schritt-kopf"><h2>1 · Einmal einrichten</h2><span class="ort buero">Büro</span><span class="dauer">einmal je Windows-Benutzer</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b1a"><label for="b1a">Auf dem Terminalserver <b>Chrome oder Edge</b> öffnen (Firefox kann keine Ordner beschreiben).</label></li>
+        <li><input type="checkbox" id="b1b"><label for="b1b">Projektzentrale öffnen → <b>„Archivordner wählen …“</b> → <code>C:\daten\Mosaik Archivordner</code> → Zulassen.</label></li>
+        <li><input type="checkbox" id="b1c"><label for="b1c">Im Browsermenü <b>„App installieren“</b> – die Projektzentrale startet dann wie ein Programm.</label></li>
+        <li><input type="checkbox" id="b1d"><label for="b1d">Das eigene <b>Kürzel</b> eintragen (in LabelKit „Ihr Kürzel“) – es gilt auch in BelegKit.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Nach jedem Browserneustart einmal <b>„Zugriff erlauben“</b> klicken. Das ist eine Schutzregel des Browsers, kein Fehler.</div>
+      <a class="app-oeffnen" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="2" data-titel="Projekt">
+    <div class="schritt-kopf"><h2>2 · Projekt öffnen</h2><span class="ort buero">Büro</span><span class="dauer">Projektzentrale</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b2a"><label for="b2a">In der Projektzentrale das <b>Projekt wählen</b> (Ordner „26.0123 Ort Kürzel“).</label></li>
+        <li><input type="checkbox" id="b2b"><label for="b2b"><b>Projektdaten</b>: „Arbeitszettel einlesen …“ (jeder Wert wird vor dem Speichern gezeigt) oder Objekt, Auftraggeber, Schadendatum von Hand.</label></li>
+        <li><input type="checkbox" id="b2c"><label for="b2c"><b>Nutzung</b> wählen – Pflichtfeld, sie bestimmt die Bewertung nach VdS 2357 in der Ergebniskarte.</label></li>
+        <li><input type="checkbox" id="b2d"><label for="b2d">Rechts stehen die Aufgaben (LabelKit, FotoKit, PlanKit, BelegKit) – jede öffnet direkt den richtigen Ordner.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Alle Apps übernehmen die Projektdaten. Einmal hier eintragen, nirgends doppelt.</div>
+      <a class="app-oeffnen" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="3" data-titel="Vor Ort">
+    <div class="schritt-kopf"><h2>3 · Vor Ort</h2><span class="ort vorort">vor Ort</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b3a"><label for="b3a">Vorher drucken, falls nötig: <b>Feldbögen</b> aus LabelKit (Raumluft Asbest/KMF, Schimmel, Materialprobe Asbest, PN 98, Bohrkerne).</label></li>
+        <li><input type="checkbox" id="b3b"><label for="b3b">Proben nehmen und beschriften, wie im Büro üblich. Raum/Ort immer gleich schreiben (z. B. immer „EG Küche“).</label></li>
+        <li><input type="checkbox" id="b3c"><label for="b3c"><b>Fotos</b> machen: Übersicht je Raum, jede Probenahmestelle.</label></li>
+        <li><input type="checkbox" id="b3d"><label for="b3d">Grundriss mitnehmen oder vor Ort scannen (Polycam) – sonst später in PlanKit skizzieren.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Bohrkerne? Dafür gibt es einen eigenen Ablauf: <a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a>.</div>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="4" data-titel="Proben erfassen">
+    <div class="schritt-kopf"><h2>4 · Proben erfassen</h2><span class="ort buero">Büro</span><span class="dauer">LabelKit → Ordner „Laboraufträge“</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b4a"><label for="b4a">Projektnummer prüfen – sie kommt aus der Projektzentrale.</label></li>
+        <li><input type="checkbox" id="b4b"><label for="b4b">Proben anlegen im passenden Reiter (PAK, Chlorid, Asbest, Sonstige, PN 98, Brandgeruch). „Raum / Ort“ schlägt die Räume des Projekts vor.</label></li>
+        <li><input type="checkbox" id="b4c"><label for="b4c"><b>Etiketten</b> drucken.</label></li>
+        <li><input type="checkbox" id="b4d"><label for="b4d"><b>Probenerfassung abschließen</b> → „Alle EOL + Projektdatei speichern“: Laborübergaben und Projektdatei landen in „Laboraufträge“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Zwischendurch genügt <b>Strg+S</b> (speichert nur die Projektdatei). Die Leiste unten führt durch: Projektnummer → Proben → Etiketten → Abschließen.</div>
+      <a class="app-oeffnen" href="../labelkit/" target="labelkit" rel="noopener">LabelKit öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="5" data-titel="Fotos">
+    <div class="schritt-kopf"><h2>5 · Fotos</h2><span class="ort buero">Büro</span><span class="dauer">FotoKit → Ordner „Fotos“</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b5a"><label for="b5a">In der Projektzentrale „Fotos bearbeiten“ – FotoKit öffnet den Ordner „Fotos“.</label></li>
+        <li><input type="checkbox" id="b5b"><label for="b5b">Je Bild <b>Beschreibung</b>, optional <b>Abschnitt</b> (z. B. „Küche“, gilt für die folgenden Bilder) und <b>Probe-Nr.</b> (z. B. „P1“). Enter springt weiter.</label></li>
+        <li><input type="checkbox" id="b5c"><label for="b5c">Unbrauchbare Bilder <b>aussortieren</b> (Alt+X), schiefe <b>drehen</b> (Alt+R), Reihenfolge ziehen oder „nach Abschnitt“ sortieren.</label></li>
+        <li><input type="checkbox" id="b5d"><label for="b5d"><b>Bilddokumentation erstellen …</b> → PDF (wird automatisch in Dateien ≤ 14 MB geteilt). <b>Umbenennen</b> ist ein eigener Schritt.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Originalbilder werden nur umbenannt oder nach „_aussortiert“ verschoben – nie verändert. Umbenennen lässt sich rückgängig machen.</div>
+      <a class="app-oeffnen" href="../Bildumbenenner/" target="fotokit" rel="noopener">FotoKit öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="6" data-titel="Plan">
+    <div class="schritt-kopf"><h2>6 · Probenplan</h2><span class="ort buero">Büro</span><span class="dauer">PlanKit → Ordner „Pläne“</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b6a"><label for="b6a">Grundriss aus „Pläne“ wählen (Polycam-Export, PDF oder Bild) – oder „Kein Plan? Skizze zeichnen“.</label></li>
+        <li><input type="checkbox" id="b6b"><label for="b6b">Mehrere Geschosse: unten „＋ Plan“ (EG, 1. OG …). Probennummern laufen über alle Geschosse weiter.</label></li>
+        <li><input type="checkbox" id="b6c"><label for="b6c"><b>Laborbericht importieren …</b> → die Probenerfassung aus LabelKit übernehmen und die Proben auf den Plan ziehen.</label></li>
+        <li><input type="checkbox" id="b6d"><label for="b6d">Brandherd markieren, bei Bedarf Probenflächen einzeichnen.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">PlanKit speichert jede Änderung selbst. Arbeitet ein Kollege parallel am selben Plan, fragt PlanKit nach, statt zu überschreiben.</div>
+      <a class="app-oeffnen" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="7" data-titel="Laborbericht">
+    <div class="schritt-kopf"><h2>7 · Laborbericht und Auswertung</h2><span class="ort buero">Büro</span><span class="dauer">PlanKit · FotoKit → „Mitteilungen“</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b7a"><label for="b7a">Prüfbericht als <b>XML und PDF</b> in „Laborergebnisse“ ablegen.</label></li>
+        <li><input type="checkbox" id="b7b"><label for="b7b">PlanKit: Bericht importieren, <b>„Alle Konflikte: Aktualisieren“</b> – die Messwerte hängen dann an den Proben.</label></li>
+        <li><input type="checkbox" id="b7c"><label for="b7c"><b>Ergebnisse</b> (Taste K): Ergebniskarte nach VdS 2357, passend zur Nutzung aus Schritt 2. Beim Export „Darstellung: Ergebniskarte“.</label></li>
+        <li><input type="checkbox" id="b7d"><label for="b7d"><b>Raumbuch</b>: je Raum Maßnahme und Bemerkung; Räume ohne Probe mit Status. Als Word-Anlage oder CSV.</label></li>
+        <li><input type="checkbox" id="b7e"><label for="b7e"><b>Anlage Probenahme</b> (Word) aus PlanKit; FotoKit <b>„Ergebnistabelle …“</b> für die Tabelle im Gutachten.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Anlagen landen in „Mitteilungen“. In Word an der gewünschten Stelle: Einfügen › Objekt › Text aus Datei.</div>
+      <a class="app-oeffnen" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="8" data-titel="Gutachten und Büro">
+    <div class="schritt-kopf"><h2>8 · Gutachten und Übergabe ans Büro</h2><span class="ort buero">Büro</span><span class="dauer">Word · Projektzentrale · Büroübersicht</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b8a"><label for="b8a">Gutachten in Word schreiben, Anlagen aus „Mitteilungen“ einfügen.</label></li>
+        <li><input type="checkbox" id="b8b"><label for="b8b">Projektzentrale → <b>„Übergabe ans Büro“</b>: Word-Datei und Empfänger bestätigen und bewusst übergeben.</label></li>
+        <li><input type="checkbox" id="b8c"><label for="b8c">Die <b>Papiermappe</b> bleibt Teil des Ablaufs.</label></li>
+        <li><input type="checkbox" id="b8d"><label for="b8d">Büro: in der <b>Büroübersicht</b> (Projektzentrale → „Weitere Apps“) Gegenlesen, PDF und Versand dokumentieren.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Nach dem Gegenlesen ist keine weitere Freigabe nötig.</div>
+      <a class="app-oeffnen" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="karte schritt" data-schritt="9" data-titel="Abrechnung">
+    <div class="schritt-kopf"><h2>9 · Abrechnung</h2><span class="ort buero">Büro</span><span class="dauer">BelegKit → Ordner „Abrechnung“</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="b9a"><label for="b9a">Jede Person trägt unter <b>„Meine Zeiten“</b> ihre Ortstermine selbst ein: Stunden (Fahrzeit gehört dazu), km nur der Fahrer, Spesen, Übernachtung.</label></li>
+        <li><input type="checkbox" id="b9b"><label for="b9b">Auswertung und Bericht als eigene Tätigkeit „Auswertung / Bericht“.</label></li>
+        <li><input type="checkbox" id="b9c"><label for="b9c">Proben (aus LabelKit), Berichtsseiten und Fotos zählt BelegKit selbst – Hinweise prüfen.</label></li>
+        <li><input type="checkbox" id="b9d"><label for="b9d"><b>„Abrechnung“</b>: alle Positionen mit Nummern zum Übertragen ins Rechnungsprogramm; „Stand speichern“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Die Rechnung selbst (Nummer, Umsatzsteuer, Archiv) bleibt im Rechnungsprogramm. Spesen ohne Projektbezug: SpesenKit unter „Weitere Apps“.</div>
+      <a class="app-oeffnen" href="../aufwandkit/" target="belegkit" rel="noopener">BelegKit öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+
+  <h2>Wo liegt was?</h2>
+  <div style="overflow-x:auto"><table class="wo-tab">
+    <thead><tr><th>Ordner im Projekt</th><th>Was dort liegt</th><th>App</th></tr></thead>
+    <tbody>
+      <tr><td>Laboraufträge</td><td>Laborübergaben, Protokolle, LabelKit-Projektdatei (…_Daten.json)</td><td>LabelKit</td></tr>
+      <tr><td>Fotos</td><td>Projektfotos, Bilddokumentation (PDF), FotoKit-Daten</td><td>FotoKit</td></tr>
+      <tr><td>Pläne</td><td>Grundrisse und PlanKit-Projekt (.probenplan)</td><td>PlanKit</td></tr>
+      <tr><td>Laborergebnisse</td><td>Prüfberichte vom Labor (XML und PDF)</td><td>von Hand ablegen</td></tr>
+      <tr><td>Mitteilungen</td><td>Gutachten, Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>PlanKit · LabelKit · Word</td></tr>
+      <tr><td>Abrechnung</td><td>Zeiten je Person, gespeicherte Abrechnungsstände</td><td>BelegKit</td></tr>
+      <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen (mit Prüfsumme)</td><td>LabelKit</td></tr>
+    </tbody>
+  </table></div>
+  <p class="wo">Hilfe in jeder App: <b>?</b>-Knopf oder F1. Etwas klemmt? In FotoKit „Problem melden“, sonst Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
+</section>
+
+<section id="bohrkern-ablauf" class="ablauf" data-speicher="aidkit-bohrkern-haken">
   <h1>Bohrkerne: Schritt für Schritt</h1>
   <p class="lead">Systematische Bohrkerne aus Wänden, z. B. nach einem Heizölschaden. Sechs Schritte, jeder mit kurzer Abhakliste. Die Probenbezeichnung entsteht vor Ort fast von selbst.</p>
-  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" id="ablauf-drucken">Als Spickzettel drucken</button><button type="button" id="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
-  <ol class="schritte" id="schritte" aria-label="Schritte"></ol>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
 
   <div class="karte schritt" data-schritt="1" data-titel="Vorbereiten">
     <div class="schritt-kopf"><h2>1 · Vorbereiten</h2><span class="ort buero">Büro</span><span class="dauer">ca. 10 Minuten</span></div>
@@ -384,7 +562,7 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
     </div></div>
   </div>
 
-  <div class="nav-schritte"><button type="button" id="schritt-zurueck">← Zurück</button><button type="button" id="schritt-weiter" class="primaer">Weiter →</button></div>
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
 </section>
 <section id="raumkuerzel">
   <h1>Raumkürzel</h1>
@@ -398,7 +576,7 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.2.0';
+const VERSION = '0.3.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -476,29 +654,35 @@ $('kopieren').onclick = async () => {
 };
 zeige();
 
-/* Bohrkerne: Schritt für Schritt – Schrittleiste, Haken (nur in diesem Browser), zwei kleine Übungen, Spickzettel-Druck */
-const ABLAUF = { schritt: 1 };
-const schrittEls = [...document.querySelectorAll('#bohrkern-ablauf .schritt')];
-let haken = {};
-try { haken = JSON.parse(localStorage.getItem('aidkit-bohrkern-haken') || '{}') || {}; } catch { haken = {}; }
-const hakenSpeichern = () => { try { localStorage.setItem('aidkit-bohrkern-haken', JSON.stringify(haken)); } catch {} };
-document.querySelectorAll('#bohrkern-ablauf .check input').forEach(cb => { cb.checked = !!haken[cb.id]; cb.addEventListener('change', () => { haken[cb.id] = cb.checked; hakenSpeichern(); zeigeSchritt(ABLAUF.schritt); }); });
-function schrittErledigt(el){ const c = [...el.querySelectorAll('.check input')]; return c.length && c.every(x => x.checked); }
-function zeigeSchritt(n){
-  ABLAUF.schritt = Math.max(1, Math.min(schrittEls.length, n));
-  schrittEls.forEach(el => el.classList.toggle('aktiv', Number(el.dataset.schritt) === ABLAUF.schritt));
-  $('schritte').innerHTML = schrittEls.map(el => { const k = Number(el.dataset.schritt); return `<li><button type="button" data-geh="${k}" class="${schrittErledigt(el) ? 'erledigt' : ''}"${k === ABLAUF.schritt ? ' aria-current="step"' : ''}><span class="nr">${schrittErledigt(el) ? '✓' : k}</span>${esc(el.dataset.titel)}</button></li>`; }).join('');
-  $('schritt-zurueck').disabled = ABLAUF.schritt === 1;
-  $('schritt-weiter').textContent = ABLAUF.schritt === schrittEls.length ? 'Zum Anfang' : 'Weiter →';
+/* Ablauf-Kapitel (Bohrkerne, Brandschaden …): Schrittleiste, Haken je Kapitel (nur in diesem Browser), Spickzettel-Druck.
+   Jedes <section class="ablauf" data-speicher="…"> mit .schritt-Blöcken (data-schritt, data-titel) bekommt das automatisch. */
+const ABLAEUFE = {};
+function initAblauf(sec){
+  const schritte = [...sec.querySelectorAll('.schritt')], leiste = sec.querySelector('.schritte'), key = sec.dataset.speicher;
+  const A = ABLAEUFE[sec.id] = { schritt: 1, zeige: null };
+  let haken = {};
+  try { haken = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch { haken = {}; }
+  const speichern = () => { try { localStorage.setItem(key, JSON.stringify(haken)); } catch {} };
+  const erledigt = el => { const c = [...el.querySelectorAll('.check input')]; return c.length && c.every(x => x.checked); };
+  sec.querySelectorAll('.check input').forEach(cb => { cb.checked = !!haken[cb.id]; cb.addEventListener('change', () => { haken[cb.id] = cb.checked; speichern(); zeige(A.schritt); }); });
+  function zeige(n){
+    A.schritt = Math.max(1, Math.min(schritte.length, n));
+    schritte.forEach(el => el.classList.toggle('aktiv', Number(el.dataset.schritt) === A.schritt));
+    leiste.innerHTML = schritte.map(el => { const k = Number(el.dataset.schritt), ok = erledigt(el); return `<li><button type="button" data-geh="${k}" class="${ok ? 'erledigt' : ''}"${k === A.schritt ? ' aria-current="step"' : ''}><span class="nr">${ok ? '✓' : k}</span>${esc(el.dataset.titel)}</button></li>`; }).join('');
+    sec.querySelector('.schritt-zurueck').disabled = A.schritt === 1;
+    sec.querySelector('.schritt-weiter').textContent = A.schritt === schritte.length ? 'Zum Anfang' : 'Weiter →';
+  }
+  A.zeige = zeige;
+  sec.addEventListener('click', e => { const g = e.target.closest('[data-geh]'); if (g && sec.contains(g)) { zeige(Number(g.dataset.geh)); if (!leiste.contains(g)) leiste.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } });
+  sec.querySelector('.schritt-zurueck').onclick = () => zeige(A.schritt - 1);
+  sec.querySelector('.schritt-weiter').onclick = () => zeige(A.schritt === schritte.length ? 1 : A.schritt + 1);
+  sec.querySelector('.ablauf-zuruecksetzen').onclick = () => { haken = {}; speichern(); sec.querySelectorAll('.check input').forEach(cb => { cb.checked = false; }); zeige(1); };
+  sec.querySelector('.ablauf-drucken').onclick = () => { document.body.dataset.druck = '1'; sec.classList.add('druckziel'); window.print(); };
+  zeige(1);
 }
-$('schritte').addEventListener('click', e => { const b = e.target.closest('[data-geh]'); if (b) zeigeSchritt(Number(b.dataset.geh)); });
-$('schritt-zurueck').onclick = () => zeigeSchritt(ABLAUF.schritt - 1);
-$('schritt-weiter').onclick = () => zeigeSchritt(ABLAUF.schritt === schrittEls.length ? 1 : ABLAUF.schritt + 1);
-$('ablauf-zuruecksetzen').onclick = () => { haken = {}; hakenSpeichern(); document.querySelectorAll('#bohrkern-ablauf .check input').forEach(cb => { cb.checked = false; }); zeigeSchritt(1); };
-$('ablauf-drucken').onclick = () => { document.body.dataset.druck = '1'; $('bohrkern-ablauf').classList.add('druckziel'); window.print(); };
-window.addEventListener('afterprint', () => { delete document.body.dataset.druck; $('bohrkern-ablauf').classList.remove('druckziel'); });
-document.addEventListener('keydown', e => { if (location.hash !== '#bohrkern-ablauf' || /input|select|textarea/i.test(e.target.tagName)) return; if (e.key === 'ArrowRight') zeigeSchritt(ABLAUF.schritt + 1); if (e.key === 'ArrowLeft') zeigeSchritt(ABLAUF.schritt - 1); });
-zeigeSchritt(1);
+document.querySelectorAll('section.ablauf').forEach(initAblauf);
+window.addEventListener('afterprint', () => { delete document.body.dataset.druck; document.querySelectorAll('.druckziel').forEach(x => x.classList.remove('druckziel')); });
+document.addEventListener('keydown', e => { const A = ABLAEUFE[location.hash.slice(1)]; if (!A || /input|select|textarea/i.test(e.target.tagName)) return; if (e.key === 'ArrowRight') A.zeige(A.schritt + 1); if (e.key === 'ArrowLeft') A.zeige(A.schritt - 1); });
 
 /* Übung Wand: Tür oben = Wand A, im Uhrzeigersinn B (rechts), C (unten), D (links) */
 const WAND_FRAGEN = ['C', 'B', 'D', 'A'];let wandFrage = 0;
