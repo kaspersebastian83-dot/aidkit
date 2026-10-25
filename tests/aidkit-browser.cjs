@@ -59,7 +59,7 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
     // Apps Schritt für Schritt: jedes Kapitel per Adresse, Schrittleiste, eigene Haken, Übung und App-Knopf
-    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-plankit', 9, '../Probenplan/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/']]) {
+    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-plankit', 9, '../Probenplan/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
       await page.goto(base + '#' + id);
       assert.equal(await page.locator(`#${id}`).isVisible(), true, id + ' sichtbar');
       assert.equal(await page.locator(`#${id} .schritte button`).count(), n, id + ': Schritte');
@@ -67,6 +67,19 @@ const root = path.join(__dirname, '..');
       assert.ok(await page.locator(`#${id} .quiz`).count() >= 1, id + ': mindestens eine Übung');
       for (const q of await page.locator(`#${id} .quiz`).all()) assert.ok(await q.locator('[data-a]').count() >= 2, id + ': Übung hat Antworten');
     }
+    // Datenarchiv: Ziel sichtbar, Rollentester wie im Archiv, Übung zur Rolle
+    await page.goto(base + '#app-datenarchiv');
+    assert.match(await page.locator('#app-datenarchiv .karte.ziel').innerText(), /Worum es geht[\s\S]*Erfahrungsschatz[\s\S]*bewertet nicht/);
+    const rt = async v => { await page.locator('#rolle-pruefen').fill(v); return page.locator('#rolle-ergebnis b').innerText(); };
+    assert.equal(await rt('Brandraum Küche Decke'), 'Brandbereich');
+    assert.equal(await rt('REF-1-T2'), 'Referenz (unbelastet)');
+    assert.equal(await rt('Parkettkleber Flur'), 'Verdachtsquelle');
+    assert.equal(await rt('F-EG-WZ-B-7-T1'), 'Freimessung nach Sanierung');
+    assert.equal(await rt('Freimessung Brandraum'), 'Freimessung nach Sanierung');
+    assert.equal(await rt('Prefab-Wand Flur'), 'ohne Rolle');
+    const dq = page.locator('[data-quiz="da-rolle"]');
+    await dq.locator('[data-a="0"]').click(); assert.match(await dq.locator('.antwort').innerText(), /Richtig\./);
+    assert.equal(await page.locator('nav a[href="#app-datenarchiv"]').count(), 1);
     // Übung BelegKit: einzelne Antwort, richtig → nächste Frage
     await page.goto(base + '#app-belegkit'); await page.locator('#app-belegkit .schritte [data-geh="5"]').click();
     const q = page.locator('[data-quiz="bk-proben"]');
