@@ -115,6 +115,7 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 .hinweis-klein{font-size:12.5px;color:var(--muted)}
 .rolle-ergebnis{font-size:13px;min-height:20px;margin:8px 0 0}.rolle-ergebnis b{color:var(--accent)}.rolle-ergebnis.ohne b{color:var(--muted)}
 .uebung + .uebung{margin-top:12px}
+.sim-liste{margin:6px 0 0;padding-left:22px;font-size:13px}.sim-liste li{margin:2px 0}.sim-liste code{font-size:12px}
 .uebung .frage{font-size:13px;margin:0 0 8px}
 .uebung .antwort{font-size:13px;min-height:20px;margin-top:8px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -907,8 +908,19 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk3b"><label for="fk3b"><b>Beschreibung</b> eintippen; <b>Enter</b> springt zum nächsten Bild.</label></li>
         <li><input type="checkbox" id="fk3c"><label for="fk3c">Optional <b>Abschnitt</b> (z. B. „Küche“) – gilt für die folgenden Bilder mit.</label></li>
         <li><input type="checkbox" id="fk3d"><label for="fk3d"><b>Probe-Nr.</b> eintragen (z. B. „P1“, mehrere mit Komma; bei Bohrkernen die Kern-ID wie <code>EG-WZ-B-7</code>).</label></li>
+        <li><input type="checkbox" id="fk3e"><label for="fk3e"><b>Probenfoto am schnellsten:</b> in die Beschreibung nur die Nummer tippen, z. B. <b>„P7“</b>, dann <b>Enter</b> – die Beschreibung kommt aus LabelKit (Raum, Oberflächenart, Beaufschlagung), „P7“ wandert ins Feld Probe-Nr.</label></li>
+        <li><input type="checkbox" id="fk3f"><label for="fk3f"><b>Vorschlag beim Tippen:</b> nach zwei Buchstaben ergänzt FotoKit aus diesem Projekt und LabelKit – der Rest ist markiert. <b>Enter</b> übernimmt und geht weiter, <b>Tab</b> übernimmt und man tippt weiter, einfach weitertippen ersetzt ihn, <b>Esc</b> verwirft ihn.</label></li>
       </ul>
+      <div class="tipp">Stört der Vorschlag? „Dateibenennung und weitere Einstellungen“ → „Vorschläge beim Tippen“ ausschalten (gilt nur für diesen Browser).</div>
     </div><div>
+      <div class="uebung">
+        <h3>Ausprobieren: Vorschlag beim Tippen</h3>
+        <p class="hinweis-klein">Beispielprojekt: in LabelKit stehen P7 (Küche) und P8 (Flur); beschrieben sind schon „Küche Decke“ und „Flur Übersicht“. Tippen Sie z. B. <b>P7</b>, <b>Kü</b> oder <b>Fl</b> – dann Enter, Tab oder Esc.</p>
+        <input id="fk-sim" style="width:100%;margin-top:4px" placeholder="Beschreibung …" autocomplete="off" spellcheck="false" aria-label="Beschreibung ausprobieren">
+        <p id="fk-sim-hilfe" class="hinweis-klein" aria-live="polite"></p>
+        <ol id="fk-sim-liste" class="sim-liste"></ol>
+      </div>
+      <div class="uebung quiz" data-quiz="fk-vorschlag"><h3>Kurz üben: Vorschlag</h3></div>
       <div class="uebung quiz" data-quiz="fk-tasten"><h3>Kurz üben: Welche Taste?</h3></div>
       <div class="tipp"><b>Strg+D</b> übernimmt die Angabe vom vorherigen Bild – je nach Feld Beschreibung, Abschnitt oder Probe-Nr.</div>
     </div></div>
@@ -979,7 +991,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
   <h2>Tastenkürzel</h2>
-  <div class="tasten"><span><kbd>Enter</kbd></span><span>nächstes Bild</span><span><kbd>Shift</kbd> <kbd>Enter</kbd></span><span>vorheriges Bild</span><span><kbd>Strg</kbd> <kbd>D</kbd></span><span>Angabe vom vorherigen Bild übernehmen</span><span><kbd>Alt</kbd> <kbd>X</kbd></span><span>aussortieren / zurückholen</span><span><kbd>Alt</kbd> <kbd>R</kbd></span><span>rechts drehen</span><span><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>R</kbd></span><span>links drehen</span><span><kbd>F1</kbd></span><span>Kurzanleitung</span></div>
+  <div class="tasten"><span><kbd>Enter</kbd></span><span>nächstes Bild</span><span><kbd>Shift</kbd> <kbd>Enter</kbd></span><span>vorheriges Bild</span><span><kbd>P7</kbd> <kbd>Enter</kbd></span><span>Beschreibung aus LabelKit, P7 ins Feld Probe-Nr.</span><span><kbd>Tab</kbd></span><span>Vorschlag übernehmen und weitertippen</span><span><kbd>Esc</kbd></span><span>Vorschlag verwerfen</span><span><kbd>Strg</kbd> <kbd>D</kbd></span><span>Angabe vom vorherigen Bild übernehmen</span><span><kbd>Alt</kbd> <kbd>X</kbd></span><span>aussortieren / zurückholen</span><span><kbd>Alt</kbd> <kbd>R</kbd></span><span>rechts drehen</span><span><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>R</kbd></span><span>links drehen</span><span><kbd>F1</kbd></span><span>Kurzanleitung</span></div>
   <h2>Gut zu wissen</h2>
   <p><b><code>_Bildumbenenner.json</code> nicht löschen oder umbenennen</b> – darin stehen alle Beschreibungen, Abschnitte und Proben.</p>
   <p>Etwas klemmt? <b>„Problem melden“</b> in der Fehlermeldung (oder Klick auf die Versionsnummer) kopiert einen Bericht für eine E-Mail.</p>
@@ -1419,7 +1431,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.7.0';
+const VERSION = '0.7.1';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1627,9 +1639,39 @@ QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengru
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
 QUIZ["bk-proben"] = [{"frage": "Notiz in LabelKit: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
 QUIZ["sk-naechste"] = [{"frage": "Dienstreise vom 14.07. bis 15.07.2026, dann „Speichern & nächste“. Welches Datum hat der neue Entwurf?", "antworten": ["14.07.2026", "15.07.2026", "16.07.2026"], "richtig": [2], "warum": "Der nächste Entwurf beginnt am Tag nach dem Ende der vorigen Reise."}, {"frage": "Was bleibt im neuen Entwurf erhalten?", "antworten": ["Fahrzeug", "Startort", "Uhrzeiten", "Projekt", "Reiseziel", "km"], "richtig": [0, 1, 2], "warum": "Fahrzeug, Startort und Uhrzeiten werden übernommen; Projekt, Zweck, Ziel und km sind leer."}];
+QUIZ["fk-vorschlag"] = [{"frage": "In LabelKit steht P7 (Küche, Untersicht, verrußt). Sie tippen in die Beschreibung „P7“ und drücken Enter. Was passiert?", "antworten": ["Beschreibung „Küche Untersicht verrußt“, P7 im Feld Probe-Nr.", "Beschreibung bleibt „P7“", "FotoKit ändert die LabelKit-Datei"], "richtig": [0], "warum": "Die Nummer holt die Beschreibung aus LabelKit und wandert ins Feld Probe-Nr. LabelKit wird nur gelesen."}, {"frage": "Sie tippen „Kü“, FotoKit schlägt „Küche Decke“ vor – Sie wollen aber „Küche Decke Detail“. Am schnellsten?", "antworten": ["Tab, dann „ Detail“ tippen", "Esc und alles selbst tippen", "Enter, dann zurück"], "richtig": [0], "warum": "Tab übernimmt den Vorschlag und lässt den Cursor im Feld; Enter würde übernehmen und zum nächsten Bild springen."}, {"frage": "Der Vorschlag passt gar nicht. Was tun?", "antworten": ["Einfach weitertippen", "Erst Einstellungen öffnen", "Bild aussortieren"], "richtig": [0], "warum": "Der markierte Rest wird durch das Weitertippen ersetzt. Esc verwirft ihn ausdrücklich."}];
 QUIZ["da-rolle"] = [{"frage": "Probenbeschreibung „Brandraum Küche Decke“. Welche Rolle?", "antworten": ["Brandbereich", "Referenz", "keine"], "richtig": [0], "warum": "„Brandraum“, „Brandbereich“ und „Brandherd“ ergeben Brandbereich."}, {"frage": "Wischprobe im Gästezimmer OG, das vom Brand nicht betroffen ist. Wie beschreiben, damit das Archiv sie als Vergleichsstelle erkennt?", "antworten": ["„Referenz Gästezimmer OG“", "„Gästezimmer OG“", "„OG sauber“"], "richtig": [0], "warum": "Erkannt werden „Referenz“, „unbelastet“ und REF. „Gästezimmer OG“ bliebe ohne Rolle."}, {"frage": "Freimessung nach der Reinigung an der Stelle <code>EG-WZ-B-7-T1</code>. Welche ID?", "antworten": ["<code>F-EG-WZ-B-7-T1</code>", "<code>EG-WZ-B-7-T1-F</code>", "<code>EG-WZ-B-8-T1</code>"], "richtig": [0], "warum": "„F-“ vor die alte ID – dann paart das Archiv vorher und nachher automatisch."}, {"frage": "„Freimessung Brandraum“ – welche Rolle?", "antworten": ["Freimessung", "Brandbereich", "beides"], "richtig": [0], "warum": "Freimessung geht vor: Es ist die Messung nach der Sanierung, auch wenn sie im Brandraum liegt."}];
 QUIZ["da-lesen"] = [{"frage": "Im Vergleich steht beim Median „&lt; BG“. Was heißt das?", "antworten": ["Mindestens die Hälfte der Werte liegt unter der Bestimmungsgrenze", "Der Median ist 0", "Das Labor hat einen Fehler gemacht"], "richtig": [0], "warum": "Werte unter BG zählen als kleinste Werte. Fällt der Median darauf, wird keine Zahl erfunden."}, {"frage": "Ähnlichkeit 0,99 zwischen Wohnzimmer und Brandraum. Was folgt daraus?", "antworten": ["Stützt, dass es derselbe Ruß sein kann – beweist es nicht", "Beweist, dass der Ruß vom Brand stammt", "Ein Grenzwert ist überschritten"], "richtig": [0], "warum": "Verbrennungsrückstände ähneln sich grundsätzlich. Ein deutlicher Unterschied sagt mehr als hohe Ähnlichkeit."}, {"frage": "Kann Flt/(Flt+Pyr) Brandruß von altem Teerkleber unterscheiden?", "antworten": ["Nein – beide liegen im „pyrogenen“ Bereich", "Ja, ab 0,5 ist es Brandruß", "Ja, unter 0,4 ist es Teer"], "richtig": [0], "warum": "Teer ist selbst ein Hochtemperaturprodukt. Für die Frage Teer oder Brand hilft der Mustervergleich mit einer Materialprobe des Klebers."}];
 document.querySelectorAll('.quiz').forEach(initQuiz);
+
+/* FotoKit-Vorschlag zum Ausprobieren – gleiche Bedienung wie in FotoKit 1.16 (Beispieldaten, nichts wird gespeichert). */
+(function(){
+  const inp = $('fk-sim'); if (!inp) return;
+  const LK = { P7: 'Küche Untersicht verrußt', P8: 'Flur Ansicht mit Ruß' }, liste = ['Küche Decke', 'Flur Übersicht'];
+  let geist = null, n = 0;
+  const kandidaten = () => [...liste.slice().reverse(), ...Object.values(LK), 'Küche', 'Flur'];
+  const vorschlag = g => { const k = g.trim(); if (k.length < 2) return '';
+    const nr = /^p\d+$/i.test(k) ? 'P' + k.slice(1) : ''; if (nr && LK[nr]) return k + ' ' + LK[nr];
+    const v = kandidaten().find(v => v.length > g.length && v.toLocaleLowerCase('de').startsWith(g.toLocaleLowerCase('de'))); return v ? g + v.slice(g.length) : ''; };
+  const aktiv = () => geist != null && inp.selectionEnd === inp.value.length && inp.selectionStart === geist && geist < inp.value.length;
+  const hilfe = t => { $('fk-sim-hilfe').innerHTML = t; };
+  inp.addEventListener('input', e => {
+    geist = null;
+    if (e.inputType === 'insertText' && inp.selectionStart === inp.value.length){ const v = vorschlag(inp.value); if (v){ const k = inp.value.length; inp.value = v; inp.setSelectionRange(k, v.length); geist = k; } }
+    hilfe(aktiv() ? 'Vorschlag markiert: <b>Enter</b> übernimmt und geht weiter · <b>Tab</b> übernimmt, Sie tippen weiter · weitertippen ersetzt · <b>Esc</b> verwirft' : '');
+  });
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Tab' && !e.shiftKey && aktiv()){ e.preventDefault(); inp.setSelectionRange(inp.value.length, inp.value.length); geist = null; hilfe('Übernommen – weitertippen, dann Enter.'); }
+    else if (e.key === 'Escape' && aktiv()){ e.preventDefault(); inp.value = inp.value.slice(0, geist); geist = null; hilfe('Vorschlag verworfen.'); }
+    else if (e.key === 'Enter'){
+      e.preventDefault(); let t = inp.value.trim(), probe = ''; geist = null; if (!t) return;
+      const m = /^(p\d+)\s+(.+)$/i.exec(t); if (m && LK['P' + m[1].slice(1)]){ probe = 'P' + m[1].slice(1); t = m[2]; }
+      liste.push(t); n++;
+      $('fk-sim-liste').insertAdjacentHTML('beforeend', `<li>Bild ${n}: ${probe ? '<b>Probe-Nr. ' + esc(probe) + '</b> · ' : ''}„${esc(t)}“</li>`);
+      inp.value = ''; hilfe('Gespeichert – nächstes Bild. Diese Beschreibung wird jetzt auch vorgeschlagen.');
+    }
+  });
+})();
 
 /* Rolle einer Probe wie im Datenarchiv (Projektzentrale archiv/auswertung.js, rolleAuto) – Regeln dort und hier gleich halten. */
 function rolleAuto(ref){

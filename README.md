@@ -25,6 +25,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.7.1** – FotoKit-Kapitel: Vorschlag beim Tippen und „P7 + Enter“ (FotoKit 1.16) mit Ausprobier-Feld, Übung und Tastenkürzeln.
 - **0.7.0** – Neues Kapitel „Datenarchiv“ (Gruppe „Auswerten“): worum es geht (Erfahrungsschatz aus den eigenen Laborwerten, Muster im Fall, Sanierungsnachweis, eigene Referenzmuster), sechs Schritte, Proben benennen für die Rollen (Brandraum/Brandbereich, Referenz/REF, Kleber/Teer/Bitumen, F- für Freimessung) mit Live-Prüfung wie im Archiv, Übungen zu Rollen und zum richtigen Lesen (Median „< BG“, Ähnlichkeit stützt nur, Literaturquotienten).
 - **0.6.0** – Apps Schritt für Schritt: je App ein eigenes Kapitel im Stil der Abläufe (Schritte, Haken je Kapitel, Spickzettel, Übungen mit Rückmeldung, Tastenkürzel); gemeinsamer Übungsbaustein (`QUIZ` / `initQuiz`); Bezeichnungen in den Abläufen aktualisiert („Proben übernehmen …“, „Fotos & Dokumentation“).
 - **0.5.0** – Stand zum Start im Büro: „Gilt in allen Apps“ auf der Startseite (Gelb = Pflicht, einmal eintragen, nichts geht verloren, Hilfe); Brandschaden-Ablauf mit Pflichtangaben in allen Apps, „Ich bin …“, Projektstand, Bewertungsregel VdS / eigene Skala des Büros, vorläufiger Prüfbericht, Abrechnung je Parameter, Bezeichnung der Anlage; zwei neue Übungen („Was ist Pflicht?“, „Welche Skala gilt?“); „Wo liegt was?“ mit den gemeinsamen Dateien im Archivordner; Bohrkerne: Anteil C10–C22.

@@ -67,6 +67,21 @@ const root = path.join(__dirname, '..');
       assert.ok(await page.locator(`#${id} .quiz`).count() >= 1, id + ': mindestens eine Übung');
       for (const q of await page.locator(`#${id} .quiz`).all()) assert.ok(await q.locator('[data-a]').count() >= 2, id + ': Übung hat Antworten');
     }
+    // FotoKit: Vorschlag beim Tippen zum Ausprobieren (gleiche Bedienung wie FotoKit 1.16)
+    await page.goto(base + '#app-fotokit'); await page.locator('#app-fotokit .schritte [data-geh="3"]').click();
+    const sim = page.locator('#fk-sim'), simWert = () => sim.evaluate(e => ({ wert: e.value, markiert: e.value.slice(e.selectionStart, e.selectionEnd) }));
+    await sim.click(); await page.keyboard.type('P'); await page.keyboard.type('7');
+    assert.deepEqual(await simWert(), { wert: 'P7 Küche Untersicht verrußt', markiert: ' Küche Untersicht verrußt' });
+    await page.keyboard.press('Enter');
+    assert.match(await page.locator('#fk-sim-liste li').last().innerText(), /Probe-Nr\. P7 · „Küche Untersicht verrußt“/);
+    for (const ch of 'Kü') await page.keyboard.type(ch);
+    assert.equal((await simWert()).wert, 'Küche Untersicht verrußt', 'zuletzt verwendete Beschreibung zuerst');
+    await page.keyboard.press('Escape'); assert.deepEqual(await simWert(), { wert: 'Kü', markiert: '' });
+    for (const ch of 'che D') await page.keyboard.type(ch);
+    assert.equal((await simWert()).wert, 'Küche Decke');
+    await page.keyboard.press('Tab'); await page.keyboard.type(' Detail'); await page.keyboard.press('Enter');
+    assert.match(await page.locator('#fk-sim-liste li').last().innerText(), /^Bild 2: „Küche Decke Detail“$/);
+    const fq = page.locator('[data-quiz="fk-vorschlag"]'); await fq.locator('[data-a="0"]').click(); assert.match(await fq.locator('.antwort').innerText(), /Richtig\./);
     // Datenarchiv: Ziel sichtbar, Rollentester wie im Archiv, Übung zur Rolle
     await page.goto(base + '#app-datenarchiv');
     assert.match(await page.locator('#app-datenarchiv .karte.ziel').innerText(), /Worum es geht[\s\S]*Erfahrungsschatz[\s\S]*bewertet nicht/);
