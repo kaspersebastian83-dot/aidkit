@@ -111,6 +111,10 @@ button.primaer{background:var(--accent);border-color:var(--accent-2);color:#fff;
 button.primaer:hover{background:var(--accent-l);color:#fff}
 .uebung{background:var(--panel2);border:1px solid var(--line2);border-radius:10px;padding:12px 14px}
 .uebung h3{margin:0 0 6px;font-size:14px}
+.karte.ziel{border-left:4px solid var(--accent)}.karte.ziel h2{margin-top:0}.karte.ziel ul{margin:6px 0 10px;padding-left:20px}.karte.ziel li{margin:4px 0}
+.hinweis-klein{font-size:12.5px;color:var(--muted)}
+.rolle-ergebnis{font-size:13px;min-height:20px;margin:8px 0 0}.rolle-ergebnis b{color:var(--accent)}.rolle-ergebnis.ohne b{color:var(--muted)}
+.uebung + .uebung{margin-top:12px}
 .uebung .frage{font-size:13px;margin:0 0 8px}
 .uebung .antwort{font-size:13px;min-height:20px;margin-top:8px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
@@ -178,6 +182,8 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#app-plankit">PlanKit</a>
   <a href="#app-belegkit">BelegKit</a>
   <a href="#app-spesenkit">SpesenKit</a>
+  <div class="gruppe">Auswerten</div>
+  <a href="#app-datenarchiv">Datenarchiv</a>
   <div class="gruppe">Konventionen</div>
   <a href="#bohrkern">Probenbezeichnung Bohrkerne</a>
   <a href="#raumkuerzel">Raumkürzel</a>
@@ -197,6 +203,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../Probenplan/">PlanKit</a></td><td>Probenplan, Ergebniskarte, Raumbuch · <a href="#app-plankit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../aufwandkit/">BelegKit</a></td><td>Zeiten, km, Proben, Berichtsseiten für die Rechnung · <a href="#app-belegkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../reisekosten-pro/">SpesenKit</a></td><td>Spesenabrechnung für den Monat · <a href="#app-spesenkit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../Projektzentrale/archiv/">Datenarchiv</a></td><td>Messwerte aller Projekte vergleichen, PAK-Muster, Freimessungen · <a href="#app-datenarchiv">Schritt für Schritt</a></td></tr>
     </tbody>
   </table>
   <h2>Gilt in allen Apps</h2>
@@ -1296,6 +1303,110 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <h2>Tastenkürzel</h2>
   <div class="tasten"><span><kbd>Strg</kbd> <kbd>Enter</kbd></span><span>im Reise- oder Kostenfenster: „Speichern & nächste“</span><span><kbd>Esc</kbd></span><span>Abschlussfenster schließen</span></div>
 </section>
+<section id="app-datenarchiv" class="ablauf" data-speicher="aidkit-app-datenarchiv-haken">
+  <h1>Datenarchiv</h1>
+  <div class="app-kopf"><span class="zweck">Die Messwerte aller Projekte an einem Ort – zum Vergleichen und Lernen. Liest nur, bewertet nichts.</span><a class="app-oeffnen" style="margin:0" href="../Projektzentrale/archiv/" target="spektron-archiv" rel="noopener">Datenarchiv öffnen ↗</a></div>
+  <div class="karte ziel">
+    <h2>Worum es geht</h2>
+    <p>Wir messen seit Jahren nach jedem Brand dieselben Stoffe – die Laborberichte liegen in jedem Projektordner. Zusammen sind sie ein Erfahrungsschatz, den sonst niemand hat. Das Datenarchiv macht ihn sichtbar:</p>
+    <ul>
+      <li><b>Einordnen:</b> Ist dieser Wert für einen Küchenbrand in einer Wohnung eher typisch oder auffällig? Verglichen wird mit unseren eigenen früheren Fällen.</li>
+      <li><b>Zuordnen im Fall:</b> Sieht der Ruß im Wohnzimmer aus wie im Brandraum – oder eher wie die unbelastete Referenz oder ein alter Teerkleber? Das zeigt das <b>PAK-Muster</b> (wie sich die 16 PAK prozentual verteilen).</li>
+      <li><b>Sanierung nachweisen:</b> dieselbe Stelle vorher und nach der Reinigung nebeneinander.</li>
+      <li><b>Langfristig:</b> eigene typische Muster je Brandgut (Kunststoff, Holz, Küche …) – dazu gibt es in der Fachliteratur bisher kaum Daten.</li>
+    </ul>
+    <p class="hinweis-klein">Das Archiv bewertet nicht: keine Grenz- oder Orientierungswerte, keine Schwellen. Es ersetzt kein Gutachten, es liefert Hinweise dafür. Nichts verlässt den Archivordner.</p>
+  </div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+
+  <div class="karte schritt" data-schritt="1" data-titel="Proben benennen">
+    <div class="schritt-kopf"><h2>1 · Proben so benennen, dass das Archiv sie versteht</h2><span class="ort vorort">vor Ort</span><span class="dauer">für alle</span></div>
+    <div class="schritt-grid"><div>
+      <p>Das ist das Einzige, was alle beitragen – und meist schreiben wir es ohnehin. In LabelKit in die <b>Probenbeschreibung</b> (geht so ans Labor) oder in die Probenbezeichnung:</p>
+      <ul class="check">
+        <li><input type="checkbox" id="da1a"><label for="da1a">Probe im Brandraum: <b>„Brandraum …“</b> oder <b>„Brandbereich …“</b> (auch „Brandherd“).</label></li>
+        <li><input type="checkbox" id="da1b"><label for="da1b">Vergleichsstelle, die vom Brand nicht betroffen ist: <b>„Referenz …“</b>, „unbelastet“ oder <code>REF</code> (wie beim Referenzkern).</label></li>
+        <li><input type="checkbox" id="da1c"><label for="da1c">Verdacht auf eine alte Quelle: <b>„Kleber“</b>, „Teer“, „Bitumen“ in die Beschreibung – z. B. „Parkettkleber Flur“.</label></li>
+        <li><input type="checkbox" id="da1d"><label for="da1d">Freimessung nach der Sanierung: <b><code>F-</code> vor die alte ID</b> derselben Stelle – dann stehen vorher und nachher automatisch nebeneinander.</label></li>
+      </ul>
+      <div class="tipp">Alles andere bleibt einfach „ohne Rolle“ – das ist kein Fehler. Falsch erkannt? Lässt sich im Archiv jederzeit korrigieren (Schritt 5).</div>
+    </div><div>
+      <div class="uebung">
+        <h3>Ausprobieren: Welche Rolle erkennt das Archiv?</h3>
+        <label for="rolle-pruefen" class="hinweis-klein">Probenbezeichnung oder -beschreibung eintippen</label>
+        <input id="rolle-pruefen" style="width:100%;margin-top:4px" placeholder="z. B. Brandraum Küche Decke" autocomplete="off" spellcheck="false">
+        <p id="rolle-ergebnis" class="rolle-ergebnis" aria-live="polite"></p>
+      </div>
+      <div class="uebung quiz" data-quiz="da-rolle"><h3>Kurz üben: Rollen</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Öffnen">
+    <div class="schritt-kopf"><h2>2 · Öffnen und einlesen</h2><span class="ort buero">Büro</span><span class="dauer">einmal je Sitzung</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="da2a"><label for="da2a">Projektzentrale → ganz unten unter „Weitere Apps“ der kleine Link <b>„Datenarchiv ↗“</b>.</label></li>
+        <li><input type="checkbox" id="da2b"><label for="da2b">Der Archivordner ist derselbe wie in der Projektzentrale; das Einlesen startet von selbst (sonst <b>„Einlesen“</b>).</label></li>
+        <li><input type="checkbox" id="da2c"><label for="da2c">Gelesen werden die <b>Eurofins-XML</b> im Ordner „Laborergebnisse“ jedes Projekts, dazu Nutzung, Brandgut und Schadendatum aus den Projektdaten.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Beim ersten Mal dauert es (alle Projektordner im Netz). Danach merkt sich der Browser unveränderte Projekte – es geht schnell.</div>
+      <div class="tipp achtung">Projekte nur mit PDF-Bericht werden gezählt, aber noch nicht gelesen.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Vergleich">
+    <div class="schritt-kopf"><h2>3 · Einen Wert einordnen („Vergleich“)</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="da3a"><label for="da3a">„Übersicht“: Klick auf einen Parameter öffnet ihn im <b>„Vergleich“</b>.</label></li>
+        <li><input type="checkbox" id="da3b"><label for="da3b">Gruppieren nach <b>Brandgut</b>, Nutzung, Rolle der Probe, <b>Tagen nach dem Brand</b>, Matrix oder Jahr.</label></li>
+        <li><input type="checkbox" id="da3c"><label for="da3c"><b>„Projekt hervorheben“</b>: die eigenen Proben erscheinen orange zwischen allen anderen.</label></li>
+        <li><input type="checkbox" id="da3d"><label for="da3d">Lesen: jeder Punkt = eine Probe (logarithmische Achse), Strich = <b>Median</b>, gestrichelt = 90. Perzentil, links das Feld „&lt; BG“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Werte unter BG sind nie null – sie zählen als kleinste Werte. Kennzahlen erst ab 5 Werten. µg/m², µg/100 cm² und mg/kg bleiben getrennt. Freimessungen zählen standardmäßig nicht mit.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="PAK-Muster">
+    <div class="schritt-kopf"><h2>4 · Proben eines Falls vergleichen („PAK-Muster“)</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="da4a"><label for="da4a">Projekt wählen. Jede Zeile zeigt, wie sich die PAK einer Probe <b>prozentual verteilen</b> – darunter das typische Muster anderer Projekte.</label></li>
+        <li><input type="checkbox" id="da4b"><label for="da4b">Verglichen werden nur die <b>fett gedruckten Stoffe</b>: die in allen gewählten Proben über BG liegen. Proben mit fast nur „&lt;BG“ abwählen.</label></li>
+        <li><input type="checkbox" id="da4c"><label for="da4c"><b>„Ähnlichkeit der Muster“</b>: 1,000 = gleiches Muster. Brandraum gegen Referenz und Verdachtsquelle ansehen.</label></li>
+        <li><input type="checkbox" id="da4d"><label for="da4d">Freimessungen: <b>„vorher / nachher“</b> für Σ16 EPA-PAK und BaP.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Ruß ähnelt Ruß. Hohe Ähnlichkeit <b>stützt</b> nur – ein deutlicher Unterschied (z. B. zur Referenz) sagt mehr.</div>
+      <div class="tipp achtung">Die eingeklappten „Literaturquotienten“ (z. B. Flt/(Flt+Pyr)) stammen aus Sediment- und Luftstudien und sind für Brandrückstände nicht geprüft. Teer und Brandruß sehen darin gleich aus. Nie allein darauf stützen.</div>
+      <div class="uebung quiz" data-quiz="da-lesen"><h3>Kurz üben: richtig lesen</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="5" data-titel="Zuordnen">
+    <div class="schritt-kopf"><h2>5 · Ergänzen und korrigieren („Zuordnen“)</h2><span class="ort buero">Büro</span><span class="dauer">bei Bedarf</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="da5a"><label for="da5a">Projekte ohne <b>Nutzung oder Brandgut</b> (die Zahl am Reiter): aus der Liste wählen – das „Schadenereignis“ hilft beim Erinnern.</label></li>
+        <li><input type="checkbox" id="da5b"><label for="da5b">Unten <b>„Rollen der Proben“</b>: je Probe die erkannte Rolle prüfen und bei Bedarf ändern – auch „betroffener Bereich“ oder „bewusst keine Rolle“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Gespeichert wird nur in <code>_Spektron-Archiv.json</code> im Archivordner. Die Projektdaten bleiben unverändert; was dort steht, gilt immer zuerst.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="6" data-titel="Export">
+    <div class="schritt-kopf"><h2>6 · Weiterrechnen (CSV)</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="da6a"><label for="da6a"><b>„CSV exportieren“</b>: alle Messwerte für Excel – Projektnummer, Jahr, Nutzung, Brandgut, Rolle, Tage nach Brand, Matrix, Parameter, Wert, BG.</label></li>
+        <li><input type="checkbox" id="da6b"><label for="da6b">Ohne Orte und ohne Probenbeschreibungen – trotzdem nur intern weitergeben.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Gut für eigene Auswertungen, z. B. „alle Kunststoffbrände, Wischproben, Σ16 EPA-PAK“.</div>
+    </div></div>
+  </div>
+
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+</section>
 <section id="raumkuerzel">
   <h1>Raumkürzel</h1>
   <p class="lead">Für Probenbezeichnungen. Fehlt ein Raum, bitte melden – die Liste gilt dann für alle.</p>
@@ -1308,7 +1419,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.6.0';
+const VERSION = '0.7.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1516,7 +1627,26 @@ QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengru
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
 QUIZ["bk-proben"] = [{"frage": "Notiz in LabelKit: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
 QUIZ["sk-naechste"] = [{"frage": "Dienstreise vom 14.07. bis 15.07.2026, dann „Speichern & nächste“. Welches Datum hat der neue Entwurf?", "antworten": ["14.07.2026", "15.07.2026", "16.07.2026"], "richtig": [2], "warum": "Der nächste Entwurf beginnt am Tag nach dem Ende der vorigen Reise."}, {"frage": "Was bleibt im neuen Entwurf erhalten?", "antworten": ["Fahrzeug", "Startort", "Uhrzeiten", "Projekt", "Reiseziel", "km"], "richtig": [0, 1, 2], "warum": "Fahrzeug, Startort und Uhrzeiten werden übernommen; Projekt, Zweck, Ziel und km sind leer."}];
+QUIZ["da-rolle"] = [{"frage": "Probenbeschreibung „Brandraum Küche Decke“. Welche Rolle?", "antworten": ["Brandbereich", "Referenz", "keine"], "richtig": [0], "warum": "„Brandraum“, „Brandbereich“ und „Brandherd“ ergeben Brandbereich."}, {"frage": "Wischprobe im Gästezimmer OG, das vom Brand nicht betroffen ist. Wie beschreiben, damit das Archiv sie als Vergleichsstelle erkennt?", "antworten": ["„Referenz Gästezimmer OG“", "„Gästezimmer OG“", "„OG sauber“"], "richtig": [0], "warum": "Erkannt werden „Referenz“, „unbelastet“ und REF. „Gästezimmer OG“ bliebe ohne Rolle."}, {"frage": "Freimessung nach der Reinigung an der Stelle <code>EG-WZ-B-7-T1</code>. Welche ID?", "antworten": ["<code>F-EG-WZ-B-7-T1</code>", "<code>EG-WZ-B-7-T1-F</code>", "<code>EG-WZ-B-8-T1</code>"], "richtig": [0], "warum": "„F-“ vor die alte ID – dann paart das Archiv vorher und nachher automatisch."}, {"frage": "„Freimessung Brandraum“ – welche Rolle?", "antworten": ["Freimessung", "Brandbereich", "beides"], "richtig": [0], "warum": "Freimessung geht vor: Es ist die Messung nach der Sanierung, auch wenn sie im Brandraum liegt."}];
+QUIZ["da-lesen"] = [{"frage": "Im Vergleich steht beim Median „&lt; BG“. Was heißt das?", "antworten": ["Mindestens die Hälfte der Werte liegt unter der Bestimmungsgrenze", "Der Median ist 0", "Das Labor hat einen Fehler gemacht"], "richtig": [0], "warum": "Werte unter BG zählen als kleinste Werte. Fällt der Median darauf, wird keine Zahl erfunden."}, {"frage": "Ähnlichkeit 0,99 zwischen Wohnzimmer und Brandraum. Was folgt daraus?", "antworten": ["Stützt, dass es derselbe Ruß sein kann – beweist es nicht", "Beweist, dass der Ruß vom Brand stammt", "Ein Grenzwert ist überschritten"], "richtig": [0], "warum": "Verbrennungsrückstände ähneln sich grundsätzlich. Ein deutlicher Unterschied sagt mehr als hohe Ähnlichkeit."}, {"frage": "Kann Flt/(Flt+Pyr) Brandruß von altem Teerkleber unterscheiden?", "antworten": ["Nein – beide liegen im „pyrogenen“ Bereich", "Ja, ab 0,5 ist es Brandruß", "Ja, unter 0,4 ist es Teer"], "richtig": [0], "warum": "Teer ist selbst ein Hochtemperaturprodukt. Für die Frage Teer oder Brand hilft der Mustervergleich mit einer Materialprobe des Klebers."}];
 document.querySelectorAll('.quiz').forEach(initQuiz);
+
+/* Rolle einer Probe wie im Datenarchiv (Projektzentrale archiv/auswertung.js, rolleAuto) – Regeln dort und hier gleich halten. */
+function rolleAuto(ref){
+  const t = String(ref || '').normalize('NFC').replace(/\s+/g, ' ').trim(), k = t.toLocaleLowerCase('de');
+  if (/^F[-_ ]/i.test(t) || /freimessung|sanierungskontrolle|nach (der )?sanierung/.test(k)) return ['Freimessung nach Sanierung', 'Wird mit der Stelle ohne „F-“ gepaart (vorher / nachher) und zählt im Vergleich nicht mit.'];
+  if (/(^|[^a-zäöüß])ref([^a-zäöüß]|$)|referenz|unbelastet|nullprobe|hintergrund/.test(k)) return ['Referenz (unbelastet)', 'Vergleichsstelle ohne Brandeinfluss.'];
+  if (/kleber|teer|bitumen|dachpappe|schwarzanstrich/.test(k)) return ['Verdachtsquelle', 'Mögliche alte Quelle, z. B. Teerkleber – ihr Muster wird mit dem Brandraum verglichen.'];
+  if (/brandraum|brandbereich|brandherd|brandstelle|brandausbruch/.test(k)) return ['Brandbereich', 'Probe aus dem Brandraum.'];
+  return ['ohne Rolle', 'Nichts erkannt – das ist in Ordnung. Für eine Rolle eines der Stichwörter links verwenden.'];
+}
+$('rolle-pruefen').addEventListener('input', () => {
+  const v = $('rolle-pruefen').value, out = $('rolle-ergebnis');
+  if (!v.trim()){ out.innerHTML = ''; return; }
+  const [rolle, text] = rolleAuto(v);
+  out.innerHTML = `<b>${esc(rolle)}</b> · ${esc(text)}`;
+  out.classList.toggle('ohne', rolle === 'ohne Rolle');
+});
 
 /* ID prüfen */
 $('pruefen').addEventListener('input', () => {
