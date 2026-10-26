@@ -215,7 +215,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="karte"><h3>Gelb = Pflicht</h3><p>Ein <span class="pflicht-beispiel">gelbes Feld</span> fehlt noch und wird später gebraucht (Anlagen, Bewertung, Labor, Rechnung). Ausgefüllt ist es wieder normal. „Zwischenstand speichern“ geht trotzdem immer; beim Abschluss fragt die App nach, wenn noch etwas fehlt.</p></div>
     <div class="karte"><h3>Einmal eintragen</h3><p>Projektdaten nur in der <b>Projektzentrale</b> – alle Apps übernehmen sie. Bewertungsskalen und Mitarbeiterliste liegen im Archivordner und gelten fürs ganze Büro.</p></div>
     <div class="karte"><h3>Nichts geht verloren</h3><p>Die Apps speichern in den Projektordner, Originale bleiben unverändert. Arbeiten zwei am selben Projekt, fragt die App nach, statt zu überschreiben – besser trotzdem eine Person je Projekt.</p></div>
-    <div class="karte"><h3>Etwas klemmt?</h3><p>Hilfe: Knopf <b>📘</b> (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b> in der App; F1 in Projektzentrale und FotoKit. Fehler in FotoKit: „Problem melden“ kopiert einen Bericht. Sonst Screenshot und zwei Sätze, was passiert ist, an sebastian.kasper@dr-schiffers.de.</p></div>
+    <div class="karte"><h3>Etwas klemmt?</h3><p>Hilfe: Knopf <b>📘</b> (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b> in der App; F1 in Projektzentrale und FotoKit. Fehler oder Wunsch: <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> – kurzes Formular, auf Wunsch mit Screenshot, es geht direkt an den Betreuer. Klappt das nicht: Screenshot und zwei Sätze an sebastian.kasper@dr-schiffers.de.</p></div>
   </div>
   <p class="wo">Neu im Team? Mit <a href="#brandschaden">Brandschaden von A bis Z</a> anfangen – Schritt 1 richtet den eigenen Rechner ein. Jede App hat außerdem ein eigenes Kapitel <b>Schritt für Schritt</b> mit Übungen (Menü links).</p>
   <h2>Abläufe</h2>
@@ -513,7 +513,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </tbody>
   </table></div>
   <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen. Nicht löschen oder umbenennen.</p>
-  <p class="wo">Hilfe: Knopf <b>📘</b> in der App (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt? In FotoKit „Problem melden“, sonst Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
+  <p class="wo">Hilfe: Knopf <b>📘</b> in der App (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „Weitere Apps“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
 <section id="bohrkern-ablauf" class="ablauf" data-speicher="aidkit-bohrkern-haken">
@@ -1489,11 +1489,12 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.8.5';
+const VERSION = '0.8.6';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 $('version').textContent = 'v' + VERSION;
+document.querySelectorAll('a.rueckmeldung').forEach(a => { a.setAttribute('href', a.getAttribute('href') + '&version=' + encodeURIComponent(VERSION)); });   // Rückmeldeformular: Programm und Version vorbelegt
 
 /* Kapitel über den Adress-Anker (#bohrkern), damit andere Apps direkt dorthin verlinken können */
 function zeigeKapitel(){
