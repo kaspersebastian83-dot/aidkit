@@ -196,7 +196,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 
 <section id="start">
   <h1>Handbuch</h1>
-  <p class="lead">Wie wir im Büro arbeiten: Abläufe über mehrere Apps und gemeinsame Regeln. Wie eine einzelne App bedient wird, steht in ihrer eigenen Hilfe (Knopf „?“ in der App).</p>
+  <p class="lead">Wie wir im Büro arbeiten: Abläufe über mehrere Apps und gemeinsame Regeln. Jede App hat ein eigenes Kapitel „Schritt für Schritt“; aus den Apps führt der Knopf <b>📘</b> direkt an die passende Stelle.</p>
   <h2>Die Apps</h2>
   <table>
     <thead><tr><th>App</th><th>Wofür · Anleitung</th></tr></thead>
@@ -212,10 +212,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   </table>
   <h2>Gilt in allen Apps</h2>
   <div class="regeln">
-    <div class="karte"><h3>Gelb = Pflicht</h3><p>Ein <span class="pflicht-beispiel">gelbes Feld</span> fehlt noch und wird später gebraucht (Anlagen, Bewertung, Labor, Rechnung). Ausgefüllt ist es wieder normal. Speichern geht trotzdem immer.</p></div>
+    <div class="karte"><h3>Gelb = Pflicht</h3><p>Ein <span class="pflicht-beispiel">gelbes Feld</span> fehlt noch und wird später gebraucht (Anlagen, Bewertung, Labor, Rechnung). Ausgefüllt ist es wieder normal. „Zwischenstand speichern“ geht trotzdem immer; beim Abschluss fragt die App nach, wenn noch etwas fehlt.</p></div>
     <div class="karte"><h3>Einmal eintragen</h3><p>Projektdaten nur in der <b>Projektzentrale</b> – alle Apps übernehmen sie. Bewertungsskalen und Mitarbeiterliste liegen im Archivordner und gelten fürs ganze Büro.</p></div>
     <div class="karte"><h3>Nichts geht verloren</h3><p>Die Apps speichern in den Projektordner, Originale bleiben unverändert. Arbeiten zwei am selben Projekt, fragt die App nach, statt zu überschreiben – besser trotzdem eine Person je Projekt.</p></div>
-    <div class="karte"><h3>Etwas klemmt?</h3><p>Hilfe mit <b>?</b> oder F1 in jeder App. Fehler in FotoKit: „Problem melden“ kopiert einen Bericht. Sonst Screenshot und zwei Sätze, was passiert ist, an sebastian.kasper@dr-schiffers.de.</p></div>
+    <div class="karte"><h3>Etwas klemmt?</h3><p>Hilfe: Knopf <b>📘</b> (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b> in der App; F1 in Projektzentrale und FotoKit. Fehler in FotoKit: „Problem melden“ kopiert einen Bericht. Sonst Screenshot und zwei Sätze, was passiert ist, an sebastian.kasper@dr-schiffers.de.</p></div>
   </div>
   <p class="wo">Neu im Team? Mit <a href="#brandschaden">Brandschaden von A bis Z</a> anfangen – Schritt 1 richtet den eigenen Rechner ein. Jede App hat außerdem ein eigenes Kapitel <b>Schritt für Schritt</b> mit Übungen (Menü links).</p>
   <h2>Abläufe</h2>
@@ -289,8 +289,8 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <h2>Regeln je Baustein</h2>
   <p><b>Geschoss.</b> Immer angeben, auch bei nur einem Geschoss, damit „WZ“ im EG und im OG nie verwechselt werden: <code>KG</code>, <code>UG</code>, <code>EG</code>, <code>1OG</code>, <code>2OG</code>, <code>DG</code>. In PlanKit heißt der Plan weiterhin „1. OG“.</p>
   <p><b>Raum.</b> Kürzel aus der <a href="#raumkuerzel">Liste</a>. Gibt es einen Raum mehrfach, wird angehängt: <code>KZ1</code>, <code>KZ2</code>, in der Reihenfolge der Begehung. Die Zuordnung Kürzel → Raumname steht im Raumbuch.</p>
-  <p><b>Fläche.</b> Die Wand mit der Zugangstür ist <code>A</code>, dann im Uhrzeigersinn von oben gesehen <code>B</code>, <code>C</code>, <code>D</code>; mehr Ecken: <code>E</code>, <code>F</code> … Bei mehreren Türen gilt die Tür vom Flur. Boden <code>BO</code>, Decke <code>DE</code>.</p>
-  <p><b>Punkt.</b> Raster 3 × 3 wie eine Telefontastatur, von vorn auf die Wand gesehen: 1–3 deckennah, 4–6 Mitte, 7–9 bodennah, jeweils links → rechts. Boden und Decke: von Wand A aus gesehen, Punkt 1 in der Ecke A/D. Weitere Punkte ab <code>10</code>. Lage jedes Kerns einmessen: Abstand von der linken Wandecke und Höhe über Oberkante Fertigfußboden (OKFF), auf 5 cm.</p>
+  <p><b>Fläche.</b> Die Wand mit der Zugangstür ist <code>A</code>, dann im Uhrzeigersinn von oben gesehen <code>B</code>, <code>C</code>, <code>D</code> – in der Tür stehend, Blick in den Raum: B links, C gegenüber, D rechts; mehr Ecken: <code>E</code>, <code>F</code> … Bei mehreren Türen gilt die Tür vom Flur. Boden <code>BO</code>, Decke <code>DE</code>.</p>
+  <p><b>Punkt.</b> Raster 3 × 3 wie eine Telefontastatur, von vorn auf die Wand gesehen: 1–3 deckennah, 4–6 Mitte, 7–9 bodennah, jeweils links → rechts. Boden und Decke: wie im Grundriss, Wand A oben, D links – 1 = Ecke A/D, 3 = Ecke A/B, 7 = Ecke C/D, 9 = Ecke B/C. Die Decke genauso, also wie von oben durch sie hindurch gesehen, nicht von unten (sonst wären links und rechts vertauscht). Weitere Punkte ab <code>10</code>. Lage jedes Kerns einmessen: Abstand von der linken Wandecke und Höhe über Oberkante Fertigfußboden (OKFF), auf 5 cm.</p>
   <p><b>Tiefe.</b> <code>T1</code> ist das Segment an der Oberfläche, dann <code>T2</code>, <code>T3</code> nach innen. Die Tiefen in cm stehen im Protokoll, nicht in der ID (z. B. T1 = 0–2 cm, Putz). Gleiche Tiefenstufen im ganzen Projekt.</p>
   <p><b>Schreibweise.</b> Großbuchstaben, keine Umlaute (<code>KUE</code>), keine Leerzeichen, Bindestrich als Trenner, höchstens 20 Zeichen. Übliche IDs haben 9–14 Zeichen; der Baukasten zeigt die Länge an.</p>
 
@@ -385,7 +385,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="b3a"><label for="b3a">Vorher drucken, falls nötig: <b>Feldbögen</b> aus LabelKit (Raumluft Asbest/KMF, Schimmel, Materialprobe Asbest, PN 98, Bohrkerne).</label></li>
-        <li><input type="checkbox" id="b3b"><label for="b3b">Proben nehmen und beschriften, wie im Büro üblich. Raum/Ort immer gleich schreiben (z. B. immer „EG Küche“).</label></li>
+        <li><input type="checkbox" id="b3b"><label for="b3b">Proben nehmen und beschriften. Wischproben von groß nach klein benennen: <b>Geschoss, Raum, Zusatz, Bauteil</b>, z. B. „EG Küche Brandraum Decke“; Beaufschlagung und Oberflächenart kommen in LabelKit in eigene Spalten → <a href="#wischprobe">Probenbezeichnung Wischproben</a>.</label></li>
         <li><input type="checkbox" id="b3c"><label for="b3c"><b>Fotos</b> machen: Übersicht je Raum, jede Probenahmestelle.</label></li>
         <li><input type="checkbox" id="b3d"><label for="b3d">Grundriss mitnehmen oder vor Ort scannen (Polycam) – sonst später in PlanKit skizzieren.</label></li>
       </ul>
@@ -399,10 +399,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="b4a"><label for="b4a">Projektnummer prüfen – sie kommt aus der Projektzentrale.</label></li>
-        <li><input type="checkbox" id="b4b"><label for="b4b">Proben anlegen im passenden Reiter (PAK, Chlorid, Asbest, Sonstige, PN 98, Brandgeruch). „Raum / Ort“ schlägt die Räume des Projekts vor.</label></li>
+        <li><input type="checkbox" id="b4b"><label for="b4b">Proben anlegen im passenden Reiter (PAK, Chlorid, Asbest, Sonstige, PN 98, Brandgeruch). In „Raum / Ort“ nach der Regel schreiben („EG Küche Brandraum Decke“ – <a href="#wischprobe">Probenbezeichnung Wischproben</a>); die Spalte schlägt die Räume des Projekts vor.</label></li>
         <li><input type="checkbox" id="b4e"><label for="b4e"><b>Gelbe Zellen</b> ausfüllen: Projektnummer, Probenahmedatum, Raum/Ort (bei Bohrkernen die BK-Bezeichnung), bei „Sonstige Proben“ die <b>Untersuchungsparameter</b>.</label></li>
         <li><input type="checkbox" id="b4c"><label for="b4c"><b>Etiketten</b> drucken.</label></li>
-        <li><input type="checkbox" id="b4d"><label for="b4d"><b>Probenerfassung abschließen</b> → „Alle EOL + Projektdatei speichern“: Laborübergaben und Projektdatei landen in „Laboraufträge“.</label></li>
+        <li><input type="checkbox" id="b4d"><label for="b4d"><b>Probenerfassung abschließen</b> → „Alle EOL + Projektdatei speichern“: Laborübergaben (EOL = Excel-Laborübergabe für Eurofins) und Projektdatei landen in „Laboraufträge“.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Zwischendurch genügt <b>Strg+S</b> (speichert nur die Projektdatei). Die Leiste unten führt durch: Projektnummer → Proben → Etiketten → Abschließen.</div>
@@ -513,7 +513,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </tbody>
   </table></div>
   <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen. Nicht löschen oder umbenennen.</p>
-  <p class="wo">Hilfe in jeder App: <b>?</b>-Knopf oder F1. Etwas klemmt? In FotoKit „Problem melden“, sonst Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
+  <p class="wo">Hilfe: Knopf <b>📘</b> in der App (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt? In FotoKit „Problem melden“, sonst Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
 <section id="bohrkern-ablauf" class="ablauf" data-speicher="aidkit-bohrkern-haken">
@@ -543,7 +543,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="c2a"><label for="c2a">Blatt 1, Abschnitt C: jeden Raum mit <b>Kürzel</b> eintragen (Liste unten auf dem Blatt, z. B. WZ, KUE, FL).</label></li>
         <li><input type="checkbox" id="c2b"><label for="c2b"><b>Wand A</b> festlegen: die Wand mit der Zugangstür. Bei mehreren Türen: die Tür vom Flur.</label></li>
-        <li><input type="checkbox" id="c2c"><label for="c2c">Weiter <b>im Uhrzeigersinn</b>, von oben gesehen: B, C, D. Boden heißt BO, Decke DE.</label></li>
+        <li><input type="checkbox" id="c2c"><label for="c2c">Weiter <b>im Uhrzeigersinn</b>, von oben gesehen: B, C, D – in der Tür stehend: B links, C gegenüber, D rechts. Boden heißt BO, Decke DE.</label></li>
         <li><input type="checkbox" id="c2d"><label for="c2d">Wandkennung auf Klebeband an jede Wand kleben, z. B. <code>EG-WZ-B</code>. Dann steht sie auf jedem Foto.</label></li>
       </ul>
     </div><div>
@@ -571,7 +571,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="c3a"><label for="c3a">Neues Wandblatt: Geschoss und Fläche <b>ankreuzen</b>, Raumkürzel eintragen, <b>Wandkennung</b> groß oben eintragen.</label></li>
         <li><input type="checkbox" id="c3b"><label for="c3b">Punkt im Raster wählen – wie eine <b>Telefontastatur</b>, von vorn auf die Wand gesehen: 1–3 oben, 7–9 bodennah.</label></li>
         <li><input type="checkbox" id="c3c"><label for="c3c">Lage messen: Abstand von der <b>linken</b> Wandecke und Höhe über Fußboden (OKFF).</label></li>
-        <li><input type="checkbox" id="c3d"><label for="c3d">Kern nach den Tiefenstufen teilen. Jedes Segment in ein eigenes Gefäß: <b>Wandkennung + Endung + Tiefe</b>.</label></li>
+        <li><input type="checkbox" id="c3d"><label for="c3d">Kern nach den Tiefenstufen teilen. Jedes Segment in ein eigenes Gefäß: <b>Wandkennung + Endung + Tiefe</b> – Endung = die vorgedruckte Punktnummer der Zeile (z. B. -7), also <code>EG-WZ-B-7-T2</code>.</label></li>
         <li><input type="checkbox" id="c3e"><label for="c3e">In der Zeile des Punkts: Kernlänge, Material je Tiefe (P Putz, Z Ziegel …), Geruch (– / + / ++), <b>A oder R</b> einkreisen.</label></li>
         <li><input type="checkbox" id="c3f"><label for="c3f"><b>Foto</b> vom Bohrloch mit Schild im Bild: Kern-ID, z. B. <code>EG-WZ-B-7</code>.</label></li>
       </ul>
@@ -804,7 +804,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>4 · Proben vervollständigen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk4a"><label for="lk4a">Die <b>gelben Zellen</b> ausfüllen – das sind die Pflichtangaben, die noch fehlen.</label></li>
+        <li><input type="checkbox" id="lk4a"><label for="lk4a">Die <b>gelben Zellen</b> ausfüllen – das sind die Pflichtangaben, die noch fehlen. Wischproben in „Raum / Ort“ nach der Regel: „EG Küche Brandraum Decke“ – Beaufschlagung und Oberflächenart in ihren Spalten wählen (<a href="#wischprobe">Probenbezeichnung Wischproben</a>; in LabelKit Knopf „📘 Probenbezeichnung Wischproben“).</label></li>
         <li><input type="checkbox" id="lk4b"><label for="lk4b">Mit <b>„↑“</b> („Von oben übernehmen“) den Wert der Zeile darüber übernehmen.</label></li>
         <li><input type="checkbox" id="lk4c"><label for="lk4c">Die <b>Ampel</b> bis Grün bringen; Doppelklick auf eine Zeile öffnet das Eingabepanel („✓ Speichern &amp; Schließen“).</label></li>
         <li><input type="checkbox" id="lk4d"><label for="lk4d">Wiederkehrende Aufträge mit „Als Vorlage“ speichern und über „Vorlagen“ laden; „⊞ Karten“ / „☰ Tabelle“ wechselt die Ansicht.</label></li>
@@ -860,7 +860,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="lk8a"><label for="lk8a">Reiter <b>„Probenerfassung abschließen“</b>: die „Projektprüfung“ lesen.</label></li>
         <li><input type="checkbox" id="lk8b"><label for="lk8b">Bei <b>„kritisch“</b> auf die Probennummer klicken und die Probe korrigieren.</label></li>
-        <li><input type="checkbox" id="lk8c"><label for="lk8c"><b>„Alle EOL + Projektdatei speichern“</b>.</label></li>
+        <li><input type="checkbox" id="lk8c"><label for="lk8c"><b>„Alle EOL + Projektdatei speichern“</b> (EOL = Excel-Laborübergabe für Eurofins).</label></li>
         <li><input type="checkbox" id="lk8d"><label for="lk8d"><b>„Alle Etiketten drucken“</b> (oder in den Unterreitern „Etiketten“ und „Übergabe“) – Druck: <b>Skalierung 100%</b>, <b>Ränder: Keine</b>, Papierfach „Bypass / Manuell“.</label></li>
       </ul>
     </div><div>
@@ -911,10 +911,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk3b"><label for="fk3b"><b>Beschreibung</b> eintippen; <b>Enter</b> springt zum nächsten Bild.</label></li>
         <li><input type="checkbox" id="fk3c"><label for="fk3c">Optional <b>Abschnitt</b> (z. B. „Küche“) – gilt für die folgenden Bilder mit.</label></li>
         <li><input type="checkbox" id="fk3d"><label for="fk3d"><b>Probe-Nr.</b> eintragen (z. B. „P1“, mehrere mit Komma; bei Bohrkernen die Kern-ID wie <code>EG-WZ-B-7</code>).</label></li>
-        <li><input type="checkbox" id="fk3e"><label for="fk3e"><b>Probenfoto am schnellsten:</b> in die Beschreibung nur die Nummer tippen, z. B. <b>„P7“</b>, dann <b>Enter</b> – die Beschreibung kommt aus LabelKit (Raum, Beaufschlagung, Oberflächenart), „P7“ wandert ins Feld Probe-Nr.</label></li>
+        <li><input type="checkbox" id="fk3e"><label for="fk3e"><b>Probenfoto am schnellsten:</b> in die Beschreibung nur die Nummer tippen, z. B. <b>„P7“</b>, dann <b>Enter</b> – die Beschreibung kommt aus LabelKit (Raum / Ort, Beaufschlagung, Oberflächenart), „P7“ wandert ins Feld Probe-Nr. Geht nur mit eingeschalteten <b>„Vorschlägen beim Tippen“</b> und leerem Feld Probe-Nr.</label></li>
         <li><input type="checkbox" id="fk3f"><label for="fk3f"><b>Vorschlag beim Tippen:</b> nach zwei Buchstaben ergänzt FotoKit aus diesem Projekt und LabelKit – der Rest ist markiert. <b>Enter</b> übernimmt und geht weiter, <b>Tab</b> übernimmt und man tippt weiter, einfach weitertippen ersetzt ihn, <b>Esc</b> verwirft ihn.</label></li>
       </ul>
-      <div class="tipp">Stört der Vorschlag? „Dateibenennung und weitere Einstellungen“ → „Vorschläge beim Tippen“ ausschalten (gilt nur für diesen Browser).</div>
+      <div class="tipp">Stört der Vorschlag? „Dateibenennung und weitere Einstellungen“ → „Vorschläge beim Tippen“ ausschalten (gilt nur für diesen Browser). Dann füllt „P7“ + Enter die Beschreibung nicht mehr aus LabelKit – Probe-Nr. und Beschreibung von Hand eintragen.</div>
     </div><div>
       <div class="uebung">
         <h3>Ausprobieren: Vorschlag beim Tippen</h3>
@@ -1266,6 +1266,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="sk3a"><label for="sk3a"><b>„Dienstreise erfassen“</b>: Projekt, Reisegrund, Reiseziel, Abfahrt und Rückkehr (Pflicht, mit *).</label></li>
+        <li><input type="checkbox" id="sk3e"><label for="sk3e">Erst <b>nach Mitternacht zurück</b>: Rückkehrdatum auf den Folgetag. Ohne Übernachtung gibt es <b>eine</b> Tagespauschale für die ganze Reise (bei mehr als 8 Stunden, am Tag mit dem größeren Teil). Wurde auswärts übernachtet, den Haken „Auswärtige Übernachtung … tatsächlich erfolgt“ setzen – dann zählen An- und Abreisetag.</label></li>
         <li><input type="checkbox" id="sk3b"><label for="sk3b">Kosten mit <b>„Hotelrechnung“</b> oder <b>„Sonstige Kosten“</b>.</label></li>
         <li><input type="checkbox" id="sk3c"><label for="sk3c">Belege mit <b>„Beleg fotografieren“</b> ablegen.</label></li>
         <li><input type="checkbox" id="sk3d"><label for="sk3d">Viele Reisen hintereinander: <b>„Speichern &amp; nächste“</b> (Strg+Enter) – der nächste Eintrag ist vorbelegt; „Speichern &amp; fertig“ schließt.</label></li>
@@ -1304,10 +1305,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>6 · Abschließen und ablegen</h2><span class="ort buero">Büro</span><span class="dauer">einmal im Monat</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="sk6a"><label for="sk6a"><b>„Spesenabrechnung erstellen“</b> → „Monatsabrechnung abschließen“.</label></li>
+        <li><input type="checkbox" id="sk6a"><label for="sk6a"><b>„Spesenabrechnung erstellen“</b> (heißt „Abrechnung fortsetzen“, wenn schon ein Entwurf da ist) → „Monatsabrechnung abschließen“.</label></li>
         <li><input type="checkbox" id="sk6b"><label for="sk6b">„Ich habe diese Monatsabrechnung geprüft …“ anhaken → <b>„Verbindlich abschließen“</b>.</label></li>
-        <li><input type="checkbox" id="sk6c"><label for="sk6c">Ausgeben als „PDF“, „Excel“, „CSV“, „DATEV-CSV“ oder „ZIP + Belege“ – oder „Abrechnung drucken“.</label></li>
-        <li><input type="checkbox" id="sk6d"><label for="sk6d">Sofort sichern: „Datensicherung → Jetzt sichern“.</label></li>
+        <li><input type="checkbox" id="sk6c"><label for="sk6c">Ausgeben als „PDF“, „Excel“, „CSV“, „DATEV-CSV“ oder „ZIP + Belege“. „Abrechnung drucken“ erscheint erst nach dem Abschließen, in der Karte „Ablage“.</label></li>
+        <li><input type="checkbox" id="sk6d"><label for="sk6d">Sofort sichern: „Datensicherung → Jetzt sichern“ (der Knopf ist da, sobald ein Ordner verbunden ist – siehe Schritt 1).</label></li>
       </ul>
     </div><div>
       <div class="tipp">SpesenKit gibt nichts automatisch frei und zahlt nichts aus.</div>
@@ -1338,19 +1339,19 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="karte schritt" data-schritt="1" data-titel="Proben benennen">
     <div class="schritt-kopf"><h2>1 · Proben so benennen, dass das Archiv sie versteht</h2><span class="ort vorort">vor Ort</span><span class="dauer">für alle</span></div>
     <div class="schritt-grid"><div>
-      <p>Das ist das Einzige, was alle beitragen – und meist schreiben wir es ohnehin. In LabelKit in die <b>Probenbeschreibung</b> (geht so ans Labor) oder in die Probenbezeichnung:</p>
+      <p>Das ist das Einzige, was alle beitragen – und meist schreiben wir es ohnehin. In LabelKit in <b>„Raum / Ort“</b> (wird im Laborauftrag zur Probenbeschreibung), nach der <a href="#wischprobe">Probenbezeichnung Wischproben</a>:</p>
       <ul class="check">
-        <li><input type="checkbox" id="da1a"><label for="da1a">Probe im Brandraum: <b>„Brandraum …“</b> oder <b>„Brandbereich …“</b> (auch „Brandherd“).</label></li>
-        <li><input type="checkbox" id="da1b"><label for="da1b">Vergleichsstelle, die vom Brand nicht betroffen ist: <b>„Referenz …“</b>, „unbelastet“ oder <code>REF</code> (wie beim Referenzkern).</label></li>
-        <li><input type="checkbox" id="da1c"><label for="da1c">Verdacht auf eine alte Quelle: <b>„Kleber“</b>, „Teer“, „Bitumen“ in die Beschreibung – z. B. „Parkettkleber Flur“.</label></li>
-        <li><input type="checkbox" id="da1d"><label for="da1d">Freimessung nach der Sanierung: <b><code>F-</code> vor die alte ID</b> derselben Stelle – dann stehen vorher und nachher automatisch nebeneinander.</label></li>
+        <li><input type="checkbox" id="da1a"><label for="da1a">Probe im Brandraum: Zusatz <b>„Brandraum“</b> direkt hinter dem Raum, z. B. „EG Küche Brandraum Decke“ (erkannt werden auch „Brandbereich“, „Brandherd“).</label></li>
+        <li><input type="checkbox" id="da1b"><label for="da1b">Vergleichsstelle, die vom Brand nicht betroffen ist: Zusatz <b>„Referenz unbelastet“</b>, z. B. „1OG Gästezimmer Referenz unbelastet Wand B“ (bei Bohrkernen <code>REF</code>).</label></li>
+        <li><input type="checkbox" id="da1c"><label for="da1c">Verdacht auf eine alte Quelle: Zusatz <b>„Verdacht Kleber/Teer“</b> – erkannt werden „Kleber“, „Teer“, „Bitumen“, z. B. „EG Flur Verdacht Kleber/Teer Boden“.</label></li>
+        <li><input type="checkbox" id="da1d"><label for="da1d">Freimessung nach der Sanierung: Zusatz <b>„Freimessung“</b>. Bei Bohrkernen <b><code>F-</code> vor die alte ID</b> derselben Stelle – nur dann stehen vorher und nachher automatisch nebeneinander; bei Wischproben wird die Rolle erkannt, aber nicht gepaart.</label></li>
       </ul>
       <div class="tipp">Alles andere bleibt einfach „ohne Rolle“ – das ist kein Fehler. Falsch erkannt? Lässt sich im Archiv jederzeit korrigieren (Schritt 5).</div>
     </div><div>
       <div class="uebung">
         <h3>Ausprobieren: Welche Rolle erkennt das Archiv?</h3>
         <label for="rolle-pruefen" class="hinweis-klein">Probenbezeichnung oder -beschreibung eintippen</label>
-        <input id="rolle-pruefen" style="width:100%;margin-top:4px" placeholder="z. B. Brandraum Küche Decke" autocomplete="off" spellcheck="false">
+        <input id="rolle-pruefen" style="width:100%;margin-top:4px" placeholder="z. B. EG Küche Brandraum Decke" autocomplete="off" spellcheck="false">
         <p id="rolle-ergebnis" class="rolle-ergebnis" aria-live="polite"></p>
       </div>
       <div class="uebung quiz" data-quiz="da-rolle"><h3>Kurz üben: Rollen</h3></div>
@@ -1424,7 +1425,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 </section>
 <section id="wischprobe">
   <h1>Probenbezeichnung Wischproben</h1>
-  <p class="lead">Wischproben bezeichnen wir in lesbarem Text, <b>von groß nach klein</b>: <b>Gebäude · Geschoss · Raum · Zusatz · Bauteil · Beaufschlagung · Oberflächenart</b> – der Zusatz (z. B. Brandraum) gehört zum Raum und steht gleich dahinter. Zum Beispiel <code>Haus A · EG · Küche · Brandraum · Decke · verrußt · Untersicht</code>. Das ist die Reihenfolge der PAK- und Chlorid-Wischproben in LabelKit; die Übergabe wird so ins Eurofins-System kopiert – <b>Reihenfolge nicht ändern</b>.</p>
+  <p class="lead">Wischproben bezeichnen wir in lesbarem Text, <b>von groß nach klein</b>: <b>Gebäude, Geschoss, Raum, Zusatz, Bauteil, Beaufschlagung, Oberflächenart</b> – der Zusatz (z. B. Brandraum) gehört zum Raum und steht gleich dahinter. Zum Beispiel <code>Haus A EG Küche Brandraum Decke verrußt Untersicht</code>. Das ist die Reihenfolge der PAK- und Chlorid-Wischproben in LabelKit; die Übergabe wird so ins Eurofins-System kopiert – <b>Reihenfolge nicht ändern</b>.</p>
   <div class="karte ziel">
     <h2>Warum so</h2>
     <ul>
@@ -1446,7 +1447,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <div class="zeile" role="group" aria-labelledby="wp-t-ober"><span class="titel" id="wp-t-ober">Oberflächenart</span><span id="wp-oberflaechen"></span></div>
         <div class="ergebnis" aria-live="polite">
           <div class="id wp-text" id="wp-ergebnis"></div>
-          <div class="meta"><span id="wp-hinweis"></span><button id="wp-kopieren" type="button">Bezeichnung kopieren</button></div>
+          <div class="meta"><span id="wp-hinweis"></span><button id="wp-kopieren" type="button" title="Kopiert nur den Teil für die LabelKit-Spalte „Raum / Ort“ – Beaufschlagung und Oberflächenart dort in ihren Spalten wählen">Für LabelKit „Raum / Ort“ kopieren</button></div>
         </div>
       </div>
       <div>
@@ -1472,7 +1473,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <p><b>Beaufschlagung.</b> Was man sieht, mit den Wörtern aus LabelKit: gereinigt, mit Belag, leicht verrußt, verrußt, mit Ruß, mit Kondensat, mit Staub.</p>
   <p><b>Oberflächenart.</b> Wie in LabelKit: <b>Aufsicht</b> = von oben auf eine waagerechte Fläche (Schrankoberseite, Fensterbank, Boden), <b>Ansicht</b> = senkrechte Fläche (Wand, Tür), <b>Untersicht</b> = von unten (Decke, Unterseite eines Bauteils).</p>
   <p><b>Zusatz zum Raum.</b> Steht direkt hinter dem Raum, weil er den Raum beschreibt: „Brandraum“ für Proben im Brandraum, „Referenz unbelastet“ für Vergleichsstellen ohne Brandeinfluss, „Verdacht Kleber/Teer“ für eine mögliche alte Quelle, „Freimessung“ nach der Sanierung. Das Datenarchiv liest daraus die Rolle der Probe.</p>
-  <p><b>Schreibweise.</b> Teile mit „ · “ (Mittelpunkt) trennen – der Baukasten macht das. Keine Kommas innerhalb eines Teils.</p>
+  <p><b>Schreibweise.</b> Teile einfach mit Leerzeichen trennen, wie bisher in LabelKit („EG Flur“) – der Baukasten macht das. Keine Kommas, Punkte oder Bindestriche dazwischen.</p>
 </section>
 <section id="raumkuerzel">
   <h1>Raumkürzel</h1>
@@ -1486,7 +1487,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.8.1';
+const VERSION = '0.8.2';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1521,7 +1522,7 @@ $('raum').innerHTML = K.RAEUME.map(([k, n]) => `<option value="${esc(k)}">${esc(
 
 function tastatur(){
   const boden = S.flaeche === 'BO' || S.flaeche === 'DE', lage = boden ? K.RASTER_BODEN : K.RASTER;
-  $('punkt-bezug').textContent = boden ? '· von Wand A aus gesehen' : '· von vorn auf die Wand gesehen';
+  $('punkt-bezug').textContent = boden ? '· wie im Grundriss, Wand A oben' : '· von vorn auf die Wand gesehen';
   $('tastatur').innerHTML = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => `<button type="button" data-punkt="${n}" aria-pressed="false" aria-label="Punkt ${n}, ${esc(lage[n])}"><b>${n}</b><span>${esc(lage[n])}</span></button>`).join('');
 }
 function zeige(){
@@ -1692,11 +1693,11 @@ QUIZ["fk-name"] = [{"frage": "Standard-Einstellungen. Bild 3 hat Probe-Nr. „P2
 QUIZ["pk-tasten"] = [{"frage": "Probenpunkt setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe, B = Brandherd, E = Bearbeiten."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisse, L = Liste, V = Ansicht."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
 QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengruppe?", "antworten": ["Unter BG (kein gemessener Nullwert)", "Ohne Bewertung", "unter Referenzwert"], "richtig": [0], "warum": "Werte unter der Bestimmungsgrenze sind kein gemessener Nullwert und bekommen eine eigene Gruppe (blaugrau)."}, {"frage": "Laborwert „n. n.“?", "antworten": ["Unter BG", "Nicht nachgewiesen (n.n.)", "Nicht bestimmt (n.b.)"], "richtig": [1], "warum": "Qualifikatoren werden nie zu Zahlen – n. n. hat eine eigene Gruppe."}, {"frage": "Laborwert „1.234“ (unklar, ob 1,234 oder 1234)?", "antworten": ["wird als 1234 bewertet", "Ohne Bewertung", "wird als 1,234 bewertet"], "richtig": [1], "warum": "Mehrdeutige Zahlen bleiben ohne Bewertung (grau) – lieber nachfragen als raten."}, {"frage": "Nutzung „Wohnen“, Σ16 EPA-PAK = 12 µg/m² auf einer Oberfläche?", "antworten": ["unter Referenzwert", "Referenzwert erreicht/überschritten"], "richtig": [1], "warum": "Für Wohn-/Büroräume liegt die VdS-Hintergrundreferenz bei 10 µg/m² (Industrie: 100 µg/m²)."}];
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
-QUIZ["bk-proben"] = [{"frage": "Notiz in LabelKit: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
+QUIZ["bk-proben"] = [{"frage": "LabelKit, Sonstige Proben, Spalte „Untersuchungsparameter“: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
 QUIZ["sk-naechste"] = [{"frage": "Dienstreise vom 14.07. bis 15.07.2026, dann „Speichern & nächste“. Welches Datum hat der neue Entwurf?", "antworten": ["14.07.2026", "15.07.2026", "16.07.2026"], "richtig": [2], "warum": "Der nächste Entwurf beginnt am Tag nach dem Ende der vorigen Reise."}, {"frage": "Was bleibt im neuen Entwurf erhalten?", "antworten": ["Fahrzeug", "Startort", "Uhrzeiten", "Projekt", "Reiseziel", "km"], "richtig": [0, 1, 2], "warum": "Fahrzeug, Startort und Uhrzeiten werden übernommen; Projekt, Zweck, Ziel und km sind leer."}];
-QUIZ["wp-regel"] = [{"frage": "Welche Reihenfolge ist richtig?", "antworten": ["EG · Küche · Brandraum · Decke · verrußt · Untersicht", "EG · Küche · Decke · Untersicht · verrußt · Brandraum", "Decke · Küche · EG · verrußt · Untersicht"], "richtig": [0], "warum": "Von groß nach klein: Geschoss, Raum – „Brandraum“ beschreibt den Raum und steht gleich dahinter –, Bauteil, dann Beaufschlagung und Oberflächenart in der Reihenfolge der LabelKit-Übergabe an Eurofins."}, {"frage": "Probe von der Oberseite eines Schranks. Oberflächenart?", "antworten": ["Aufsicht", "Ansicht", "Untersicht"], "richtig": [0], "warum": "Aufsicht = von oben auf eine waagerechte Fläche. Ansicht = senkrecht, Untersicht = von unten (Decke)."}, {"frage": "Wohin gehört „verrußt“ in LabelKit?", "antworten": ["In die Spalte Beaufschlagung", "Ans Ende von Raum / Ort", "In die Notiz"], "richtig": [0], "warum": "Oberflächenart und Beaufschlagung haben eigene Spalten; ans Labor geht alles zusammen."}, {"frage": "Vergleichsprobe im Gästezimmer OG ohne Brandeinfluss. Welcher Zusatz?", "antworten": ["Referenz unbelastet", "keiner", "Brandraum"], "richtig": [0], "warum": "„Referenz“ erkennt das Datenarchiv als Vergleichsstelle – wichtig für den Mustervergleich."}];
+QUIZ["wp-regel"] = [{"frage": "Welche Reihenfolge ist richtig?", "antworten": ["EG Küche Brandraum Decke verrußt Untersicht", "EG Küche Decke Untersicht verrußt Brandraum", "Decke Küche EG verrußt Untersicht"], "richtig": [0], "warum": "Von groß nach klein: Geschoss, Raum – „Brandraum“ beschreibt den Raum und steht gleich dahinter –, Bauteil, dann Beaufschlagung und Oberflächenart in der Reihenfolge der LabelKit-Übergabe an Eurofins."}, {"frage": "Probe von der Oberseite eines Schranks. Oberflächenart?", "antworten": ["Aufsicht", "Ansicht", "Untersicht"], "richtig": [0], "warum": "Aufsicht = von oben auf eine waagerechte Fläche. Ansicht = senkrecht, Untersicht = von unten (Decke)."}, {"frage": "Wohin gehört „verrußt“ in LabelKit?", "antworten": ["In die Spalte Beaufschlagung", "Ans Ende von Raum / Ort", "In die Notiz"], "richtig": [0], "warum": "Oberflächenart und Beaufschlagung haben eigene Spalten; ans Labor geht alles zusammen."}, {"frage": "Vergleichsprobe im Gästezimmer im 1OG ohne Brandeinfluss. Welcher Zusatz?", "antworten": ["Referenz unbelastet", "keiner", "Brandraum"], "richtig": [0], "warum": "„Referenz“ erkennt das Datenarchiv als Vergleichsstelle – wichtig für den Mustervergleich."}];
 QUIZ["fk-vorschlag"] = [{"frage": "In LabelKit steht P7 (Küche, verrußt, Untersicht). Sie tippen in die Beschreibung „P7“ und drücken Enter. Was passiert?", "antworten": ["Beschreibung „Küche verrußt Untersicht“, P7 im Feld Probe-Nr.", "Beschreibung bleibt „P7“", "FotoKit ändert die LabelKit-Datei"], "richtig": [0], "warum": "Die Nummer holt die Beschreibung aus LabelKit und wandert ins Feld Probe-Nr. LabelKit wird nur gelesen."}, {"frage": "Sie tippen „Kü“, FotoKit schlägt „Küche Decke“ vor – Sie wollen aber „Küche Decke Detail“. Am schnellsten?", "antworten": ["Tab, dann „ Detail“ tippen", "Esc und alles selbst tippen", "Enter, dann zurück"], "richtig": [0], "warum": "Tab übernimmt den Vorschlag und lässt den Cursor im Feld; Enter würde übernehmen und zum nächsten Bild springen."}, {"frage": "Der Vorschlag passt gar nicht. Was tun?", "antworten": ["Einfach weitertippen", "Erst Einstellungen öffnen", "Bild aussortieren"], "richtig": [0], "warum": "Der markierte Rest wird durch das Weitertippen ersetzt. Esc verwirft ihn ausdrücklich."}];
-QUIZ["da-rolle"] = [{"frage": "Probenbeschreibung „Brandraum Küche Decke“. Welche Rolle?", "antworten": ["Brandbereich", "Referenz", "keine"], "richtig": [0], "warum": "„Brandraum“, „Brandbereich“ und „Brandherd“ ergeben Brandbereich."}, {"frage": "Wischprobe im Gästezimmer OG, das vom Brand nicht betroffen ist. Wie beschreiben, damit das Archiv sie als Vergleichsstelle erkennt?", "antworten": ["„Referenz Gästezimmer OG“", "„Gästezimmer OG“", "„OG sauber“"], "richtig": [0], "warum": "Erkannt werden „Referenz“, „unbelastet“ und REF. „Gästezimmer OG“ bliebe ohne Rolle."}, {"frage": "Freimessung nach der Reinigung an der Stelle <code>EG-WZ-B-7-T1</code>. Welche ID?", "antworten": ["<code>F-EG-WZ-B-7-T1</code>", "<code>EG-WZ-B-7-T1-F</code>", "<code>EG-WZ-B-8-T1</code>"], "richtig": [0], "warum": "„F-“ vor die alte ID – dann paart das Archiv vorher und nachher automatisch."}, {"frage": "„Freimessung Brandraum“ – welche Rolle?", "antworten": ["Freimessung", "Brandbereich", "beides"], "richtig": [0], "warum": "Freimessung geht vor: Es ist die Messung nach der Sanierung, auch wenn sie im Brandraum liegt."}];
+QUIZ["da-rolle"] = [{"frage": "„Raum / Ort“ in LabelKit: „EG Küche Brandraum Decke“. Welche Rolle?", "antworten": ["Brandbereich", "Referenz", "keine"], "richtig": [0], "warum": "„Brandraum“, „Brandbereich“ und „Brandherd“ ergeben Brandbereich."}, {"frage": "Wischprobe im Gästezimmer im 1OG, das vom Brand nicht betroffen ist. Wie beschreiben, damit das Archiv sie als Vergleichsstelle erkennt?", "antworten": ["„1OG Gästezimmer Referenz unbelastet Wand B“", "„1OG Gästezimmer Wand B“", "„1OG · Gästezimmer sauber“"], "richtig": [0], "warum": "Erkannt werden „Referenz“, „unbelastet“ und REF – als Zusatz direkt hinter dem Raum. Ohne Zusatz bliebe die Probe ohne Rolle."}, {"frage": "Freimessung nach der Reinigung an der Stelle <code>EG-WZ-B-7-T1</code>. Welche ID?", "antworten": ["<code>F-EG-WZ-B-7-T1</code>", "<code>EG-WZ-B-7-T1-F</code>", "<code>EG-WZ-B-8-T1</code>"], "richtig": [0], "warum": "„F-“ vor die alte ID – dann paart das Archiv vorher und nachher automatisch."}, {"frage": "„Freimessung Brandraum“ – welche Rolle?", "antworten": ["Freimessung", "Brandbereich", "beides"], "richtig": [0], "warum": "Freimessung geht vor: Es ist die Messung nach der Sanierung, auch wenn sie im Brandraum liegt."}];
 QUIZ["da-lesen"] = [{"frage": "Im Vergleich steht beim Median „&lt; BG“. Was heißt das?", "antworten": ["Mindestens die Hälfte der Werte liegt unter der Bestimmungsgrenze", "Der Median ist 0", "Das Labor hat einen Fehler gemacht"], "richtig": [0], "warum": "Werte unter BG zählen als kleinste Werte. Fällt der Median darauf, wird keine Zahl erfunden."}, {"frage": "Ähnlichkeit 0,99 zwischen Wohnzimmer und Brandraum. Was folgt daraus?", "antworten": ["Stützt, dass es derselbe Ruß sein kann – beweist es nicht", "Beweist, dass der Ruß vom Brand stammt", "Ein Grenzwert ist überschritten"], "richtig": [0], "warum": "Verbrennungsrückstände ähneln sich grundsätzlich. Ein deutlicher Unterschied sagt mehr als hohe Ähnlichkeit."}, {"frage": "Kann Flt/(Flt+Pyr) Brandruß von altem Teerkleber unterscheiden?", "antworten": ["Nein – beide liegen im „pyrogenen“ Bereich", "Ja, ab 0,5 ist es Brandruß", "Ja, unter 0,4 ist es Teer"], "richtig": [0], "warum": "Teer ist selbst ein Hochtemperaturprodukt. Für die Frage Teer oder Brand hilft der Mustervergleich mit einer Materialprobe des Klebers."}];
 document.querySelectorAll('.quiz').forEach(initQuiz);
 
@@ -1707,7 +1708,7 @@ document.querySelectorAll('.quiz').forEach(initQuiz);
   const chips = (id, attr, werte) => { $(id).innerHTML = werte.map(v => knopf(attr, v, v)).join(''); };
   $('wp-geschosse').innerHTML = K.GESCHOSSE.map(([k, n]) => knopf('wpgeschoss', k, k, n)).join('');
   chips('wp-bauteile', 'wpbauteil', K.W_BAUTEILE); chips('wp-oberflaechen', 'wpoberflaeche', K.W_OBERFLAECHEN);
-  chips('wp-beaufschlagung', 'wpbeaufschlagung', K.W_BEAUFSCHLAGUNG); chips('wp-zusaetze', 'wpzusatz', [...K.W_ZUSAETZE, 'Freimessung']);
+  chips('wp-beaufschlagung', 'wpbeaufschlagung', K.W_BEAUFSCHLAGUNG); chips('wp-zusaetze', 'wpzusatz', K.W_ZUSAETZE);
   $('wp-raum').innerHTML = '<option value="">– Raum wählen –</option>' + K.RAEUME.map(([, n]) => n.split(',')[0]).map(n => `<option>${esc(n)}</option>`).join('');
   const teile = () => ({ gebaeude: $('wp-gebaeude').value, geschoss: w.geschoss, raum: $('wp-raum-frei').value.trim() || $('wp-raum').value,
     bauteil: $('wp-bauteil-frei').value.trim() || w.bauteil, oberflaeche: w.oberflaeche, beaufschlagung: w.beaufschlagung, zusatz: w.zusatz });
@@ -1717,7 +1718,7 @@ document.querySelectorAll('.quiz').forEach(initQuiz);
     $('wp-lk-raum').textContent = lk.raumOrt || '–'; $('wp-lk-ober').textContent = lk.oberflaeche || '–'; $('wp-lk-beauf').textContent = lk.beaufschlagung || '–';
     const fehlt = [['Geschoss', t.geschoss], ['Raum', t.raum], ['Bauteil', t.bauteil], ['Beaufschlagung', t.beaufschlagung], ['Oberflächenart', t.oberflaeche]].filter(x => !x[1]).map(x => x[0]);
     $('wp-hinweis').textContent = fehlt.length ? 'Fehlt noch: ' + fehlt.join(', ') : 'Vollständig.';
-    $('wp-kopieren').disabled = !text;
+    $('wp-kopieren').disabled = !K.wischLabelKit(t).raumOrt;
   }
   document.getElementById('wischprobe').addEventListener('click', e => {
     const b = e.target.closest('button[aria-pressed]'); if (!b) return;
@@ -1732,7 +1733,7 @@ document.querySelectorAll('.quiz').forEach(initQuiz);
     if (id === 'wp-bauteil-frei' && $(id).value.trim()){ w.bauteil = ''; $('wp-bauteile').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', 'false')); }
     zeige();
   });
-  $('wp-kopieren').addEventListener('click', async () => { try{ await navigator.clipboard.writeText(K.wischBezeichnung(teile())); $('wp-hinweis').textContent = 'Kopiert.'; }catch(e){ $('wp-hinweis').textContent = 'Kopieren nicht möglich – Text markieren und Strg+C.'; } });
+  $('wp-kopieren').addEventListener('click', async () => { try{ await navigator.clipboard.writeText(K.wischLabelKit(teile()).raumOrt); $('wp-hinweis').textContent = 'Kopiert: „' + K.wischLabelKit(teile()).raumOrt + '“ – in LabelKit in „Raum / Ort“ einfügen.'; }catch(e){ $('wp-hinweis').textContent = 'Kopieren nicht möglich – Text markieren und Strg+C.'; } });
   zeige();
 })();
 

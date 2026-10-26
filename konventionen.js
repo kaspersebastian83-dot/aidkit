@@ -1,6 +1,6 @@
 /* Spektron – gemeinsame Konventionen (eine Quelle für AidKit und später LabelKit/PlanKit).
    Probenbezeichnung Bohrkerne: Geschoss-Raum-Fläche-Punkt-Tiefe, z. B. EG-WZ-B-7-T2.
-   Probenbezeichnung Wischproben: lesbarer Text von groß nach klein, z. B. „EG · Küche · Brandraum · Decke · verrußt · Untersicht“.
+   Probenbezeichnung Wischproben: lesbarer Text von groß nach klein, z. B. „EG Küche Brandraum Decke verrußt Untersicht“.
    Reine Funktionen, keine Abhängigkeiten; im Browser als window.SpektronKonventionen, in Node über require(). */
 (function(root){
   'use strict';
@@ -84,15 +84,16 @@
   }
 
   /* ---------- Probenbezeichnung Wischproben: lesbarer Text, von groß nach klein ----------
-     Gebäude (nur bei mehreren) · Geschoss · Raum · Zusatz zum Raum · Bauteil · Beaufschlagung · Oberflächenart,
-     z. B. „Haus A · EG · Küche · Brandraum · Decke · verrußt · Untersicht“. Reihenfolge wie die LabelKit-Übergabe (PAK, Chlorid:
+     Gebäude (nur bei mehreren), Geschoss, Raum, Zusatz zum Raum, Bauteil, Beaufschlagung, Oberflächenart –
+     mit Leerzeichen getrennt wie in LabelKit („EG Flur“),
+     z. B. „Haus A EG Küche Brandraum Decke verrußt Untersicht“. Reihenfolge wie die LabelKit-Übergabe (PAK, Chlorid:
      Raum / Ort, Beaufschlagung, Oberflächenart), die so ins Eurofins-System kopiert wird – nicht ändern.
      Oberflächenart und Beaufschlagung: dieselben Listen wie in LabelKit (dort eigene Spalten). */
-  const W_TRENNER = ' · ';
+  const W_TRENNER = ' ';
   const W_BAUTEILE = ['Decke', 'Wand A', 'Wand B', 'Wand C', 'Wand D', 'Boden', 'Fenster/Fensterbank', 'Tür/Zarge', 'Heizkörper', 'Möbel', 'Einbauten', 'Elektro/Leitungen'];
   const W_OBERFLAECHEN = ['Aufsicht', 'Ansicht', 'Untersicht'];   // LabelKit OBERFLAECHEN
   const W_BEAUFSCHLAGUNG = ['gereinigt', 'mit Belag', 'leicht verrußt', 'verrußt', 'mit Ruß', 'mit Kondensat', 'mit Staub'];   // LabelKit BEAUFSCHLAGUNG
-  const W_ZUSAETZE = ['Brandraum', 'Referenz unbelastet', 'Verdacht Kleber/Teer'];   // vom Datenarchiv als Rolle erkannt
+  const W_ZUSAETZE = ['Brandraum', 'Referenz unbelastet', 'Verdacht Kleber/Teer', 'Freimessung'];   // vom Datenarchiv als Rolle erkannt
   const sauber = v => String(v == null ? '' : v).replace(/[·,;]+/g, ' ').replace(/\s+/g, ' ').trim();
   /** {gebaeude, geschoss, raum, zusatz, bauteil, beaufschlagung, oberflaeche} → Text; fehlende Teile entfallen. Geschoss als Kürzel (EG, 1OG …). */
   function wischBezeichnung(t){
