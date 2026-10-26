@@ -450,9 +450,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="b7a"><label for="b7a">Prüfbericht (<b>XML und PDF</b>) in <b>ResultKit</b> importieren: „📥 Berichte importieren“ oder die Dateien auf die Seite ziehen → „Ablegen“. ResultKit legt sie in „Laborergebnisse“ ab.</label></li>
-        <li><input type="checkbox" id="b7g"><label for="b7g">In ResultKit prüfen: je Probe „✓ Ergebnis“, „◐ nur vorläufig“, „○ offen“ oder „! nicht beauftragt“, dazu die Karte je Prüfbericht. Dann <b>„Ergebnisse übernehmen“</b> → <a href="#app-resultkit">ResultKit Schritt für Schritt</a>.</label></li>
+        <li><input type="checkbox" id="b7g"><label for="b7g">In ResultKit prüfen: Die <b>Übersicht</b> zeigt je Probenart Probe · Probenahmestelle · Ergebnis, das Ergebnis in der Farbe der Bewertung. Unter <b>„Prüfung und Import“</b> stehen der Stand je Probe („✓ Ergebnis“, „◐ nur vorläufig“, „○ offen“, „! nicht beauftragt“) und die Karte je Prüfbericht. Dann <b>„Ergebnisse übernehmen“</b> → <a href="#app-resultkit">ResultKit Schritt für Schritt</a>.</label></li>
         <li><input type="checkbox" id="b7b"><label for="b7b">PlanKit: <b>„Proben übernehmen …“</b> und den in ResultKit übernommenen Bericht wählen, <b>„Alle Konflikte: Aktualisieren“</b> – die Messwerte hängen dann an den Proben.</label></li>
-        <li><input type="checkbox" id="b7c"><label for="b7c"><b>Ergebnisse</b> (Taste K): Ergebniskarte. Bewertet wird nach VdS 2357, wenn es dafür eine Referenz gibt, sonst nach der eigenen Skala des Büros – beide lassen sich anpassen (Übung rechts). Beim Export „Darstellung: Ergebniskarte“.</label></li>
+        <li><input type="checkbox" id="b7c"><label for="b7c"><b>Ergebnisse</b> (Taste K): Ergebniskarte. Bewertet wird nach VdS 2357, wenn es dafür eine Referenz gibt, sonst nach der eigenen Skala des Büros – beide lassen sich anpassen (Übung rechts). Chlorid nach VdS 2357: 5–10 µg/cm² ist die korrosionschemisch relevante Größenordnung – grün unter 5, amber 5 bis unter 10, rot ab 10 µg/cm², unabhängig von der Nutzung (in ResultKit, PlanKit und FotoKit gleich). Beim Export „Darstellung: Ergebniskarte“.</label></li>
         <li><input type="checkbox" id="b7f"><label for="b7f"><b>Vorläufiger Prüfbericht?</b> Die Karte trägt dann rot <b>VORLÄUFIG</b>, die Anlagen einen Hinweis. Kommt der endgültige Bericht: in ResultKit importieren und <b>„Erneut übernehmen“</b>, dann in PlanKit „Proben übernehmen …“ wiederholen – FotoKits „Ergebnistabelle …“ nimmt den übernommenen Stand von selbst.</label></li>
         <li><input type="checkbox" id="b7d"><label for="b7d"><b>Raumbuch</b>: je Raum Maßnahme und Bemerkung; Räume ohne Probe mit Status. Als Word-Anlage oder CSV.</label></li>
         <li><input type="checkbox" id="b7e"><label for="b7e"><b>Anlage Probenahme</b> (Word) aus PlanKit – die <b>Bezeichnung der Anlage</b> mit Nummer ist Pflicht („Anlage 5“, nicht nur „Anlage“). FotoKit <b>„Ergebnistabelle …“</b> (Werte aus ResultKit) für die Tabelle im Gutachten.</label></li>
@@ -988,7 +988,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>8 · Ergebnistabelle</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="fk8a"><label for="fk8a"><b>„Ergebnistabelle …“</b> – FotoKit nimmt die in <b>ResultKit</b> übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle.</label></li>
+        <li><input type="checkbox" id="fk8a"><label for="fk8a"><b>„Ergebnistabelle …“</b> – FotoKit nimmt die in <b>ResultKit</b> übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle. Chlorid wird nach VdS 2357 bewertet (5–10 µg/cm²).</label></li>
         <li><input type="checkbox" id="fk8d"><label for="fk8d">Warnt FotoKit, dass sich der Ordner seit der Übernahme geändert hat oder noch Proben offen sind: <b>„🧪 ResultKit öffnen“</b>, dort prüfen und erneut übernehmen.</label></li>
         <li><input type="checkbox" id="fk8b"><label for="fk8b">Parameter und <b>Bewertungsskala</b> prüfen; Proben werden über die Probe-Nr. den Fotos zugeordnet.</label></li>
         <li><input type="checkbox" id="fk8c"><label for="fk8c"><b>„Tabelle kopieren“</b> und in Word mit <b>Strg+V</b> einfügen.</label></li>
@@ -1025,13 +1025,13 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <a class="app-oeffnen" href="../resultkit/" target="resultkit" rel="noopener">ResultKit öffnen ↗</a>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="2" data-titel="Stand">
-    <div class="schritt-kopf"><h2>2 · Stand lesen</h2><span class="ort buero">Büro</span></div>
+  <div class="karte schritt" data-schritt="2" data-titel="Übersicht">
+    <div class="schritt-kopf"><h2>2 · Übersicht und Stand lesen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk2a"><label for="rk2a">ResultKit vergleicht die Laborübergabe aus LabelKit (neueste <code>…_Daten.json</code> in „Laboraufträge“) mit den Prüfberichten in „Laborergebnisse“.</label></li>
-        <li><input type="checkbox" id="rk2b"><label for="rk2b">Die Zeile oben lesen, z. B. <b>„3 von 4 Proben mit Ergebnis · 1 offen“</b>.</label></li>
-        <li><input type="checkbox" id="rk2c"><label for="rk2c">Je Probe den Stand prüfen: <b>„✓ Ergebnis“</b>, <b>„◐ nur vorläufig“</b>, <b>„○ offen“</b> oder <b>„! nicht beauftragt“</b>.</label></li>
+        <li><input type="checkbox" id="rk2a"><label for="rk2a">ResultKit öffnet mit der <b>Übersicht</b>: oben je Probenart eine Kachel (z. B. „PAK 34 / 40 · 12 auffällig · 6 offen“), darunter je Probenart eine Tabelle <b>Probe · Probenahmestelle · Ergebnis</b> – die Probenahmestelle ist die Bezeichnung aus LabelKit, über der Tabelle stehen die Prüfberichte mit Datum.</label></li>
+        <li><input type="checkbox" id="rk2b"><label for="rk2b">Das Ergebnis steht in der <b>Farbe der Bewertung</b> (Legende über der Tabelle); PAK als Σ16 EPA-PAK, Chlorid in µg/cm², Asbest mit dem Befund wie im Bericht – nachgewiesen zart rot. Fehlt eine Probe noch, steht dort „ausstehend“. Mit <b>„Nur auffällige“</b> und <b>„Nur offene“</b> filtern, nach Ort oder Probennummer sortieren.</label></li>
+        <li><input type="checkbox" id="rk2c"><label for="rk2c">Unter <b>„Prüfung und Import“</b> (Punkt am Reiter = dort ist etwas zu tun): ResultKit vergleicht die Laborübergabe aus LabelKit mit den Prüfberichten, oben z. B. „3 von 4 Proben mit Ergebnis · 1 offen“. Je Probe den Stand prüfen: <b>„✓ Ergebnis“</b>, <b>„◐ nur vorläufig“</b>, <b>„○ offen“</b> oder <b>„! nicht beauftragt“</b>.</label></li>
         <li><input type="checkbox" id="rk2d"><label for="rk2d">Neue Dateien im Ordner? <b>„⟳ Neu einlesen“</b> – das passiert auch von selbst, wenn man ins Fenster zurückkommt.</label></li>
       </ul>
     </div><div>
@@ -1066,6 +1066,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </div><div>
       <div class="uebung quiz" data-quiz="rk-bericht"><h3>Kurz üben: Was zeigt ResultKit?</h3></div>
       <div class="tipp">Bewertet wird nur nach vorhandenen Skalen: Einstellungen der Ergebniskarte aus PlanKit, sonst die VdS-2357-Referenz nach der Nutzung des Projekts, sonst die Skalen des Büros. Ohne Skala bleibt ein Wert unbewertet – ResultKit erfindet keine Grenzwerte.</div>
+      <div class="tipp">Chlorid nach VdS 2357: 5–10 µg/cm² ist die korrosionschemisch relevante Größenordnung – grün unter 5, amber 5 bis unter 10, rot ab 10 µg/cm², unabhängig von der Nutzung (in ResultKit, PlanKit und FotoKit gleich). Ältere Berichte in mg/m² zeigt ResultKit umgerechnet in µg/cm² (1 µg/cm² = 10 mg/m²); der Wert laut Bericht steht im Tooltip.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="5" data-titel="Übernehmen">
@@ -1197,7 +1198,8 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="pk-legende"><h3>Kurz üben: In welche Legendengruppe kommt der Wert?</h3></div>
-      <div class="tipp">Die VdS-Werte sind Hintergrundreferenzen nur für Σ16 EPA-PAK auf Oberflächen – keine pauschalen Freigabe- oder Sanierungsgrenzwerte.</div>
+      <div class="tipp">Die VdS-Werte für Σ16 EPA-PAK auf Oberflächen sind Hintergrundreferenzen – keine pauschalen Freigabe- oder Sanierungsgrenzwerte.</div>
+      <div class="tipp">Chlorid nach VdS 2357: 5–10 µg/cm² ist die korrosionschemisch relevante Größenordnung – grün unter 5, amber 5 bis unter 10, rot ab 10 µg/cm², unabhängig von der Nutzung (in ResultKit, PlanKit und FotoKit gleich). Ältere Berichte in mg/m² werden umgerechnet (1 µg/cm² = 10 mg/m²). Anpassbar wie die PAK-Referenz.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="8" data-titel="Export">
@@ -1591,7 +1593,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.9.0';
+const VERSION = '0.9.1';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1738,12 +1740,13 @@ $('pflicht-pruefen').onclick = () => {
     : `<span class="warn">${[fehlt ? `${fehlt} ${fehlt === 1 ? 'Pflichtangabe fehlt' : 'Pflichtangaben fehlen'}` : '', zuviel ? `${zuviel} ${zuviel === 1 ? 'ist' : 'sind'} keine Pflicht` : ''].filter(Boolean).join(', ')}.</span> Rot umrandet = falsch, grün = richtig erkannt.`;
 };
 
-/* Übung Skala: wie PlanKit scaleFor – VdS-Referenz nur für Σ16 EPA-PAK auf Oberflächen (µg/m²) und nur mit eingetragener Nutzung, sonst die eigene Skala des Büros */
+/* Übung Skala: wie PlanKit scaleFor – VdS-Referenz für Σ16 EPA-PAK auf Oberflächen (µg/m²) nur mit eingetragener Nutzung; für Chlorid auf Oberflächen (µg/cm²) immer; sonst die eigene Skala des Büros */
 const SKALA_FAELLE = [
   ['Wohnhaus, Nutzung „Wohnen“ eingetragen. Wischprobe, <b>Σ16 EPA-PAK in µg/m²</b>.', 'vds', 'Für PAK auf Oberflächen gibt es eine VdS-Referenz, und die Nutzung ist bekannt.'],
   ['Heizölschaden, Bohrkern, <b>MKW C10–C40 in mg/kg TS</b>.', 'eigen', 'Für MKW ist in den Apps keine VdS-Referenz hinterlegt – es gilt die eigene Skala des Büros.'],
   ['Büro, aber <b>Nutzung noch leer</b>. Wischprobe, Σ16 EPA-PAK in µg/m².', 'eigen', 'Ohne Nutzung weiß PlanKit nicht, welche VdS-Referenz gilt – deshalb ist die Nutzung Pflicht.'],
   ['Schule, Nutzung „Öffentlich“. Materialprobe, <b>Σ16 EPA-PAK in mg/kg</b>.', 'eigen', 'Die VdS-Referenz in den Apps gilt nur für Oberflächen (µg/m²), nicht für Material in mg/kg.'],
+  ['Werkhalle, <b>Nutzung noch leer</b>. Wischprobe, <b>Chlorid in µg/cm²</b>.', 'vds', 'Für Chlorid gilt VdS 2357 (5–10 µg/cm² korrosionschemisch relevante Größenordnung) – unabhängig von der Nutzung.'],
 ];
 let skalaFall = 0;
 function zeigeSkalaFall(){ $('skala-fall').innerHTML = `Fall ${skalaFall + 1} von ${SKALA_FAELLE.length}: ${SKALA_FAELLE[skalaFall][0]}`; $('skala-antwort').textContent = ''; document.querySelectorAll('[data-skala]').forEach(b => b.classList.remove('richtig', 'falsch')); }

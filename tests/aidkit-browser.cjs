@@ -154,10 +154,10 @@ const root = path.join(__dirname, '..');
     assert.match(await page.locator('#pflicht-antwort').innerText(), /Richtig – sieben Pflichtangaben/);
     // Übung „Welche Skala gilt?“ (Schritt 7)
     await page.locator('#brandschaden .schritte [data-geh="7"]').click();
-    assert.match(await page.locator('#skala-fall').innerText(), /Fall 1 von 4/);
+    assert.match(await page.locator('#skala-fall').innerText(), /Fall 1 von 5/);
     await page.locator('[data-skala="eigen"]').click(); assert.match(await page.locator('#skala-antwort').innerText(), /Nicht ganz/);
     await page.locator('[data-skala="vds"]').click(); assert.match(await page.locator('#skala-antwort').innerText(), /Richtig/);
-    await page.waitForFunction(() => /Fall 2 von 4/.test(document.getElementById('skala-fall').textContent));
+    await page.waitForFunction(() => /Fall 2 von 5/.test(document.getElementById('skala-fall').textContent));
     await page.locator('[data-skala="eigen"]').click(); assert.match(await page.locator('#skala-antwort').innerText(), /keine VdS-Referenz/);
     await page.locator('#brandschaden .fluss [data-geh="5"]').click();
     assert.match(await page.locator('#brandschaden .schritt.aktiv h2').innerText(), /5 · Fotos/);
