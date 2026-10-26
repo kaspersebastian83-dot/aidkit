@@ -1769,7 +1769,8 @@ document.querySelectorAll('.quiz').forEach(initQuiz);
 /* Rolle einer Probe wie im Datenarchiv (Projektzentrale archiv/auswertung.js, rolleAuto) – Regeln dort und hier gleich halten. */
 function rolleAuto(ref){
   const t = String(ref || '').normalize('NFC').replace(/\s+/g, ' ').trim(), k = t.toLocaleLowerCase('de');
-  if (/^F[-_ ]/i.test(t) || /freimessung|sanierungskontrolle|nach (der )?sanierung/.test(k)) return ['Freimessung nach Sanierung', 'Wird mit der Stelle ohne „F-“ gepaart (vorher / nachher) und zählt im Vergleich nicht mit.'];
+  if (/^F[-_ ]/i.test(t)) return ['Freimessung nach Sanierung', 'Wird mit der Stelle ohne „F-“ gepaart (vorher / nachher) und zählt im Vergleich nicht mit.'];
+  if (/freimessung|sanierungskontrolle|nach (der )?sanierung/.test(k)) return ['Freimessung nach Sanierung', 'Zählt im Vergleich nicht mit. Automatisch gepaart (vorher / nachher) werden nur Bohrkerne mit „F-“ vor der alten ID.'];
   if (/(^|[^a-zäöüß])ref([^a-zäöüß]|$)|referenz|unbelastet|nullprobe|hintergrund/.test(k)) return ['Referenz (unbelastet)', 'Vergleichsstelle ohne Brandeinfluss.'];
   if (/kleber|teer|bitumen|dachpappe|schwarzanstrich/.test(k)) return ['Verdachtsquelle', 'Mögliche alte Quelle, z. B. Teerkleber – ihr Muster wird mit dem Brandraum verglichen.'];
   if (/brandraum|brandbereich|brandherd|brandstelle|brandausbruch/.test(k)) return ['Brandbereich', 'Probe aus dem Brandraum.'];

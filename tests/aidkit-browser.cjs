@@ -115,6 +115,8 @@ const root = path.join(__dirname, '..');
     assert.equal(await rt('Parkettkleber Flur'), 'Verdachtsquelle');
     assert.equal(await rt('F-EG-WZ-B-7-T1'), 'Freimessung nach Sanierung');
     assert.equal(await rt('Freimessung Brandraum'), 'Freimessung nach Sanierung');
+    assert.match(await page.locator('#rolle-ergebnis').innerText(), /nur Bohrkerne mit „F-“/, 'Wischprobe: Rolle ja, Paarung nur mit F-');
+    await rt('F-EG-WZ-B-7-T1'); assert.match(await page.locator('#rolle-ergebnis').innerText(), /gepaart \(vorher \/ nachher\)/);
     assert.equal(await rt('Prefab-Wand Flur'), 'ohne Rolle');
     const dq = page.locator('[data-quiz="da-rolle"]');
     await dq.locator('[data-a="0"]').click(); assert.match(await dq.locator('.antwort').innerText(), /Richtig\./);
