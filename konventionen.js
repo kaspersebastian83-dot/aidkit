@@ -1,5 +1,6 @@
 /* Spektron – gemeinsame Konventionen (eine Quelle für AidKit und später LabelKit/PlanKit).
    Probenbezeichnung Bohrkerne: Geschoss-Raum-Fläche-Punkt-Tiefe, z. B. EG-WZ-B-7-T2.
+   Probenbezeichnung Wischproben: lesbarer Text von groß nach klein, z. B. „EG · Küche · Decke · Untersicht · verrußt“.
    Reine Funktionen, keine Abhängigkeiten; im Browser als window.SpektronKonventionen, in Node über require(). */
 (function(root){
   'use strict';
@@ -82,7 +83,29 @@
     return out.join(', ');
   }
 
-  const api = Object.freeze({ MAX_LAENGE, GESCHOSSE, RAEUME, FLAECHEN, RASTER, RASTER_BODEN, bohrkernId, pruefeId, gesprochen, lage, raumName });
+  /* ---------- Probenbezeichnung Wischproben: lesbarer Text, von groß nach klein ----------
+     Gebäude (nur bei mehreren) · Geschoss · Raum · Bauteil · Oberflächenart · Beaufschlagung · Zusatz,
+     z. B. „Haus A · EG · Küche · Decke · Untersicht · verrußt · Brandraum“.
+     Oberflächenart und Beaufschlagung: dieselben Listen wie in LabelKit (dort eigene Spalten). */
+  const W_TRENNER = ' · ';
+  const W_BAUTEILE = ['Decke', 'Wand A', 'Wand B', 'Wand C', 'Wand D', 'Boden', 'Fenster/Fensterbank', 'Tür/Zarge', 'Heizkörper', 'Möbel', 'Einbauten', 'Elektro/Leitungen'];
+  const W_OBERFLAECHEN = ['Aufsicht', 'Ansicht', 'Untersicht'];   // LabelKit OBERFLAECHEN
+  const W_BEAUFSCHLAGUNG = ['gereinigt', 'mit Belag', 'leicht verrußt', 'verrußt', 'mit Ruß', 'mit Kondensat', 'mit Staub'];   // LabelKit BEAUFSCHLAGUNG
+  const W_ZUSAETZE = ['Brandraum', 'Referenz unbelastet', 'Verdacht Kleber/Teer'];   // vom Datenarchiv als Rolle erkannt
+  const sauber = v => String(v == null ? '' : v).replace(/[·,;]+/g, ' ').replace(/\s+/g, ' ').trim();
+  /** {gebaeude, geschoss, raum, bauteil, oberflaeche, beaufschlagung, zusatz} → Text; fehlende Teile entfallen. Geschoss als Kürzel (EG, 1OG …). */
+  function wischBezeichnung(t){
+    t = t || {};
+    return [t.gebaeude, t.geschoss, t.raum, t.bauteil, t.oberflaeche, t.beaufschlagung, t.zusatz].map(sauber).filter(Boolean).join(W_TRENNER);
+  }
+  /** Für LabelKit: was in welche Spalte gehört. Raum / Ort = Gebäude bis Bauteil (+ Zusatz); Oberflächenart und Beaufschlagung eigene Spalten. */
+  function wischLabelKit(t){
+    t = t || {};
+    return { raumOrt: [t.gebaeude, t.geschoss, t.raum, t.bauteil, t.zusatz].map(sauber).filter(Boolean).join(W_TRENNER), oberflaeche: sauber(t.oberflaeche), beaufschlagung: sauber(t.beaufschlagung) };
+  }
+
+  const api = Object.freeze({ MAX_LAENGE, GESCHOSSE, RAEUME, FLAECHEN, RASTER, RASTER_BODEN, bohrkernId, pruefeId, gesprochen, lage, raumName,
+    W_TRENNER, W_BAUTEILE, W_OBERFLAECHEN, W_BEAUFSCHLAGUNG, W_ZUSAETZE, wischBezeichnung, wischLabelKit });
   root.SpektronKonventionen = api;
   if (typeof module !== 'undefined') module.exports = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this);

@@ -115,6 +115,8 @@ button.primaer:hover{background:var(--accent-l);color:#fff}
 .hinweis-klein{font-size:12.5px;color:var(--muted)}
 .rolle-ergebnis{font-size:13px;min-height:20px;margin:8px 0 0}.rolle-ergebnis b{color:var(--accent)}.rolle-ergebnis.ohne b{color:var(--muted)}
 .uebung + .uebung{margin-top:12px}
+.wp-text{font-family:inherit!important;font-size:18px!important;letter-spacing:0!important;word-break:normal!important}
+table.wp-lk th{width:42%;font-size:12px;color:var(--muted);text-align:left;vertical-align:top}table.wp-lk td{font-size:13px}
 .sim-liste{margin:6px 0 0;padding-left:22px;font-size:13px}.sim-liste li{margin:2px 0}.sim-liste code{font-size:12px}
 .uebung .frage{font-size:13px;margin:0 0 8px}
 .uebung .antwort{font-size:13px;min-height:20px;margin-top:8px}
@@ -187,6 +189,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#app-datenarchiv">Datenarchiv</a>
   <div class="gruppe">Konventionen</div>
   <a href="#bohrkern">Probenbezeichnung Bohrkerne</a>
+  <a href="#wischprobe">Probenbezeichnung Wischproben</a>
   <a href="#raumkuerzel">Raumkürzel</a>
 </nav>
 <main>
@@ -219,7 +222,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <p><a href="#brandschaden"><b>Brandschaden von A bis Z</b></a> – der normale Weg durch alle Apps, vom Projekt bis zur Abrechnung</p>
   <p><a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a> – von der Vorbereitung im Büro bis zum Labor</p>
   <h2>Konventionen</h2>
-  <p><a href="#bohrkern">Probenbezeichnung Bohrkerne</a> – mit ID-Baukasten und Prüfung · <a href="#raumkuerzel">Raumkürzel</a></p>
+  <p><a href="#bohrkern">Probenbezeichnung Bohrkerne</a> – mit ID-Baukasten und Prüfung · <a href="#wischprobe">Probenbezeichnung Wischproben</a> – mit Baukasten · <a href="#raumkuerzel">Raumkürzel</a></p>
 </section>
 
 <section id="bohrkern">
@@ -1419,6 +1422,58 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
 </section>
+<section id="wischprobe">
+  <h1>Probenbezeichnung Wischproben</h1>
+  <p class="lead">Wischproben bezeichnen wir in lesbarem Text, <b>von groß nach klein</b>: <b>Gebäude · Geschoss · Raum · Bauteil · Oberflächenart · Beaufschlagung</b>, bei Bedarf ein Zusatz. Zum Beispiel <code>Haus A · EG · Küche · Decke · Untersicht · verrußt · Brandraum</code>.</p>
+  <div class="karte ziel">
+    <h2>Warum so</h2>
+    <ul>
+      <li><b>Liest sich wie ein Weg</b> vom Gebäude bis zur Stelle – im Laborbericht, in der Bilddokumentation und im Gutachten gleich.</li>
+      <li><b>Sortiert sich von selbst:</b> alle Proben eines Geschosses und eines Raums stehen zusammen.</li>
+      <li><b>Die Apps verstehen es:</b> FotoKit schlägt die Beschreibung aus LabelKit vor, das Datenarchiv erkennt „Brandraum“ und „Referenz“ als Rolle der Probe.</li>
+    </ul>
+  </div>
+
+  <div class="karte baukasten-karte">
+    <div class="baukasten">
+      <div>
+        <div class="zeile"><span class="titel">Gebäude <span style="font-weight:400">– nur wenn es mehrere gibt</span></span><input id="wp-gebaeude" placeholder="z. B. Haus A, Halle 2" style="max-width:220px" autocomplete="off"></div>
+        <div class="zeile" role="group" aria-labelledby="wp-t-geschoss"><span class="titel" id="wp-t-geschoss">Geschoss</span><span id="wp-geschosse"></span></div>
+        <div class="zeile"><span class="titel">Raum</span><select id="wp-raum" aria-label="Raum"></select><input id="wp-raum-frei" placeholder="oder eigener Name" style="max-width:200px" autocomplete="off" aria-label="Eigener Raumname"></div>
+        <div class="zeile" role="group" aria-labelledby="wp-t-bauteil"><span class="titel" id="wp-t-bauteil">Bauteil</span><span id="wp-bauteile"></span><input id="wp-bauteil-frei" placeholder="oder z. B. Schrank oben" style="max-width:200px" autocomplete="off" aria-label="Eigenes Bauteil"></div>
+        <div class="zeile" role="group" aria-labelledby="wp-t-ober"><span class="titel" id="wp-t-ober">Oberflächenart</span><span id="wp-oberflaechen"></span></div>
+        <div class="zeile" role="group" aria-labelledby="wp-t-beauf"><span class="titel" id="wp-t-beauf">Beaufschlagung</span><span id="wp-beaufschlagung"></span></div>
+        <div class="zeile" role="group" aria-labelledby="wp-t-zusatz"><span class="titel" id="wp-t-zusatz">Zusatz <span style="font-weight:400">– optional</span></span><span id="wp-zusaetze"></span></div>
+        <div class="ergebnis" aria-live="polite">
+          <div class="id wp-text" id="wp-ergebnis"></div>
+          <div class="meta"><span id="wp-hinweis"></span><button id="wp-kopieren" type="button">Bezeichnung kopieren</button></div>
+        </div>
+      </div>
+      <div>
+        <div class="karte" style="margin:0">
+          <h3 style="margin:0 0 8px;font-size:14px">So in LabelKit (PAK-Wischprobe)</h3>
+          <table class="wp-lk"><tbody>
+            <tr><th>Raum / Ort</th><td id="wp-lk-raum">–</td></tr>
+            <tr><th>Oberflächenart</th><td id="wp-lk-ober">–</td></tr>
+            <tr><th>Beaufschlagung</th><td id="wp-lk-beauf">–</td></tr>
+          </tbody></table>
+          <p class="hinweis-klein">Oberflächenart und Beaufschlagung haben in LabelKit eigene Spalten – dort auswählen, nicht in „Raum / Ort“ schreiben. Ans Labor geht alles zusammen als Probenbeschreibung.</p>
+        </div>
+        <div class="uebung quiz" data-quiz="wp-regel" style="margin-top:14px"><h3>Kurz üben</h3></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Regeln je Baustein</h2>
+  <p><b>Gebäude.</b> Nur wenn es auf dem Grundstück mehrere gibt: „Haus A“, „Halle 2“, „Nebengebäude“. Sonst weglassen.</p>
+  <p><b>Geschoss.</b> Immer, als Kürzel wie bei den Bohrkernen: <code>KG</code>, <code>UG</code>, <code>EG</code>, <code>1OG</code>, <code>2OG</code>, <code>DG</code>.</p>
+  <p><b>Raum.</b> Ausgeschrieben, damit Labor und Gutachten es direkt lesen: „Küche“, „Wohnzimmer“ – die Namen aus der <a href="#raumkuerzel">Raumliste</a>. Gibt es einen Raum mehrfach: „Kinderzimmer 1“, „Kinderzimmer 2“ in der Reihenfolge der Begehung.</p>
+  <p><b>Bauteil.</b> Decke, Boden oder Wand; Wände wie bei den Bohrkernen: <b>Wand A</b> ist die Wand mit der Zugangstür, dann B, C, D im Uhrzeigersinn. Sonst das Bauteil selbst: Fensterbank, Türzarge, Heizkörper, „Schrank oben“.</p>
+  <p><b>Oberflächenart.</b> Wie in LabelKit: <b>Aufsicht</b> = von oben auf eine waagerechte Fläche (Schrankoberseite, Fensterbank, Boden), <b>Ansicht</b> = senkrechte Fläche (Wand, Tür), <b>Untersicht</b> = von unten (Decke, Unterseite eines Bauteils).</p>
+  <p><b>Beaufschlagung.</b> Was man sieht, mit den Wörtern aus LabelKit: gereinigt, mit Belag, leicht verrußt, verrußt, mit Ruß, mit Kondensat, mit Staub.</p>
+  <p><b>Zusatz.</b> „Brandraum“ für Proben im Brandraum, „Referenz unbelastet“ für Vergleichsstellen ohne Brandeinfluss, „Verdacht Kleber/Teer“ für eine mögliche alte Quelle, „Freimessung“ nach der Sanierung. Das Datenarchiv liest daraus die Rolle der Probe.</p>
+  <p><b>Schreibweise.</b> Teile mit „ · “ (Mittelpunkt) trennen – der Baukasten macht das. Keine Kommas innerhalb eines Teils.</p>
+</section>
 <section id="raumkuerzel">
   <h1>Raumkürzel</h1>
   <p class="lead">Für Probenbezeichnungen. Fehlt ein Raum, bitte melden – die Liste gilt dann für alle.</p>
@@ -1431,7 +1486,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.7.1';
+const VERSION = '0.8.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1639,10 +1694,47 @@ QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengru
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
 QUIZ["bk-proben"] = [{"frage": "Notiz in LabelKit: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
 QUIZ["sk-naechste"] = [{"frage": "Dienstreise vom 14.07. bis 15.07.2026, dann „Speichern & nächste“. Welches Datum hat der neue Entwurf?", "antworten": ["14.07.2026", "15.07.2026", "16.07.2026"], "richtig": [2], "warum": "Der nächste Entwurf beginnt am Tag nach dem Ende der vorigen Reise."}, {"frage": "Was bleibt im neuen Entwurf erhalten?", "antworten": ["Fahrzeug", "Startort", "Uhrzeiten", "Projekt", "Reiseziel", "km"], "richtig": [0, 1, 2], "warum": "Fahrzeug, Startort und Uhrzeiten werden übernommen; Projekt, Zweck, Ziel und km sind leer."}];
+QUIZ["wp-regel"] = [{"frage": "Welche Reihenfolge ist richtig?", "antworten": ["EG · Küche · Decke · Untersicht · verrußt", "Decke · Küche · EG · verrußt · Untersicht", "Küche · verrußt · EG · Decke"], "richtig": [0], "warum": "Von groß nach klein: Geschoss, Raum, Bauteil, dann wie die Fläche liegt und wie sie aussieht."}, {"frage": "Probe von der Oberseite eines Schranks. Oberflächenart?", "antworten": ["Aufsicht", "Ansicht", "Untersicht"], "richtig": [0], "warum": "Aufsicht = von oben auf eine waagerechte Fläche. Ansicht = senkrecht, Untersicht = von unten (Decke)."}, {"frage": "Wohin gehört „verrußt“ in LabelKit?", "antworten": ["In die Spalte Beaufschlagung", "Ans Ende von Raum / Ort", "In die Notiz"], "richtig": [0], "warum": "Oberflächenart und Beaufschlagung haben eigene Spalten; ans Labor geht alles zusammen."}, {"frage": "Vergleichsprobe im Gästezimmer OG ohne Brandeinfluss. Welcher Zusatz?", "antworten": ["Referenz unbelastet", "keiner", "Brandraum"], "richtig": [0], "warum": "„Referenz“ erkennt das Datenarchiv als Vergleichsstelle – wichtig für den Mustervergleich."}];
 QUIZ["fk-vorschlag"] = [{"frage": "In LabelKit steht P7 (Küche, Untersicht, verrußt). Sie tippen in die Beschreibung „P7“ und drücken Enter. Was passiert?", "antworten": ["Beschreibung „Küche Untersicht verrußt“, P7 im Feld Probe-Nr.", "Beschreibung bleibt „P7“", "FotoKit ändert die LabelKit-Datei"], "richtig": [0], "warum": "Die Nummer holt die Beschreibung aus LabelKit und wandert ins Feld Probe-Nr. LabelKit wird nur gelesen."}, {"frage": "Sie tippen „Kü“, FotoKit schlägt „Küche Decke“ vor – Sie wollen aber „Küche Decke Detail“. Am schnellsten?", "antworten": ["Tab, dann „ Detail“ tippen", "Esc und alles selbst tippen", "Enter, dann zurück"], "richtig": [0], "warum": "Tab übernimmt den Vorschlag und lässt den Cursor im Feld; Enter würde übernehmen und zum nächsten Bild springen."}, {"frage": "Der Vorschlag passt gar nicht. Was tun?", "antworten": ["Einfach weitertippen", "Erst Einstellungen öffnen", "Bild aussortieren"], "richtig": [0], "warum": "Der markierte Rest wird durch das Weitertippen ersetzt. Esc verwirft ihn ausdrücklich."}];
 QUIZ["da-rolle"] = [{"frage": "Probenbeschreibung „Brandraum Küche Decke“. Welche Rolle?", "antworten": ["Brandbereich", "Referenz", "keine"], "richtig": [0], "warum": "„Brandraum“, „Brandbereich“ und „Brandherd“ ergeben Brandbereich."}, {"frage": "Wischprobe im Gästezimmer OG, das vom Brand nicht betroffen ist. Wie beschreiben, damit das Archiv sie als Vergleichsstelle erkennt?", "antworten": ["„Referenz Gästezimmer OG“", "„Gästezimmer OG“", "„OG sauber“"], "richtig": [0], "warum": "Erkannt werden „Referenz“, „unbelastet“ und REF. „Gästezimmer OG“ bliebe ohne Rolle."}, {"frage": "Freimessung nach der Reinigung an der Stelle <code>EG-WZ-B-7-T1</code>. Welche ID?", "antworten": ["<code>F-EG-WZ-B-7-T1</code>", "<code>EG-WZ-B-7-T1-F</code>", "<code>EG-WZ-B-8-T1</code>"], "richtig": [0], "warum": "„F-“ vor die alte ID – dann paart das Archiv vorher und nachher automatisch."}, {"frage": "„Freimessung Brandraum“ – welche Rolle?", "antworten": ["Freimessung", "Brandbereich", "beides"], "richtig": [0], "warum": "Freimessung geht vor: Es ist die Messung nach der Sanierung, auch wenn sie im Brandraum liegt."}];
 QUIZ["da-lesen"] = [{"frage": "Im Vergleich steht beim Median „&lt; BG“. Was heißt das?", "antworten": ["Mindestens die Hälfte der Werte liegt unter der Bestimmungsgrenze", "Der Median ist 0", "Das Labor hat einen Fehler gemacht"], "richtig": [0], "warum": "Werte unter BG zählen als kleinste Werte. Fällt der Median darauf, wird keine Zahl erfunden."}, {"frage": "Ähnlichkeit 0,99 zwischen Wohnzimmer und Brandraum. Was folgt daraus?", "antworten": ["Stützt, dass es derselbe Ruß sein kann – beweist es nicht", "Beweist, dass der Ruß vom Brand stammt", "Ein Grenzwert ist überschritten"], "richtig": [0], "warum": "Verbrennungsrückstände ähneln sich grundsätzlich. Ein deutlicher Unterschied sagt mehr als hohe Ähnlichkeit."}, {"frage": "Kann Flt/(Flt+Pyr) Brandruß von altem Teerkleber unterscheiden?", "antworten": ["Nein – beide liegen im „pyrogenen“ Bereich", "Ja, ab 0,5 ist es Brandruß", "Ja, unter 0,4 ist es Teer"], "richtig": [0], "warum": "Teer ist selbst ein Hochtemperaturprodukt. Für die Frage Teer oder Brand hilft der Mustervergleich mit einer Materialprobe des Klebers."}];
 document.querySelectorAll('.quiz').forEach(initQuiz);
+
+/* Wischproben-Baukasten (Regeln in konventionen.js: wischBezeichnung, wischLabelKit). */
+(function(){
+  if (!$('wp-geschosse')) return;
+  const w = { geschoss: '', bauteil: '', oberflaeche: '', beaufschlagung: '', zusatz: '' };
+  const chips = (id, attr, werte) => { $(id).innerHTML = werte.map(v => knopf(attr, v, v)).join(''); };
+  $('wp-geschosse').innerHTML = K.GESCHOSSE.map(([k, n]) => knopf('wpgeschoss', k, k, n)).join('');
+  chips('wp-bauteile', 'wpbauteil', K.W_BAUTEILE); chips('wp-oberflaechen', 'wpoberflaeche', K.W_OBERFLAECHEN);
+  chips('wp-beaufschlagung', 'wpbeaufschlagung', K.W_BEAUFSCHLAGUNG); chips('wp-zusaetze', 'wpzusatz', [...K.W_ZUSAETZE, 'Freimessung']);
+  $('wp-raum').innerHTML = '<option value="">– Raum wählen –</option>' + K.RAEUME.map(([, n]) => n.split(',')[0]).map(n => `<option>${esc(n)}</option>`).join('');
+  const teile = () => ({ gebaeude: $('wp-gebaeude').value, geschoss: w.geschoss, raum: $('wp-raum-frei').value.trim() || $('wp-raum').value,
+    bauteil: $('wp-bauteil-frei').value.trim() || w.bauteil, oberflaeche: w.oberflaeche, beaufschlagung: w.beaufschlagung, zusatz: w.zusatz });
+  function zeige(){
+    const t = teile(), text = K.wischBezeichnung(t), lk = K.wischLabelKit(t);
+    $('wp-ergebnis').textContent = text || 'Bausteine wählen …';
+    $('wp-lk-raum').textContent = lk.raumOrt || '–'; $('wp-lk-ober').textContent = lk.oberflaeche || '–'; $('wp-lk-beauf').textContent = lk.beaufschlagung || '–';
+    const fehlt = [['Geschoss', t.geschoss], ['Raum', t.raum], ['Bauteil', t.bauteil], ['Oberflächenart', t.oberflaeche], ['Beaufschlagung', t.beaufschlagung]].filter(x => !x[1]).map(x => x[0]);
+    $('wp-hinweis').textContent = fehlt.length ? 'Fehlt noch: ' + fehlt.join(', ') : 'Vollständig.';
+    $('wp-kopieren').disabled = !text;
+  }
+  document.getElementById('wischprobe').addEventListener('click', e => {
+    const b = e.target.closest('button[aria-pressed]'); if (!b) return;
+    const attr = Object.keys(b.dataset).find(k => k.startsWith('wp')); if (!attr) return;
+    const feld = attr.slice(2), wert = b.dataset[attr], an = w[feld] !== wert;
+    w[feld] = an ? wert : '';
+    b.parentElement.querySelectorAll('button[aria-pressed]').forEach(x => x.setAttribute('aria-pressed', String(an && x === b)));
+    if (feld === 'bauteil') $('wp-bauteil-frei').value = '';
+    zeige();
+  });
+  for (const id of ['wp-gebaeude', 'wp-raum', 'wp-raum-frei', 'wp-bauteil-frei']) $(id).addEventListener('input', () => {
+    if (id === 'wp-bauteil-frei' && $(id).value.trim()){ w.bauteil = ''; $('wp-bauteile').querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', 'false')); }
+    zeige();
+  });
+  $('wp-kopieren').addEventListener('click', async () => { try{ await navigator.clipboard.writeText(K.wischBezeichnung(teile())); $('wp-hinweis').textContent = 'Kopiert.'; }catch(e){ $('wp-hinweis').textContent = 'Kopieren nicht möglich – Text markieren und Strg+C.'; } });
+  zeige();
+})();
 
 /* FotoKit-Vorschlag zum Ausprobieren – gleiche Bedienung wie in FotoKit 1.16 (Beispieldaten, nichts wird gespeichert). */
 (function(){

@@ -67,6 +67,23 @@ const root = path.join(__dirname, '..');
       assert.ok(await page.locator(`#${id} .quiz`).count() >= 1, id + ': mindestens eine Übung');
       for (const q of await page.locator(`#${id} .quiz`).all()) assert.ok(await q.locator('[data-a]').count() >= 2, id + ': Übung hat Antworten');
     }
+    // Wischproben: Baukasten von groß nach klein, Aufteilung für LabelKit
+    await page.goto(base + '#wischprobe');
+    assert.equal(await page.locator('nav a[href="#wischprobe"]').count(), 1);
+    const wp = page.locator('#wischprobe');
+    await page.locator('#wp-gebaeude').fill('Haus A');
+    await wp.locator('[data-wpgeschoss="EG"]').click(); await page.locator('#wp-raum').selectOption('Küche');
+    await wp.locator('[data-wpbauteil="Decke"]').click(); await wp.locator('[data-wpoberflaeche="Untersicht"]').click();
+    await wp.locator('[data-wpbeaufschlagung="verrußt"]').click(); await wp.locator('[data-wpzusatz="Brandraum"]').click();
+    assert.equal(await page.locator('#wp-ergebnis').innerText(), 'Haus A · EG · Küche · Decke · Untersicht · verrußt · Brandraum');
+    assert.equal(await page.locator('#wp-lk-raum').innerText(), 'Haus A · EG · Küche · Decke · Brandraum');
+    assert.equal(await page.locator('#wp-lk-ober').innerText(), 'Untersicht'); assert.equal(await page.locator('#wp-lk-beauf').innerText(), 'verrußt');
+    assert.equal(await page.locator('#wp-hinweis').innerText(), 'Vollständig.');
+    await wp.locator('[data-wpzusatz="Brandraum"]').click();   // erneut = abwählen
+    await page.locator('#wp-bauteil-frei').fill('Schrank oben');
+    assert.equal(await page.locator('#wp-ergebnis').innerText(), 'Haus A · EG · Küche · Schrank oben · Untersicht · verrußt');
+    assert.equal(await wp.locator('[data-wpbauteil="Decke"]').getAttribute('aria-pressed'), 'false', 'eigenes Bauteil ersetzt die Auswahl');
+    const wq = page.locator('[data-quiz="wp-regel"]'); await wq.locator('[data-a="0"]').click(); assert.match(await wq.locator('.antwort').innerText(), /Richtig\./);
     // FotoKit: Vorschlag beim Tippen zum Ausprobieren (gleiche Bedienung wie FotoKit 1.16)
     await page.goto(base + '#app-fotokit'); await page.locator('#app-fotokit .schritte [data-geh="3"]').click();
     const sim = page.locator('#fk-sim'), simWert = () => sim.evaluate(e => ({ wert: e.value, markiert: e.value.slice(e.selectionStart, e.selectionEnd) }));
