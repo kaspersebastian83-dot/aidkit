@@ -19,6 +19,8 @@ jobs:
           node-version: 24
       - name: Probenbezeichnung (ohne Browser)
         run: node tests/konventionen.cjs
+      - name: Hilfe-Adressen der Apps vorhanden
+        run: node tests/hilfe-anker.cjs
       - name: Install Playwright (pinned, not part of the repository)
         run: |
           npm install --no-save --no-package-lock --prefix "$RUNNER_TEMP/pw" playwright@1.56.1
