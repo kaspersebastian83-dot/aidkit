@@ -42,4 +42,23 @@ ok('Raumkürzel eindeutig, ohne Umlaute, passend zum Muster', () => {
   const k = K.RAEUME.map(r => r[0]); assert.equal(new Set(k).size, k.length);
   for (const x of k) assert.match(x, /^[A-Z]{2,3}$/);
 });
+ok('Wischproben: von groß nach klein, lesbar, leere Teile entfallen', () => {
+  assert.equal(K.wischBezeichnung({ gebaeude: 'Haus A', geschoss: 'EG', raum: 'Küche', bauteil: 'Decke', oberflaeche: 'Untersicht', beaufschlagung: 'verrußt', zusatz: 'Brandraum' }),
+    'Haus A · EG · Küche · Brandraum · Decke · verrußt · Untersicht', 'Zusatz hinter dem Raum; Beaufschlagung vor Oberflächenart wie in der LabelKit-Übergabe');
+  assert.equal(K.wischBezeichnung({ geschoss: 'EG', raum: 'Wohnzimmer', bauteil: 'Wand B', oberflaeche: 'Ansicht', beaufschlagung: 'mit Ruß' }), 'EG · Wohnzimmer · Wand B · mit Ruß · Ansicht');
+  assert.equal(K.wischBezeichnung({ raum: '  Flur,  Diele ', bauteil: 'Decke' }), 'Flur Diele · Decke', 'Komma/Punkt in Teilen stört die Gliederung nicht');
+  assert.equal(K.wischBezeichnung({}), '');
+});
+ok('Wischproben: Aufteilung für LabelKit (Raum / Ort, Oberflächenart, Beaufschlagung)', () => {
+  assert.deepEqual(K.wischLabelKit({ gebaeude: 'Halle 2', geschoss: 'EG', raum: 'Lager', bauteil: 'Heizkörper', oberflaeche: 'Aufsicht', beaufschlagung: 'mit Belag', zusatz: 'Referenz unbelastet' }),
+    { raumOrt: 'Halle 2 · EG · Lager · Referenz unbelastet · Heizkörper', oberflaeche: 'Aufsicht', beaufschlagung: 'mit Belag' });
+  assert.deepEqual(K.W_OBERFLAECHEN, ['Aufsicht', 'Ansicht', 'Untersicht']);
+  assert.deepEqual(K.W_BEAUFSCHLAGUNG, ['gereinigt', 'mit Belag', 'leicht verrußt', 'verrußt', 'mit Ruß', 'mit Kondensat', 'mit Staub']);
+});
+ok('Wischproben-Listen gleich wie in LabelKit (falls LabelKit daneben liegt)', () => {
+  const fs = require('node:fs'), path = require('node:path'), f = path.join(__dirname, '..', '..', 'labelkit', 'index.html');
+  if (!fs.existsSync(f)) return;
+  const h = fs.readFileSync(f, 'utf8'), liste = name => JSON.parse(h.match(new RegExp('const ' + name + '=(\\[[^\\]]*\\])'))[1].replace(/'/g, '"'));
+  assert.deepEqual(liste('BEAUFSCHLAGUNG'), K.W_BEAUFSCHLAGUNG); assert.deepEqual(liste('OBERFLAECHEN'), K.W_OBERFLAECHEN);
+});
 console.log(`OK Konventionen: ${n} Fälle`);

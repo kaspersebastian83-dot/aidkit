@@ -67,15 +67,32 @@ const root = path.join(__dirname, '..');
       assert.ok(await page.locator(`#${id} .quiz`).count() >= 1, id + ': mindestens eine Übung');
       for (const q of await page.locator(`#${id} .quiz`).all()) assert.ok(await q.locator('[data-a]').count() >= 2, id + ': Übung hat Antworten');
     }
+    // Wischproben: Baukasten von groß nach klein, Aufteilung für LabelKit
+    await page.goto(base + '#wischprobe');
+    assert.equal(await page.locator('nav a[href="#wischprobe"]').count(), 1);
+    const wp = page.locator('#wischprobe');
+    await page.locator('#wp-gebaeude').fill('Haus A');
+    await wp.locator('[data-wpgeschoss="EG"]').click(); await page.locator('#wp-raum').selectOption('Küche');
+    await wp.locator('[data-wpbauteil="Decke"]').click(); await wp.locator('[data-wpoberflaeche="Untersicht"]').click();
+    await wp.locator('[data-wpbeaufschlagung="verrußt"]').click(); await wp.locator('[data-wpzusatz="Brandraum"]').click();
+    assert.equal(await page.locator('#wp-ergebnis').innerText(), 'Haus A · EG · Küche · Brandraum · Decke · verrußt · Untersicht');
+    assert.equal(await page.locator('#wp-lk-raum').innerText(), 'Haus A · EG · Küche · Brandraum · Decke');
+    assert.equal(await page.locator('#wp-lk-ober').innerText(), 'Untersicht'); assert.equal(await page.locator('#wp-lk-beauf').innerText(), 'verrußt');
+    assert.equal(await page.locator('#wp-hinweis').innerText(), 'Vollständig.');
+    await wp.locator('[data-wpzusatz="Brandraum"]').click();   // erneut = abwählen
+    await page.locator('#wp-bauteil-frei').fill('Schrank oben');
+    assert.equal(await page.locator('#wp-ergebnis').innerText(), 'Haus A · EG · Küche · Schrank oben · verrußt · Untersicht');
+    assert.equal(await wp.locator('[data-wpbauteil="Decke"]').getAttribute('aria-pressed'), 'false', 'eigenes Bauteil ersetzt die Auswahl');
+    const wq = page.locator('[data-quiz="wp-regel"]'); await wq.locator('[data-a="0"]').click(); assert.match(await wq.locator('.antwort').innerText(), /Richtig\./);
     // FotoKit: Vorschlag beim Tippen zum Ausprobieren (gleiche Bedienung wie FotoKit 1.16)
     await page.goto(base + '#app-fotokit'); await page.locator('#app-fotokit .schritte [data-geh="3"]').click();
     const sim = page.locator('#fk-sim'), simWert = () => sim.evaluate(e => ({ wert: e.value, markiert: e.value.slice(e.selectionStart, e.selectionEnd) }));
     await sim.click(); await page.keyboard.type('P'); await page.keyboard.type('7');
-    assert.deepEqual(await simWert(), { wert: 'P7 Küche Untersicht verrußt', markiert: ' Küche Untersicht verrußt' });
+    assert.deepEqual(await simWert(), { wert: 'P7 Küche verrußt Untersicht', markiert: ' Küche verrußt Untersicht' });
     await page.keyboard.press('Enter');
-    assert.match(await page.locator('#fk-sim-liste li').last().innerText(), /Probe-Nr\. P7 · „Küche Untersicht verrußt“/);
+    assert.match(await page.locator('#fk-sim-liste li').last().innerText(), /Probe-Nr\. P7 · „Küche verrußt Untersicht“/);
     for (const ch of 'Kü') await page.keyboard.type(ch);
-    assert.equal((await simWert()).wert, 'Küche Untersicht verrußt', 'zuletzt verwendete Beschreibung zuerst');
+    assert.equal((await simWert()).wert, 'Küche verrußt Untersicht', 'zuletzt verwendete Beschreibung zuerst');
     await page.keyboard.press('Escape'); assert.deepEqual(await simWert(), { wert: 'Kü', markiert: '' });
     for (const ch of 'che D') await page.keyboard.type(ch);
     assert.equal((await simWert()).wert, 'Küche Decke');
