@@ -25,6 +25,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.8.6** – Startseite, „Etwas klemmt?“: Link „💬 Rückmeldung schreiben“ ins Rückmeldeformular (`../rueckmeldung/?app=handbuch&version=…`), E-Mail bleibt als Ausweg.
 - **0.8.5** – FotoKit-Kapitel (ab FotoKit 1.17): „Dateibenennung ▸“ und „⋯ Mehr“ (Version und Build, gesicherte Fassungen/Eingaben, roter Punkt).
 - **0.8.4** – SpesenKit-Kapitel (ab SpesenKit 1.8.5): Schritt 1 „Tätigkeit“ Außendienst/Innendienst, Schritt 3 Haken „Gehört zu keiner Reise und keinem Projekt“.
 - **0.8.3** – Rollen-Prüfung im Datenarchiv-Kapitel: „Freimessung“ in einer Wischproben-Bezeichnung ergibt die Rolle; automatisch vorher/nachher gepaart werden nur Bohrkern-IDs mit „F-“ (Hinweis aus dem Codex-Review).

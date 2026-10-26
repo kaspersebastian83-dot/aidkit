@@ -167,6 +167,13 @@ const root = path.join(__dirname, '..');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'kein waagerechtes Scrollen bei 390 px');
     await page.goto(base + '#brandschaden'); await page.waitForTimeout(100);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Brandschaden: kein waagerechtes Scrollen bei 390 px');
+    // Rückmeldung: Links auf der Startseite und im Brandschaden-Ablauf, Programm + Version vorbelegt, eigenes Fenster
+    await page.goto(base + '#start');
+    const rm = await page.locator('a.rueckmeldung').evaluateAll(as => as.map(a => [a.getAttribute('href'), a.target, a.rel]));
+    const ver = (await page.locator('#version').innerText()).replace(/^v/, '');
+    assert.equal(rm.length, 2);
+    for (const [href, target, rel] of rm) { assert.equal(href, `../rueckmeldung/?app=handbuch&version=${ver}`); assert.equal(target, 'rueckmeldung'); assert.equal(rel, 'noopener'); }
+
     assert.deepEqual(errors, []);
     console.log(`OK ${name}: Kapitel, ID-Baukasten, Prüfung, Raumsuche, Bohrkern-Ablauf, Brandschaden, 390 px`);
   } finally { if (browser) await browser.close(); server.close(); }
