@@ -44,8 +44,8 @@ ok('Raumkürzel eindeutig, ohne Umlaute, passend zum Muster', () => {
 });
 ok('Wischproben: von groß nach klein, lesbar, leere Teile entfallen', () => {
   assert.equal(K.wischBezeichnung({ gebaeude: 'Haus A', geschoss: 'EG', raum: 'Küche', bauteil: 'Decke', oberflaeche: 'Untersicht', beaufschlagung: 'verrußt', zusatz: 'Brandraum' }),
-    'Haus A · EG · Küche · Brandraum · Decke · Untersicht · verrußt', 'Zusatz gleich hinter dem Raum');
-  assert.equal(K.wischBezeichnung({ geschoss: 'EG', raum: 'Wohnzimmer', bauteil: 'Wand B', oberflaeche: 'Ansicht', beaufschlagung: 'mit Ruß' }), 'EG · Wohnzimmer · Wand B · Ansicht · mit Ruß');
+    'Haus A · EG · Küche · Brandraum · Decke · verrußt · Untersicht', 'Zusatz hinter dem Raum; Beaufschlagung vor Oberflächenart wie in der LabelKit-Übergabe');
+  assert.equal(K.wischBezeichnung({ geschoss: 'EG', raum: 'Wohnzimmer', bauteil: 'Wand B', oberflaeche: 'Ansicht', beaufschlagung: 'mit Ruß' }), 'EG · Wohnzimmer · Wand B · mit Ruß · Ansicht');
   assert.equal(K.wischBezeichnung({ raum: '  Flur,  Diele ', bauteil: 'Decke' }), 'Flur Diele · Decke', 'Komma/Punkt in Teilen stört die Gliederung nicht');
   assert.equal(K.wischBezeichnung({}), '');
 });
