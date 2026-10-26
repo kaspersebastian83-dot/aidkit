@@ -914,7 +914,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk3e"><label for="fk3e"><b>Probenfoto am schnellsten:</b> in die Beschreibung nur die Nummer tippen, z. B. <b>„P7“</b>, dann <b>Enter</b> – die Beschreibung kommt aus LabelKit (Raum / Ort, Beaufschlagung, Oberflächenart), „P7“ wandert ins Feld Probe-Nr. Geht nur mit eingeschalteten <b>„Vorschlägen beim Tippen“</b> und leerem Feld Probe-Nr.</label></li>
         <li><input type="checkbox" id="fk3f"><label for="fk3f"><b>Vorschlag beim Tippen:</b> nach zwei Buchstaben ergänzt FotoKit aus diesem Projekt und LabelKit – der Rest ist markiert. <b>Enter</b> übernimmt und geht weiter, <b>Tab</b> übernimmt und man tippt weiter, einfach weitertippen ersetzt ihn, <b>Esc</b> verwirft ihn.</label></li>
       </ul>
-      <div class="tipp">Stört der Vorschlag? „Dateibenennung und weitere Einstellungen“ → „Vorschläge beim Tippen“ ausschalten (gilt nur für diesen Browser). Dann füllt „P7“ + Enter die Beschreibung nicht mehr aus LabelKit – Probe-Nr. und Beschreibung von Hand eintragen.</div>
+      <div class="tipp">Stört der Vorschlag? „Dateibenennung ▸“ → „Vorschläge beim Tippen“ ausschalten (gilt nur für diesen Browser). Dann füllt „P7“ + Enter die Beschreibung nicht mehr aus LabelKit – Probe-Nr. und Beschreibung von Hand eintragen.</div>
     </div><div>
       <div class="uebung">
         <h3>Ausprobieren: Vorschlag beim Tippen</h3>
@@ -956,7 +956,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>6 · Umbenennen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="fk6a"><label for="fk6a">Bei Bedarf „Dateibenennung und weitere Einstellungen“ aufklappen (Präfix, Startnummer, Stellen …).</label></li>
+        <li><input type="checkbox" id="fk6a"><label for="fk6a">Bei Bedarf „Dateibenennung ▸“ aufklappen (Präfix, Startnummer, Stellen …, mit Beispiel-Dateinamen).</label></li>
         <li><input type="checkbox" id="fk6b"><label for="fk6b">Den geplanten Namen prüfen.</label></li>
         <li><input type="checkbox" id="fk6c"><label for="fk6c">Auf den Knopf klicken – bei offenen Änderungen heißt er „Ausführen: … umbenennen“ – und mit <b>„Jetzt ausführen“</b> bestätigen.</label></li>
         <li><input type="checkbox" id="fk6d"><label for="fk6d">Falsch? Im grünen Hinweis <b>„Rückgängig“</b>.</label></li>
@@ -997,7 +997,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="tasten"><span><kbd>Enter</kbd></span><span>nächstes Bild</span><span><kbd>Shift</kbd> <kbd>Enter</kbd></span><span>vorheriges Bild</span><span><kbd>P7</kbd> <kbd>Enter</kbd></span><span>Beschreibung aus LabelKit, P7 ins Feld Probe-Nr.</span><span><kbd>Tab</kbd></span><span>Vorschlag übernehmen und weitertippen</span><span><kbd>Esc</kbd></span><span>Vorschlag verwerfen</span><span><kbd>Strg</kbd> <kbd>D</kbd></span><span>Angabe vom vorherigen Bild übernehmen</span><span><kbd>Alt</kbd> <kbd>X</kbd></span><span>aussortieren / zurückholen</span><span><kbd>Alt</kbd> <kbd>R</kbd></span><span>rechts drehen</span><span><kbd>Alt</kbd> <kbd>Shift</kbd> <kbd>R</kbd></span><span>links drehen</span><span><kbd>F1</kbd></span><span>Kurzanleitung</span></div>
   <h2>Gut zu wissen</h2>
   <p><b><code>_Bildumbenenner.json</code> nicht löschen oder umbenennen</b> – darin stehen alle Beschreibungen, Abschnitte und Proben.</p>
-  <p>Etwas klemmt? <b>„Problem melden“</b> in der Fehlermeldung (oder Klick auf die Versionsnummer) kopiert einen Bericht für eine E-Mail.</p>
+  <p>Etwas klemmt? <b>„Problem melden“</b> in der Fehlermeldung (oder <b>„⋯ Mehr“</b> → „Version und Build“) kopiert einen Bericht für eine E-Mail. Unter „⋯ Mehr“ stehen auch gesicherte Fassungen und Eingaben; ein roter Punkt am Knopf heißt: dort bitte etwas prüfen.</p>
 </section>
 <section id="app-plankit" class="ablauf" data-speicher="aidkit-app-plankit-haken">
   <h1>PlanKit</h1>
@@ -1489,7 +1489,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.8.4';
+const VERSION = '0.8.5';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
