@@ -1241,6 +1241,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="sk1a"><label for="sk1a">Öffnen in der Projektzentrale unter <b>„Weitere Apps“</b>.</label></li>
         <li><input type="checkbox" id="sk1b"><label for="sk1b">„Einstellungen“: „Name“, <b>„Wohnort / Startadresse“</b>, „Erste Tätigkeitsstätte“ und die Fahrzeuge – dann „Einstellungen speichern“.</label></li>
+        <li><input type="checkbox" id="sk1e"><label for="sk1e"><b>„Tätigkeit“</b> wählen: <b>Außendienst</b> (Dienstreisen, Fahrtenbuch, Verpflegung) oder <b>Innendienst</b> (nur Kosten und Belege, ohne Reise- und Projektzuordnung).</label></li>
         <li><input type="checkbox" id="sk1c"><label for="sk1c">Das meistgenutzte Fahrzeug als <b>„Standard“</b> markieren.</label></li>
         <li><input type="checkbox" id="sk1d"><label for="sk1d"><b>„Ordner einrichten“</b>; nach einem Browserneustart „Zugriff bestätigen“.</label></li>
       </ul>
@@ -1268,6 +1269,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="sk3a"><label for="sk3a"><b>„Dienstreise erfassen“</b>: Projekt, Reisegrund, Reiseziel, Abfahrt und Rückkehr (Pflicht, mit *).</label></li>
         <li><input type="checkbox" id="sk3e"><label for="sk3e">Erst <b>nach Mitternacht zurück</b>: Rückkehrdatum auf den Folgetag. Ohne Übernachtung gibt es <b>eine</b> Tagespauschale für die ganze Reise (bei mehr als 8 Stunden, am Tag mit dem größeren Teil). Wurde auswärts übernachtet, den Haken „Auswärtige Übernachtung … tatsächlich erfolgt“ setzen – dann zählen An- und Abreisetag.</label></li>
         <li><input type="checkbox" id="sk3b"><label for="sk3b">Kosten mit <b>„Hotelrechnung“</b> oder <b>„Sonstige Kosten“</b>.</label></li>
+        <li><input type="checkbox" id="sk3f"><label for="sk3f">Kosten ohne Reise und Projekt (z. B. Büromaterial): <b>„Gehört zu keiner Reise und keinem Projekt“</b> anhaken – dann kommt kein Hinweis auf eine fehlende Zuordnung.</label></li>
         <li><input type="checkbox" id="sk3c"><label for="sk3c">Belege mit <b>„Beleg fotografieren“</b> ablegen.</label></li>
         <li><input type="checkbox" id="sk3d"><label for="sk3d">Viele Reisen hintereinander: <b>„Speichern &amp; nächste“</b> (Strg+Enter) – der nächste Eintrag ist vorbelegt; „Speichern &amp; fertig“ schließt.</label></li>
       </ul>
@@ -1487,7 +1489,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.8.3';
+const VERSION = '0.8.4';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
