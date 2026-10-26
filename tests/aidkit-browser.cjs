@@ -75,8 +75,8 @@ const root = path.join(__dirname, '..');
     await wp.locator('[data-wpgeschoss="EG"]').click(); await page.locator('#wp-raum').selectOption('Küche');
     await wp.locator('[data-wpbauteil="Decke"]').click(); await wp.locator('[data-wpoberflaeche="Untersicht"]').click();
     await wp.locator('[data-wpbeaufschlagung="verrußt"]').click(); await wp.locator('[data-wpzusatz="Brandraum"]').click();
-    assert.equal(await page.locator('#wp-ergebnis').innerText(), 'Haus A · EG · Küche · Decke · Untersicht · verrußt · Brandraum');
-    assert.equal(await page.locator('#wp-lk-raum').innerText(), 'Haus A · EG · Küche · Decke · Brandraum');
+    assert.equal(await page.locator('#wp-ergebnis').innerText(), 'Haus A · EG · Küche · Brandraum · Decke · Untersicht · verrußt');
+    assert.equal(await page.locator('#wp-lk-raum').innerText(), 'Haus A · EG · Küche · Brandraum · Decke');
     assert.equal(await page.locator('#wp-lk-ober').innerText(), 'Untersicht'); assert.equal(await page.locator('#wp-lk-beauf').innerText(), 'verrußt');
     assert.equal(await page.locator('#wp-hinweis').innerText(), 'Vollständig.');
     await wp.locator('[data-wpzusatz="Brandraum"]').click();   // erneut = abwählen

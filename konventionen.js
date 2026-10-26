@@ -84,8 +84,8 @@
   }
 
   /* ---------- Probenbezeichnung Wischproben: lesbarer Text, von groß nach klein ----------
-     Gebäude (nur bei mehreren) · Geschoss · Raum · Bauteil · Oberflächenart · Beaufschlagung · Zusatz,
-     z. B. „Haus A · EG · Küche · Decke · Untersicht · verrußt · Brandraum“.
+     Gebäude (nur bei mehreren) · Geschoss · Raum · Zusatz zum Raum · Bauteil · Oberflächenart · Beaufschlagung,
+     z. B. „Haus A · EG · Küche · Brandraum · Decke · Untersicht · verrußt“. Wie LabelKit (PAK, Chlorid): Raum / Ort plus eigene Spalten.
      Oberflächenart und Beaufschlagung: dieselben Listen wie in LabelKit (dort eigene Spalten). */
   const W_TRENNER = ' · ';
   const W_BAUTEILE = ['Decke', 'Wand A', 'Wand B', 'Wand C', 'Wand D', 'Boden', 'Fenster/Fensterbank', 'Tür/Zarge', 'Heizkörper', 'Möbel', 'Einbauten', 'Elektro/Leitungen'];
@@ -96,12 +96,12 @@
   /** {gebaeude, geschoss, raum, bauteil, oberflaeche, beaufschlagung, zusatz} → Text; fehlende Teile entfallen. Geschoss als Kürzel (EG, 1OG …). */
   function wischBezeichnung(t){
     t = t || {};
-    return [t.gebaeude, t.geschoss, t.raum, t.bauteil, t.oberflaeche, t.beaufschlagung, t.zusatz].map(sauber).filter(Boolean).join(W_TRENNER);
+    return [t.gebaeude, t.geschoss, t.raum, t.zusatz, t.bauteil, t.oberflaeche, t.beaufschlagung].map(sauber).filter(Boolean).join(W_TRENNER);
   }
-  /** Für LabelKit: was in welche Spalte gehört. Raum / Ort = Gebäude bis Bauteil (+ Zusatz); Oberflächenart und Beaufschlagung eigene Spalten. */
+  /** Für LabelKit: was in welche Spalte gehört. Raum / Ort = Gebäude, Geschoss, Raum, Zusatz, Bauteil; Oberflächenart und Beaufschlagung eigene Spalten. */
   function wischLabelKit(t){
     t = t || {};
-    return { raumOrt: [t.gebaeude, t.geschoss, t.raum, t.bauteil, t.zusatz].map(sauber).filter(Boolean).join(W_TRENNER), oberflaeche: sauber(t.oberflaeche), beaufschlagung: sauber(t.beaufschlagung) };
+    return { raumOrt: [t.gebaeude, t.geschoss, t.raum, t.zusatz, t.bauteil].map(sauber).filter(Boolean).join(W_TRENNER), oberflaeche: sauber(t.oberflaeche), beaufschlagung: sauber(t.beaufschlagung) };
   }
 
   const api = Object.freeze({ MAX_LAENGE, GESCHOSSE, RAEUME, FLAECHEN, RASTER, RASTER_BODEN, bohrkernId, pruefeId, gesprochen, lage, raumName,

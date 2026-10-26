@@ -44,14 +44,14 @@ ok('Raumkürzel eindeutig, ohne Umlaute, passend zum Muster', () => {
 });
 ok('Wischproben: von groß nach klein, lesbar, leere Teile entfallen', () => {
   assert.equal(K.wischBezeichnung({ gebaeude: 'Haus A', geschoss: 'EG', raum: 'Küche', bauteil: 'Decke', oberflaeche: 'Untersicht', beaufschlagung: 'verrußt', zusatz: 'Brandraum' }),
-    'Haus A · EG · Küche · Decke · Untersicht · verrußt · Brandraum');
+    'Haus A · EG · Küche · Brandraum · Decke · Untersicht · verrußt', 'Zusatz gleich hinter dem Raum');
   assert.equal(K.wischBezeichnung({ geschoss: 'EG', raum: 'Wohnzimmer', bauteil: 'Wand B', oberflaeche: 'Ansicht', beaufschlagung: 'mit Ruß' }), 'EG · Wohnzimmer · Wand B · Ansicht · mit Ruß');
   assert.equal(K.wischBezeichnung({ raum: '  Flur,  Diele ', bauteil: 'Decke' }), 'Flur Diele · Decke', 'Komma/Punkt in Teilen stört die Gliederung nicht');
   assert.equal(K.wischBezeichnung({}), '');
 });
 ok('Wischproben: Aufteilung für LabelKit (Raum / Ort, Oberflächenart, Beaufschlagung)', () => {
   assert.deepEqual(K.wischLabelKit({ gebaeude: 'Halle 2', geschoss: 'EG', raum: 'Lager', bauteil: 'Heizkörper', oberflaeche: 'Aufsicht', beaufschlagung: 'mit Belag', zusatz: 'Referenz unbelastet' }),
-    { raumOrt: 'Halle 2 · EG · Lager · Heizkörper · Referenz unbelastet', oberflaeche: 'Aufsicht', beaufschlagung: 'mit Belag' });
+    { raumOrt: 'Halle 2 · EG · Lager · Referenz unbelastet · Heizkörper', oberflaeche: 'Aufsicht', beaufschlagung: 'mit Belag' });
   assert.deepEqual(K.W_OBERFLAECHEN, ['Aufsicht', 'Ansicht', 'Untersicht']);
   assert.deepEqual(K.W_BEAUFSCHLAGUNG, ['gereinigt', 'mit Belag', 'leicht verrußt', 'verrußt', 'mit Ruß', 'mit Kondensat', 'mit Staub']);
 });
