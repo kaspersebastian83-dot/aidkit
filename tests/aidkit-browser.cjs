@@ -60,7 +60,7 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
     // Apps Schritt für Schritt: jedes Kapitel per Adresse, Schrittleiste, eigene Haken, Übung und App-Knopf
-    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-plankit', 9, '../Probenplan/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
+    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
       await page.goto(base + '#' + id);
       assert.equal(await page.locator(`#${id}`).isVisible(), true, id + ' sichtbar');
       assert.equal(await page.locator(`#${id} .schritte button`).count(), n, id + ': Schritte');
@@ -106,6 +106,12 @@ const root = path.join(__dirname, '..');
     await page.keyboard.press('Tab'); await page.keyboard.type(' Detail'); await page.keyboard.press('Enter');
     assert.match(await page.locator('#fk-sim-liste li').last().innerText(), /^Bild 2: „Küche Decke Detail“$/);
     const fq = page.locator('[data-quiz="fk-vorschlag"]'); await fq.locator('[data-a="0"]').click(); assert.match(await fq.locator('.antwort').innerText(), /Richtig\./);
+    // ResultKit: Menü zwischen FotoKit und PlanKit, Übung zum Stand je Probe
+    assert.deepEqual(await page.locator('nav a[href^="#app-"]').evaluateAll(as => as.slice(2, 5).map(a => a.getAttribute('href'))), ['#app-fotokit', '#app-resultkit', '#app-plankit']);
+    await page.goto(base + '#app-resultkit'); await page.locator('#app-resultkit .schritte [data-geh="2"]').click();
+    const rq = page.locator('[data-quiz="rk-stand"]');
+    await rq.locator('[data-a="1"]').click(); assert.match(await rq.locator('.antwort').innerText(), /Nicht ganz/);
+    await rq.locator('[data-a="0"]').click(); assert.match(await rq.locator('.antwort').innerText(), /Richtig\. Beauftragt, aber noch kein Ergebnis/);
     // Datenarchiv: Ziel sichtbar, Rollentester wie im Archiv, Übung zur Rolle
     await page.goto(base + '#app-datenarchiv');
     assert.match(await page.locator('#app-datenarchiv .karte.ziel').innerText(), /Worum es geht[\s\S]*Erfahrungsschatz[\s\S]*bewertet nicht/);
@@ -160,7 +166,7 @@ const root = path.join(__dirname, '..');
     assert.match(await page.locator('#brandschaden .schritte button').nth(4).innerText(), /✓/);
     assert.doesNotMatch(await page.locator('#bohrkern-ablauf .schritte button').nth(4).innerText(), /✓/, 'Haken je Kapitel getrennt');
     const hrefs = await page.locator('#brandschaden a.app-oeffnen').evaluateAll(as => [...new Set(as.map(a => a.getAttribute('href')))].sort());
-    assert.deepEqual(hrefs, ['../Bildumbenenner/', '../Probenplan/', '../Projektzentrale/', '../aufwandkit/', '../labelkit/']);
+    assert.deepEqual(hrefs, ['../Bildumbenenner/', '../Probenplan/', '../Projektzentrale/', '../aufwandkit/', '../labelkit/', '../resultkit/']);
     await page.locator('#brandschaden h1').click(); await page.keyboard.press('ArrowRight');
     assert.match(await page.locator('#brandschaden .schritt.aktiv h2').innerText(), /6 · Probenplan/, 'Pfeiltasten blättern');
     await page.setViewportSize({ width: 390, height: 800 }); await page.goto(base + '#bohrkern');
