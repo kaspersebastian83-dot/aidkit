@@ -25,6 +25,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.8.4** – SpesenKit-Kapitel (ab SpesenKit 1.8.5): Schritt 1 „Tätigkeit“ Außendienst/Innendienst, Schritt 3 Haken „Gehört zu keiner Reise und keinem Projekt“.
 - **0.8.3** – Rollen-Prüfung im Datenarchiv-Kapitel: „Freimessung“ in einer Wischproben-Bezeichnung ergibt die Rolle; automatisch vorher/nachher gepaart werden nur Bohrkern-IDs mit „F-“ (Hinweis aus dem Codex-Review).
 - **0.8.2** – Durchsicht vor dem Einsatz: Wischproben mit Leerzeichen statt „ · “, wie bisher in LabelKit („EG Küche Brandraum Decke“); Beispiele in A–Z, LabelKit und Datenarchiv nach dieser Regel, 1OG statt OG; Bohrkerne Boden/Decke eindeutig „wie im Grundriss, Wand A oben“ (Decke nicht von unten), Tür-Merksatz B links, C gegenüber, D rechts; Baukasten kopiert nur den Teil für „Raum / Ort“; „P7 + Enter“ nur mit Vorschlägen; Freimessung wird nur bei Bohrkern-IDs gepaart; Hilfe-Hinweis 📘/?/F1; EOL erklärt; „Endung“ erklärt; Freimessung in `W_ZUSAETZE`; SpesenKit Schritt 6 genauer („Abrechnung fortsetzen“, „Abrechnung drucken“ erst nach dem Abschließen, „Jetzt sichern“ mit verbundenem Ordner) und Schritt 3 „nach Mitternacht zurück“ (ab SpesenKit 1.8.2).
 - **0.8.1** – Feste Kapiteladressen für die Hilfe-Knöpfe der Apps (`hilfe-anker.json`, z. B. `../aidkit/#wischprobe`) mit Prüfung `tests/hilfe-anker.cjs`: Kapitel nicht umbenennen, sonst schlägt die Prüfung an.
