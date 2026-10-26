@@ -1,0 +1,20 @@
+{
+  "format": "spektron-hilfe-anker",
+  "version": 1,
+  "hinweis": "Feste Kapiteladressen für die Hilfe-Knöpfe der Apps (../aidkit/#<anker>). Nicht umbenennen oder entfernen – sonst landen die Knöpfe auf der Startseite. Prüfung: tests/hilfe-anker.cjs.",
+  "anker": {
+    "start": "Handbuch – Start",
+    "brandschaden": "Brandschaden von A bis Z",
+    "bohrkern-ablauf": "Bohrkerne: Schritt für Schritt",
+    "app-projektzentrale": "Projektzentrale Schritt für Schritt",
+    "app-labelkit": "LabelKit Schritt für Schritt",
+    "app-fotokit": "FotoKit Schritt für Schritt",
+    "app-plankit": "PlanKit Schritt für Schritt",
+    "app-belegkit": "BelegKit Schritt für Schritt",
+    "app-spesenkit": "SpesenKit Schritt für Schritt",
+    "app-datenarchiv": "Datenarchiv",
+    "bohrkern": "Probenbezeichnung Bohrkerne",
+    "wischprobe": "Probenbezeichnung Wischproben",
+    "raumkuerzel": "Raumkürzel"
+  }
+}
