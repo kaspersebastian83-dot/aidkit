@@ -92,7 +92,7 @@
   const W_BAUTEILE = ['Decke', 'Wand A', 'Wand B', 'Wand C', 'Wand D', 'Boden', 'Fenster/Fensterbank', 'Tür/Zarge', 'Heizkörper', 'Möbel', 'Einbauten', 'Elektro/Leitungen'];
   const W_OBERFLAECHEN = ['Aufsicht', 'Ansicht', 'Untersicht'];   // LabelKit OBERFLAECHEN
   const W_BEAUFSCHLAGUNG = ['gereinigt', 'mit Belag', 'leicht verrußt', 'verrußt', 'mit Ruß', 'mit Kondensat', 'mit Staub'];   // LabelKit BEAUFSCHLAGUNG
-  const W_ZUSAETZE = ['Brandraum', 'Referenz unbelastet', 'Verdacht Kleber/Teer'];   // vom Datenarchiv als Rolle erkannt
+  const W_ZUSAETZE = ['Brandraum', 'Referenz unbelastet', 'Verdacht Kleber/Teer', 'Freimessung'];   // vom Datenarchiv als Rolle erkannt
   const sauber = v => String(v == null ? '' : v).replace(/[·,;]+/g, ' ').replace(/\s+/g, ' ').trim();
   /** {gebaeude, geschoss, raum, zusatz, bauteil, beaufschlagung, oberflaeche} → Text; fehlende Teile entfallen. Geschoss als Kürzel (EG, 1OG …). */
   function wischBezeichnung(t){

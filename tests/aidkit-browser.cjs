@@ -79,6 +79,12 @@ const root = path.join(__dirname, '..');
     assert.equal(await page.locator('#wp-lk-raum').innerText(), 'Haus A · EG · Küche · Brandraum · Decke');
     assert.equal(await page.locator('#wp-lk-ober').innerText(), 'Untersicht'); assert.equal(await page.locator('#wp-lk-beauf').innerText(), 'verrußt');
     assert.equal(await page.locator('#wp-hinweis').innerText(), 'Vollständig.');
+    assert.equal(await page.locator('#wp-kopieren').innerText(), 'Für LabelKit „Raum / Ort“ kopieren');
+    await page.context().grantPermissions(['clipboard-read', 'clipboard-write']).catch(() => {});
+    await page.locator('#wp-kopieren').click();
+    await page.waitForFunction(() => /Kopiert|nicht möglich/.test(document.getElementById('wp-hinweis').textContent), null, { timeout: 5000 });
+    assert.match(await page.locator('#wp-hinweis').innerText(), /Kopiert: „Haus A · EG · Küche · Brandraum · Decke“|Kopieren nicht möglich/, 'nur der Teil für Raum / Ort');
+    assert.equal(await wp.locator('[data-wpzusatz="Freimessung"]').count(), 1, 'Freimessung aus konventionen.js');
     await wp.locator('[data-wpzusatz="Brandraum"]').click();   // erneut = abwählen
     await page.locator('#wp-bauteil-frei').fill('Schrank oben');
     assert.equal(await page.locator('#wp-ergebnis').innerText(), 'Haus A · EG · Küche · Schrank oben · verrußt · Untersicht');

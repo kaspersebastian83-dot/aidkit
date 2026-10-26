@@ -25,6 +25,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.8.2** – Durchsicht vor dem Einsatz: Beispiele in A–Z, LabelKit und Datenarchiv nach der Wischproben-Regel („EG · Küche · Brandraum · Decke“, 1OG statt OG); Baukasten kopiert nur den Teil für „Raum / Ort“; „P7 + Enter“ nur mit Vorschlägen; Freimessung wird nur bei Bohrkern-IDs gepaart; Hilfe-Hinweis 📘/?/F1; EOL erklärt; „Endung“ erklärt; Freimessung in `W_ZUSAETZE`.
 - **0.8.1** – Feste Kapiteladressen für die Hilfe-Knöpfe der Apps (`hilfe-anker.json`, z. B. `../aidkit/#wischprobe`) mit Prüfung `tests/hilfe-anker.cjs`: Kapitel nicht umbenennen, sonst schlägt die Prüfung an.
 - **0.8.0** – Neue Konvention „Probenbezeichnung Wischproben“: lesbarer Text von groß nach klein (Gebäude · Geschoss · Raum · Zusatz zum Raum, z. B. Brandraum · Bauteil · Beaufschlagung · Oberflächenart – Reihenfolge der LabelKit-Übergabe an Eurofins, nicht ändern) mit Baukasten, Aufteilung für LabelKit und Übung; Regeln in `konventionen.js` (`wischBezeichnung`, `wischLabelKit`), Listen geprüft gleich wie in LabelKit.
 - **0.7.1** – FotoKit-Kapitel: Vorschlag beim Tippen und „P7 + Enter“ (FotoKit 1.16) mit Ausprobier-Feld, Übung und Tastenkürzeln.
