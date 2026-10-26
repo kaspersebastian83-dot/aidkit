@@ -156,7 +156,7 @@ table.wp-lk th{width:42%;font-size:12px;color:var(--muted);text-align:left;verti
 a.app-oeffnen{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 13px;border:1px solid var(--accent-2);border-radius:7px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
 a.app-oeffnen:hover{background:var(--accent-l)}
 .fluss{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:0 0 16px}
-.fluss button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 10px;flex:1 1 104px;min-width:0;text-align:left;border-radius:9px}
+.fluss button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 9px;flex:1 1 104px;min-width:0;text-align:left;border-radius:9px}
 .fluss button b{font-size:13.5px}
 .fluss button span{font:11.5px var(--mono);color:var(--muted)}
 .fluss .pfeil{align-self:center;color:var(--muted);font-size:16px}
@@ -182,6 +182,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#app-projektzentrale">Projektzentrale</a>
   <a href="#app-labelkit">LabelKit</a>
   <a href="#app-fotokit">FotoKit</a>
+  <a href="#app-resultkit">ResultKit</a>
   <a href="#app-plankit">PlanKit</a>
   <a href="#app-belegkit">BelegKit</a>
   <a href="#app-spesenkit">SpesenKit</a>
@@ -204,6 +205,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../Projektzentrale/">Projektzentrale</a></td><td>Projekte, Projektdaten, Start der Apps · <a href="#app-projektzentrale">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../labelkit/">LabelKit</a></td><td>Proben erfassen, Etiketten, Laborübergabe · <a href="#app-labelkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Bildumbenenner/">FotoKit</a></td><td>Fotos benennen, Bilddokumentation · <a href="#app-fotokit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../resultkit/">ResultKit</a></td><td>Laborergebnisse prüfen: Prüfberichte importieren, mit dem Laborauftrag abgleichen, für PlanKit und FotoKit übernehmen · <a href="#app-resultkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Probenplan/">PlanKit</a></td><td>Probenplan, Ergebniskarte, Raumbuch · <a href="#app-plankit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../aufwandkit/">BelegKit</a></td><td>Zeiten, km, Proben, Berichtsseiten für die Rechnung · <a href="#app-belegkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../reisekosten-pro/">SpesenKit</a></td><td>Spesenabrechnung für den Monat · <a href="#app-spesenkit">Schritt für Schritt</a></td></tr>
@@ -331,10 +333,11 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
   <p class="wo" style="margin:0 0 8px">Überblick – tippen springt zum Schritt. Darunter steht, in welchen Ordner die App speichert.</p>
   <div class="fluss kein-druck" role="group" aria-label="Apps und Ordner">
-    <button type="button" data-geh="2"><b>Projektzentrale</b><span>_Projekt.json</span></button><span class="pfeil" aria-hidden="true">→</span>
-    <button type="button" data-geh="4"><b>LabelKit</b><span>Laboraufträge</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="2"><b>Projekt&shy;zentrale</b><span>_Projekt<wbr>.json</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="4"><b>LabelKit</b><span>Labor&shy;aufträge</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="5"><b>FotoKit</b><span>Fotos</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="6"><b>PlanKit</b><span>Pläne · Mitteilungen</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="7"><b>ResultKit</b><span>Labor&shy;ergebnisse</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="8"><b>Büro</b><span>Übergabe · Versand</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="9"><b>BelegKit</b><span>Abrechnung</span></button>
   </div>
@@ -348,7 +351,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b1b"><label for="b1b">Projektzentrale öffnen → <b>„Archivordner wählen …“</b> → <code>C:\daten\Mosaik Archivordner</code> → Zulassen.</label></li>
         <li><input type="checkbox" id="b1c"><label for="b1c">Im Browsermenü <b>„App installieren“</b> – die Projektzentrale startet dann wie ein Programm.</label></li>
         <li><input type="checkbox" id="b1d"><label for="b1d">In der Projektzentrale oben <b>„Ich bin …“</b> wählen – LabelKit und BelegKit schlagen dann das eigene <b>Kürzel</b> vor („Meine Projekte“ filtert die Liste).</label></li>
-        <li><input type="checkbox" id="b1e"><label for="b1e">Auch <b>LabelKit, FotoKit, PlanKit und BelegKit</b> einmal öffnen und „App installieren“ – dann starten sie aus der Projektzentrale im richtigen Ordner.</label></li>
+        <li><input type="checkbox" id="b1e"><label for="b1e">Auch <b>LabelKit, FotoKit, ResultKit, PlanKit und BelegKit</b> einmal öffnen und „App installieren“ – dann starten sie aus der Projektzentrale im richtigen Ordner.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Nach jedem Browserneustart einmal <b>„Zugriff erlauben“</b> klicken. Das ist eine Schutzregel des Browsers, kein Fehler.</div>
@@ -365,7 +368,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b2b"><label for="b2b"><b>Projektdaten</b>: „Arbeitszettel einlesen …“ (jeder Wert wird vor dem Speichern gezeigt) oder Objekt, Auftraggeber, Schadendatum von Hand.</label></li>
         <li><input type="checkbox" id="b2c"><label for="b2c"><b>Gelbe Felder</b> ausfüllen – das sind die Pflichtangaben. Oben auf der Karte steht „5 Pflichtangaben fehlen“; ein Klick darauf springt zum ersten leeren Feld.</label></li>
         <li><input type="checkbox" id="b2e"><label for="b2e">Besonders die <b>Nutzung</b>: Sie bestimmt die Bewertung nach VdS 2357 in der Ergebniskarte.</label></li>
-        <li><input type="checkbox" id="b2d"><label for="b2d">Darunter stehen die Aufgaben (LabelKit, FotoKit, PlanKit, BelegKit) – jede öffnet direkt den richtigen Ordner. Die Leiste <b>Projektstand</b> zeigt, wie weit das Projekt ist (Ortstermin › Laborauftrag › Prüfbericht › Übergabe ans Büro › Versand › Abrechnung, je mit Datum).</label></li>
+        <li><input type="checkbox" id="b2d"><label for="b2d">Darunter stehen fünf Aufgaben (LabelKit, FotoKit, ResultKit „Laborergebnisse prüfen“, PlanKit, BelegKit) – jede öffnet direkt den richtigen Ordner. Die Leiste <b>Projektstand</b> zeigt, wie weit das Projekt ist (Ortstermin › Laborauftrag › Prüfbericht › Übergabe ans Büro › Versand › Abrechnung, je mit Datum).</label></li>
       </ul>
     </div><div>
       <div class="uebung" id="uebung-pflicht">
@@ -443,15 +446,16 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   </div>
 
   <div class="karte schritt" data-schritt="7" data-titel="Laborbericht">
-    <div class="schritt-kopf"><h2>7 · Laborbericht und Auswertung</h2><span class="ort buero">Büro</span><span class="dauer">PlanKit · FotoKit → „Mitteilungen“</span></div>
+    <div class="schritt-kopf"><h2>7 · Laborbericht und Auswertung</h2><span class="ort buero">Büro</span><span class="dauer">ResultKit → „Laborergebnisse“ · PlanKit · FotoKit → „Mitteilungen“</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="b7a"><label for="b7a">Prüfbericht als <b>XML und PDF</b> in „Laborergebnisse“ ablegen.</label></li>
-        <li><input type="checkbox" id="b7b"><label for="b7b">PlanKit: <b>„Proben übernehmen …“</b> und den Bericht wählen, <b>„Alle Konflikte: Aktualisieren“</b> – die Messwerte hängen dann an den Proben.</label></li>
+        <li><input type="checkbox" id="b7a"><label for="b7a">Prüfbericht (<b>XML und PDF</b>) in <b>ResultKit</b> importieren: „📥 Berichte importieren“ oder die Dateien auf die Seite ziehen → „Ablegen“. ResultKit legt sie in „Laborergebnisse“ ab.</label></li>
+        <li><input type="checkbox" id="b7g"><label for="b7g">In ResultKit prüfen: je Probe „✓ Ergebnis“, „◐ nur vorläufig“, „○ offen“ oder „! nicht beauftragt“, dazu die Karte je Prüfbericht. Dann <b>„Ergebnisse übernehmen“</b> → <a href="#app-resultkit">ResultKit Schritt für Schritt</a>.</label></li>
+        <li><input type="checkbox" id="b7b"><label for="b7b">PlanKit: <b>„Proben übernehmen …“</b> und den in ResultKit übernommenen Bericht wählen, <b>„Alle Konflikte: Aktualisieren“</b> – die Messwerte hängen dann an den Proben.</label></li>
         <li><input type="checkbox" id="b7c"><label for="b7c"><b>Ergebnisse</b> (Taste K): Ergebniskarte. Bewertet wird nach VdS 2357, wenn es dafür eine Referenz gibt, sonst nach der eigenen Skala des Büros – beide lassen sich anpassen (Übung rechts). Beim Export „Darstellung: Ergebniskarte“.</label></li>
-        <li><input type="checkbox" id="b7f"><label for="b7f"><b>Vorläufiger Prüfbericht?</b> Die Karte trägt dann rot <b>VORLÄUFIG</b>, die Anlagen einen Hinweis. Kommt der endgültige Bericht: in „Laborergebnisse“ ablegen und in PlanKit erneut importieren – FotoKit nimmt automatisch den neuesten.</label></li>
+        <li><input type="checkbox" id="b7f"><label for="b7f"><b>Vorläufiger Prüfbericht?</b> Die Karte trägt dann rot <b>VORLÄUFIG</b>, die Anlagen einen Hinweis. Kommt der endgültige Bericht: in ResultKit importieren und <b>„Erneut übernehmen“</b>, dann in PlanKit „Proben übernehmen …“ wiederholen – FotoKits „Ergebnistabelle …“ nimmt den übernommenen Stand von selbst.</label></li>
         <li><input type="checkbox" id="b7d"><label for="b7d"><b>Raumbuch</b>: je Raum Maßnahme und Bemerkung; Räume ohne Probe mit Status. Als Word-Anlage oder CSV.</label></li>
-        <li><input type="checkbox" id="b7e"><label for="b7e"><b>Anlage Probenahme</b> (Word) aus PlanKit – die <b>Bezeichnung der Anlage</b> mit Nummer ist Pflicht („Anlage 5“, nicht nur „Anlage“). FotoKit <b>„Ergebnistabelle …“</b> für die Tabelle im Gutachten.</label></li>
+        <li><input type="checkbox" id="b7e"><label for="b7e"><b>Anlage Probenahme</b> (Word) aus PlanKit – die <b>Bezeichnung der Anlage</b> mit Nummer ist Pflicht („Anlage 5“, nicht nur „Anlage“). FotoKit <b>„Ergebnistabelle …“</b> (Werte aus ResultKit) für die Tabelle im Gutachten.</label></li>
       </ul>
     </div><div>
       <div class="uebung" id="uebung-skala">
@@ -462,6 +466,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </div>
       <div class="tipp">Anlagen landen in „Mitteilungen“. In Word an der gewünschten Stelle: Einfügen › Objekt › Text aus Datei. Sie bringen keine eigenen Formatvorlagen mit und passen sich ins Gutachten ein.</div>
       <div class="tipp">Eigene Skalen (z. B. für MKW) gelten fürs ganze Büro: Ändern in FotoKit oder PlanKit wirkt bei allen. Ein PlanKit-Projekt behält seine Skala, auch wenn sie später geändert wird.</div>
+      <a class="app-oeffnen" href="../resultkit/" target="resultkit" rel="noopener">ResultKit öffnen ↗</a>
       <a class="app-oeffnen" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a>
     </div></div>
   </div>
@@ -505,7 +510,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td>Laboraufträge</td><td>Laborübergaben, Protokolle, LabelKit-Projektdatei (…_Daten.json)</td><td>LabelKit</td></tr>
       <tr><td>Fotos</td><td>Projektfotos, Bilddokumentation (PDF), FotoKit-Daten</td><td>FotoKit</td></tr>
       <tr><td>Pläne</td><td>Grundrisse und PlanKit-Projekt (.probenplan)</td><td>PlanKit</td></tr>
-      <tr><td>Laborergebnisse</td><td>Prüfberichte vom Labor (XML und PDF)</td><td>von Hand ablegen</td></tr>
+      <tr><td>Laborergebnisse</td><td>Prüfberichte vom Labor (XML und PDF), über ResultKit importiert; <code>_Ergebnisse.json</code> mit den übernommenen Werten für PlanKit und FotoKit – nicht löschen</td><td>ResultKit</td></tr>
       <tr><td>Mitteilungen</td><td>Gutachten, Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>PlanKit · LabelKit · Word</td></tr>
       <tr><td>Abrechnung</td><td>Zeiten je Person, gespeicherte Abrechnungsstände</td><td>BelegKit</td></tr>
       <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen (mit Prüfsumme)</td><td>LabelKit</td></tr>
@@ -621,8 +626,8 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>6 · Ergebnisse und Bericht</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="c6a"><label for="c6a">Prüfbericht des Labors (XML und PDF) im Projektordner unter „Laborergebnisse“ ablegen.</label></li>
-        <li><input type="checkbox" id="c6b"><label for="c6b">In <b>PlanKit</b> mit <b>„Proben übernehmen …“</b> den Prüfbericht einlesen – die Werte werden den Proben über die Probennummer zugeordnet.</label></li>
+        <li><input type="checkbox" id="c6a"><label for="c6a">Prüfbericht des Labors (XML und PDF) in <b>ResultKit</b> importieren (landet in „Laborergebnisse“), prüfen und <b>„Ergebnisse übernehmen“</b>.</label></li>
+        <li><input type="checkbox" id="c6b"><label for="c6b">In <b>PlanKit</b> mit <b>„Proben übernehmen …“</b> den in ResultKit übernommenen Prüfbericht wählen und <b>„Alle Konflikte: Aktualisieren“</b> – die Werte werden den Proben über die Probennummer zugeordnet.</label></li>
         <li><input type="checkbox" id="c6c"><label for="c6c"><b>Raumbuch</b> in PlanKit: die Räume kommen aus den Proben (z. B. „EG Wohnzimmer“). Maßnahme je Raum eintragen.</label></li>
         <li><input type="checkbox" id="c6d"><label for="c6d">Zurückgestellte Segmente nachbeauftragen, wenn die Ergebnisse es verlangen – die Bezeichnung bleibt gleich.</label></li>
         <li><input type="checkbox" id="c6f"><label for="c6f">In <b>PlanKit</b> Liste → <b>Wandansichten (Bohrkerne) …</b>: je Wand eine Zeichnung mit Tiefensäule T1, T2 … je Kern und eine Tabelle. Wert wählen (Vorschlag MKW C10–C40, dazu C10–C22), dann <b>Word-Anlage speichern</b>. Die Kerne müssen dafür nicht im Plan platziert sein.</label></li>
@@ -688,7 +693,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="pz4a"><label for="pz4a"><b>„Proben &amp; Laborauftrag“</b> öffnet LabelKit im Ordner „Laboraufträge“.</label></li>
-        <li><input type="checkbox" id="pz4b"><label for="pz4b"><b>„Fotos &amp; Dokumentation“</b> öffnet FotoKit („Fotos“), <b>„Probenplan bearbeiten“</b> öffnet PlanKit („Pläne“).</label></li>
+        <li><input type="checkbox" id="pz4b"><label for="pz4b"><b>„Fotos &amp; Dokumentation“</b> öffnet FotoKit („Fotos“), <b>„Laborergebnisse prüfen“</b> öffnet ResultKit („Laborergebnisse“), <b>„Probenplan bearbeiten“</b> öffnet PlanKit („Pläne“).</label></li>
         <li><input type="checkbox" id="pz4c"><label for="pz4c"><b>„Zeiten &amp; Abrechnung“</b> öffnet BelegKit („Abrechnung“).</label></li>
         <li><input type="checkbox" id="pz4d"><label for="pz4d">Anlagen: bei PlanKit <b>„Anlage Probenahme · Erstellen …“</b> (sobald ein Plan da ist), bei LabelKit <b>„Anlage PN 98 / Brandgeruch · Erstellen …“</b> – die Datei liegt danach in „Mitteilungen“.</label></li>
       </ul>
@@ -983,12 +988,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>8 · Ergebnistabelle</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="fk8a"><label for="fk8a"><b>„Ergebnistabelle …“</b> – FotoKit liest die <b>neueste XML</b> aus „Laborergebnisse“.</label></li>
+        <li><input type="checkbox" id="fk8a"><label for="fk8a"><b>„Ergebnistabelle …“</b> – FotoKit nimmt die in <b>ResultKit</b> übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle.</label></li>
+        <li><input type="checkbox" id="fk8d"><label for="fk8d">Warnt FotoKit, dass sich der Ordner seit der Übernahme geändert hat oder noch Proben offen sind: <b>„🧪 ResultKit öffnen“</b>, dort prüfen und erneut übernehmen.</label></li>
         <li><input type="checkbox" id="fk8b"><label for="fk8b">Parameter und <b>Bewertungsskala</b> prüfen; Proben werden über die Probe-Nr. den Fotos zugeordnet.</label></li>
         <li><input type="checkbox" id="fk8c"><label for="fk8c"><b>„Tabelle kopieren“</b> und in Word mit <b>Strg+V</b> einfügen.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Eigene Skalen liegen im Archivordner (<code>_Spektron-Skalen.json</code>) und gelten fürs ganze Büro. Für Σ16 EPA-PAK mit Nutzung gilt die VdS-Referenz – ändern geht in PlanKit unter „Ergebnisse“.</div>
+      <div class="tipp">„Andere Datei …“ (eine XML direkt) gibt es nur ohne Projektordner. Im Projekt kommen die Werte immer aus ResultKit.</div>
     </div></div>
   </div>
 
@@ -998,6 +1005,100 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <h2>Gut zu wissen</h2>
   <p><b><code>_Bildumbenenner.json</code> nicht löschen oder umbenennen</b> – darin stehen alle Beschreibungen, Abschnitte und Proben.</p>
   <p>Etwas klemmt? <b>„Problem melden“</b> in der Fehlermeldung (oder <b>„⋯ Mehr“</b> → „Version und Build“) kopiert einen Bericht für eine E-Mail. Unter „⋯ Mehr“ stehen auch gesicherte Fassungen und Eingaben; ein roter Punkt am Knopf heißt: dort bitte etwas prüfen.</p>
+</section>
+<section id="app-resultkit" class="ablauf" data-speicher="aidkit-app-resultkit-haken">
+  <h1>ResultKit</h1>
+  <div class="app-kopf"><span class="zweck">Die Laborergebnisse eines Projekts an einer Stelle: was beim Labor ist, was zurück ist und was noch fehlt. Prüfberichte werden nur hier importiert, geprüft und für PlanKit und FotoKit übernommen.</span><a class="app-oeffnen" style="margin:0" href="../resultkit/" target="resultkit" rel="noopener">ResultKit öffnen ↗</a></div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+
+  <div class="karte schritt" data-schritt="1" data-titel="Öffnen">
+    <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="rk1a"><label for="rk1a">In der Projektzentrale <b>„Laborergebnisse prüfen“</b> – oder oben in der Spektron-Leiste der anderen Apps auf <b>③ ResultKit</b>. Das Projekt ist dann schon offen.</label></li>
+        <li><input type="checkbox" id="rk1b"><label for="rk1b">Sonst <b>„📁 Projekt“</b> bzw. <b>„📁 Projektordner öffnen“</b> und den Projektordner wählen (z. B. <code>26.0123 Köln</code>) oder dessen Ordner „Laborergebnisse“.</label></li>
+        <li><input type="checkbox" id="rk1c"><label for="rk1c">Prüfen, dass oben <b>Projektnummer und Ort</b> stehen.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Wie alle Spektron-Apps nur in <b>Chrome oder Edge</b> – Firefox kann keine Ordner öffnen. Nach einem Browserneustart einmal den Zugriff erlauben.</div>
+      <a class="app-oeffnen" href="../resultkit/" target="resultkit" rel="noopener">ResultKit öffnen ↗</a>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Stand">
+    <div class="schritt-kopf"><h2>2 · Stand lesen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="rk2a"><label for="rk2a">ResultKit vergleicht die Laborübergabe aus LabelKit (neueste <code>…_Daten.json</code> in „Laboraufträge“) mit den Prüfberichten in „Laborergebnisse“.</label></li>
+        <li><input type="checkbox" id="rk2b"><label for="rk2b">Die Zeile oben lesen, z. B. <b>„3 von 4 Proben mit Ergebnis · 1 offen“</b>.</label></li>
+        <li><input type="checkbox" id="rk2c"><label for="rk2c">Je Probe den Stand prüfen: <b>„✓ Ergebnis“</b>, <b>„◐ nur vorläufig“</b>, <b>„○ offen“</b> oder <b>„! nicht beauftragt“</b>.</label></li>
+        <li><input type="checkbox" id="rk2d"><label for="rk2d">Neue Dateien im Ordner? <b>„⟳ Neu einlesen“</b> – das passiert auch von selbst, wenn man ins Fenster zurückkommt.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="rk-stand"><h3>Kurz üben: Welchen Stand hat die Probe?</h3></div>
+      <div class="tipp">„! nicht beauftragt“ heißt: Die Probe steht im Prüfbericht, aber nicht in der Laborübergabe aus LabelKit. Mit LabelKit abgleichen, z. B. auf eine vertippte Probennummer.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Importieren">
+    <div class="schritt-kopf"><h2>3 · Berichte importieren</h2><span class="ort buero">Büro</span><span class="dauer">→ Ordner „Laborergebnisse“</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="rk3a"><label for="rk3a"><b>„📥 Berichte importieren“</b> – oder XML und PDF des Prüfberichts auf die Seite ziehen (oder „Dateien wählen …“ im gestrichelten Feld).</label></li>
+        <li><input type="checkbox" id="rk3b"><label for="rk3b">In der Vorschau <b>„In „Laborergebnisse“ ablegen?“</b> je Bericht Berichtsnummer, Zahl der Proben und Auftragsreferenz prüfen.</label></li>
+        <li><input type="checkbox" id="rk3c"><label for="rk3c"><b>„Ablegen“</b> – ResultKit legt eine unveränderte Kopie in „Laborergebnisse“ ab.</label></li>
+        <li><input type="checkbox" id="rk3d"><label for="rk3d">Immer <b>XML und PDF</b> zusammen: Die Werte kommen nur aus der Eurofins-<b>XML</b>, die PDF ist zum Gegenlesen.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Nichts wird überschrieben. „Liegt schon unverändert im Ordner“ heißt: Die Datei ist schon da, nichts zu tun. Eine gleichnamige, aber andere Datei bekommt einen eigenen Namen mit „(2)“.</div>
+      <div class="tipp achtung">Nennt die Auftragsreferenz eine <b>andere Projektnummer</b>, ist der Bericht nicht vorausgewählt. Erst klären, ob er wirklich zu diesem Projekt gehört.</div>
+      <div class="tipp">Im Projekt werden Prüfberichte <b>nur hier</b> importiert – nicht mehr in PlanKit oder FotoKit.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="Prüfen">
+    <div class="schritt-kopf"><h2>4 · Berichte prüfen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="rk4a"><label for="rk4a">Je Prüfbericht eine Karte: Berichtsnummer, <b>endgültig / vorläufig / ersetzt</b>, Zahl der Proben, Probenahmedatum.</label></li>
+        <li><input type="checkbox" id="rk4b"><label for="rk4b">Die Kennwerte lesen (Σ16 EPA-PAK, BaP, Chlorid, Asbest), bei Bedarf <b>„Alle Parameter“</b> aufklappen und mit der PDF vergleichen.</label></li>
+        <li><input type="checkbox" id="rk4c"><label for="rk4c">Hinweise auf der Karte lesen – z. B. eine fremde Projektnummer in der Auftragsreferenz oder eine PDF ohne XML (dann die XML beim Labor anfordern).</label></li>
+        <li><input type="checkbox" id="rk4d"><label for="rk4d"><b>Vorläufiger Bericht?</b> Seine Werte gelten, bis der endgültige da ist. Diesen dann importieren – der vorläufige steht danach als <b>„ersetzt“</b> da und wird nicht mehr übernommen.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="rk-bericht"><h3>Kurz üben: Was zeigt ResultKit?</h3></div>
+      <div class="tipp">Bewertet wird nur nach vorhandenen Skalen: Einstellungen der Ergebniskarte aus PlanKit, sonst die VdS-2357-Referenz nach der Nutzung des Projekts, sonst die Skalen des Büros. Ohne Skala bleibt ein Wert unbewertet – ResultKit erfindet keine Grenzwerte.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="5" data-titel="Übernehmen">
+    <div class="schritt-kopf"><h2>5 · Ergebnisse übernehmen</h2><span class="ort buero">Büro</span><span class="dauer">→ <code>Laborergebnisse/_Ergebnisse.json</code></span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="rk5a"><label for="rk5a"><b>„Ergebnisse übernehmen“</b> – ResultKit schreibt die geltenden Werte nach <code>Laborergebnisse/_Ergebnisse.json</code>. PlanKit und FotoKit lesen nur diese Datei.</label></li>
+        <li><input type="checkbox" id="rk5b"><label for="rk5b">Noch nicht alles da? ResultKit fragt nach. <b>„Trotzdem übernehmen“</b> speichert einen Zwischenstand – PlanKit und FotoKit zeigen dann diesen.</label></li>
+        <li><input type="checkbox" id="rk5c"><label for="rk5c">Ändert sich danach der Ordner (neuer Bericht, neue LabelKit-Datei), steht dort <b>„Seit der Übernahme … bitte prüfen und erneut übernehmen“</b>. Prüfen, dann <b>„Erneut übernehmen“</b>.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="rk-uebernehmen"><h3>Kurz üben: Übernehmen oder warten?</h3></div>
+      <div class="tipp">Die vorige Übernahme bleibt als <code>_Ergebnisse.vorher.json</code> erhalten. Beide Dateien schreibt nur ResultKit – nicht von Hand ändern, löschen oder umbenennen.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="6" data-titel="Weiter">
+    <div class="schritt-kopf"><h2>6 · In PlanKit und FotoKit weiterarbeiten</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="rk6a"><label for="rk6a"><b>PlanKit</b> → <b>„Proben übernehmen …“</b>: Dort stehen die Probenerfassung aus LabelKit und jeder in ResultKit übernommene Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Den Bericht wählen.</label></li>
+        <li><input type="checkbox" id="rk6b"><label for="rk6b">In der Prüftabelle <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“ – Labordaten und Messwerte hängen dann an den LabelKit-Proben.</label></li>
+        <li><input type="checkbox" id="rk6c"><label for="rk6c"><b>FotoKit</b> → <b>„Ergebnistabelle …“</b>: nimmt die in ResultKit übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle. Hat sich der Ordner seit der Übernahme geändert oder sind noch Proben offen, warnt FotoKit.</label></li>
+        <li><input type="checkbox" id="rk6d"><label for="rk6d">Aus PlanKit und FotoKit führt <b>„🧪 ResultKit öffnen“</b> hierher zurück.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">XML direkt einlesen geht in PlanKit und FotoKit nur noch <b>ohne Projektordner</b> (freier Plan, „Andere Datei …“). Im Projekt kommen die Werte immer aus ResultKit.</div>
+      <a class="app-oeffnen" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a>
+    </div></div>
+  </div>
+
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+  <h2>Gut zu wissen</h2>
+  <p>ResultKit liest den Projektordner; geschrieben wird nur beim <b>„Ablegen“</b> neuer Berichte und bei <b>„Ergebnisse übernehmen“</b>. Die Originaldateien vom Labor bleiben unverändert.</p>
 </section>
 <section id="app-plankit" class="ablauf" data-speicher="aidkit-app-plankit-haken">
   <h1>PlanKit</h1>
@@ -1075,13 +1176,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>6 · Proben übernehmen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk6a"><label for="pk6a"><b>„Proben übernehmen …“</b>: „Probenerfassung aus LabelKit“ oder einen Bericht aus „Laborergebnisse“ (XML und PDF gleichen Namens zusammen).</label></li>
+        <li><input type="checkbox" id="pk6a"><label for="pk6a"><b>„Proben übernehmen …“</b>: „Probenerfassung aus LabelKit“ oder einen in <b>ResultKit</b> übernommenen Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Fehlt der Bericht: <b>„🧪 ResultKit öffnen“</b>, dort importieren und übernehmen.</label></li>
         <li><input type="checkbox" id="pk6b"><label for="pk6b">In der Prüftabelle bei „Bei belegter Kennung“ wählen: „Überspringen“, „Nächste freie P-Nummer“ oder „Notiz, Labordaten und Herkunft ersetzen“.</label></li>
         <li><input type="checkbox" id="pk6c"><label for="pk6c">Schon vorhandene LabelKit-Proben: <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“.</label></li>
         <li><input type="checkbox" id="pk6d"><label for="pk6d">Die Einträge unter <b>„Noch zu platzieren“</b> auf den Plan ziehen (oder auswählen und in den Plan tippen).</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Vorläufiger Prüfbericht? Die Werte werden als vorläufig gekennzeichnet; auf der Ergebniskarte steht dann rot VORLÄUFIG. Den endgültigen Bericht später genauso übernehmen.</div>
+      <div class="tipp">Vorläufiger Prüfbericht? Die Werte werden als vorläufig gekennzeichnet; auf der Ergebniskarte steht dann rot VORLÄUFIG. Kommt der endgültige Bericht: in ResultKit importieren und erneut übernehmen, dann hier genauso übernehmen.</div>
+      <div class="tipp">XML und PDF direkt einlesen geht nur noch bei einem freien Plan ohne Projektordner. Im Projekt kommen die Laborwerte immer aus ResultKit.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="7" data-titel="Ergebnisse">
@@ -1489,7 +1591,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.8.6';
+const VERSION = '0.9.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1693,7 +1795,10 @@ QUIZ["lk-pflicht"] = [{"frage": "PAK-Wischprobe: welche Zellen sind gelb, solang
 QUIZ["lk-ampel"] = [{"frage": "PAK-Wischprobe mit Datum, Projektnr., Raum / Ort und Matrix – aber <b>ohne</b> Oberflächenart und cm². Welche Ampel?", "antworten": ["Grün", "Gelb", "Rot"], "richtig": [1], "warum": "Grün braucht alle sechs Angaben, ab vier von sechs ist sie gelb („Fast fertig – Felder prüfen“). Beim Abschluss ist das nur eine Warnung, nicht kritisch."}, {"frage": "Dieselbe Probe ohne Raum / Ort – ist das beim Abschluss „kritisch“?", "antworten": ["Ja", "Nein"], "richtig": [0], "warum": "Raum/Ort gehört zu den kritischen Feldern (wie Projektnummer und Datum) – Speichern geht dann nur mit Rückfrage."}];
 QUIZ["fk-tasten"] = [{"frage": "Nächstes Bild?", "antworten": ["Enter", "Strg+D", "Alt+X"], "richtig": [0], "warum": "Enter (oder ↓) springt weiter, Shift+Enter zurück."}, {"frage": "Den Abschnitt vom vorherigen Bild übernehmen?", "antworten": ["Alt+R", "Strg+D im Feld Abschnitt", "Shift+Enter"], "richtig": [1], "warum": "Strg+D übernimmt je nach Feld Beschreibung, Abschnitt oder Probe-Nr."}, {"frage": "Ein unscharfes Bild aussortieren?", "antworten": ["Entf", "Alt+X", "Esc"], "richtig": [1], "warum": "Alt+X sortiert aus (und holt zurück) – gelöscht wird nichts."}, {"frage": "Ein Bild nach links drehen?", "antworten": ["Alt+R", "Alt+Shift+R", "Strg+R"], "richtig": [1], "warum": "Alt+R dreht rechts, Alt+Shift+R links."}];
 QUIZ["fk-name"] = [{"frage": "Standard-Einstellungen. Bild 3 hat Probe-Nr. „P2“, Beschreibung „Küche Decke“ und heißt <code>IMG_0815.JPG</code>. Neuer Name?", "antworten": ["<code>03_P2_Küche_Decke.jpg</code>", "<code>3_Küche Decke.JPG</code>", "<code>03_Küche_Decke_P2.jpg</code>"], "richtig": [0], "warum": "Zweistellige Nummer, dann Probe-Nr. und Beschreibung; Leerzeichen werden zu „_“, die Endung klein. Der Abschnitt steht nicht im Dateinamen."}, {"frage": "Bild 3 hat <b>keine</b> Beschreibung. Was passiert beim Umbenennen?", "antworten": ["Es heißt „03.jpg“", "Es behält seinen Namen", "Es wird aussortiert"], "richtig": [1], "warum": "Ohne Beschreibung bleibt der Dateiname erhalten."}, {"frage": "Probe-Nr. „P1, P2“ – wie steht das im Namen?", "antworten": ["<code>P1,P2</code>", "<code>P1+P2</code>", "<code>P1_P2</code>"], "richtig": [1], "warum": "Mehrere Proben werden mit „+“ verbunden."}];
-QUIZ["pk-tasten"] = [{"frage": "Probenpunkt setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe, B = Brandherd, E = Bearbeiten."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisse, L = Liste, V = Ansicht."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
+QUIZ["rk-stand"] = [{"frage": "P3 steht in der Laborübergabe aus LabelKit, aber in keinem Prüfbericht. Welcher Stand?", "antworten": ["○ offen", "! nicht beauftragt", "◐ nur vorläufig"], "richtig": [0], "warum": "Beauftragt, aber noch kein Ergebnis zurück – die Probe ist offen."}, {"frage": "P5 steht bisher nur in einem vorläufigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "◐ nur vorläufig", "○ offen"], "richtig": [1], "warum": "Es gibt Werte, aber nur vorläufige – sie können sich mit dem endgültigen Bericht noch ändern."}, {"frage": "Im Prüfbericht steht P9, in der Laborübergabe aus LabelKit nicht. Welcher Stand?", "antworten": ["○ offen", "✓ Ergebnis", "! nicht beauftragt"], "richtig": [2], "warum": "Die Probe war nicht beauftragt – mit LabelKit abgleichen, z. B. auf eine vertippte Probennummer."}, {"frage": "P1 steht im vorläufigen und im endgültigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "◐ nur vorläufig", "zweimal, je Bericht einer"], "richtig": [0], "warum": "Endgültig geht vor vorläufig – der vorläufige Bericht ist ersetzt."}];
+QUIZ["rk-bericht"] = [{"frage": "Erst kam ein vorläufiger, jetzt der endgültige Prüfbericht für dieselben Proben. Was steht beim vorläufigen?", "antworten": ["ersetzt", "vorläufig", "endgültig"], "richtig": [0], "warum": "Ist der endgültige Bericht da, wird der vorläufige als „ersetzt“ gezeigt und nicht mehr übernommen."}, {"frage": "Geöffnet ist Projekt 26.0123, die Auftragsreferenz im Bericht nennt 26.0456. Was passiert beim Import?", "antworten": ["Der Bericht ist nicht vorausgewählt – erst klären", "Er wird trotzdem automatisch abgelegt", "ResultKit ändert die Nummer im Bericht"], "richtig": [0], "warum": "Ein Bericht mit fremder Projektnummer wird nur abgelegt, wenn man ihn bewusst anhakt."}, {"frage": "Vom Labor ist nur die PDF da. Woher kommen die Werte?", "antworten": ["Gar nicht – die XML anfordern", "Aus der PDF", "Aus der Laborübergabe"], "richtig": [0], "warum": "Werte kommen nur aus der Eurofins-XML. Die PDF ist zum Gegenlesen."}, {"frage": "Für einen Parameter gibt es keine Skala. Wie zeigt ResultKit den Wert?", "antworten": ["Ohne Bewertung", "Mit einem Grenzwert aus der Literatur", "Immer rot"], "richtig": [0], "warum": "Bewertet wird nur nach vorhandenen Skalen – ResultKit erfindet keine Grenzwerte."}];
+QUIZ["rk-uebernehmen"] = [{"frage": "Zwei von vier Proben sind noch offen, die Ergebniskarte soll aber schon als Entwurf entstehen. Was tun?", "antworten": ["„Ergebnisse übernehmen“ → „Trotzdem übernehmen“ (Zwischenstand)", "Warten – übernehmen geht erst, wenn alles da ist", "Die Werte in PlanKit von Hand eintippen"], "richtig": [0], "warum": "Ein Zwischenstand geht immer. Kommen die übrigen Berichte, einfach erneut übernehmen."}, {"frage": "Nach der Übernahme kommt der endgültige Bericht und wird importiert. Was sehen PlanKit und FotoKit bis zur nächsten Übernahme?", "antworten": ["Den übernommenen Stand, mit Hinweis", "Sofort die neuen Werte", "Gar keine Werte mehr"], "richtig": [0], "warum": "Bis „Erneut übernehmen“ gilt der übernommene Stand; die Apps weisen darauf hin, dass sich der Ordner geändert hat."}];
+QUIZ["pk-tasten"] =[{"frage": "Probenpunkt setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe, B = Brandherd, E = Bearbeiten."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisse, L = Liste, V = Ansicht."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
 QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengruppe?", "antworten": ["Unter BG (kein gemessener Nullwert)", "Ohne Bewertung", "unter Referenzwert"], "richtig": [0], "warum": "Werte unter der Bestimmungsgrenze sind kein gemessener Nullwert und bekommen eine eigene Gruppe (blaugrau)."}, {"frage": "Laborwert „n. n.“?", "antworten": ["Unter BG", "Nicht nachgewiesen (n.n.)", "Nicht bestimmt (n.b.)"], "richtig": [1], "warum": "Qualifikatoren werden nie zu Zahlen – n. n. hat eine eigene Gruppe."}, {"frage": "Laborwert „1.234“ (unklar, ob 1,234 oder 1234)?", "antworten": ["wird als 1234 bewertet", "Ohne Bewertung", "wird als 1,234 bewertet"], "richtig": [1], "warum": "Mehrdeutige Zahlen bleiben ohne Bewertung (grau) – lieber nachfragen als raten."}, {"frage": "Nutzung „Wohnen“, Σ16 EPA-PAK = 12 µg/m² auf einer Oberfläche?", "antworten": ["unter Referenzwert", "Referenzwert erreicht/überschritten"], "richtig": [1], "warum": "Für Wohn-/Büroräume liegt die VdS-Hintergrundreferenz bei 10 µg/m² (Industrie: 100 µg/m²)."}];
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
 QUIZ["bk-proben"] = [{"frage": "LabelKit, Sonstige Proben, Spalte „Untersuchungsparameter“: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];

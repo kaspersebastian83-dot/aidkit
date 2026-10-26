@@ -11,7 +11,7 @@ Wie wir im Büro arbeiten: Abläufe über mehrere Apps und gemeinsame Regeln. Wi
 | Start, Übersicht der Apps, „Gilt in allen Apps“ | `#start` |
 | Brandschaden von A bis Z – der normale Weg durch alle Apps in neun Schritten, mit Übungen zu Pflichtangaben und Bewertungsskala, Überblick „welche App speichert wohin“ und „Wo liegt was?“ | `#brandschaden` |
 | Bohrkerne: Schritt für Schritt – sechs Schritte mit Abhakliste, zwei Übungen, Spickzettel zum Drucken | `#bohrkern-ablauf` |
-| Apps Schritt für Schritt – je App ein Kapitel mit Schrittleiste, Abhakliste, Übungen und Tastenkürzeln: Projektzentrale, LabelKit, FotoKit, PlanKit, BelegKit, SpesenKit | `#app-projektzentrale`, `#app-labelkit`, `#app-fotokit`, `#app-plankit`, `#app-belegkit`, `#app-spesenkit` |
+| Apps Schritt für Schritt – je App ein Kapitel mit Schrittleiste, Abhakliste, Übungen und Tastenkürzeln: Projektzentrale, LabelKit, FotoKit, ResultKit, PlanKit, BelegKit, SpesenKit | `#app-projektzentrale`, `#app-labelkit`, `#app-fotokit`, `#app-resultkit`, `#app-plankit`, `#app-belegkit`, `#app-spesenkit` |
 | Probenbezeichnung Bohrkerne – mit ID-Baukasten und ID-Prüfung | `#bohrkern` |
 | Raumkürzel | `#raumkuerzel` |
 
@@ -25,6 +25,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.9.0** – Neues Kapitel „ResultKit Schritt für Schritt“ (`#app-resultkit`, auch in `hilfe-anker.json`): Projekt öffnen, Stand je Probe lesen („✓ Ergebnis“, „◐ nur vorläufig“, „○ offen“, „! nicht beauftragt“), Prüfberichte importieren, prüfen (vorläufig/ersetzt, fremde Projektnummer), „Ergebnisse übernehmen“ (`Laborergebnisse/_Ergebnisse.json`), weiter in PlanKit und FotoKit; drei Übungen. Laborergebnisse laufen jetzt über ResultKit (ab PlanKit 1.36, FotoKit 1.19): Brandschaden Schritt 7 und Überblick, Bohrkerne Schritt 6, Projektzentrale (fünf Aufgaben), FotoKit „Ergebnistabelle …“, PlanKit „Proben übernehmen …“, „Wo liegt was?“ angepasst.
 - **0.8.6** – Startseite, „Etwas klemmt?“: Link „💬 Rückmeldung schreiben“ ins Rückmeldeformular (`../rueckmeldung/?app=handbuch&version=…`), E-Mail bleibt als Ausweg.
 - **0.8.5** – FotoKit-Kapitel (ab FotoKit 1.17): „Dateibenennung ▸“ und „⋯ Mehr“ (Version und Build, gesicherte Fassungen/Eingaben, roter Punkt).
 - **0.8.4** – SpesenKit-Kapitel (ab SpesenKit 1.8.5): Schritt 1 „Tätigkeit“ Außendienst/Innendienst, Schritt 3 Haken „Gehört zu keiner Reise und keinem Projekt“.
