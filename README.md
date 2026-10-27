@@ -25,6 +25,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.12.0** – Kapitel **ResultKit** und Brandschaden Schritt 7 passend zu ResultKit 1.3: eine Seite mit „Jetzt dran“, Proben per Klick aufklappen, Prüfberichte zugeklappt unten, „Jetzt übernehmen?“ nach dem Import. Übung „Welchen Stand hat die Probe?“ mit den neuen Bezeichnungen.
 - **0.11.0** – Kapitel **Projektzentrale** und Verweise in den anderen Kapiteln passend zu Projektzentrale 1.29: „Heute für dich“, Liste in Gruppen, „Jetzt dran“, sechs Stufen, Menü „⋯ Mehr“.
 - **0.10.0** – Neues Kapitel **BüroKit** (Tagesliste des Büros: einrichten, Liste lesen, Gutachten abhaken, eigene Aufgaben und Rückfragen). Brandschaden Schritt 8 und Projektzentrale Schritte 6–7 beschreiben die einfache Übergabe „Ans Büro“ statt der früheren Büroübersicht.
 - **0.9.1** – ResultKit: Schritt 2 zeigt die neue Übersicht (je Probenart Probe · Probenahmestelle · Ergebnis in der Farbe der Bewertung, Filter, Sortierung) und „Prüfung und Import“. Chlorid nach VdS 2357 (5–10 µg/cm² korrosionschemisch relevant, grün/amber/rot, unabhängig von der Nutzung; auf Nicht-Metall-Oberflächen als Hinweis auf das Korrosionspotenzial) in ResultKit, PlanKit, FotoKit und im Brandschaden-Ablauf; Skala-Übung mit fünftem Fall (Chlorid).
