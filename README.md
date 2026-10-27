@@ -25,6 +25,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.12.1** – ResultKit Schritt 6: Warnleiste „Neuerer Laborstand in ResultKit“ in PlanKit (ab 1.40) und wie man aktualisiert.
 - **0.12.0** – Kapitel **ResultKit** und Brandschaden Schritt 7 passend zu ResultKit 1.3: eine Seite mit „Jetzt dran“, Proben per Klick aufklappen, Prüfberichte zugeklappt unten, „Jetzt übernehmen?“ nach dem Import. Übung „Welchen Stand hat die Probe?“ mit den neuen Bezeichnungen. Projektzentrale Schritt 2: Gruppe „Vor Spektron“ (Spektron-Start 26.0560, Projektzentrale 1.30).
 - **0.11.0** – Kapitel **Projektzentrale** und Verweise in den anderen Kapiteln passend zu Projektzentrale 1.29: „Heute für dich“, Liste in Gruppen, „Jetzt dran“, sechs Stufen, Menü „⋯ Mehr“.
 - **0.10.0** – Neues Kapitel **BüroKit** (Tagesliste des Büros: einrichten, Liste lesen, Gutachten abhaken, eigene Aufgaben und Rückfragen). Brandschaden Schritt 8 und Projektzentrale Schritte 6–7 beschreiben die einfache Übergabe „Ans Büro“ statt der früheren Büroübersicht.
