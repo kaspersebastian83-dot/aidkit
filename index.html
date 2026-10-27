@@ -1089,6 +1089,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="rk6a"><label for="rk6a"><b>PlanKit</b> → <b>„Proben übernehmen …“</b>: Dort stehen die Probenerfassung aus LabelKit und jeder in ResultKit übernommene Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Den Bericht wählen.</label></li>
         <li><input type="checkbox" id="rk6b"><label for="rk6b">In der Prüftabelle <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“ – Labordaten und Messwerte hängen dann an den LabelKit-Proben.</label></li>
         <li><input type="checkbox" id="rk6c"><label for="rk6c"><b>FotoKit</b> → <b>„Ergebnistabelle …“</b>: nimmt die in ResultKit übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle. Hat sich der Ordner seit der Übernahme geändert oder sind noch Proben offen, warnt FotoKit.</label></li>
+        <li><input type="checkbox" id="rk6e"><label for="rk6e">Später ein neuer Bericht übernommen (z. B. endgültig statt vorläufig)? PlanKit zeigt oben die Leiste <b>„Neuerer Laborstand in ResultKit“</b>. <b>„Proben übernehmen …“</b>, den Bericht wählen, <b>„Alle Konflikte: Aktualisieren“</b> – die Proben bleiben, wo sie im Plan stehen.</label></li>
         <li><input type="checkbox" id="rk6d"><label for="rk6d">Aus PlanKit und FotoKit führt <b>„🧪 ResultKit öffnen“</b> hierher zurück.</label></li>
       </ul>
     </div><div>
@@ -1650,7 +1651,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.12.0';
+const VERSION = '0.12.1';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
