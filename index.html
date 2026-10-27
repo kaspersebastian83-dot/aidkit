@@ -368,9 +368,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="b2a"><label for="b2a">In der Projektzentrale das <b>Projekt wählen</b> (Ordner „26.0123 Ort Kürzel“).</label></li>
         <li><input type="checkbox" id="b2b"><label for="b2b"><b>Projektdaten</b>: „Arbeitszettel einlesen …“ (jeder Wert wird vor dem Speichern gezeigt) oder Objekt, Auftraggeber, Schadendatum von Hand.</label></li>
-        <li><input type="checkbox" id="b2c"><label for="b2c"><b>Gelbe Felder</b> ausfüllen – das sind die Pflichtangaben. Oben auf der Karte steht „5 Pflichtangaben fehlen“; ein Klick darauf springt zum ersten leeren Feld.</label></li>
+        <li><input type="checkbox" id="b2c"><label for="b2c"><b>Gelbe Felder</b> ausfüllen – das sind die Pflichtangaben. Oben im Projekt steht „5 Pflichtangaben fehlen“; ein Klick darauf öffnet die Projektdaten am ersten leeren Feld.</label></li>
         <li><input type="checkbox" id="b2e"><label for="b2e">Besonders die <b>Nutzung</b>: Sie bestimmt die Bewertung nach VdS 2357 in der Ergebniskarte.</label></li>
-        <li><input type="checkbox" id="b2d"><label for="b2d">Darunter stehen fünf Aufgaben (LabelKit, FotoKit, ResultKit „Laborergebnisse prüfen“, PlanKit, BelegKit) – jede öffnet direkt den richtigen Ordner. Die Leiste <b>Projektstand</b> zeigt, wie weit das Projekt ist (Ortstermin › Laborauftrag › Prüfbericht › Übergabe ans Büro › Versand › Abrechnung, je mit Datum).</label></li>
+        <li><input type="checkbox" id="b2d"><label for="b2d">Oben steht <b>„Jetzt dran“</b> mit dem nächsten Schritt, darunter die sechs <b>Stufen</b> (Projekt anlegen · Ortstermin: Proben &amp; Fotos · Labor · Gutachten · Ans Büro → Versand · Abrechnung) – je mit Stand und Datum; ihre Knöpfe öffnen LabelKit, FotoKit, ResultKit, PlanKit und BelegKit direkt im richtigen Ordner.</label></li>
       </ul>
     </div><div>
       <div class="uebung" id="uebung-pflicht">
@@ -420,7 +420,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>5 · Fotos</h2><span class="ort buero">Büro</span><span class="dauer">FotoKit → Ordner „Fotos“</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="b5a"><label for="b5a">In der Projektzentrale <b>„Fotos &amp; Dokumentation“</b> – FotoKit öffnet den Ordner „Fotos“.</label></li>
+        <li><input type="checkbox" id="b5a"><label for="b5a">In der Projektzentrale in der Stufe „Ortstermin“ <b>„Fotos“</b> – FotoKit öffnet den Ordner „Fotos“.</label></li>
         <li><input type="checkbox" id="b5b"><label for="b5b">Je Bild <b>Beschreibung</b>, optional <b>Abschnitt</b> (z. B. „Küche“, gilt für die folgenden Bilder) und <b>Probe-Nr.</b> (z. B. „P1“, bei Bohrkernen die Kern-ID wie „EG-WZ-B-7“). Enter springt weiter.</label></li>
         <li><input type="checkbox" id="b5c"><label for="b5c">Unbrauchbare Bilder <b>aussortieren</b> (Alt+X), schiefe <b>drehen</b> (Alt+R), Reihenfolge ziehen oder „nach Abschnitt“ sortieren.</label></li>
         <li><input type="checkbox" id="b5e"><label for="b5e"><b>Projektdaten …</b> prüfen – die Zahl am Knopf zeigt, wie viele Pflichtangaben fürs Deckblatt fehlen (u. a. <b>Anlagen-Nr.</b>, z. B. „Anlage 3“).</label></li>
@@ -498,7 +498,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b9d"><label for="b9d"><b>„Abrechnung“</b>: alle Positionen mit Nummern zum Übertragen ins Rechnungsprogramm; „Stand speichern“.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Die Rechnung selbst (Nummer, Umsatzsteuer, Archiv) bleibt im Rechnungsprogramm. Spesen ohne Projektbezug: SpesenKit unter „Weitere Apps“.</div>
+      <div class="tipp">Die Rechnung selbst (Nummer, Umsatzsteuer, Archiv) bleibt im Rechnungsprogramm. Spesen ohne Projektbezug: SpesenKit in der Projektzentrale unter „⋯ Mehr“.</div>
       <a class="app-oeffnen" href="../aufwandkit/" target="belegkit" rel="noopener">BelegKit öffnen ↗</a>
     </div></div>
   </div>
@@ -520,7 +520,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </tbody>
   </table></div>
   <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen. Nicht löschen oder umbenennen.</p>
-  <p class="wo">Hilfe: Knopf <b>📘</b> in der App (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „Weitere Apps“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
+  <p class="wo">Hilfe: Knopf <b>📘</b> in der App (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Mehr“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
 <section id="bohrkern-ablauf" class="ablauf" data-speicher="aidkit-bohrkern-haken">
@@ -645,7 +645,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 </section>
 <section id="app-projektzentrale" class="ablauf" data-speicher="aidkit-app-projektzentrale-haken">
   <h1>Projektzentrale</h1>
-  <div class="app-kopf"><span class="zweck">Der Einstieg für jedes Projekt: Projekt wählen, Projektdaten pflegen, die Apps im richtigen Ordner öffnen und den Auftrag bewusst ans Büro übergeben.</span><a class="app-oeffnen" style="margin:0" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a></div>
+  <div class="app-kopf"><span class="zweck">Der Einstieg für jedes Projekt: sehen, was heute dran ist, die Apps im richtigen Ordner öffnen und das Gutachten ans Büro übergeben.</span><a class="app-oeffnen" style="margin:0" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a></div>
   <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
   <ol class="schritte" aria-label="Schritte"></ol>
 
@@ -654,7 +654,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="pz1a"><label for="pz1a"><b>Google Chrome oder Microsoft Edge</b> öffnen – Firefox kann keine Ordner beschreiben.</label></li>
-        <li><input type="checkbox" id="pz1b"><label for="pz1b">„Archivordner wählen …“ → <code>C:\daten\Mosaik Archivordner</code> → „Zulassen“.</label></li>
+        <li><input type="checkbox" id="pz1b"><label for="pz1b">„Archivordner wählen …“ → <code>C:\daten\Mosaik Archivordner</code> → „Zulassen“. Danach steht der Ordnername oben rechts (grüner Punkt; Klick wählt einen anderen).</label></li>
         <li><input type="checkbox" id="pz1c"><label for="pz1c">Im Browsermenü <b>„App installieren“</b> wählen – die Projektzentrale startet dann wie ein Programm.</label></li>
         <li><input type="checkbox" id="pz1d"><label for="pz1d">Nach jedem Browserneustart den Knopf <b>„Zugriff auf … erlauben“</b> klicken.</label></li>
       </ul>
@@ -667,9 +667,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>2 · Projekt finden</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pz2a"><label for="pz2a">Oben in <b>„Suchen: Nummer oder Ort …“</b> tippen – gesucht wird im ganzen Ordnernamen.</label></li>
-        <li><input type="checkbox" id="pz2b"><label for="pz2b">Das Jahr mit den Knöpfen „Alle“ / „2026“ … eingrenzen (nur sichtbar, wenn es mehrere Jahre gibt).</label></li>
-        <li><input type="checkbox" id="pz2c"><label for="pz2c">Unter <b>„Ich bin …“</b> den eigenen Namen wählen; <b>„Meine Projekte“</b> zeigt dann nur die eigenen.</label></li>
+        <li><input type="checkbox" id="pz2a"><label for="pz2a">Links oben in <b>„Suchen: Nummer oder Ort …“</b> tippen – gesucht wird im ganzen Ordnernamen.</label></li>
+        <li><input type="checkbox" id="pz2b"><label for="pz2b">Mit <b>„Meine“</b> und den Jahren „Alle“ / „2026“ … eingrenzen. Die Liste ist gruppiert: <b>Braucht dich</b> · <b>Läuft</b> (Labor oder Büro sind dran) · <b>Abgeschlossen</b> · Ältere Projekte.</label></li>
+        <li><input type="checkbox" id="pz2c"><label for="pz2c">Links oben bei <b>„Ich bin …“</b> den eigenen Namen wählen. Die Startseite <b>„☀ Heute für dich“</b> zeigt dann deine Projekte, bei denen ein Schritt bei dir liegt – Karte anklicken öffnet das Projekt.</label></li>
         <li><input type="checkbox" id="pz2d"><label for="pz2d">Im Projektkopf <b>„Zuständig“</b> prüfen – eine Änderung steht in <code>_Projekt.json</code>, der Ordnername bleibt.</label></li>
       </ul>
     </div><div>
@@ -681,23 +681,23 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>3 · Projektdaten pflegen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pz3a"><label for="pz3a"><b>„📄 Arbeitszettel einlesen …“</b> klicken oder das PDF auf die Karte ziehen.</label></li>
+        <li><input type="checkbox" id="pz3a"><label for="pz3a">In Stufe 1 <b>„Projekt anlegen“</b> auf <b>„Arbeitszettel einlesen …“</b> klicken oder das PDF auf die aufgeklappten Projektdaten ziehen.</label></li>
         <li><input type="checkbox" id="pz3b"><label for="pz3b">Im Fenster „Arbeitszettel übernehmen“ jeden Wert prüfen und „Übernehmen“ – schon ausgefüllte Felder werden nur überschrieben, wenn sie angehakt sind.</label></li>
         <li><input type="checkbox" id="pz3c"><label for="pz3c">Die <b>gelben Pflichtfelder</b> ausfüllen: Objekt, Nutzung, Auftraggeber, Schadenereignis, Schadendatum, Ortstermin, Sachverständiger.</label></li>
-        <li><input type="checkbox" id="pz3d"><label for="pz3d">Auf <b>„n Pflichtangaben fehlen“</b> klicken – springt zum ersten leeren Feld.</label></li>
+        <li><input type="checkbox" id="pz3d"><label for="pz3d">Oben auf <b>„n Pflichtangaben fehlen“</b> klicken – öffnet die Projektdaten am ersten leeren Feld. Sonst bleiben sie zugeklappt (<b>„Angaben ▾“</b>).</label></li>
       </ul>
     </div><div>
       <div class="tipp">Gespeichert wird von selbst: „Änderungen werden gespeichert …“ wechselt zu „✓ Gespeichert“. Speichern geht auch mit leeren Pflichtfeldern.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Apps">
-    <div class="schritt-kopf"><h2>4 · Apps starten</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-kopf"><h2>4 · Jetzt dran und die Stufen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pz4a"><label for="pz4a"><b>„Proben &amp; Laborauftrag“</b> öffnet LabelKit im Ordner „Laboraufträge“.</label></li>
-        <li><input type="checkbox" id="pz4b"><label for="pz4b"><b>„Fotos &amp; Dokumentation“</b> öffnet FotoKit („Fotos“), <b>„Laborergebnisse prüfen“</b> öffnet ResultKit („Laborergebnisse“), <b>„Probenplan bearbeiten“</b> öffnet PlanKit („Pläne“).</label></li>
-        <li><input type="checkbox" id="pz4c"><label for="pz4c"><b>„Zeiten &amp; Abrechnung“</b> öffnet BelegKit („Abrechnung“).</label></li>
-        <li><input type="checkbox" id="pz4d"><label for="pz4d">Anlagen: bei PlanKit <b>„Anlage Probenahme · Erstellen …“</b> (sobald ein Plan da ist), bei LabelKit <b>„Anlage PN 98 / Brandgeruch · Erstellen …“</b> – die Datei liegt danach in „Mitteilungen“.</label></li>
+        <li><input type="checkbox" id="pz4a"><label for="pz4a">Oben steht <b>„Jetzt dran“</b> mit einem blauen Knopf – das ist der nächste Schritt. Wartet das Projekt auf Labor oder Büro, steht das dort.</label></li>
+        <li><input type="checkbox" id="pz4b"><label for="pz4b">Darunter die sechs <b>Stufen</b>: Projekt anlegen · Ortstermin: Proben &amp; Fotos · Labor · Gutachten · Ans Büro → Versand · Abrechnung. Die Knöpfe öffnen die App im richtigen Ordner: <b>„Proben &amp; Etiketten“</b> (LabelKit), <b>„Fotos“</b> (FotoKit), <b>„Ergebnisse prüfen“</b> (ResultKit), <b>„Probenplan“</b> (PlanKit).</label></li>
+        <li><input type="checkbox" id="pz4c"><label for="pz4c"><b>„Zeiten &amp; Abrechnung“</b> in Stufe 6 öffnet BelegKit („Abrechnung“).</label></li>
+        <li><input type="checkbox" id="pz4d"><label for="pz4d">Anlagen in der Stufe <b>„Gutachten“</b>: <b>„Anlage Probenahme …“</b> (sobald ein Plan da ist) und <b>„Anlage PN 98 / Brandgeruch · Erstellen …“</b> – die Datei liegt danach in „Mitteilungen“.</label></li>
       </ul>
     </div><div>
       <div class="tipp">In Word an der gewünschten Stelle „Einfügen › Objekt › Text aus Datei“.</div>
@@ -707,27 +707,27 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>5 · Stand prüfen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pz5a"><label for="pz5a">Die Leiste <b>Projektstand</b> lesen: Ortstermin › Laborauftrag › Prüfbericht › Übergabe ans Büro › Versand › Abrechnung – je mit ✓ und Datum oder ○.</label></li>
+        <li><input type="checkbox" id="pz5a"><label for="pz5a">An jeder Stufe den Stand lesen: <b>✓</b> fertig (mit Datum), <b>blau umrandet</b> = aktuell, „Beim Labor“ / „Beim Büro“ = andere sind dran, <b>–</b> gestrichelt = übersprungen (keine Spur im Ordner).</label></li>
         <li><input type="checkbox" id="pz5b"><label for="pz5b">Bei „Es fehlen Unterordner: …“ auf <b>„Anlegen“</b> klicken und bestätigen.</label></li>
-        <li><input type="checkbox" id="pz5c"><label for="pz5c">Die Karte <b>„Ordner“</b> aufklappen, um den Dateibestand je Unterordner zu sehen.</label></li>
+        <li><input type="checkbox" id="pz5c"><label for="pz5c">Unten <b>„Ordner“</b> aufklappen, um den Dateibestand je Unterordner zu sehen.</label></li>
         <li><input type="checkbox" id="pz5d"><label for="pz5d">„Frühere Versandangaben“ ist nur für alte Angaben da.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="pz-subs"><h3>Kurz üben: Welche Unterordner legt „Anlegen“ an?</h3></div>
-      <div class="tipp">Die Hinweise zeigen nur den erkannten Dateibestand – keine fachliche Fertigstellung.</div>
+      <div class="tipp">Die Stufen sind eine Orientierung aus dem Dateibestand – keine fachliche Fertigstellung. Jede App geht jederzeit, z. B. der Probenplan, während das Labor noch läuft.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="6" data-titel="Ans Büro">
     <div class="schritt-kopf"><h2>6 · Gutachten ans Büro</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pz6a"><label for="pz6a">Karte <b>„Ans Büro“</b> → <b>„Gutachten ans Büro übergeben“</b> aufklappen.</label></li>
+        <li><input type="checkbox" id="pz6a"><label for="pz6a">In Stufe 5 <b>„Ans Büro → Versand“</b> auf <b>„Ans Büro übergeben“</b> klicken (ist es dran, steht das Formular schon offen).</label></li>
         <li><input type="checkbox" id="pz6b"><label for="pz6b"><b>Word-Datei</b>: die neueste aus „Mitteilungen“ ist schon gewählt – prüfen.</label></li>
         <li><input type="checkbox" id="pz6c"><label for="pz6c"><b>Empfänger</b> anhaken und Anschrift prüfen (Auftraggeber und beteiligte Sachverständige sind aus den Projektdaten vorausgefüllt).</label></li>
         <li><input type="checkbox" id="pz6d"><label for="pz6d">Optional <b>„Fällig bis“</b> und Hinweis fürs Büro, dann <b>„Ans Büro übergeben“</b>.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Die Papiermappe geht wie immer ans Büro. Die Karte zeigt danach, was noch offen ist (Gegenlesen · PDF · Versand). Stellt das Büro eine <b>Rückfrage</b>, steht sie oben am Projekt – dort direkt beantworten.</div>
+      <div class="tipp">Die Papiermappe geht wie immer ans Büro. Stufe 5 zeigt danach, was noch offen ist (Gegenlesen · PDF · Versand). Stellt das Büro eine <b>Rückfrage</b>, steht sie oben am Projekt – dort direkt beantworten.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="7" data-titel="Büro">
@@ -745,10 +745,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>8 · Team und Zahlen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pz8a"><label for="pz8a"><b>„👥 Mitarbeiter“</b>: Ordnerkürzel, Name, App-Kürzel, Aktiv – „+ Person“, dann „Speichern“ (liegt in <code>_Spektron-Mitarbeiter.json</code>).</label></li>
+        <li><input type="checkbox" id="pz8a"><label for="pz8a">Oben unter <b>„⋯ Mehr“</b> › <b>„👥 Mitarbeiter“</b>: Ordnerkürzel, Name, App-Kürzel, Aktiv – „+ Person“, dann „Speichern“ (liegt in <code>_Spektron-Mitarbeiter.json</code>).</label></li>
         <li><input type="checkbox" id="pz8b"><label for="pz8b"><b>„📊 Auslastung“</b>: In Bearbeitung / Beim Büro / Rückfrage / Offen je Person – eine Zahl antippen zeigt die Projekte.</label></li>
         <li><input type="checkbox" id="pz8c"><label for="pz8c"><b>„📈 Durchlaufzeiten“</b>: wie lange es vom Ortstermin bis zum Versand dauert, aus vorhandenen Daten.</label></li>
-        <li><input type="checkbox" id="pz8d"><label for="pz8d">Unter <b>„Weitere Apps“</b>: Handbuch (AidKit), BüroKit, SpesenKit.</label></li>
+        <li><input type="checkbox" id="pz8d"><label for="pz8d">Ebenfalls unter <b>„⋯ Mehr“</b>: Auslastung, Durchlaufzeiten, Handbuch (AidKit), BüroKit, SpesenKit, Rückmeldung, Datenarchiv.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Wer nicht mehr im Büro ist, wird auf inaktiv gesetzt – alte Projekte zeigen den Namen weiter.</div>
@@ -769,7 +769,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk1a"><label for="lk1a">In der Projektzentrale <b>„Proben &amp; Laborauftrag“</b> – oder in LabelKit oben „📁 Projekt“ und den Projektordner wählen.</label></li>
+        <li><input type="checkbox" id="lk1a"><label for="lk1a">In der Projektzentrale in der Stufe „Ortstermin“ <b>„Proben &amp; Etiketten“</b> – oder in LabelKit oben „📁 Projekt“ und den Projektordner wählen.</label></li>
         <li><input type="checkbox" id="lk1b"><label for="lk1b">Projektnummer und Schadenort kommen aus dem <b>Ordnernamen</b>; die neueste „…_Daten.json“ aus „Laboraufträge“ wird automatisch geladen.</label></li>
         <li><input type="checkbox" id="lk1c"><label for="lk1c">Ohne Projekt: oben die „Projektnummer“ eintragen – sie wird in alle Proben übernommen.</label></li>
         <li><input type="checkbox" id="lk1d"><label for="lk1d">Das Willkommen-Fenster mit „Los geht's →“ schließen (oder „Nicht mehr anzeigen“).</label></li>
@@ -898,7 +898,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>2 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="fk2a"><label for="fk2a">In der Projektzentrale <b>„Fotos &amp; Dokumentation“</b> – oder in FotoKit „Projekt öffnen …“ und den Projektordner wählen (z. B. <code>26.0123 Köln</code>).</label></li>
+        <li><input type="checkbox" id="fk2a"><label for="fk2a">In der Projektzentrale in der Stufe „Ortstermin“ <b>„Fotos“</b> – oder in FotoKit „Projekt öffnen …“ und den Projektordner wählen (z. B. <code>26.0123 Köln</code>).</label></li>
         <li><input type="checkbox" id="fk2b"><label for="fk2b">Prüfen, dass oben in der blauen Leiste <b>Projektnummer und Ort</b> stehen.</label></li>
         <li><input type="checkbox" id="fk2c"><label for="fk2c">Steht dort „Projekt unbekannt“ (nur der Ordner „Fotos“ gewählt): <b>„Projekt zuordnen …“</b>.</label></li>
         <li><input type="checkbox" id="fk2d"><label for="fk2d">Neue Fotos in den Ordner kopieren und <b>„Fotos neu einlesen“</b>.</label></li>
@@ -1016,7 +1016,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk1a"><label for="rk1a">In der Projektzentrale <b>„Laborergebnisse prüfen“</b> – oder oben in der Spektron-Leiste der anderen Apps auf <b>③ ResultKit</b>. Das Projekt ist dann schon offen.</label></li>
+        <li><input type="checkbox" id="rk1a"><label for="rk1a">In der Projektzentrale in der Stufe „Labor“ <b>„Ergebnisse prüfen“</b> – oder oben in der Spektron-Leiste der anderen Apps auf <b>③ ResultKit</b>. Das Projekt ist dann schon offen.</label></li>
         <li><input type="checkbox" id="rk1b"><label for="rk1b">Sonst <b>„📁 Projekt“</b> bzw. <b>„📁 Projektordner öffnen“</b> und den Projektordner wählen (z. B. <code>26.0123 Köln</code>) oder dessen Ordner „Laborergebnisse“.</label></li>
         <li><input type="checkbox" id="rk1c"><label for="rk1c">Prüfen, dass oben <b>Projektnummer und Ort</b> stehen.</label></li>
       </ul>
@@ -1111,7 +1111,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk1a"><label for="pk1a">In der Projektzentrale <b>„Probenplan bearbeiten“</b> – oder in PlanKit <b>„📁 Projekt“</b> und den Projektordner wählen.</label></li>
+        <li><input type="checkbox" id="pk1a"><label for="pk1a">In der Projektzentrale in der Stufe „Gutachten“ <b>„Probenplan“</b> – oder in PlanKit <b>„📁 Projekt“</b> und den Projektordner wählen.</label></li>
         <li><input type="checkbox" id="pk1b"><label for="pk1b">Nach einem Browserneustart: „Zugriff erlauben und Projekt öffnen“.</label></li>
         <li><input type="checkbox" id="pk1c"><label for="pk1c">Fehlt der Ordner „Pläne“: die Frage mit „Anlegen“ beantworten.</label></li>
         <li><input type="checkbox" id="pk1d"><label for="pk1d">Meldet PlanKit eine zwischenzeitlich geänderte Fassung: bewusst „Andere Fassung laden“, „Meine Fassung als Kopie sichern“ oder „Meine Fassung übernehmen“.</label></li>
@@ -1343,7 +1343,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Einmal einrichten</h2><span class="ort buero">Büro</span><span class="dauer">einmal</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="sk1a"><label for="sk1a">Öffnen in der Projektzentrale unter <b>„Weitere Apps“</b>.</label></li>
+        <li><input type="checkbox" id="sk1a"><label for="sk1a">Öffnen in der Projektzentrale oben unter <b>„⋯ Mehr“</b>.</label></li>
         <li><input type="checkbox" id="sk1b"><label for="sk1b">„Einstellungen“: „Name“, <b>„Wohnort / Startadresse“</b>, „Erste Tätigkeitsstätte“ und die Fahrzeuge – dann „Einstellungen speichern“.</label></li>
         <li><input type="checkbox" id="sk1e"><label for="sk1e"><b>„Tätigkeit“</b> wählen: <b>Außendienst</b> (Dienstreisen, Fahrtenbuch, Verpflegung) oder <b>Innendienst</b> (nur Kosten und Belege, ohne Reise- und Projektzuordnung).</label></li>
         <li><input type="checkbox" id="sk1c"><label for="sk1c">Das meistgenutzte Fahrzeug als <b>„Standard“</b> markieren.</label></li>
@@ -1524,7 +1524,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>2 · Öffnen und einlesen</h2><span class="ort buero">Büro</span><span class="dauer">einmal je Sitzung</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="da2a"><label for="da2a">Projektzentrale → ganz unten unter „Weitere Apps“ der kleine Link <b>„Datenarchiv ↗“</b>.</label></li>
+        <li><input type="checkbox" id="da2a"><label for="da2a">Projektzentrale → oben <b>„⋯ Mehr“</b> → unten der kleine Link <b>„Datenarchiv ↗“</b>.</label></li>
         <li><input type="checkbox" id="da2b"><label for="da2b">Der Archivordner ist derselbe wie in der Projektzentrale; das Einlesen startet von selbst (sonst <b>„Einlesen“</b>).</label></li>
         <li><input type="checkbox" id="da2c"><label for="da2c">Gelesen werden die <b>Eurofins-XML</b> im Ordner „Laborergebnisse“ jedes Projekts, dazu Nutzung, Brandgut und Schadendatum aus den Projektdaten.</label></li>
       </ul>
@@ -1650,7 +1650,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.10.0';
+const VERSION = '0.11.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
