@@ -139,6 +139,21 @@ const root = path.join(__dirname, '..');
     for (const i of [0, 1]) await l.locator(`[data-a="${i}"]`).click();
     await l.locator('.quiz-knopf button').click(); assert.match(await l.locator('.antwort').innerText(), /Nicht ganz/);
     await l.locator('[data-a="2"]').click(); await l.locator('.quiz-knopf button').click(); assert.match(await l.locator('.antwort').innerText(), /Richtig/);
+    // Übergabe ans Büro & Rechnung: fünf Schritte, Fluss springt, Übungen
+    await page.goto(base + '#buero-uebergabe');
+    assert.equal(await page.locator('#buero-uebergabe .schritte button').count(), 5);
+    await page.locator('#buero-uebergabe .fluss [data-geh="4"]').click();
+    assert.match(await page.locator('#buero-uebergabe .schritt.aktiv h2').innerText(), /4 · Rechnung schreiben/);
+    const ur = page.locator('#buero-uebergabe [data-quiz="ub-rechnung"]');
+    await ur.locator('[data-a="1"]').click(); assert.match(await ur.locator('.antwort').innerText(), /Nicht ganz/);
+    await ur.locator('[data-a="0"]').click(); assert.match(await ur.locator('.antwort').innerText(), /Richtig/);
+    await page.locator('#buero-uebergabe .fluss [data-geh="2"]').click();
+    const ua = page.locator('#buero-uebergabe [data-quiz="ub-anlagen"]');
+    await ua.locator('[data-a="0"]').click(); await ua.locator('[data-a="1"]').click(); await ua.locator('.quiz-knopf button').click();
+    assert.match(await ua.locator('.antwort').innerText(), /Richtig/);
+    assert.equal(await page.locator('nav a[href="#buero-uebergabe"]').count(), 1);
+    await page.goto(base + '#app-buerokit');
+    assert.deepEqual(await page.locator('#app-buerokit .schritte button').allInnerTexts().then(t => t.map(x => x.replace(/^\D*\d+\s*·?\s*/, '').replace(/\s*✓$/, '').trim())), ['Einrichten', 'Liste lesen', 'Abhaken', 'Rechnung', 'Eigene Aufgaben']);
     // Haken je Kapitel getrennt
     await page.goto(base + '#app-fotokit'); for (const cb of await page.locator('#app-fotokit .schritt.aktiv .check input').all()) await cb.check();
     await page.goto(base + '#app-plankit'); assert.doesNotMatch(await page.locator('#app-plankit .schritte button').first().innerText(), /✓/, 'Haken nur im eigenen Kapitel');

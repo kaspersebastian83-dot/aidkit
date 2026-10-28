@@ -11,7 +11,8 @@ Wie wir im Büro arbeiten: Abläufe über mehrere Apps und gemeinsame Regeln. Wi
 | Start, Übersicht der Apps, „Gilt in allen Apps“ | `#start` |
 | Brandschaden von A bis Z – der normale Weg durch alle Apps in neun Schritten, mit Übungen zu Pflichtangaben und Bewertungsskala, Überblick „welche App speichert wohin“ und „Wo liegt was?“ | `#brandschaden` |
 | Bohrkerne: Schritt für Schritt – sechs Schritte mit Abhakliste, zwei Übungen, Spickzettel zum Drucken | `#bohrkern-ablauf` |
-| Apps Schritt für Schritt – je App ein Kapitel mit Schrittleiste, Abhakliste, Übungen und Tastenkürzeln: Projektzentrale, LabelKit, FotoKit, ResultKit, PlanKit, BelegKit, SpesenKit | `#app-projektzentrale`, `#app-labelkit`, `#app-fotokit`, `#app-resultkit`, `#app-plankit`, `#app-belegkit`, `#app-spesenkit` |
+| Übergabe ans Büro & Rechnung – fünf Schritte zwischen Sachverständigen (BelegKit, Projektzentrale) und Büro (BüroKit), zwei Übungen, „Wer sieht was?“ | `#buero-uebergabe` |
+| Apps Schritt für Schritt – je App ein Kapitel mit Schrittleiste, Abhakliste, Übungen und Tastenkürzeln: Projektzentrale, LabelKit, FotoKit, ResultKit, PlanKit, BelegKit, SpesenKit, BüroKit | `#app-projektzentrale`, `#app-labelkit`, `#app-fotokit`, `#app-resultkit`, `#app-plankit`, `#app-belegkit`, `#app-spesenkit`, `#app-buerokit` |
 | Probenbezeichnung Bohrkerne – mit ID-Baukasten und ID-Prüfung | `#bohrkern` |
 | Raumkürzel | `#raumkuerzel` |
 
@@ -25,6 +26,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.13.0** – Neuer Ablauf **Übergabe ans Büro & Rechnung** (`#buero-uebergabe`, auch in `hilfe-anker.json`): BelegKit „Stand speichern“ als Grundlage der Rechnung, „Ans Büro“ mit Anlagen und Abrechnungsstand (Projektzentrale 1.31), in BüroKit Gegenlesen/PDF/Versand, dann Rechnung mit „Positionen kopieren“, Warnung bei geändertem Stand und „Je Person“ (BüroKit 1.1/1.2); Übungen „Was ist schon angehakt?“ und „Darf das Büro jetzt abrechnen?“, Tabelle „Wer sieht was?“. BüroKit-Kapitel mit neuem Schritt 4 „Rechnung“; Brandschaden 8/9, Projektzentrale 6/7 und BelegKit 7 verweisen darauf.
 - **0.12.1** – ResultKit Schritt 6: Warnleiste „Neuerer Laborstand in ResultKit“ in PlanKit (ab 1.40) und wie man aktualisiert.
 - **0.12.0** – Kapitel **ResultKit** und Brandschaden Schritt 7 passend zu ResultKit 1.3: eine Seite mit „Jetzt dran“, Proben per Klick aufklappen, Prüfberichte zugeklappt unten, „Jetzt übernehmen?“ nach dem Import. Übung „Welchen Stand hat die Probe?“ mit den neuen Bezeichnungen. Projektzentrale Schritt 2: Gruppe „Vor Spektron“ (Spektron-Start 26.0560, Projektzentrale 1.30).
 - **0.11.0** – Kapitel **Projektzentrale** und Verweise in den anderen Kapiteln passend zu Projektzentrale 1.29: „Heute für dich“, Liste in Gruppen, „Jetzt dran“, sechs Stufen, Menü „⋯ Mehr“.
