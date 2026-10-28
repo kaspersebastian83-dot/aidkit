@@ -514,14 +514,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div style="overflow-x:auto"><table class="wo-tab">
     <thead><tr><th>Ordner im Projekt</th><th>Was dort liegt</th><th>App</th></tr></thead>
     <tbody>
-      <tr><td>Laboraufträge</td><td>Laborübergaben, Protokolle, LabelKit-Projektdatei (…_Daten.json)</td><td>LabelKit</td></tr>
-      <tr><td>Fotos</td><td>Projektfotos, Bilddokumentation (PDF), FotoKit-Daten</td><td>FotoKit</td></tr>
-      <tr><td>Pläne</td><td>Grundrisse und PlanKit-Projekt (.probenplan)</td><td>PlanKit</td></tr>
-      <tr><td>Laborergebnisse</td><td>Prüfberichte vom Labor (XML und PDF), über ResultKit importiert; <code>_Ergebnisse.json</code> mit den übernommenen Werten für PlanKit und FotoKit – nicht löschen</td><td>ResultKit</td></tr>
+      <tr><td><b>_Spektron</b></td><td><b>Bitte nicht anfassen.</b> Alles, was ohne App nicht nutzbar ist: Projektdaten (<code>_Projekt.json</code>), LabelKit-Projektdatei (…_Daten.json), FotoKit-Daten, übernommene Laborwerte (<code>_Ergebnisse.json</code>), PlanKit-Projekt (.probenplan), Zeiten und Abrechnungsstände (JSON), Büroaufgaben. Je App ein Unterordner. Nichts löschen, umbenennen oder verschieben – auch nicht beim Aufräumen.</td><td>alle</td></tr>
+      <tr><td>Laboraufträge</td><td>Laborübergaben (Excel), Protokolle</td><td>LabelKit</td></tr>
+      <tr><td>Fotos</td><td>Projektfotos, Bilddokumentation (PDF), Ordner „_aussortiert“</td><td>FotoKit</td></tr>
+      <tr><td>Pläne</td><td>Grundrisse, exportierte Pläne (Bilder, PDF)</td><td>PlanKit</td></tr>
+      <tr><td>Laborergebnisse</td><td>Prüfberichte vom Labor (XML und PDF), über ResultKit importiert</td><td>ResultKit</td></tr>
       <tr><td>Mitteilungen</td><td>Gutachten, Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>PlanKit · LabelKit · Word</td></tr>
-      <tr><td>Abrechnung</td><td>Zeiten je Person, gespeicherte Abrechnungsstände</td><td>BelegKit</td></tr>
-      <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen (mit Prüfsumme)</td><td>LabelKit</td></tr>
-      <tr><td>_Projekt.json</td><td>Projektdaten (direkt im Projektordner) – nicht löschen</td><td>Projektzentrale · alle</td></tr>
+      <tr><td>Abrechnung</td><td>Abrechnungsstände als CSV (fürs Büro, zum Öffnen in Excel)</td><td>BelegKit</td></tr>
+      <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen</td><td>LabelKit</td></tr>
     </tbody>
   </table></div>
   <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen. Nicht löschen oder umbenennen.</p>
@@ -744,10 +744,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div style="overflow-x:auto"><table class="wo-tab">
     <thead><tr><th>Was</th><th>Liegt in</th><th>Wer sieht es wo</th></tr></thead>
     <tbody>
-      <tr><td>Zeiten einer Person</td><td>Abrechnung/Aufwand_&lt;Kürzel&gt;.json</td><td>Die Person selbst in BelegKit · das Büro in BüroKit („Je Person“)</td></tr>
-      <tr><td>Abrechnungsstand</td><td>Abrechnung/&lt;Nr&gt;_Aufwand_&lt;Datum&gt;.json (+ .csv)</td><td>BelegKit · BüroKit („Abrechnung“) · Projektzentrale (Stufe 5 und 6)</td></tr>
-      <tr><td>Übergabe, Anlagen, Verteiler</td><td>_Buero/aufgaben</td><td>BüroKit · Projektzentrale (Stufe 5)</td></tr>
-      <tr><td>Haken (Gegenlesen … Rechnung)</td><td>_Buero/vermerke</td><td>BüroKit · Projektzentrale (Stufe 5 und 6)</td></tr>
+      <tr><td>Zeiten einer Person</td><td>_Spektron/BelegKit/Aufwand_&lt;Kürzel&gt;.json</td><td>Die Person selbst in BelegKit · das Büro in BüroKit („Je Person“)</td></tr>
+      <tr><td>Abrechnungsstand</td><td>_Spektron/BelegKit/&lt;Nr&gt;_Aufwand_&lt;Datum&gt;.json · die CSV dazu in Abrechnung/</td><td>BelegKit · BüroKit („Abrechnung“) · Projektzentrale (Stufe 5 und 6)</td></tr>
+      <tr><td>Übergabe, Anlagen, Verteiler</td><td>_Spektron/Buero/aufgaben</td><td>BüroKit · Projektzentrale (Stufe 5)</td></tr>
+      <tr><td>Haken (Gegenlesen … Rechnung)</td><td>_Spektron/Buero/vermerke</td><td>BüroKit · Projektzentrale (Stufe 5 und 6)</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -1550,7 +1550,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="bue1c"><label for="bue1c">Oben bei <b>„Ich bin“</b> das eigene Kürzel wählen.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Gespeichert wird nur im Projektordner („_Buero“) – nichts wird hochgeladen. Der Browser merkt sich den Archivordner; nach einem Neustart ggf. einmal „Zugriff erlauben“.</div>
+      <div class="tipp">Gespeichert wird nur im Projektordner („_Spektron/Buero“) – nichts wird hochgeladen. Der Browser merkt sich den Archivordner; nach einem Neustart ggf. einmal „Zugriff erlauben“.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="2" data-titel="Liste lesen">
@@ -1774,7 +1774,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.13.0';
+const VERSION = '0.14.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
