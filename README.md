@@ -26,6 +26,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.14.0** – Ordner `_Spektron`: „Wo liegt was?“ und „Wer sieht was?“ zeigen den neuen Ort der App-Daten (seit dem Umzug am 28.10.2026 liegt alles, was ohne App nicht nutzbar ist, je Projekt in `_Spektron` – bitte nicht anfassen; Fotos, Pläne, Laborberichte, Anlagen und CSV bleiben in den Büro-Ordnern).
 - **0.13.0** – Neuer Ablauf **Übergabe ans Büro & Rechnung** (`#buero-uebergabe`, auch in `hilfe-anker.json`): BelegKit „Stand speichern“ als Grundlage der Rechnung, „Ans Büro“ mit Anlagen und Abrechnungsstand (Projektzentrale 1.31), in BüroKit Gegenlesen/PDF/Versand, dann Rechnung mit „Positionen kopieren“, Warnung bei geändertem Stand und „Je Person“ (BüroKit 1.1/1.2); Übungen „Was ist schon angehakt?“ und „Darf das Büro jetzt abrechnen?“, Tabelle „Wer sieht was?“. BüroKit-Kapitel mit neuem Schritt 4 „Rechnung“; Brandschaden 8/9, Projektzentrale 6/7 und BelegKit 7 verweisen darauf.
 - **0.12.1** – ResultKit Schritt 6: Warnleiste „Neuerer Laborstand in ResultKit“ in PlanKit (ab 1.40) und wie man aktualisiert.
 - **0.12.0** – Kapitel **ResultKit** und Brandschaden Schritt 7 passend zu ResultKit 1.3: eine Seite mit „Jetzt dran“, Proben per Klick aufklappen, Prüfberichte zugeklappt unten, „Jetzt übernehmen?“ nach dem Import. Übung „Welchen Stand hat die Probe?“ mit den neuen Bezeichnungen. Projektzentrale Schritt 2: Gruppe „Vor Spektron“ (Spektron-Start 26.0560, Projektzentrale 1.30).
