@@ -411,7 +411,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b4b"><label for="b4b">Proben anlegen im passenden Reiter (PAK, Chlorid, Asbest, Sonstige, PN 98, Brandgeruch). In „Raum / Ort“ nach der Regel schreiben („EG Küche Brandraum Decke“ – <a href="#wischprobe">Probenbezeichnung Wischproben</a>); die Spalte schlägt die Räume des Projekts vor.</label></li>
         <li><input type="checkbox" id="b4e"><label for="b4e"><b>Gelbe Zellen</b> ausfüllen: Projektnummer, Probenahmedatum, Raum/Ort (bei Bohrkernen die BK-Bezeichnung), bei „Sonstige Proben“ die <b>Untersuchungsparameter</b>.</label></li>
         <li><input type="checkbox" id="b4c"><label for="b4c"><b>Etiketten</b> drucken.</label></li>
-        <li><input type="checkbox" id="b4d"><label for="b4d"><b>Probenerfassung abschließen</b> → „Alle EOL + Projektdatei speichern“: Laborübergaben (EOL = Excel-Laborübergabe für Eurofins) und Projektdatei landen in „Laboraufträge“.</label></li>
+        <li><input type="checkbox" id="b4d"><label for="b4d"><b>Probenerfassung abschließen</b> → „Alle EOL + Projektdatei speichern“: Laborübergaben (EOL = Excel-Laborübergabe für Eurofins) landen in „Laboraufträge“. Die Projektdatei liegt in „_Spektron/LabelKit“, bei älteren, noch nicht umgezogenen Projekten in „Laboraufträge“.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Zwischendurch genügt <b>Strg+S</b> (speichert nur die Projektdatei). Die Leiste unten führt durch: Projektnummer → Proben → Etiketten → Abschließen.</div>
@@ -880,7 +880,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="lk1a"><label for="lk1a">In der Projektzentrale in der Stufe „Ortstermin“ <b>„Proben &amp; Etiketten“</b> – oder in LabelKit oben „📁 Projekt“ und den Projektordner wählen.</label></li>
-        <li><input type="checkbox" id="lk1b"><label for="lk1b">Projektnummer und Schadenort kommen aus dem <b>Ordnernamen</b>; die neueste „…_Daten.json“ aus „Laboraufträge“ wird automatisch geladen.</label></li>
+        <li><input type="checkbox" id="lk1b"><label for="lk1b">Projektnummer und Schadenort kommen aus dem <b>Ordnernamen</b>; die neueste „…_Daten.json“ aus „_Spektron/LabelKit“ wird automatisch geladen (bei älteren, noch nicht umgezogenen Projekten aus „Laboraufträge“).</label></li>
         <li><input type="checkbox" id="lk1c"><label for="lk1c">Ohne Projekt: oben die „Projektnummer“ eintragen – sie wird in alle Proben übernommen.</label></li>
         <li><input type="checkbox" id="lk1d"><label for="lk1d">Das Willkommen-Fenster mit „Los geht's →“ schließen (oder „Nicht mehr anzeigen“).</label></li>
       </ul>
@@ -961,7 +961,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="lk7a"><label for="lk7a"><b>„Zwischenstand speichern“</b> oder <b>Strg+S</b> – speichert die Projektdatei, auch wenn noch Pflichtangaben fehlen.</label></li>
-        <li><input type="checkbox" id="lk7b"><label for="lk7b">Mit geöffnetem Projekt landet sie in „Laboraufträge“ als „…_Daten.json“.</label></li>
+        <li><input type="checkbox" id="lk7b"><label for="lk7b">Mit geöffnetem Projekt landet sie in „_Spektron/LabelKit“ als „…_Daten.json“ (bei älteren, noch nicht umgezogenen Projekten in „Laboraufträge“).</label></li>
         <li><input type="checkbox" id="lk7c"><label for="lk7c">Ohne Projekt einmal einen Ordner wählen; ohne Ordnerzugriff gibt es einen Download.</label></li>
         <li><input type="checkbox" id="lk7d"><label for="lk7d">Weiterarbeiten an einer Datei: über <b>„Laden“</b> öffnen.</label></li>
       </ul>
@@ -1774,7 +1774,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.14.0';
+const VERSION = '0.15.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
