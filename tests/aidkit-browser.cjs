@@ -60,7 +60,7 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
     // Apps Schritt für Schritt: jedes Kapitel per Adresse, Schrittleiste, eigene Haken, Übung und App-Knopf
-    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
+    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-berichtkit', 6, '../berichtkit/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
       await page.goto(base + '#' + id);
       assert.equal(await page.locator(`#${id}`).isVisible(), true, id + ' sichtbar');
       assert.equal(await page.locator(`#${id} .schritte button`).count(), n, id + ': Schritte');

@@ -158,7 +158,7 @@ table.wp-lk th{width:42%;font-size:12px;color:var(--muted);text-align:left;verti
 a.app-oeffnen{display:inline-flex;align-items:center;gap:6px;margin-top:12px;padding:7px 13px;border:1px solid var(--accent-2);border-radius:7px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
 a.app-oeffnen:hover{background:var(--accent-l)}
 .fluss{display:flex;flex-wrap:wrap;align-items:stretch;gap:6px;margin:0 0 16px}
-.fluss button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 9px;flex:1 1 104px;min-width:0;text-align:left;border-radius:9px}
+.fluss button{display:flex;flex-direction:column;align-items:flex-start;gap:1px;padding:8px 7px;flex:1 1 82px;min-width:0;text-align:left;border-radius:9px}
 .fluss button b{font-size:13.5px}
 .fluss button span{font:11.5px var(--mono);color:var(--muted)}
 .fluss .pfeil{align-self:center;color:var(--muted);font-size:16px}
@@ -187,6 +187,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#app-fotokit">FotoKit</a>
   <a href="#app-resultkit">ResultKit</a>
   <a href="#app-plankit">PlanKit</a>
+  <a href="#app-berichtkit">BerichtKit</a>
   <a href="#app-belegkit">BelegKit</a>
   <a href="#app-spesenkit">SpesenKit</a>
   <a href="#app-buerokit">BüroKit</a>
@@ -211,6 +212,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../Bildumbenenner/">FotoKit</a></td><td>Fotos benennen, Bilddokumentation · <a href="#app-fotokit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../resultkit/">ResultKit</a></td><td>Laborergebnisse prüfen: Prüfberichte importieren, mit dem Laborauftrag abgleichen, für PlanKit und FotoKit übernehmen · <a href="#app-resultkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Probenplan/">PlanKit</a></td><td>Probenplan, Ergebniskarte, Raumbuch · <a href="#app-plankit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../berichtkit/">BerichtKit</a></td><td>Asbest-Untersuchungsbericht als Word-Datei aus Projektdaten, Proben, Ergebnissen und Fotos · <a href="#app-berichtkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../aufwandkit/">BelegKit</a></td><td>Zeiten, km, Proben, Berichtsseiten für die Rechnung · <a href="#app-belegkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../buerokit/">BüroKit</a></td><td>Tagesliste des Büros: Gutachten gegenlesen, PDF, Versand, Rechnung, eigene Aufgaben · <a href="#app-buerokit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../reisekosten-pro/">SpesenKit</a></td><td>Spesenabrechnung für den Monat · <a href="#app-spesenkit">Schritt für Schritt</a></td></tr>
@@ -344,6 +346,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <button type="button" data-geh="5"><b>FotoKit</b><span>Fotos</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="6"><b>PlanKit</b><span>Pläne · Mitteilungen</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="7"><b>ResultKit</b><span>Labor&shy;ergebnisse</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="8"><b>BerichtKit</b><span>Mittei&shy;lungen</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="8"><b>Büro</b><span>Übergabe · Versand</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="9"><b>BelegKit</b><span>Abrechnung</span></button>
   </div>
@@ -478,9 +481,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   </div>
 
   <div class="karte schritt" data-schritt="8" data-titel="Gutachten und Büro">
-    <div class="schritt-kopf"><h2>8 · Gutachten und Übergabe ans Büro</h2><span class="ort buero">Büro</span><span class="dauer">Word · BelegKit · Projektzentrale · BüroKit</span></div>
+    <div class="schritt-kopf"><h2>8 · Gutachten und Übergabe ans Büro</h2><span class="ort buero">Büro</span><span class="dauer">BerichtKit · Word · BelegKit · Projektzentrale · BüroKit</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
+        <li><input type="checkbox" id="b8f"><label for="b8f"><b>Asbestproben?</b> Projektzentrale → Stufe „Gutachten“ → <b>„Asbestbericht“</b>: BerichtKit setzt den Untersuchungsbericht zusammen und legt ihn in „Mitteilungen“ ab (<a href="#app-berichtkit">BerichtKit Schritt für Schritt</a>).</label></li>
         <li><input type="checkbox" id="b8a"><label for="b8a">Gutachten in Word schreiben, Anlagen aus „Mitteilungen“ einfügen.</label></li>
         <li><input type="checkbox" id="b8e"><label for="b8e"><b>Abrechnungsstand</b> vor der Übergabe: alle Beteiligten haben in BelegKit ihre Zeiten eingetragen (Schritt 9), dann BelegKit → „Abrechnung“ → Hinweise klären → <b>„💾 Stand speichern“</b>. Nach diesem Stand schreibt das Büro die Rechnung.</label></li>
         <li><input type="checkbox" id="b8b"><label for="b8b">Projektzentrale → Karte <b>„Ans Büro“</b>: Word-Datei, Empfänger und <b>Anlagen</b> prüfen (sind vorausgefüllt), <b>„Ans Büro übergeben“</b>.</label></li>
@@ -514,17 +518,17 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div style="overflow-x:auto"><table class="wo-tab">
     <thead><tr><th>Ordner im Projekt</th><th>Was dort liegt</th><th>App</th></tr></thead>
     <tbody>
-      <tr><td><b>_Spektron</b></td><td><b>Bitte nicht anfassen.</b> Alles, was ohne App nicht nutzbar ist: Projektdaten (<code>_Projekt.json</code>), LabelKit-Projektdatei (…_Daten.json), FotoKit-Daten, übernommene Laborwerte (<code>_Ergebnisse.json</code>), PlanKit-Projekt (.probenplan), Zeiten und Abrechnungsstände (JSON), Büroaufgaben. Je App ein Unterordner. Nichts löschen, umbenennen oder verschieben – auch nicht beim Aufräumen.</td><td>alle</td></tr>
+      <tr><td><b>_Spektron</b></td><td><b>Bitte nicht anfassen.</b> Alles, was ohne App nicht nutzbar ist: Projektdaten (<code>_Projekt.json</code>), LabelKit-Projektdatei (…_Daten.json), FotoKit-Daten, übernommene Laborwerte (<code>_Ergebnisse.json</code>), PlanKit-Projekt (.probenplan), Angaben zum Bericht (BerichtKit), Zeiten und Abrechnungsstände (JSON), Büroaufgaben. Je App ein Unterordner. Nichts löschen, umbenennen oder verschieben – auch nicht beim Aufräumen.</td><td>alle</td></tr>
       <tr><td>Laboraufträge</td><td>Laborübergaben (Excel), Protokolle</td><td>LabelKit</td></tr>
       <tr><td>Fotos</td><td>Projektfotos, Bilddokumentation (PDF), Ordner „_aussortiert“</td><td>FotoKit</td></tr>
       <tr><td>Pläne</td><td>Grundrisse, exportierte Pläne (Bilder, PDF)</td><td>PlanKit</td></tr>
       <tr><td>Laborergebnisse</td><td>Prüfberichte vom Labor (XML und PDF), über ResultKit importiert</td><td>ResultKit</td></tr>
-      <tr><td>Mitteilungen</td><td>Gutachten, Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>PlanKit · LabelKit · Word</td></tr>
+      <tr><td>Mitteilungen</td><td>Gutachten, Asbest-Untersuchungsbericht, Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>BerichtKit · PlanKit · LabelKit · Word</td></tr>
       <tr><td>Abrechnung</td><td>Abrechnungsstände als CSV (fürs Büro, zum Öffnen in Excel)</td><td>BelegKit</td></tr>
       <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen</td><td>LabelKit</td></tr>
     </tbody>
   </table></div>
-  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen. Nicht löschen oder umbenennen.</p>
+  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) und der Ordner <code>_Spektron-Unterschriften</code>. Nicht löschen oder umbenennen.</p>
   <p class="wo">Hilfe: Knopf <b>📘</b> in der App (öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Mehr“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
@@ -1344,6 +1348,99 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <h2>Tastenkürzel</h2>
   <div class="tasten"><span><kbd>V</kbd></span><span>Ansicht</span><span><kbd>P</kbd></span><span>Probe</span><span><kbd>B</kbd></span><span>Brandherd</span><span><kbd>E</kbd></span><span>Bearbeiten</span><span><kbd>F</kbd></span><span>Fläche zeichnen</span><span><kbd>G</kbd></span><span>Fläche bearbeiten</span><span><kbd>R</kbd></span><span>drehen (Umschalt+R andersherum)</span><span><kbd>C</kbd></span><span>zuschneiden</span><span><kbd>A</kbd></span><span>ausrichten</span><span><kbd>W</kbd></span><span>entzerren</span><span><kbd>K</kbd></span><span>Ergebnisse</span><span><kbd>L</kbd></span><span>Liste ein/aus</span><span><kbd>+</kbd> <kbd>−</kbd> <kbd>0</kbd></span><span>Zoom, einpassen</span><span><kbd>Bild↑</kbd> <kbd>Bild↓</kbd></span><span>Plan wechseln</span><span><kbd>Strg</kbd> <kbd>Z</kbd></span><span>rückgängig (Strg+Y / Strg+Umschalt+Z wiederherstellen)</span><span><kbd>Entf</kbd></span><span>löschen</span><span><kbd>Esc</kbd></span><span>abwählen / Messen abbrechen</span></div>
 </section>
+<section id="app-berichtkit" class="ablauf" data-speicher="aidkit-app-berichtkit-haken">
+  <h1>BerichtKit</h1>
+  <div class="app-kopf"><span class="zweck">Der Asbest-Untersuchungsbericht („1. Mitteilung“) als Word-Datei im Format des Büros – zusammengesetzt aus dem, was die anderen Apps schon im Projekt abgelegt haben. Fehlende Angaben sind gelb markiert, nichts wird erfunden.</span><a class="app-oeffnen" style="margin:0" href="../berichtkit/" target="berichtkit" rel="noopener">BerichtKit öffnen ↗</a></div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+
+  <div class="karte schritt" data-schritt="1" data-titel="Öffnen">
+    <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br1a"><label for="br1a">In der Projektzentrale in der Stufe „Gutachten“ <b>„Asbestbericht“</b> – oder oben in der Spektron-Leiste auf <b>BerichtKit</b> (der Schritt nach PlanKit). Das Projekt ist dann schon offen.</label></li>
+        <li><input type="checkbox" id="br1b"><label for="br1b">Sonst <b>„Projekt wählen“</b> und den Projektordner im Archiv wählen (z. B. <code>26.0528 Köln Ste</code>).</label></li>
+        <li><input type="checkbox" id="br1c"><label for="br1c">Prüfen, dass oben die <b>Projektnummer</b> steht und unter „Hinweise“ grüne Haken bei Projektdaten, LabelKit, ResultKit und FotoKit.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Wie alle Spektron-Apps nur in <b>Chrome oder Edge</b>. Nach einem Browserneustart einmal „Zugriff auf den Archivordner erlauben“.</div>
+      <a class="app-oeffnen" href="../berichtkit/" target="berichtkit" rel="noopener">BerichtKit öffnen ↗</a>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Vorher erledigt">
+    <div class="schritt-kopf"><h2>2 · Was vorher erledigt sein muss</h2><span class="ort sv">Sachverständige</span><span class="dauer">Projektzentrale · LabelKit · ResultKit · FotoKit</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br2a"><label for="br2a"><b>Projektzentrale</b>: Objekt, Auftraggeber, ggf. Versicherungsnehmer und Schaden-Nr., <b>Auftragsdatum</b>. Ist ein VN eingetragen, wird das Deckblatt ein Versicherungsfall (VN, Risiko, Versicherer).</label></li>
+        <li><input type="checkbox" id="br2b"><label for="br2b"><b>LabelKit</b>, Asbest-Tabelle: je Probe Probenahmedatum, <b>Raum / Ort</b> (wird die Entnahmestelle) und <b>Bauteil / Material</b> (wird der Materialname im Text).</label></li>
+        <li><input type="checkbox" id="br2c"><label for="br2c"><b>ResultKit</b>: Prüfbericht (XML und PDF) importiert und <b>„Ergebnisse übernehmen“</b> – BerichtKit liest nur die übernommenen Werte.</label></li>
+        <li><input type="checkbox" id="br2d"><label for="br2d"><b>FotoKit</b>: Fotos der Proben mit <b>Probe-Nr.</b> (z. B. P1). Nur solche Fotos bietet BerichtKit an.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="br-quelle"><h3>Kurz üben: Wo wird das nachgetragen?</h3></div>
+      <div class="tipp">BerichtKit ändert keine Daten der anderen Apps. Fehlt etwas, dort nachtragen – BerichtKit liest beim nächsten Öffnen neu.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Bericht einstellen">
+    <div class="schritt-kopf"><h2>3 · Bericht und Auftrag einstellen</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br3a"><label for="br3a"><b>Berichtsdatum</b> und <b>Mitteilung Nr.</b> (vorgeschlagen: die nächste freie Nummer in „Mitteilungen“).</label></li>
+        <li><input type="checkbox" id="br3b"><label for="br3b"><b>Probenahme durch uns</b> oder <b>zugestellte Probe</b>. Bei zugestellten Proben das <b>Eingangsdatum</b> eintragen – der Bericht bekommt dann den Satz zur Gewährleistung, und es unterschreibt nur die/der Sachverständige.</label></li>
+        <li><input type="checkbox" id="br3c"><label for="br3c"><b>Auftraggeber im Satz</b>: so, wie er in „… wurde unser Büro durch ___ beauftragt“ passt – Artikel bei Bedarf ergänzen („die Firma …“, „den Bauverein …“).</label></li>
+        <li><input type="checkbox" id="br3d"><label for="br3d">Das <b>Auftragsdatum</b> kommt aus der Projektzentrale; dort ändern, nicht hier.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Alles, was hier eingestellt wird, liegt im Projektordner (<code>_Spektron/BerichtKit</code>) und gilt für alle Kollegen. Hat jemand inzwischen gespeichert, lädt BerichtKit dessen Stand und sagt es – nichts wird stumm überschrieben.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="Proben">
+    <div class="schritt-kopf"><h2>4 · Proben, Fotos und KMF</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br4a"><label for="br4a">Liste <b>Proben</b>: Haken = kommt in den Bericht. Ergebnis steht <b>wörtlich aus dem Prüfbericht</b> da (rot = Asbest nachgewiesen, grün = kein Asbest, gelb = nicht eindeutig – im PDF nachsehen).</label></li>
+        <li><input type="checkbox" id="br4b"><label for="br4b"><b>Foto</b> je Probe wählen (oder „kein Foto“). Die Bildunterschrift lautet „Abb. n: Material, Entnahmestelle“.</label></li>
+        <li><input type="checkbox" id="br4c"><label for="br4c"><b>Dämmstoff?</b> Haken <b>KMF</b>, dann „WHO-Fasern nachgewiesen“ prüfen. Den <b>KI-Wert</b> übernimmt BerichtKit aus den Labordaten; steht er dort nicht, genau wie im Prüfbericht (PDF) eintragen.</label></li>
+        <li><input type="checkbox" id="br4d"><label for="br4d">Bei KMF das <b>Einbaujahr</b> wählen: „vor 1996“ oder „nicht bekannt“ – danach richtet sich die Schlussfolgerung nach TRGS 521.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="br-kmf"><h3>Kurz üben: KI-Wert und Einbaujahr</h3></div>
+      <div class="tipp achtung">Laborwerte und Probenbezeichnungen werden nie geändert. Stimmt etwas nicht, klärt das das Labor – nicht der Bericht.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="5" data-titel="Personen">
+    <div class="schritt-kopf"><h2>5 · Personen und Unterschriften</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br5a"><label for="br5a"><b>Probenahme durch</b>: wer vor Ort die Proben genommen hat (steht im Satz „… wurde durch Herrn/Frau … entnommen“).</label></li>
+        <li><input type="checkbox" id="br5b"><label for="br5b"><b>Sachverständige(r)</b> unterschreibt immer. Hat der <b>Messtechniker</b> die Proben genommen, unterschreibt er rechts mit („Zweite Unterschrift“ wird dann von selbst vorgeschlagen).</label></li>
+        <li><input type="checkbox" id="br5c"><label for="br5c"><b>Labor</b> mit vollem Namen (z. B. „Eurofins Boden und Grundwasser Südwest GmbH“) – vorbelegt aus den Einstellungen.</label></li>
+        <li><input type="checkbox" id="br5d"><label for="br5d">Einmal fürs Büro: <b>„Einstellungen“</b> → je Person Frau/Herr und Rolle (Sachverständige(r) / Messtechniker), Standard-Labor. Unterschriften als <code>&lt;Kürzel&gt;.png</code> in <code>_Spektron-Unterschriften</code> im Archivordner; ohne Bild bleibt eine Linie zum Unterschreiben.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="br-unterschrift"><h3>Kurz üben: Wer unterschreibt?</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="6" data-titel="Speichern">
+    <div class="schritt-kopf"><h2>6 · Vorschau prüfen und speichern</h2><span class="ort sv">Sachverständige</span><span class="dauer">→ Ordner „Mitteilungen“</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br6a"><label for="br6a">Rechts die <b>Vorschau</b> lesen. <span class="pflicht-beispiel">Gelb</span> = Lücke, z. B. <code>[Auftragsdatum]</code>. Die Liste „Hinweise“ sagt, wo es fehlt – dort nachtragen.</label></li>
+        <li><input type="checkbox" id="br6b"><label for="br6b"><b>„Word-Bericht in „Mitteilungen“ speichern“</b> – Datei <code>&lt;n&gt;._Mitteilung_&lt;Nr&gt;.docx</code>. Gibt es sie schon, fragt BerichtKit: überschreiben oder daneben als „(2)“ speichern.</label></li>
+        <li><input type="checkbox" id="br6c"><label for="br6c">In <b>Word gegenlesen</b>, den Prüfbericht als Anlage beifügen, dann wie gewohnt ans Büro übergeben (<a href="#brandschaden">Brandschaden</a> Schritt 8).</label></li>
+        <li><input type="checkbox" id="br6d"><label for="br6d">In der Spektron-Leiste hat BerichtKit jetzt einen <b>Haken</b>.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Gespeichert wird trotzdem, auch mit gelben Lücken – BerichtKit fragt vorher nach. Die gelbe Markierung bleibt in Word sichtbar, bis sie gefüllt ist.</div>
+      <div class="tipp">Ohne Ordnerzugriff: <b>„Herunterladen“</b> speichert die Word-Datei im Download-Ordner.</div>
+    </div></div>
+  </div>
+
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+  <h2>Gut zu wissen</h2>
+  <p>Die Texte folgen den Textbausteinen des Büros: Veranlassung, Probenahme und Untersuchung, Befund mit Tabelle 1 (immer, auch bei einer Probe), Schlussfolgerungen nach GefStoffV und TRGS 519, bei KMF nach TRGS 905 (Fassung 2026) und TRGS 521. BerichtKit liest nur; geschrieben werden die Word-Datei in „Mitteilungen“, die eigenen Angaben in <code>_Spektron/BerichtKit</code> und die Einstellungen im Archivordner.</p>
+</section>
+
 <section id="app-belegkit" class="ablauf" data-speicher="aidkit-app-belegkit-haken">
   <h1>BelegKit</h1>
   <div class="app-kopf"><span class="zweck">Erfasst je Projekt, was in die Rechnung gehört – mit den Positionsnummern zum Übertragen ins Rechnungsprogramm. Die Rechnung selbst bleibt im Rechnungsprogramm.</span><a class="app-oeffnen" style="margin:0" href="../aufwandkit/" target="belegkit" rel="noopener">BelegKit öffnen ↗</a></div>
@@ -1774,7 +1871,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.15.0';
+const VERSION = '0.16.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -1982,6 +2079,9 @@ QUIZ["fk-name"] = [{"frage": "Standard-Einstellungen. Bild 3 hat Probe-Nr. „P2
 QUIZ["rk-stand"] = [{"frage": "P3 steht in der Laborübergabe aus LabelKit, aber in keinem Prüfbericht. Welcher Stand?", "antworten": ["offen (ausstehend)", "nicht beauftragt", "nur vorläufig"], "richtig": [0], "warum": "Beauftragt, aber noch kein Ergebnis zurück – die Probe ist offen."}, {"frage": "P5 steht bisher nur in einem vorläufigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "nur vorläufig", "offen (ausstehend)"], "richtig": [1], "warum": "Es gibt Werte, aber nur vorläufige – sie können sich mit dem endgültigen Bericht noch ändern."}, {"frage": "Im Prüfbericht steht P9, in der Laborübergabe aus LabelKit nicht. Welcher Stand?", "antworten": ["offen (ausstehend)", "✓ Ergebnis", "nicht beauftragt"], "richtig": [2], "warum": "Die Probe war nicht beauftragt – mit LabelKit abgleichen, z. B. auf eine vertippte Probennummer."}, {"frage": "P1 steht im vorläufigen und im endgültigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "nur vorläufig", "zweimal, je Bericht einer"], "richtig": [0], "warum": "Endgültig geht vor vorläufig – der vorläufige Bericht ist ersetzt."}];
 QUIZ["rk-bericht"] = [{"frage": "Erst kam ein vorläufiger, jetzt der endgültige Prüfbericht für dieselben Proben. Was steht beim vorläufigen?", "antworten": ["ersetzt", "vorläufig", "endgültig"], "richtig": [0], "warum": "Ist der endgültige Bericht da, wird der vorläufige als „ersetzt“ gezeigt und nicht mehr übernommen."}, {"frage": "Geöffnet ist Projekt 26.0123, die Auftragsreferenz im Bericht nennt 26.0456. Was passiert beim Import?", "antworten": ["Der Bericht ist nicht vorausgewählt – erst klären", "Er wird trotzdem automatisch abgelegt", "ResultKit ändert die Nummer im Bericht"], "richtig": [0], "warum": "Ein Bericht mit fremder Projektnummer wird nur abgelegt, wenn man ihn bewusst anhakt."}, {"frage": "Vom Labor ist nur die PDF da. Woher kommen die Werte?", "antworten": ["Gar nicht – die XML anfordern", "Aus der PDF", "Aus der Laborübergabe"], "richtig": [0], "warum": "Werte kommen nur aus der Eurofins-XML. Die PDF ist zum Gegenlesen."}, {"frage": "Für einen Parameter gibt es keine Skala. Wie zeigt ResultKit den Wert?", "antworten": ["Ohne Bewertung", "Mit einem Grenzwert aus der Literatur", "Immer rot"], "richtig": [0], "warum": "Bewertet wird nur nach vorhandenen Skalen – ResultKit erfindet keine Grenzwerte."}];
 QUIZ["rk-uebernehmen"] = [{"frage": "Zwei von vier Proben sind noch offen, die Ergebniskarte soll aber schon als Entwurf entstehen. Was tun?", "antworten": ["„Ergebnisse übernehmen“ → „Trotzdem übernehmen“ (Zwischenstand)", "Warten – übernehmen geht erst, wenn alles da ist", "Die Werte in PlanKit von Hand eintippen"], "richtig": [0], "warum": "Ein Zwischenstand geht immer. Kommen die übrigen Berichte, einfach erneut übernehmen."}, {"frage": "Nach der Übernahme kommt der endgültige Bericht und wird importiert. Was sehen PlanKit und FotoKit bis zur nächsten Übernahme?", "antworten": ["Den übernommenen Stand, mit Hinweis", "Sofort die neuen Werte", "Gar keine Werte mehr"], "richtig": [0], "warum": "Bis „Erneut übernehmen“ gilt der übernommene Stand; die Apps weisen darauf hin, dass sich der Ordner geändert hat."}];
+QUIZ["br-quelle"] = [{"frage": "In der Vorschau steht „Material: [Material]“ gelb. Wo trägst du das Material nach?", "antworten": ["In LabelKit, Asbest-Tabelle, Spalte „Bauteil / Material“", "In BerichtKit direkt im Text", "In ResultKit bei der Probe"], "richtig": [0], "warum": "Material und Entnahmestelle kommen aus LabelKit. Dort nachtragen und speichern – BerichtKit liest beim nächsten Öffnen neu."}, {"frage": "Unter „Hinweise“ steht „Keine Laborergebnisse“. Was fehlt?", "antworten": ["In ResultKit „Ergebnisse übernehmen“", "Der Prüfbericht muss in „Mitteilungen“ liegen", "Ein Foto mit Probe-Nr."], "richtig": [0], "warum": "BerichtKit liest nur die in ResultKit übernommenen Werte (_Ergebnisse.json)."}];
+QUIZ["br-kmf"] = [{"frage": "Dämmstoffprobe, KI-Wert steht nicht in den Labordaten. Was tun?", "antworten": ["KI-Wert genau wie im Prüfbericht (PDF) eintragen", "Feld leer lassen und schätzen", "KMF-Haken entfernen"], "richtig": [0], "warum": "Der KI-Wert wird immer genannt – aus den Labordaten oder, wenn er dort fehlt, wörtlich aus dem PDF. Nie schätzen."}, {"frage": "Niemand weiß, wann die Mineralwolle eingebaut wurde. Welches Einbaujahr?", "antworten": ["„nicht bekannt“ – sie wird wie alte Mineralwolle (TRGS 521) behandelt", "„vor 1996“", "Keins – KMF weglassen"], "richtig": [0], "warum": "Solange nicht belegt ist, dass es neue Mineralwolle ist, gilt sie als alte Mineralwolle im Sinne der TRGS 521."}];
+QUIZ["br-unterschrift"] = [{"frage": "Der Messtechniker hat die Proben genommen, die Sachverständige bewertet. Wer unterschreibt?", "antworten": ["Beide: links die Sachverständige, rechts der Messtechniker", "Nur der Messtechniker", "Nur die Sachverständige"], "richtig": [0], "warum": "Probenahme durch den Messtechniker → zwei Unterschriften."}, {"frage": "Der Kunde hat die Probe ins Büro geschickt. Wer unterschreibt?", "antworten": ["Nur die/der Sachverständige", "Sachverständige(r) und Messtechniker", "Niemand – zugestellte Proben brauchen keine Unterschrift"], "richtig": [0], "warum": "Bei zugestellten Proben reicht die Unterschrift der/des Sachverständigen; dazu kommt der Satz zur Gewährleistung."}];
 QUIZ["pk-tasten"] =[{"frage": "Probenpunkt setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe, B = Brandherd, E = Bearbeiten."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisse, L = Liste, V = Ansicht."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
 QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengruppe?", "antworten": ["Unter BG (kein gemessener Nullwert)", "Ohne Bewertung", "unter Referenzwert"], "richtig": [0], "warum": "Werte unter der Bestimmungsgrenze sind kein gemessener Nullwert und bekommen eine eigene Gruppe (blaugrau)."}, {"frage": "Laborwert „n. n.“?", "antworten": ["Unter BG", "Nicht nachgewiesen (n.n.)", "Nicht bestimmt (n.b.)"], "richtig": [1], "warum": "Qualifikatoren werden nie zu Zahlen – n. n. hat eine eigene Gruppe."}, {"frage": "Laborwert „1.234“ (unklar, ob 1,234 oder 1234)?", "antworten": ["wird als 1234 bewertet", "Ohne Bewertung", "wird als 1,234 bewertet"], "richtig": [1], "warum": "Mehrdeutige Zahlen bleiben ohne Bewertung (grau) – lieber nachfragen als raten."}, {"frage": "Nutzung „Wohnen“, Σ16 EPA-PAK = 12 µg/m² auf einer Oberfläche?", "antworten": ["unter Referenzwert", "Referenzwert erreicht/überschritten"], "richtig": [1], "warum": "Für Wohn-/Büroräume liegt die VdS-Hintergrundreferenz bei 10 µg/m² (Industrie: 100 µg/m²)."}];
 QUIZ["ub-anlagen"] = [{"frage": "Im Projekt liegen: <code>Fotos/26.0560_Bilddokumentation.pdf</code>, <code>Mitteilungen/26.0560 Anlage Probenahme.docx</code>, <code>Mitteilungen/26.0560 Gutachten.docx</code> (gewählte Word-Datei), <code>Laborergebnisse/Prüfbericht 123.pdf</code>. Was ist <b>schon angehakt</b>?", "antworten": ["Bilddokumentation.pdf", "Anlage Probenahme.docx", "Gutachten.docx", "Prüfbericht 123.pdf"], "richtig": [0, 1], "warum": "Vorgeschlagen sind PDFs in „Fotos“ und Dateien mit „Anlage“ oder „Bilddokumentation“ im Namen. Das Gutachten selbst steht nicht in der Liste; Prüfberichte sind wählbar, aber nicht vorangehakt.", "tipp": "Zwei sind vorangehakt. Die Word-Datei des Gutachtens ist keine Anlage."}];
