@@ -12,7 +12,7 @@ Wie wir im Büro arbeiten: Abläufe über mehrere Apps und gemeinsame Regeln. Wi
 | Brandschaden von A bis Z – der normale Weg durch alle Apps in neun Schritten, mit Übungen zu Pflichtangaben und Bewertungsskala, Überblick „welche App speichert wohin“ und „Wo liegt was?“ | `#brandschaden` |
 | Bohrkerne: Schritt für Schritt – sechs Schritte mit Abhakliste, zwei Übungen, Spickzettel zum Drucken | `#bohrkern-ablauf` |
 | Übergabe ans Büro & Rechnung – fünf Schritte zwischen Sachverständigen (BelegKit, Projektzentrale) und Büro (BüroKit), zwei Übungen, „Wer sieht was?“ | `#buero-uebergabe` |
-| Apps Schritt für Schritt – je App ein Kapitel mit Schrittleiste, Abhakliste, Übungen und Tastenkürzeln: Projektzentrale, LabelKit, FotoKit, ResultKit, PlanKit, BelegKit, SpesenKit, BüroKit | `#app-projektzentrale`, `#app-labelkit`, `#app-fotokit`, `#app-resultkit`, `#app-plankit`, `#app-belegkit`, `#app-spesenkit`, `#app-buerokit` |
+| Apps Schritt für Schritt – je App ein Kapitel mit Schrittleiste, Abhakliste, Übungen und Tastenkürzeln: Projektzentrale, LabelKit, FotoKit, ResultKit, PlanKit, BerichtKit, BelegKit, SpesenKit, BüroKit | `#app-projektzentrale`, `#app-labelkit`, `#app-fotokit`, `#app-resultkit`, `#app-plankit`, `#app-belegkit`, `#app-spesenkit`, `#app-buerokit` |
 | Probenbezeichnung Bohrkerne – mit ID-Baukasten und ID-Prüfung | `#bohrkern` |
 | Raumkürzel | `#raumkuerzel` |
 
@@ -26,6 +26,7 @@ Neues Raumkürzel: in `konventionen.js` unter `RAEUME` ergänzen – Handbuch, B
 
 ## Versionen
 
+- **0.16.0** – Neues Kapitel **BerichtKit Schritt für Schritt** (`#app-berichtkit`, auch in `hilfe-anker.json`): öffnen, was vorher erledigt sein muss (Projektzentrale, LabelKit, ResultKit, FotoKit), Bericht und Auftrag einstellen, Proben/Fotos/KMF, Personen und Unterschriften, Vorschau und Speichern – mit drei Übungen. Brandschaden: BerichtKit im Überblick und in Schritt 8; „Wo liegt was?“ ergänzt.
 - **0.15.0** – LabelKit-Anleitung (Ablauf und Schritte „Projekt öffnen“, „Zwischenstand speichern“, „Abschließen“): die Projektdatei „…_Daten.json“ liegt in `_Spektron/LabelKit` (ältere, noch nicht umgezogene Projekte: „Laboraufträge“); die Excel-Übergaben bleiben in „Laboraufträge“ (Prüfbericht 29.10.).
 - **0.14.0** – Ordner `_Spektron`: „Wo liegt was?“ und „Wer sieht was?“ zeigen den neuen Ort der App-Daten (seit dem Umzug am 28.10.2026 liegt alles, was ohne App nicht nutzbar ist, je Projekt in `_Spektron` – bitte nicht anfassen; Fotos, Pläne, Laborberichte, Anlagen und CSV bleiben in den Büro-Ordnern).
 - **0.13.0** – Neuer Ablauf **Übergabe ans Büro & Rechnung** (`#buero-uebergabe`, auch in `hilfe-anker.json`): BelegKit „Stand speichern“ als Grundlage der Rechnung, „Ans Büro“ mit Anlagen und Abrechnungsstand (Projektzentrale 1.31), in BüroKit Gegenlesen/PDF/Versand, dann Rechnung mit „Positionen kopieren“, Warnung bei geändertem Stand und „Je Person“ (BüroKit 1.1/1.2); Übungen „Was ist schon angehakt?“ und „Darf das Büro jetzt abrechnen?“, Tabelle „Wer sieht was?“. BüroKit-Kapitel mit neuem Schritt 4 „Rechnung“; Brandschaden 8/9, Projektzentrale 6/7 und BelegKit 7 verweisen darauf.
