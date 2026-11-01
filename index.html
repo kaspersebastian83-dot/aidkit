@@ -212,7 +212,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../Bildumbenenner/">FotoKit</a></td><td>Fotos benennen, Bilddokumentation · <a href="#app-fotokit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../resultkit/">ResultKit</a></td><td>Laborergebnisse prüfen: Prüfberichte importieren, mit dem Laborauftrag abgleichen, für PlanKit und FotoKit übernehmen · <a href="#app-resultkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Probenplan/">PlanKit</a></td><td>Probenplan, Ergebniskarte, Raumbuch · <a href="#app-plankit">Schritt für Schritt</a></td></tr>
-      <tr><td><a href="../berichtkit/">BerichtKit</a></td><td>Asbest-Untersuchungsbericht als Word-Datei aus Projektdaten, Proben, Ergebnissen und Fotos · <a href="#app-berichtkit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../berichtkit/">BerichtKit</a></td><td>Asbest- oder Brandbericht als Word-Datei aus Projektdaten, Proben, Ergebnissen und Fotos · <a href="#app-berichtkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../aufwandkit/">BelegKit</a></td><td>Zeiten, km, Proben, Berichtsseiten für die Rechnung · <a href="#app-belegkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../buerokit/">BüroKit</a></td><td>Tagesliste des Büros: Gutachten gegenlesen, PDF, Versand, Rechnung, eigene Aufgaben · <a href="#app-buerokit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../reisekosten-pro/">SpesenKit</a></td><td>Spesenabrechnung für den Monat · <a href="#app-spesenkit">Schritt für Schritt</a></td></tr>
@@ -484,7 +484,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>8 · Gutachten und Übergabe ans Büro</h2><span class="ort buero">Büro</span><span class="dauer">BerichtKit · Word · BelegKit · Projektzentrale · BüroKit</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="b8f"><label for="b8f"><b>Asbestproben?</b> Projektzentrale → Stufe „Gutachten“ → <b>„Asbestbericht“</b>: BerichtKit setzt den Untersuchungsbericht zusammen und legt ihn in „Mitteilungen“ ab (<a href="#app-berichtkit">BerichtKit Schritt für Schritt</a>).</label></li>
+        <li><input type="checkbox" id="b8f"><label for="b8f"><b>Bericht entwerfen:</b> Projektzentrale → Stufe „Gutachten“ → <b>„Brandbericht“</b> (Sanierungsvorschlag oder Untersuchungsbericht, mit Chlorid, PAK, Asbest, Brandgeruch) oder <b>„Asbestbericht“</b> – der passende Knopf ist hervorgehoben. BerichtKit setzt den Bericht zusammen, lässt die gutachterlichen Teile als gelbe Lücken und legt ihn in „Mitteilungen“ ab (<a href="#app-berichtkit">BerichtKit Schritt für Schritt</a>).</label></li>
         <li><input type="checkbox" id="b8a"><label for="b8a">Gutachten in Word schreiben, Anlagen aus „Mitteilungen“ einfügen.</label></li>
         <li><input type="checkbox" id="b8e"><label for="b8e"><b>Abrechnungsstand</b> vor der Übergabe: alle Beteiligten haben in BelegKit ihre Zeiten eingetragen (Schritt 9), dann BelegKit → „Abrechnung“ → Hinweise klären → <b>„💾 Stand speichern“</b>. Nach diesem Stand schreibt das Büro die Rechnung.</label></li>
         <li><input type="checkbox" id="b8b"><label for="b8b">Projektzentrale → Karte <b>„Ans Büro“</b>: Word-Datei, Empfänger und <b>Anlagen</b> prüfen (sind vorausgefüllt), <b>„Ans Büro übergeben“</b>.</label></li>
@@ -523,7 +523,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td>Fotos</td><td>Projektfotos, Bilddokumentation (PDF), Ordner „_aussortiert“</td><td>FotoKit</td></tr>
       <tr><td>Pläne</td><td>Grundrisse, exportierte Pläne (Bilder, PDF)</td><td>PlanKit</td></tr>
       <tr><td>Laborergebnisse</td><td>Prüfberichte vom Labor (XML und PDF), über ResultKit importiert</td><td>ResultKit</td></tr>
-      <tr><td>Mitteilungen</td><td>Gutachten, Asbest-Untersuchungsbericht, Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>BerichtKit · PlanKit · LabelKit · Word</td></tr>
+      <tr><td>Mitteilungen</td><td>Gutachten, Brand- und Asbestbericht (n. Mitteilung), Anlagen (Probenahme, Raumbuch, PN 98, Brandgeruch)</td><td>BerichtKit · PlanKit · LabelKit · Word</td></tr>
       <tr><td>Abrechnung</td><td>Abrechnungsstände als CSV (fürs Büro, zum Öffnen in Excel)</td><td>BelegKit</td></tr>
       <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen</td><td>LabelKit</td></tr>
     </tbody>
@@ -808,7 +808,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="pz4a"><label for="pz4a">Oben steht <b>„Jetzt dran“</b> mit einem blauen Knopf – das ist der nächste Schritt. Wartet das Projekt auf Labor oder Büro, steht das dort.</label></li>
-        <li><input type="checkbox" id="pz4b"><label for="pz4b">Darunter die sechs <b>Stufen</b>: Projekt anlegen · Ortstermin: Proben &amp; Fotos · Labor · Gutachten · Ans Büro → Versand · Abrechnung. Die Knöpfe öffnen die App im richtigen Ordner: <b>„Proben &amp; Etiketten“</b> (LabelKit), <b>„Fotos“</b> (FotoKit), <b>„Ergebnisse prüfen“</b> (ResultKit), <b>„Probenplan“</b> (PlanKit).</label></li>
+        <li><input type="checkbox" id="pz4b"><label for="pz4b">Darunter die sechs <b>Stufen</b>: Projekt anlegen · Ortstermin: Proben &amp; Fotos · Labor · Gutachten · Ans Büro → Versand · Abrechnung. Die Knöpfe öffnen die App im richtigen Ordner: <b>„Proben &amp; Etiketten“</b> (LabelKit), <b>„Fotos“</b> (FotoKit), <b>„Ergebnisse prüfen“</b> (ResultKit), <b>„Probenplan“</b> (PlanKit), <b>„Asbestbericht“</b> und <b>„Brandbericht“</b> (BerichtKit – hervorgehoben ist der Bericht, der zu den LabelKit-Proben passt).</label></li>
         <li><input type="checkbox" id="pz4c"><label for="pz4c"><b>„Zeiten &amp; Abrechnung“</b> in Stufe 6 öffnet BelegKit („Abrechnung“).</label></li>
         <li><input type="checkbox" id="pz4d"><label for="pz4d">Anlagen in der Stufe <b>„Gutachten“</b>: <b>„Anlage Probenahme …“</b> (sobald ein Plan da ist) und <b>„Anlage PN 98 / Brandgeruch · Erstellen …“</b> – die Datei liegt danach in „Mitteilungen“.</label></li>
       </ul>
@@ -1350,95 +1350,142 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 </section>
 <section id="app-berichtkit" class="ablauf" data-speicher="aidkit-app-berichtkit-haken">
   <h1>BerichtKit</h1>
-  <div class="app-kopf"><span class="zweck">Der Asbest-Untersuchungsbericht („1. Mitteilung“) als Word-Datei im Format des Büros – zusammengesetzt aus dem, was die anderen Apps schon im Projekt abgelegt haben. Fehlende Angaben sind gelb markiert, nichts wird erfunden.</span><a class="app-oeffnen" style="margin:0" href="../berichtkit/" target="berichtkit" rel="noopener">BerichtKit öffnen ↗</a></div>
+  <div class="app-kopf"><span class="zweck">Asbestbericht und Brandbericht („n. Mitteilung“) als Word-Datei im Format des Büros – zusammengesetzt aus dem, was die anderen Apps schon im Projekt abgelegt haben. Standardtexte und Zahlen sind gefüllt, alles Gutachterliche steht als gelbe Lücke mit Anweisung da. Nichts wird erfunden.</span><a class="app-oeffnen" style="margin:0" href="../berichtkit/" target="berichtkit" rel="noopener">BerichtKit öffnen ↗</a></div>
   <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
   <ol class="schritte" aria-label="Schritte"></ol>
 
   <div class="karte schritt" data-schritt="1" data-titel="Öffnen">
-    <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-kopf"><h2>1 · Asbest- oder Brandbericht öffnen</h2><span class="ort sv">Sachverständige</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="br1a"><label for="br1a">In der Projektzentrale in der Stufe „Gutachten“ <b>„Asbestbericht“</b> – oder oben in der Spektron-Leiste auf <b>BerichtKit</b> (der Schritt nach PlanKit). Das Projekt ist dann schon offen.</label></li>
-        <li><input type="checkbox" id="br1b"><label for="br1b">Sonst <b>„Projekt wählen“</b> und den Projektordner im Archiv wählen (z. B. <code>26.0528 Köln Ste</code>).</label></li>
-        <li><input type="checkbox" id="br1c"><label for="br1c">Prüfen, dass oben die <b>Projektnummer</b> steht und unter „Hinweise“ grüne Haken bei Projektdaten, LabelKit, ResultKit und FotoKit.</label></li>
+        <li><input type="checkbox" id="br1a"><label for="br1a">Projektzentrale → Stufe „Gutachten“: <b>„Asbestbericht“</b> oder <b>„Brandbericht“</b>. Hervorgehoben ist der Knopf, der zu den LabelKit-Proben passt: Chlorid-, PAK- oder Brandgeruch-Proben → Brandbericht, nur Asbestproben → Asbestbericht. Beide Knöpfe sind immer da.</label></li>
+        <li><input type="checkbox" id="br1b"><label for="br1b"><b>Asbestproben aus einem Brandschaden</b> gehören in den Brandbericht (eigener Abschnitt im Befund) – kein eigener Asbestbericht.</label></li>
+        <li><input type="checkbox" id="br1c"><label for="br1c">Ohne Projektzentrale: oben in der Spektron-Leiste auf <b>BerichtKit</b> (öffnet den Asbestbericht) oder <b>„Projekt wählen“</b> und den Projektordner im Archiv wählen. Im Brandbericht führt <b>„Zum Asbestbericht“</b> (Karte „Brandbericht“) zurück.</label></li>
+        <li><input type="checkbox" id="br1d"><label for="br1d">Prüfen: oben steht die <b>Projektnummer</b>, unter „Hinweise“ grüne Haken bei Projektdaten, LabelKit, ResultKit und FotoKit.</label></li>
       </ul>
     </div><div>
+      <div class="uebung quiz" data-quiz="br-art"><h3>Kurz üben: Welcher Bericht?</h3></div>
       <div class="tipp">Wie alle Spektron-Apps nur in <b>Chrome oder Edge</b>. Nach einem Browserneustart einmal „Zugriff auf den Archivordner erlauben“.</div>
       <a class="app-oeffnen" href="../berichtkit/" target="berichtkit" rel="noopener">BerichtKit öffnen ↗</a>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="2" data-titel="Vorher erledigt">
-    <div class="schritt-kopf"><h2>2 · Was vorher erledigt sein muss</h2><span class="ort sv">Sachverständige</span><span class="dauer">Projektzentrale · LabelKit · ResultKit · FotoKit</span></div>
+    <div class="schritt-kopf"><h2>2 · Was vorher erledigt sein muss</h2><span class="ort sv">Sachverständige</span><span class="dauer">Projektzentrale · LabelKit · ResultKit · FotoKit · PlanKit</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="br2a"><label for="br2a"><b>Projektzentrale</b>: Objekt, Auftraggeber, ggf. Versicherungsnehmer und Schaden-Nr., <b>Auftragsdatum</b>. Ist ein VN eingetragen, wird das Deckblatt ein Versicherungsfall (VN, Risiko, Versicherer).</label></li>
-        <li><input type="checkbox" id="br2b"><label for="br2b"><b>LabelKit</b>, Asbest-Tabelle: je Probe Probenahmedatum, <b>Raum / Ort</b> (wird die Entnahmestelle) und <b>Bauteil / Material</b> (wird der Materialname im Text).</label></li>
-        <li><input type="checkbox" id="br2c"><label for="br2c"><b>ResultKit</b>: Prüfbericht (XML und PDF) importiert und <b>„Ergebnisse übernehmen“</b> – BerichtKit liest nur die übernommenen Werte.</label></li>
-        <li><input type="checkbox" id="br2d"><label for="br2d"><b>FotoKit</b>: Fotos der Proben mit <b>Probe-Nr.</b> (z. B. P1). Nur solche Fotos bietet BerichtKit an.</label></li>
+        <li><input type="checkbox" id="br2a"><label for="br2a"><b>Projektzentrale</b>: Objekt, Auftraggeber, ggf. Versicherungsnehmer, Versicherer und Schaden-Nr., <b>Auftragsdatum</b>. Beim Brandbericht zusätzlich <b>Schadendatum</b> (oder „nicht bekannt“), <b>Ortstermin</b>, <b>Nutzung</b>, Schadenereignis und Brandgut.</label></li>
+        <li><input type="checkbox" id="br2b"><label for="br2b"><b>LabelKit</b>: je Probe Probenahmedatum, <b>Raum / Ort</b> (wird die Entnahmestelle), bei Asbest <b>Bauteil / Material</b>. Brandgeruch: Bewertungen der fünf Prüfpersonen eingetragen und <b>aufgedeckt</b> – verdeckt kommt kein Ergebnis in den Bericht.</label></li>
+        <li><input type="checkbox" id="br2c"><label for="br2c"><b>ResultKit</b>: Prüfberichte (XML und PDF) importiert und <b>„Ergebnisse übernehmen“</b> – BerichtKit liest nur die übernommenen Werte.</label></li>
+        <li><input type="checkbox" id="br2d"><label for="br2d"><b>FotoKit</b>: Fotos der Proben mit <b>Probe-Nr.</b>, Beschreibungen (werden Bildunterschriften), Bilddokumentation erstellt. <b>PlanKit</b>: Probenplan. Brandgeruch: in der Projektzentrale (Stufe „Gutachten“, <b>„Anlage PN 98 / Brandgeruch“ › „Erstellen …“</b>) die Anlage erstellen.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-quelle"><h3>Kurz üben: Wo wird das nachgetragen?</h3></div>
-      <div class="tipp">BerichtKit ändert keine Daten der anderen Apps. Fehlt etwas, dort nachtragen – BerichtKit liest beim nächsten Öffnen neu.</div>
+      <div class="tipp">BerichtKit ändert keine Daten der anderen Apps. Fehlt etwas, dort nachtragen. Wechselst du zurück zu BerichtKit, liest es geänderte Dateien neu und sagt <b>„Daten neu gelesen“</b> – vor dem Speichern hält es dann einmal an, damit du die neue Vorschau ansiehst.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="3" data-titel="Bericht einstellen">
     <div class="schritt-kopf"><h2>3 · Bericht und Auftrag einstellen</h2><span class="ort sv">Sachverständige</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="br3a"><label for="br3a"><b>Berichtsdatum</b> und <b>Mitteilung Nr.</b> (vorgeschlagen: die nächste freie Nummer in „Mitteilungen“).</label></li>
-        <li><input type="checkbox" id="br3b"><label for="br3b"><b>Probenahme durch uns</b> oder <b>zugestellte Probe</b>. Bei zugestellten Proben das <b>Eingangsdatum</b> eintragen – der Bericht bekommt dann den Satz zur Gewährleistung, und es unterschreibt nur die/der Sachverständige.</label></li>
-        <li><input type="checkbox" id="br3c"><label for="br3c"><b>Auftraggeber im Satz</b>: so, wie er in „… wurde unser Büro durch ___ beauftragt“ passt – Artikel bei Bedarf ergänzen („die Firma …“, „den Bauverein …“).</label></li>
-        <li><input type="checkbox" id="br3d"><label for="br3d">Das <b>Auftragsdatum</b> kommt aus der Projektzentrale; dort ändern, nicht hier.</label></li>
+        <li><input type="checkbox" id="br3a"><label for="br3a"><b>Berichtsdatum</b> (Vorschlag: heute) und <b>Mitteilung Nr.</b> (Vorschlag: die nächste freie Nummer in „Mitteilungen“). Beides wird bei jedem Öffnen neu vorgeschlagen – eine schon gespeicherte Nummer kommt nicht noch einmal.</label></li>
+        <li><input type="checkbox" id="br3b"><label for="br3b"><b>Deckblatt</b> „mit Versicherung“ (VN · Risiko · Versicherer) oder „ohne Versicherung“ (Auftraggeber · Schadenort, z. B. Hausverwaltung). BerichtKit wählt nach den Projektdaten; selbst umgestellt bringt <b>„automatisch“</b> die Wahl zurück.</label></li>
+        <li><input type="checkbox" id="br3c"><label for="br3c"><b>Auftraggeber im Satz</b>: so, wie er in „… wurde unser Büro durch ___ beauftragt“ passt. Bei Firmen ergänzt BerichtKit den Artikel, sonst selbst („den Bauverein …“).</label></li>
+        <li><input type="checkbox" id="br3d"><label for="br3d"><b>Versicherer</b> aus der Projektzentrale. Ist er nur angenommen (z. B. Auftraggeber sieht nach Versicherung aus), steht <b>„✓ stimmt“</b> daneben – einmal bestätigen, dann ist der Hinweis weg.</label></li>
+        <li><input type="checkbox" id="br3e"><label for="br3e">Nur Asbestbericht: <b>Probenahme durch uns</b> oder <b>zugestellte Probe</b> (dann <b>Eingangsdatum</b>; Satz zur Gewährleistung, nur die/der Sachverständige unterschreibt).</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Alles, was hier eingestellt wird, liegt im Projektordner (<code>_Spektron/BerichtKit</code>) und gilt für alle Kollegen. Hat jemand inzwischen gespeichert, lädt BerichtKit dessen Stand und sagt es – nichts wird stumm überschrieben.</div>
+      <div class="tipp">Was du hier einstellst, liegt im Projektordner (<code>_Spektron/BerichtKit</code>) und gilt für alle Kollegen. Hat jemand inzwischen gespeichert, übernimmt BerichtKit dessen Stand und sagt es – nichts wird stumm überschrieben. Das <b>Auftragsdatum</b> kommt aus der Projektzentrale; dort ändern.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Proben">
     <div class="schritt-kopf"><h2>4 · Proben, Fotos und KMF</h2><span class="ort sv">Sachverständige</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="br4a"><label for="br4a">Liste <b>Proben</b>: Haken = kommt in den Bericht. Ergebnis steht <b>wörtlich aus dem Prüfbericht</b> da (rot = Asbest nachgewiesen, grün = kein Asbest, gelb = nicht eindeutig – im PDF nachsehen).</label></li>
-        <li><input type="checkbox" id="br4b"><label for="br4b"><b>Foto</b> je Probe wählen (oder „kein Foto“). Die Bildunterschrift lautet „Abb. n: Material, Entnahmestelle“.</label></li>
-        <li><input type="checkbox" id="br4c"><label for="br4c"><b>Dämmstoff?</b> Haken <b>KMF</b>, dann „WHO-Fasern nachgewiesen“ prüfen. Den <b>KI-Wert</b> übernimmt BerichtKit aus den Labordaten; steht er dort nicht, genau wie im Prüfbericht (PDF) eintragen.</label></li>
-        <li><input type="checkbox" id="br4d"><label for="br4d">Bei KMF das <b>Einbaujahr</b> wählen: „vor 1996“ oder „nicht bekannt“ – danach richtet sich die Schlussfolgerung nach TRGS 521.</label></li>
+        <li><input type="checkbox" id="br4a"><label for="br4a">Liste <b>Proben</b>: Haken = kommt in den Bericht. Das Ergebnis steht <b>wörtlich aus dem Prüfbericht</b> da (rot = Asbest nachgewiesen, grün = kein Asbest, gelb = nicht eindeutig – im PDF nachsehen).</label></li>
+        <li><input type="checkbox" id="br4b"><label for="br4b"><b>Foto</b> je Asbest-/KMF-Probe wählen (oder „kein Foto“). Bildunterschrift „Abb. n: Material, Entnahmestelle“.</label></li>
+        <li><input type="checkbox" id="br4c"><label for="br4c"><b>Dämmstoff?</b> Haken <b>KMF</b>, dann „WHO-Fasern nachgewiesen“ prüfen. Den <b>KI-Wert</b> übernimmt BerichtKit aus den Labordaten; steht er dort nicht, genau wie im Prüfbericht (PDF) eintragen. <b>Einbaujahr</b>: „vor 1996“ oder „nicht bekannt“ (TRGS 521).</label></li>
+        <li><input type="checkbox" id="br4d"><label for="br4d">In LabelKit <b>stornierte Proben</b> fehlen im Bericht; die übrigen behalten ihre Nummer (z. B. 1, 2, 4). Sind alle Asbestproben storniert, geht nur „Entwurf herunterladen“.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-kmf"><h3>Kurz üben: KI-Wert und Einbaujahr</h3></div>
-      <div class="tipp achtung">Laborwerte und Probenbezeichnungen werden nie geändert. Stimmt etwas nicht, klärt das das Labor – nicht der Bericht.</div>
+      <div class="tipp achtung">Laborwerte und Probenbezeichnungen werden nie geändert. Stimmt etwas nicht, klärt das das Labor – nicht der Bericht. Chlorid- und PAK-Werte ordnet BerichtKit nach VdS 2357 ein, genau wie ResultKit.</div>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="5" data-titel="Personen">
-    <div class="schritt-kopf"><h2>5 · Personen und Unterschriften</h2><span class="ort sv">Sachverständige</span></div>
+  <div class="karte schritt" data-schritt="5" data-titel="Brandbericht">
+    <div class="schritt-kopf"><h2>5 · Brandbericht: Karte „Brandbericht“</h2><span class="ort sv">Sachverständige</span><span class="dauer">nur Brandbericht</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="br5a"><label for="br5a"><b>Probenahme durch</b>: wer vor Ort die Proben genommen hat (steht im Satz „… wurde durch Herrn/Frau … entnommen“).</label></li>
-        <li><input type="checkbox" id="br5b"><label for="br5b"><b>Sachverständige(r)</b> unterschreibt immer. Hat der <b>Messtechniker</b> die Proben genommen, unterschreibt er rechts mit („Zweite Unterschrift“ wird dann von selbst vorgeschlagen).</label></li>
-        <li><input type="checkbox" id="br5c"><label for="br5c"><b>Labor</b> mit vollem Namen (z. B. „Eurofins Boden und Grundwasser Südwest GmbH“) – vorbelegt aus den Einstellungen.</label></li>
-        <li><input type="checkbox" id="br5d"><label for="br5d">Einmal fürs Büro: <b>„Einstellungen“</b> → je Person Frau/Herr und Rolle (Sachverständige(r) / Messtechniker), Standard-Labor. Unterschriften als <code>&lt;Kürzel&gt;.png</code> in <code>_Spektron-Unterschriften</code> im Archivordner; ohne Bild bleibt eine Linie zum Unterschreiben.</label></li>
+        <li><input type="checkbox" id="br5a"><label for="br5a"><b>Titel</b>: „Sanierungsvorschlag“ (Standard) oder „Untersuchungsbericht“ – dann ohne Sanierungskonzept, Abschnitt 6 heißt „Schlussfolgerungen“, Abschnitt 8 entfällt.</label></li>
+        <li><input type="checkbox" id="br5b"><label for="br5b"><b>Umfang</b>: Gebäude, Technische Einrichtung, Warenvorräte (Standard: Gebäude). Danach richten sich 2. Aufgabenstellung und die Felder in 6.</label></li>
+        <li><input type="checkbox" id="br5c"><label for="br5c"><b>Brandort im Satz</b> (vorbelegt nach der Nutzung, z. B. „in einem Wohngebäude“), <b>Anwesende</b> (eintragen / nur unser Büro / Teilnehmerliste) und <b>zweite Person</b> aus unserem Büro.</label></li>
+        <li><input type="checkbox" id="br5d"><label for="br5d">Mit Chlorid-/PAK-Wischproben: <b>Ergebnistabellen</b> ja/nein (aus = nur Verweis auf den Prüfbericht; die Asbest-Tabelle steht immer da) und <b>Hintergrundreferenz PAK</b> 10 oder 100 µg/m², ggf. mit Begründung.</label></li>
+        <li><input type="checkbox" id="br5e"><label for="br5e">7. Arbeitsschutz: <b>Gefahrenbereich</b> GB 0–3, optional <b>Bereich</b> („im Obergeschoss“) und ein <b>zweiter Bereich</b> mit eigenem GB (z. B. OG GB 1, EG GB 0); Haken „übrige Wohnungen/Bereiche“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Abschnitte 1.–4., der Befund 5.2 ff. (Chlorid, PAK, KMF, Asbest, Brandgeruch, weitere Proben) und die Anlagen setzt BerichtKit aus den Daten zusammen. Was es nicht entscheiden kann – z. B. eine Einordnung, die nicht eindeutig ist – steht als gelbe Lücke da.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="6" data-titel="Brand-Texte">
+    <div class="schritt-kopf"><h2>6 · Brandbericht: Karte „Brandbericht – Texte“</h2><span class="ort sv">Sachverständige</span><span class="dauer">nur Brandbericht</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br6a"><label for="br6a"><b>5.1 Brandlast und Schadenbild</b>: vorbelegt mit „Der Brand ereignete sich “ – weiterschreiben. Schadenereignis und Brandgut aus der Projektzentrale stehen als Hilfe darüber.</label></li>
+        <li><input type="checkbox" id="br6b"><label for="br6b"><b>6. Sanierungsmaßnahmen</b>: ein Feld je angehaktem Umfang (mehrere → 6.1, 6.2 …). Beim Untersuchungsbericht stattdessen <b>6. Schlussfolgerungen</b>. Dazu <b>7. Zusatz</b> (optional) und <b>8. Zusammenfassung</b>: je Zeile „Bereich: Maßnahme“, der Bereich wird fett.</label></li>
+        <li><input type="checkbox" id="br6c"><label for="br6c"><b>Schreibweise</b> in jedem Feld: neue Zeile = Absatz · <code>- Text</code> Aufzählung · <code>## Titel</code> kursiver Zwischentitel (z. B. ein Raum) · <code>**fett**</code> · <code>[Etwas ergänzen]</code> bleibt eine gelbe Lücke.</label></li>
+        <li><input type="checkbox" id="br6d"><label for="br6d"><b>„+ Foto einfügen …“</b> unter jedem Feld: zeigt alle Fotos aus FotoKit und setzt <code>[Abb: Datei]</code> als eigene Zeile ein. Im Bericht: „Abb. n:“ mit der Beschreibung aus FotoKit; eigene Bildunterschrift mit <code>[Abb: Datei | Text]</code>.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="br-schreibweise"><h3>Kurz üben: Schreibweise</h3></div>
+      <div class="tipp">Ein leeres Feld steht als gelbe Lücke mit Anweisung im Bericht, z. B. <code>[Sanierungsmaßnahmen Gebäude beschreiben]</code>. Foto ohne Beschreibung in FotoKit → <code>[Bildunterschrift ergänzen]</code>; besser in FotoKit beschreiben.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="7" data-titel="Personen">
+    <div class="schritt-kopf"><h2>7 · Personen und Unterschriften</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br7a"><label for="br7a"><b>Probenahme durch</b> (im Brandbericht „Vor Ort / Probenahme“): wer vor Ort war. Kommt aus dem LabelKit-Feldbogen; sonst angenommen – <b>„angenommen – bitte prüfen“</b> und „✓ stimmt“.</label></li>
+        <li><input type="checkbox" id="br7b"><label for="br7b"><b>Unterschrift</b> und <b>zweite Unterschrift</b>, je mit <b>„als Sachverständige(r)“</b> oder <b>„als Messtechniker(in)“</b>. Standard folgt den Einstellungen, für diesen Bericht änderbar.</label></li>
+        <li><input type="checkbox" id="br7c"><label for="br7c"><b>Labor</b> mit vollem Namen (z. B. „Eurofins Boden und Grundwasser Südwest GmbH“) – vorbelegt aus den Einstellungen.</label></li>
+        <li><input type="checkbox" id="br7d"><label for="br7d">Einmal fürs Büro: <b>„Einstellungen“</b> → je Person Frau/Herr und <b>Rolle festlegen</b> („nicht festgelegt“ gilt als SV, dann kommt der Hinweis „Rolle nicht festgelegt“ mit „Einstellungen öffnen“). Unterschriften als <code>&lt;Kürzel&gt;.png</code> in <code>_Spektron-Unterschriften</code>; ohne Bild bleibt eine Linie.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-unterschrift"><h3>Kurz üben: Wer unterschreibt?</h3></div>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="6" data-titel="Speichern">
-    <div class="schritt-kopf"><h2>6 · Vorschau prüfen und speichern</h2><span class="ort sv">Sachverständige</span><span class="dauer">→ Ordner „Mitteilungen“</span></div>
+  <div class="karte schritt" data-schritt="8" data-titel="Lücken">
+    <div class="schritt-kopf"><h2>8 · Lücken schließen</h2><span class="ort sv">Sachverständige</span><span class="dauer">BerichtKit · Word</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="br6a"><label for="br6a">Rechts die <b>Vorschau</b> lesen. <span class="pflicht-beispiel">Gelb</span> = Lücke, z. B. <code>[Auftragsdatum]</code>. Die Liste „Hinweise“ sagt, wo es fehlt – dort nachtragen.</label></li>
-        <li><input type="checkbox" id="br6b"><label for="br6b"><b>„Word-Bericht in „Mitteilungen“ speichern“</b> – Datei <code>&lt;n&gt;._Mitteilung_&lt;Nr&gt;.docx</code>. Gibt es sie schon, fragt BerichtKit: überschreiben oder daneben als „(2)“ speichern.</label></li>
-        <li><input type="checkbox" id="br6c"><label for="br6c">In <b>Word gegenlesen</b>, den Prüfbericht als Anlage beifügen, dann wie gewohnt ans Büro übergeben (<a href="#brandschaden">Brandschaden</a> Schritt 8).</label></li>
-        <li><input type="checkbox" id="br6d"><label for="br6d">In der Spektron-Leiste hat BerichtKit jetzt einen <b>Haken</b>.</label></li>
+        <li><input type="checkbox" id="br8a"><label for="br8a">Oben steht der Zähler <b>„n Stellen noch offen“</b>. Klick springt zum Feld, das die nächste Lücke füllt; leere Pflichtfelder sind gelb umrandet.</label></li>
+        <li><input type="checkbox" id="br8b"><label for="br8b">Unter „Hinweise“ steht zu jeder Lücke, wo sie zu füllen ist, z. B. „Lücke im Bericht: [Labor] – Personen › Labor“ oder „in der Projektzentrale eintragen“.</label></li>
+        <li><input type="checkbox" id="br8c"><label for="br8c">Was nur Gutachter wissen, bleibt bis Word offen: Die Word-Datei hat an jeder gelben Lücke einen <b>Kommentar am Rand</b> („Noch ausfüllen: …“). In Word mit <b>Überprüfen › Nächster</b> durchgehen.</label></li>
+        <li><input type="checkbox" id="br8d"><label for="br8d">In Word ausgefüllt? Dann die <b>gelbe Markierung entfernen</b> und den <b>Kommentar löschen</b> (Rechtsklick › Kommentar löschen, oder Überprüfen › Löschen). Die Projektzentrale meldet beim Übergeben, was noch gelb ist.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Gespeichert wird trotzdem, auch mit gelben Lücken – BerichtKit fragt vorher nach. Die gelbe Markierung bleibt in Word sichtbar, bis sie gefüllt ist.</div>
-      <div class="tipp">Ohne Ordnerzugriff: <b>„Herunterladen“</b> speichert die Word-Datei im Download-Ordner.</div>
+      <div class="uebung quiz" data-quiz="br-luecken"><h3>Kurz üben: Gelbe Stellen</h3></div>
+      <div class="tipp">Lücken sperren das Speichern nicht – BerichtKit fragt nur nach. Gesperrt (nur „Entwurf herunterladen“) wird bei Datenfehlern: LabelKit-Datei aus einem anderen Projekt, Probe ohne Ergebnis, alle Asbestproben storniert.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="9" data-titel="Speichern">
+    <div class="schritt-kopf"><h2>9 · Speichern und ans Büro übergeben</h2><span class="ort sv">Sachverständige</span><span class="dauer">→ Ordner „Mitteilungen“ · Projektzentrale</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="br9a"><label for="br9a"><b>Anlagen</b> prüfen: Prüfberichte, Bilddokumentation, Probenplan, beim Brandbericht die Anlage Brandgeruch. Fehlt eine oder ist sie veraltet, sagt ein Hinweis, wo du sie neu erstellst (FotoKit, PlanKit, Projektzentrale).</label></li>
+        <li><input type="checkbox" id="br9b"><label for="br9b"><b>„Word-Bericht in „Mitteilungen“ speichern“</b> – Datei <code>&lt;n&gt;._Mitteilung_&lt;Nr&gt;.docx</code>. Gibt es sie schon: <b>Ersetzen</b>, <b>Daneben speichern</b> als „(2)“ oder <b>Abbrechen</b>. Ist sie schon beim Büro, gibt es kein Ersetzen, sondern „Als n. Mitteilung speichern“.</label></li>
+        <li><input type="checkbox" id="br9c"><label for="br9c">Gesperrt? Dann nur <b>„Entwurf herunterladen“</b> (Kopfzeile „ENTWURF – nicht versenden“) – erst die Daten in der anderen App richtigstellen.</label></li>
+        <li><input type="checkbox" id="br9d"><label for="br9d">In Word gegenlesen, dann <b>„Ans Büro übergeben →“</b>: Die Projektzentrale öffnet die Übergabe mit dieser Mitteilung und den Anlagen. In der Spektron-Leiste hat BerichtKit jetzt einen <b>Haken</b>.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Ohne Ordnerzugriff: <b>„Herunterladen“</b> speichert die Word-Datei im Download-Ordner. Entwürfe kommen nie in den Projektordner.</div>
+      <div class="tipp">Weiter mit <a href="#brandschaden">Brandschaden</a> Schritt 8 und <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>.</div>
     </div></div>
   </div>
 
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
   <h2>Gut zu wissen</h2>
-  <p>Die Texte folgen den Textbausteinen des Büros: Veranlassung, Probenahme und Untersuchung, Befund mit Tabelle 1 (immer, auch bei einer Probe), Schlussfolgerungen nach GefStoffV und TRGS 519, bei KMF nach TRGS 905 (Fassung 2026) und TRGS 521. BerichtKit liest nur; geschrieben werden die Word-Datei in „Mitteilungen“, die eigenen Angaben in <code>_Spektron/BerichtKit</code> und die Einstellungen im Archivordner.</p>
+  <p><b>Asbestbericht:</b> Veranlassung, Probenahme und Untersuchung, Befund mit Tabelle 1 (immer, auch bei einer Probe), Schlussfolgerungen nach GefStoffV und TRGS 519, bei KMF nach TRGS 905 und TRGS 521.</p>
+  <p><b>Brandbericht:</b> 1. Veranlassung, 2. Aufgabenstellung, 3. Ortsbesichtigung, 4. Probenahme, 5. Befund (5.1 Brandlast und Schadenbild, dann je nach Proben Chlorid, PAK, KMF, Asbest, Brandgeruch, weitere Untersuchungen), 6. Sanierungsmaßnahmen bzw. Schlussfolgerungen, 7. Arbeitsschutzmaßnahmen nach VdS 2357, 8. Zusammenfassung Sanierungsmaßnahmen. Abbildungen sind durch den ganzen Bericht nummeriert; jeder Prüfbericht ist eine eigene Anlage.</p>
+  <p>BerichtKit liest nur; geschrieben werden die Word-Datei in „Mitteilungen“, die eigenen Angaben in <code>_Spektron/BerichtKit</code> (auch, welche Mitteilung als Asbest- oder Brandbericht gespeichert wurde) und die Einstellungen im Archivordner.</p>
 </section>
 
 <section id="app-belegkit" class="ablauf" data-speicher="aidkit-app-belegkit-haken">
@@ -1871,7 +1918,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.16.0';
+const VERSION = '0.17.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2079,7 +2126,10 @@ QUIZ["fk-name"] = [{"frage": "Standard-Einstellungen. Bild 3 hat Probe-Nr. „P2
 QUIZ["rk-stand"] = [{"frage": "P3 steht in der Laborübergabe aus LabelKit, aber in keinem Prüfbericht. Welcher Stand?", "antworten": ["offen (ausstehend)", "nicht beauftragt", "nur vorläufig"], "richtig": [0], "warum": "Beauftragt, aber noch kein Ergebnis zurück – die Probe ist offen."}, {"frage": "P5 steht bisher nur in einem vorläufigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "nur vorläufig", "offen (ausstehend)"], "richtig": [1], "warum": "Es gibt Werte, aber nur vorläufige – sie können sich mit dem endgültigen Bericht noch ändern."}, {"frage": "Im Prüfbericht steht P9, in der Laborübergabe aus LabelKit nicht. Welcher Stand?", "antworten": ["offen (ausstehend)", "✓ Ergebnis", "nicht beauftragt"], "richtig": [2], "warum": "Die Probe war nicht beauftragt – mit LabelKit abgleichen, z. B. auf eine vertippte Probennummer."}, {"frage": "P1 steht im vorläufigen und im endgültigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "nur vorläufig", "zweimal, je Bericht einer"], "richtig": [0], "warum": "Endgültig geht vor vorläufig – der vorläufige Bericht ist ersetzt."}];
 QUIZ["rk-bericht"] = [{"frage": "Erst kam ein vorläufiger, jetzt der endgültige Prüfbericht für dieselben Proben. Was steht beim vorläufigen?", "antworten": ["ersetzt", "vorläufig", "endgültig"], "richtig": [0], "warum": "Ist der endgültige Bericht da, wird der vorläufige als „ersetzt“ gezeigt und nicht mehr übernommen."}, {"frage": "Geöffnet ist Projekt 26.0123, die Auftragsreferenz im Bericht nennt 26.0456. Was passiert beim Import?", "antworten": ["Der Bericht ist nicht vorausgewählt – erst klären", "Er wird trotzdem automatisch abgelegt", "ResultKit ändert die Nummer im Bericht"], "richtig": [0], "warum": "Ein Bericht mit fremder Projektnummer wird nur abgelegt, wenn man ihn bewusst anhakt."}, {"frage": "Vom Labor ist nur die PDF da. Woher kommen die Werte?", "antworten": ["Gar nicht – die XML anfordern", "Aus der PDF", "Aus der Laborübergabe"], "richtig": [0], "warum": "Werte kommen nur aus der Eurofins-XML. Die PDF ist zum Gegenlesen."}, {"frage": "Für einen Parameter gibt es keine Skala. Wie zeigt ResultKit den Wert?", "antworten": ["Ohne Bewertung", "Mit einem Grenzwert aus der Literatur", "Immer rot"], "richtig": [0], "warum": "Bewertet wird nur nach vorhandenen Skalen – ResultKit erfindet keine Grenzwerte."}];
 QUIZ["rk-uebernehmen"] = [{"frage": "Zwei von vier Proben sind noch offen, die Ergebniskarte soll aber schon als Entwurf entstehen. Was tun?", "antworten": ["„Ergebnisse übernehmen“ → „Trotzdem übernehmen“ (Zwischenstand)", "Warten – übernehmen geht erst, wenn alles da ist", "Die Werte in PlanKit von Hand eintippen"], "richtig": [0], "warum": "Ein Zwischenstand geht immer. Kommen die übrigen Berichte, einfach erneut übernehmen."}, {"frage": "Nach der Übernahme kommt der endgültige Bericht und wird importiert. Was sehen PlanKit und FotoKit bis zur nächsten Übernahme?", "antworten": ["Den übernommenen Stand, mit Hinweis", "Sofort die neuen Werte", "Gar keine Werte mehr"], "richtig": [0], "warum": "Bis „Erneut übernehmen“ gilt der übernommene Stand; die Apps weisen darauf hin, dass sich der Ordner geändert hat."}];
-QUIZ["br-quelle"] = [{"frage": "In der Vorschau steht „Material: [Material]“ gelb. Wo trägst du das Material nach?", "antworten": ["In LabelKit, Asbest-Tabelle, Spalte „Bauteil / Material“", "In BerichtKit direkt im Text", "In ResultKit bei der Probe"], "richtig": [0], "warum": "Material und Entnahmestelle kommen aus LabelKit. Dort nachtragen und speichern – BerichtKit liest beim nächsten Öffnen neu."}, {"frage": "Unter „Hinweise“ steht „Keine Laborergebnisse“. Was fehlt?", "antworten": ["In ResultKit „Ergebnisse übernehmen“", "Der Prüfbericht muss in „Mitteilungen“ liegen", "Ein Foto mit Probe-Nr."], "richtig": [0], "warum": "BerichtKit liest nur die in ResultKit übernommenen Werte (_Ergebnisse.json)."}];
+QUIZ["br-art"] = [{"frage": "Brandschaden mit Chlorid- und PAK-Wischproben und zwei Asbestproben (Fliesenkleber). Welcher Bericht?", "antworten": ["Ein Brandbericht – die Asbestproben stehen darin in einem eigenen Abschnitt", "Ein Brandbericht und ein eigener Asbestbericht", "Ein Asbestbericht"], "richtig": [0], "warum": "Asbestproben aus einem Brandschaden gehören in den Brandbericht (Befund 5.x Asbest, TRGS-519-Satz in 7.). Die Projektzentrale hebt darum „Brandbericht“ hervor."}, {"frage": "In der Projektzentrale ist „Brandbericht“ hervorgehoben, du brauchst aber einen Asbestbericht. Geht das?", "antworten": ["Ja – beide Knöpfe sind immer da, die Hervorhebung ist nur ein Vorschlag nach den Proben", "Nein, erst die Proben in LabelKit ändern", "Nur über BüroKit"], "richtig": [0], "warum": "Hervorgehoben wird, was die LabelKit-Proben nahelegen. Gewählt wird trotzdem frei."}];
+QUIZ["br-schreibweise"] = [{"frage": "Was wird im Bericht aus der Zeile „## Küche (Brandraum)“?", "antworten": ["Ein kursiver Zwischentitel ohne Nummer", "Eine Überschrift „6.1 Küche“", "Der Text bleibt so mit ##"], "richtig": [0], "warum": "„## Titel“ ist ein kursiver Zwischentitel – praktisch für Räume. Die Nummern 6.1, 6.2 … vergibt BerichtKit selbst nach den Umfang-Haken."}, {"frage": "Du weißt die Fläche noch nicht. Wie schreibst du das, damit es niemand übersieht?", "antworten": ["„[Fläche ergänzen]“ – bleibt eine gelbe Lücke mit Kommentar in Word", "„XXX“", "Einfach weglassen und merken"], "richtig": [0], "warum": "Eckige Klammern mit Großbuchstaben vorn werden eine gelbe Lücke, zählen im Zähler „Stellen noch offen“ mit und bekommen in Word einen Kommentar."}, {"frage": "Wie kommt ein Foto in 5.1?", "antworten": ["„+ Foto einfügen …“ unter dem Feld – setzt „[Abb: Datei]“ ein, Bildunterschrift aus FotoKit", "Foto in Word einkleben und das Feld leer lassen", "Foto in den Ordner „Mitteilungen“ legen"], "richtig": [0], "warum": "„[Abb: Datei]“ in einer eigenen Zeile wird eine Abbildung mit „Abb. n:“ und der FotoKit-Beschreibung; eigene Unterschrift mit „[Abb: Datei | Text]“."}];
+QUIZ["br-luecken"] = [{"frage": "In Word hast du „[Ortstermin]“ durch das Datum ersetzt. Was noch?", "antworten": ["Gelbe Markierung entfernen und den Kommentar „Noch ausfüllen: Ortstermin“ löschen", "Nichts – der Kommentar verschwindet von selbst", "Datei in BerichtKit neu speichern"], "richtig": [0], "warum": "Gelb und Kommentar bleiben, bis du sie entfernst. Die Projektzentrale meldet beim Übergeben noch gelb markierte Stellen."}, {"frage": "Der Zähler zeigt „3 Stellen noch offen“. Darfst du trotzdem speichern?", "antworten": ["Ja – BerichtKit fragt nach; die Lücken füllst du dann in Word", "Nein, Speichern ist gesperrt", "Nur als Entwurf"], "richtig": [0], "warum": "Lücken sperren nicht. Gesperrt wird nur bei Datenfehlern (fremde LabelKit-Datei, Probe ohne Ergebnis …)."}];
+QUIZ["br-quelle"] = [{"frage": "Im Brandbericht steht „[Schadendatum]“ gelb. Wo trägst du es nach?", "antworten": ["In der Projektzentrale (Projektdaten, Schadendatum – oder „nicht bekannt“)", "In BerichtKit in der Karte „Brandbericht“", "In LabelKit"], "richtig": [0], "warum": "Schadendatum, Ortstermin und Nutzung kommen aus der Projektzentrale. „nicht bekannt“ ergibt den Satz ohne Datum."}, {"frage": "In der Vorschau steht „Material: [Material]“ gelb. Wo trägst du das Material nach?", "antworten": ["In LabelKit, Asbest-Tabelle, Spalte „Bauteil / Material“", "In BerichtKit direkt im Text", "In ResultKit bei der Probe"], "richtig": [0], "warum": "Material und Entnahmestelle kommen aus LabelKit. Dort nachtragen und speichern – BerichtKit liest beim nächsten Öffnen neu."}, {"frage": "Unter „Hinweise“ steht „Keine Laborergebnisse“. Was fehlt?", "antworten": ["In ResultKit „Ergebnisse übernehmen“", "Der Prüfbericht muss in „Mitteilungen“ liegen", "Ein Foto mit Probe-Nr."], "richtig": [0], "warum": "BerichtKit liest nur die in ResultKit übernommenen Werte (_Ergebnisse.json)."}];
 QUIZ["br-kmf"] = [{"frage": "Dämmstoffprobe, KI-Wert steht nicht in den Labordaten. Was tun?", "antworten": ["KI-Wert genau wie im Prüfbericht (PDF) eintragen", "Feld leer lassen und schätzen", "KMF-Haken entfernen"], "richtig": [0], "warum": "Der KI-Wert wird immer genannt – aus den Labordaten oder, wenn er dort fehlt, wörtlich aus dem PDF. Nie schätzen."}, {"frage": "Niemand weiß, wann die Mineralwolle eingebaut wurde. Welches Einbaujahr?", "antworten": ["„nicht bekannt“ – sie wird wie alte Mineralwolle (TRGS 521) behandelt", "„vor 1996“", "Keins – KMF weglassen"], "richtig": [0], "warum": "Solange nicht belegt ist, dass es neue Mineralwolle ist, gilt sie als alte Mineralwolle im Sinne der TRGS 521."}];
 QUIZ["br-unterschrift"] = [{"frage": "Der Messtechniker hat die Proben genommen, die Sachverständige bewertet. Wer unterschreibt?", "antworten": ["Beide: links die Sachverständige, rechts der Messtechniker", "Nur der Messtechniker", "Nur die Sachverständige"], "richtig": [0], "warum": "Probenahme durch den Messtechniker → zwei Unterschriften."}, {"frage": "Der Kunde hat die Probe ins Büro geschickt. Wer unterschreibt?", "antworten": ["Nur die/der Sachverständige", "Sachverständige(r) und Messtechniker", "Niemand – zugestellte Proben brauchen keine Unterschrift"], "richtig": [0], "warum": "Bei zugestellten Proben reicht die Unterschrift der/des Sachverständigen; dazu kommt der Satz zur Gewährleistung."}];
 QUIZ["pk-tasten"] =[{"frage": "Probenpunkt setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe, B = Brandherd, E = Bearbeiten."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisse, L = Liste, V = Ansicht."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
