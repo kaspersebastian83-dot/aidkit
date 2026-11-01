@@ -60,7 +60,7 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
     // Apps Schritt für Schritt: jedes Kapitel per Adresse, Schrittleiste, eigene Haken, Übung und App-Knopf
-    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-berichtkit', 6, '../berichtkit/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
+    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-berichtkit', 9, '../berichtkit/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
       await page.goto(base + '#' + id);
       assert.equal(await page.locator(`#${id}`).isVisible(), true, id + ' sichtbar');
       assert.equal(await page.locator(`#${id} .schritte button`).count(), n, id + ': Schritte');
@@ -133,6 +133,20 @@ const root = path.join(__dirname, '..');
     await q.locator('[data-a="0"]').click(); assert.match(await q.locator('.antwort').innerText(), /Nicht ganz/);
     await q.locator('[data-a="1"]').click(); assert.match(await q.locator('.antwort').innerText(), /Richtig\. Je Parameter/);
     await q.locator('.quiz-weiter').click(); assert.match(await q.locator('.zaehler').innerText(), /Frage 2 von 4/);
+    // BerichtKit (0.17): neun Schritte mit Brandbericht; Übungen Berichtsart, Schreibweise, Lücken
+    await page.goto(base + '#app-berichtkit');
+    assert.deepEqual(await page.locator('#app-berichtkit .schritte button').allInnerTexts().then(t => t.map(x => x.replace(/^\D*\d+\s*·?\s*/, '').replace(/\s*✓$/, '').trim())),
+      ['Öffnen', 'Vorher erledigt', 'Bericht einstellen', 'Proben', 'Brandbericht', 'Brand-Texte', 'Personen', 'Lücken', 'Speichern']);
+    assert.match(await page.locator('#app-berichtkit .schritt.aktiv').innerText(), /„Asbestbericht“[\s\S]*„Brandbericht“[\s\S]*Hervorgehoben/);
+    const aq = page.locator('[data-quiz="br-art"]'); await aq.locator('[data-a="0"]').click(); assert.match(await aq.locator('.antwort').innerText(), /Nicht ganz/);
+    await aq.locator('[data-a="1"]').click(); assert.match(await aq.locator('.antwort').innerText(), /Richtig\. Asbestproben aus einem Brandschaden/);
+    await page.locator('#app-berichtkit .schritte [data-geh="6"]').click();
+    assert.match(await page.locator('#app-berichtkit .schritt.aktiv').innerText(), /## Titel[\s\S]*„\+ Foto einfügen …“[\s\S]*\[Abb: Datei\]/);
+    const sq = page.locator('[data-quiz="br-schreibweise"]'); await sq.locator('[data-a="2"]').click(); assert.match(await sq.locator('.antwort').innerText(), /Richtig\. „## Titel“/);
+    await sq.locator('.quiz-weiter').click(); assert.match(await sq.locator('.zaehler').innerText(), /Frage 2 von 3/);
+    await page.locator('#app-berichtkit .schritte [data-geh="8"]').click();
+    assert.match(await page.locator('#app-berichtkit .schritt.aktiv').innerText(), /Stellen noch offen[\s\S]*Kommentar löschen/);
+    const lq = page.locator('[data-quiz="br-luecken"]'); await lq.locator('[data-a="1"]').click(); assert.match(await lq.locator('.antwort').innerText(), /Richtig\. Gelb und Kommentar/);
     // Übung LabelKit: mehrere Antworten mit „Prüfen“
     await page.goto(base + '#app-labelkit'); await page.locator('#app-labelkit .schritte [data-geh="4"]').click();
     const l = page.locator('[data-quiz="lk-pflicht"]');
