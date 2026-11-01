@@ -221,7 +221,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   </table>
   <h2>Gilt in allen Apps</h2>
   <div class="regeln">
-    <div class="karte"><h3>Gelb = Pflicht</h3><p>Ein <span class="pflicht-beispiel">gelbes Feld</span> fehlt noch und wird später gebraucht (Anlagen, Bewertung, Labor, Rechnung). Ausgefüllt ist es wieder normal. „Zwischenstand speichern“ geht trotzdem immer; beim Abschluss fragt die App nach, wenn noch etwas fehlt.</p></div>
+    <div class="karte"><h3>Gelb = Pflicht</h3><p>Ein <span class="pflicht-beispiel">gelbes Feld</span> fehlt noch und wird später gebraucht (Anlagen, Bewertung, Labor, Rechnung). Ausgefüllt ist es wieder normal. „Speichern“ geht trotzdem immer; beim Abschluss fragt die App nach, wenn noch etwas fehlt.</p></div>
     <div class="karte"><h3>Einmal eintragen</h3><p>Projektdaten nur in der <b>Projektzentrale</b> – alle Apps übernehmen sie. Bewertungsskalen und Mitarbeiterliste liegen im Archivordner und gelten fürs ganze Büro.</p></div>
     <div class="karte"><h3>Nichts geht verloren</h3><p>Die Apps speichern in den Projektordner, Originale bleiben unverändert. Arbeiten zwei am selben Projekt, fragt die App nach, statt zu überschreiben – besser trotzdem eine Person je Projekt.</p></div>
     <div class="karte"><h3>Die Leiste oben</h3><p>In jeder App: <b>⌂</b> zur Projektzentrale, das Projekt (▾ andere Projekte), die sechs Schritte mit <b>✓</b> für erledigt und <b>„Weiter: … →“</b> zum nächsten offenen Schritt – mit der Maus darauf steht, wohin und warum. In <b>BerichtKit</b> ist daraus schon das große <b>Kopfband</b> geworden: das Projekt groß (darunter Objekt, Nutzung, Schadendatum, Zuständig), sechs Kacheln mit Symbol – <b>Proben · Fotos · Labor · Plan · Bericht · Abrechnung</b> –, „Weiter“ mit dem Grund darunter; die anderen Apps folgen. Unten links steht dort <b>„Mehr …“</b> mit Handbuch, Rückmeldung und allem, was nicht auf den ersten Blick muss. Jede App öffnet in ihrem <b>eigenen Fenster</b>; ein zweiter Klick öffnet dasselbe Fenster neu mit diesem Projekt (vorher dort speichern). Der Bericht heißt „Brandbericht“ bzw. „Asbestbericht“, sobald BerichtKit sich die Art gemerkt hat; nach dem gespeicherten Bericht führt „Weiter: Ans Büro übergeben →“ in die Projektzentrale.</p></div>
@@ -412,10 +412,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="b4a"><label for="b4a">Projektnummer prüfen – sie kommt aus der Projektzentrale.</label></li>
-        <li><input type="checkbox" id="b4b"><label for="b4b">Proben anlegen im passenden Reiter (PAK, Chlorid, Asbest, Sonstige, PN 98, Brandgeruch). In „Raum / Ort“ nach der Regel schreiben („EG Küche Brandraum Decke“ – <a href="#wischprobe">Probenbezeichnung Wischproben</a>); die Spalte schlägt die Räume des Projekts vor.</label></li>
+        <li><input type="checkbox" id="b4b"><label for="b4b">Proben anlegen: in Schritt ① die Kachel der Probenart wählen (PAK, Chlorid, Asbest, Brandgeruch; Sonstige und PN 98 unter „+ Weitere Art …“). In „Raum / Ort“ nach der Regel schreiben („EG Küche Brandraum Decke“ – <a href="#wischprobe">Probenbezeichnung Wischproben</a>); die Spalte schlägt die Räume des Projekts vor.</label></li>
         <li><input type="checkbox" id="b4e"><label for="b4e"><b>Gelbe Zellen</b> ausfüllen: Projektnummer, Probenahmedatum, Raum/Ort (bei Bohrkernen die BK-Bezeichnung), bei „Sonstige Proben“ die <b>Untersuchungsparameter</b>.</label></li>
-        <li><input type="checkbox" id="b4c"><label for="b4c"><b>Etiketten</b> drucken.</label></li>
-        <li><input type="checkbox" id="b4d"><label for="b4d"><b>Probenerfassung abschließen</b> → „Alle EOL + Projektdatei speichern“: Laborübergaben (EOL = Excel-Laborübergabe für Eurofins) landen in „Laboraufträge“. Die Projektdatei liegt in „_Spektron/LabelKit“, bei älteren, noch nicht umgezogenen Projekten in „Laboraufträge“.</label></li>
+        <li><input type="checkbox" id="b4c"><label for="b4c">Schritt ② <b>Etiketten drucken</b> („Alle Etiketten drucken →“) – ab dann sind die Nummern fest.</label></li>
+        <li><input type="checkbox" id="b4d"><label for="b4d">Schritt ③ <b>Laborauftrag abschließen</b>: je Art „Kopieren (für Eurofins)“, dann „Laborauftrag speichern →“ – die Laborübergaben (EOL = Excel-Laborübergabe für Eurofins) landen in „Laboraufträge“. Die Projektdatei liegt in „_Spektron/LabelKit“, bei älteren, noch nicht umgezogenen Projekten in „Laboraufträge“.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Zwischendurch genügt <b>Strg+S</b> (speichert nur die Projektdatei). Die Leiste unten führt durch: Projektnummer → Proben → Etiketten → Abschließen.</div>
@@ -543,7 +543,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Vorbereiten</h2><span class="ort buero">Büro</span><span class="dauer">ca. 10 Minuten</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="c1a"><label for="c1a">LabelKit öffnen, Reiter <b>Bohrkerne</b> → <b>Wandblätter</b>.</label></li>
+        <li><input type="checkbox" id="c1a"><label for="c1a">LabelKit öffnen, Kachel <b>Bohrkerne</b> (unter „+ Weitere Art …“) → <b>Wandblätter</b>.</label></li>
         <li><input type="checkbox" id="c1b"><label for="c1b">Anzahl Wände eintragen – je Wand ein Blatt, zwei als Reserve.</label></li>
         <li><input type="checkbox" id="c1c"><label for="c1c">Tiefenstufen und Untersuchung prüfen. Standard: <b>0–2 / 2–6 / 6–12 cm</b>, <b>MKW C10–C40 und C10–C22</b>.</label></li>
         <li><input type="checkbox" id="c1d"><label for="c1d">Vorgabe A/R eintragen, z. B. „bodennah alle Tiefen A, sonst T1 A, Rest R“.</label></li>
@@ -609,14 +609,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>4 · Übertragen</h2><span class="ort buero">Büro</span><span class="dauer">ca. 2 Minuten je Wand</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="c4a"><label for="c4a">LabelKit, Reiter <b>Bohrkerne</b> → <b>＋ Bogen erfassen</b>. Formular-ID steht oben rechts auf dem Bogen (z. B. 26.0142-BK-01).</label></li>
+        <li><input type="checkbox" id="c4a"><label for="c4a">LabelKit, Kachel <b>Bohrkerne</b> → <b>＋ Bogen erfassen</b>. Formular-ID steht oben rechts auf dem Bogen (z. B. 26.0142-BK-01).</label></li>
         <li><input type="checkbox" id="c4b"><label for="c4b">Werte <b>so eintragen, wie sie auf dem Bogen stehen</b>. Nicht lesbar? „unleserlich“ markieren statt raten.</label></li>
         <li><input type="checkbox" id="c4c"><label for="c4c">Hinweise abarbeiten. Der Knopf <b>Proben anlegen</b> bleibt grau, solange eine Zeile unklar ist.</label></li>
-        <li><input type="checkbox" id="c4d"><label for="c4d"><b>Proben anlegen</b> – alle Segmente stehen dann unter „Sonstige Proben“ und im Reiter „Bohrkerne“.</label></li>
+        <li><input type="checkbox" id="c4d"><label for="c4d"><b>Proben anlegen</b> – alle Segmente stehen dann unter „Sonstige Proben“ und in der Kachel „Bohrkerne“.</label></li>
         <li><input type="checkbox" id="c4e"><label for="c4e">Erfassung abschließen, Scan ablegen, zweite Person prüft („Übertragung geprüft“).</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Später etwas korrigiert? Im Bogen ändern, dann <b>Proben aktualisieren</b>. Der Reiter „Bohrkerne“ erinnert daran.</div>
+      <div class="tipp">Später etwas korrigiert? Im Bogen ändern, dann <b>Proben aktualisieren</b>. Die Kachel „Bohrkerne“ erinnert daran.</div>
     </div></div>
   </div>
 
@@ -624,7 +624,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>5 · Ans Labor</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="c5a"><label for="c5a">Reiter <b>Bohrkerne</b>, Übersicht prüfen: stimmen je Wand Anzahl der Kerne und A/R?</label></li>
+        <li><input type="checkbox" id="c5a"><label for="c5a">Kachel <b>Bohrkerne</b>, Übersicht prüfen: stimmen je Wand Anzahl der Kerne und A/R?</label></li>
         <li><input type="checkbox" id="c5b"><label for="c5b"><b>Schnittpläne</b> drucken – je Kern ein Blatt, <b>dem Kern beilegen</b>. Dort steht je Segment „analysieren“ oder „nur sägen und aufbewahren“.</label></li>
         <li><input type="checkbox" id="c5c"><label for="c5c"><b>Etiketten</b> drucken und aufkleben.</label></li>
         <li><input type="checkbox" id="c5d"><label for="c5d"><b>Übergabe</b> (Laborauftrag) erstellen, wie bei den sonstigen Proben.</label></li>
@@ -876,7 +876,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 </section>
 <section id="app-labelkit" class="ablauf" data-speicher="aidkit-app-labelkit-haken">
   <h1>LabelKit</h1>
-  <div class="app-kopf"><span class="zweck">Proben erfassen, Etiketten drucken, Laborübergabe erstellen – Laborübergabe und Protokolle landen im Projektordner unter „Laboraufträge“, die Projektdatei der App in „_Spektron“.</span><a class="app-oeffnen" style="margin:0" href="../labelkit/" target="labelkit" rel="noopener">LabelKit öffnen ↗</a></div>
+  <div class="app-kopf"><span class="zweck">In drei Schritten zum Laborauftrag: ① Proben erfassen, ② Etiketten drucken, ③ Laborauftrag abschließen – Laborübergabe und Protokolle landen im Projektordner unter „Laboraufträge“, die Projektdatei der App in „_Spektron“.</span><a class="app-oeffnen" style="margin:0" href="../labelkit/" target="labelkit" rel="noopener">LabelKit öffnen ↗</a></div>
   <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
   <ol class="schritte" aria-label="Schritte"></ol>
 
@@ -884,13 +884,13 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk1a"><label for="lk1a">In der Projektzentrale die Kachel <b>„Proben“</b> – oder in LabelKit oben „📁 Projekt“ und den Projektordner wählen.</label></li>
-        <li><input type="checkbox" id="lk1b"><label for="lk1b">Projektnummer und Schadenort kommen aus dem <b>Ordnernamen</b>; die neueste „…_Daten.json“ aus „_Spektron/LabelKit“ wird automatisch geladen (bei älteren, noch nicht umgezogenen Projekten aus „Laboraufträge“).</label></li>
-        <li><input type="checkbox" id="lk1c"><label for="lk1c">Ohne Projekt: oben die „Projektnummer“ eintragen – sie wird in alle Proben übernommen.</label></li>
-        <li><input type="checkbox" id="lk1d"><label for="lk1d">Das Willkommen-Fenster mit „Los geht's →“ schließen (oder „Nicht mehr anzeigen“).</label></li>
+        <li><input type="checkbox" id="lk1a"><label for="lk1a">In der Projektzentrale die Kachel <b>„Proben“</b> – oder in LabelKit unten links <b>„Mehr …“ › „Projektordner öffnen …“</b>.</label></li>
+        <li><input type="checkbox" id="lk1b"><label for="lk1b">Oben steht das <b>Kopfband</b> wie in allen Spektron-Apps: Projekt groß, die sechs Arbeitsschritte, rechts <b>„Weiter: … →“</b>.</label></li>
+        <li><input type="checkbox" id="lk1c"><label for="lk1c">Darunter die drei Schritte von LabelKit: <b>① Proben erfassen</b> · <b>② Etiketten drucken</b> · <b>③ Laborauftrag abschließen</b>.</label></li>
+        <li><input type="checkbox" id="lk1d"><label for="lk1d">Ohne Projektordner steht gelb <b>„Projektnummer fehlt“</b> – mit „Projektnummer eintragen …“ nachholen; sie kommt auf jedes Etikett.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Fehlt im Projekt der Ordner „Laboraufträge“, fragt LabelKit nach und legt ihn an.</div>
+      <div class="tipp">Projektnummer und Schadenort kommen aus dem Ordnernamen; die Projektdatei aus „_Spektron/LabelKit“ (ältere Projekte: „Laboraufträge“) wird automatisch geladen.</div>
       <a class="app-oeffnen" href="../labelkit/" target="labelkit" rel="noopener">LabelKit öffnen ↗</a>
     </div></div>
   </div>
@@ -898,7 +898,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>2 · Feldbögen drucken</h2><span class="ort buero">Büro</span><span class="dauer">vor dem Ortstermin</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk2a"><label for="lk2a">Reiter <b>„Feldbögen“</b> → „① Bögen drucken (für vor Ort)“.</label></li>
+        <li><input type="checkbox" id="lk2a"><label for="lk2a">In Schritt ① die Kachel <b>„+ Weitere Art …“</b> → <b>„Feldbögen“</b> → <b>„① Bögen drucken (für vor Ort)“</b>.</label></li>
         <li><input type="checkbox" id="lk2b"><label for="lk2b">Formular wählen: „Raumluft Asbest / KMF (VDI 3492)“, „Materialprobe Asbest“, „Raumluft Schimmelpilze“, „Probenahme Feststoffe (PN 98)“ oder „Bohrkerne (Wandblatt)“.</label></li>
         <li><input type="checkbox" id="lk2c"><label for="lk2c"><b>„↙ Aus Projekt übernehmen“</b> – oder „Leerformular ohne Projektdaten“.</label></li>
         <li><input type="checkbox" id="lk2d"><label for="lk2d"><b>„🖨 Feldbögen drucken“</b> und vor Ort von Hand ausfüllen.</label></li>
@@ -911,39 +911,39 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>3 · Proben anlegen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk3a"><label for="lk3a">Unter „Vorbelegung“: „Anzahl neuer Proben“, „Probenahmedatum“, „cm²“ – dann <b>„Neue Proben hinzufügen“</b>.</label></li>
-        <li><input type="checkbox" id="lk3b"><label for="lk3b">Fehlende Angaben bei vorhandenen Proben mit <b>„Leere Angaben ergänzen“</b> nachtragen.</label></li>
-        <li><input type="checkbox" id="lk3c"><label for="lk3c">„Bestehende Angaben ändern …“ erst nach der Vorschau mit „Genannte Angaben jetzt ändern“ bestätigen.</label></li>
-        <li><input type="checkbox" id="lk3d"><label for="lk3d">Oder Probe für Probe mit der <b>„Geführte Eingabe“</b> („Weiter →“, „← Zurück“, „Beenden“).</label></li>
+        <li><input type="checkbox" id="lk3a"><label for="lk3a">„Welche Proben hast du genommen?“ – die <b>Kachel</b> der Probenart wählen (PAK-Wischproben, Chlorid-Wischproben, Asbestproben, Brandgeruch; Sonstige, Bohrkerne, PN 98 unter „+ Weitere Art …“).</label></li>
+        <li><input type="checkbox" id="lk3b"><label for="lk3b"><b>„+ Probe“</b> oder <b>„+ 5“</b> über der Tabelle – oder <b>„Vorbelegung …“</b>: Anzahl, Probenahmedatum, cm² → „Neue Proben hinzufügen“.</label></li>
+        <li><input type="checkbox" id="lk3c"><label for="lk3c">Im selben Dialog: fehlende Angaben mit „Leere Angaben ergänzen“, vorhandene mit „Bestehende Angaben ändern …“ (erst nach der Vorschau mit „Genannte Angaben jetzt ändern“).</label></li>
+        <li><input type="checkbox" id="lk3d"><label for="lk3d">Oder Probe für Probe mit der <b>Geführten Eingabe</b> – großer Knopf bei leerer Tabelle, sonst „Mehr …“ › „Geführte Eingabe“ (Strg+Shift+E).</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Ohne Flächenangabe gelten für neue Wischproben 600 cm². Die Anzahl ist eine ganze Zahl von 1 bis 96.</div>
+      <div class="tipp">Asbest: Die <b>Matrix</b> setzt den Untersuchungsparameter mit Nachweisgrenze. Sonstige: <b>„Chlorid-Bohrmehl“</b> steht als Schalter über der Tabelle.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Vervollständigen">
     <div class="schritt-kopf"><h2>4 · Proben vervollständigen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk4a"><label for="lk4a">Die <b>gelben Zellen</b> ausfüllen – das sind die Pflichtangaben, die noch fehlen. Wischproben in „Raum / Ort“ nach der Regel: „EG Küche Brandraum Decke“ – Beaufschlagung und Oberflächenart in ihren Spalten wählen (<a href="#wischprobe">Probenbezeichnung Wischproben</a>; in LabelKit Knopf „📘 Probenbezeichnung Wischproben“).</label></li>
-        <li><input type="checkbox" id="lk4b"><label for="lk4b">Mit <b>„↑“</b> („Von oben übernehmen“) den Wert der Zeile darüber übernehmen.</label></li>
-        <li><input type="checkbox" id="lk4c"><label for="lk4c">Die <b>Ampel</b> bis Grün bringen; Doppelklick auf eine Zeile öffnet das Eingabepanel („✓ Speichern &amp; Schließen“).</label></li>
-        <li><input type="checkbox" id="lk4d"><label for="lk4d">Wiederkehrende Aufträge mit „Als Vorlage“ speichern und über „Vorlagen“ laden; „⊞ Karten“ / „☰ Tabelle“ wechselt die Ansicht.</label></li>
-        <li><input type="checkbox" id="lk4e"><label for="lk4e">Chlorid: Häkchen setzen und <b>„→ Ausgewählte übertragen“</b> oder „→ Alle übertragen“.</label></li>
+        <li><input type="checkbox" id="lk4a"><label for="lk4a">Die <b>gelben Felder</b> ausfüllen – Pflichtangaben, die noch fehlen. Die Kachel zählt „n unvollständig“, die gelbe Pille unten rechts springt zur nächsten Stelle.</label></li>
+        <li><input type="checkbox" id="lk4b"><label for="lk4b">Sind Datum, Projektnummer oder Matrix bei allen Proben gleich, stehen sie einmal über der Tabelle („Für alle Proben gleich …“); <b>„Spalten zeigen“</b> blendet sie zum Ändern ein.</label></li>
+        <li><input type="checkbox" id="lk4c"><label for="lk4c">Mit <b>„↑“</b> den Wert der Zeile darüber übernehmen (erscheint beim Überfahren); <b>Doppelklick</b> auf eine Zeile öffnet die Probe als Karte („✓ Speichern &amp; Schließen“).</label></li>
+        <li><input type="checkbox" id="lk4d"><label for="lk4d">Chlorid: in PAK die Proben <b>anhaken</b> → „→ Als Chlorid-Wischproben übernehmen“ – oder in Chlorid „Alle PAK-Proben übernehmen“.</label></li>
+        <li><input type="checkbox" id="lk4e"><label for="lk4e">Zwischendurch unten rechts <b>„Speichern“</b> (Strg+S) – speichert die Projektdatei, auch wenn noch etwas fehlt. Daneben steht, ob gespeichert ist.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="lk-pflicht"><h3>Kurz üben: Welche Zellen sind Pflicht?</h3></div>
-      <div class="tipp">Gelb blockiert nichts – Speichern und Exportieren bleiben möglich.</div>
+      <div class="tipp">Gelb blockiert nichts. Vorlagen, Karten-Ansicht und „Projektdatei laden …“ stehen unter „Mehr …“.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="5" data-titel="Bögen erfassen">
     <div class="schritt-kopf"><h2>5 · Ausgefüllte Bögen erfassen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk5a"><label for="lk5a">„② Ausgefüllte Bögen erfassen &amp; Scans ablegen“ öffnen und <b>„Ihr Kürzel“</b> eintragen.</label></li>
+        <li><input type="checkbox" id="lk5a"><label for="lk5a">Kachel <b>„Feldbögen“</b> → <b>„② Ausgefüllte Bögen erfassen“</b> und <b>„Ihr Kürzel“</b> eintragen.</label></li>
         <li><input type="checkbox" id="lk5b"><label for="lk5b"><b>„+ Neues Feldprotokoll erfassen“</b> und die Werte so übertragen, wie sie auf dem Bogen stehen – Unlesbares als „unleserlich“.</label></li>
         <li><input type="checkbox" id="lk5c"><label for="lk5c"><b>„📎 Scan ablegen…“</b> – der Scan landet unter „Feldprotokolle“, mit SHA-256-Prüfsumme.</label></li>
         <li><input type="checkbox" id="lk5d"><label for="lk5d"><b>„✓ Erfassung abschließen“</b>; danach vermerkt eine <b>zweite Person</b> „👁 Übertragung geprüft“.</label></li>
-        <li><input type="checkbox" id="lk5e"><label for="lk5e">Bohrkerne: „Proben anlegen“; PN 98: „Als PN 98-Protokolle übernehmen“ bzw. „→ Laborproben anlegen“.</label></li>
+        <li><input type="checkbox" id="lk5e"><label for="lk5e">Bohrkerne: „Proben anlegen“; PN 98: „Als PN 98-Protokolle übernehmen“ bzw. in der Kachel „PN 98“ „→ Laborproben anlegen“.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Ab dem Abschluss wird jede Änderung mit altem und neuem Wert, Kürzel und Zeit protokolliert. Eine spätere Änderung hebt die Prüfung wieder auf.</div>
@@ -953,7 +953,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>6 · Brandgeruch bewerten</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk6a"><label for="lk6a">Reiter <b>„Brandgeruch“</b> → „+ Probe hinzufügen“.</label></li>
+        <li><input type="checkbox" id="lk6a"><label for="lk6a">Kachel <b>„Brandgeruch“</b> → „+ Probe“.</label></li>
         <li><input type="checkbox" id="lk6b"><label for="lk6b"><b>„🕶️ Blind-Modus (verdeckte Eingabe)“</b> eingeschaltet lassen, damit sich Person 1–5 nicht beeinflussen.</label></li>
         <li><input type="checkbox" id="lk6c"><label for="lk6c">Erst wenn alle bewertet haben: <b>„🔓 Ergebnisse aufdecken“</b>.</label></li>
       </ul>
@@ -961,37 +961,37 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <div class="tipp">Der Blind-Modus ist von Anfang an an. Wer nicht aufdeckt, exportiert „•“ statt der Bewertungen – der Export warnt davor.</div>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="7" data-titel="Speichern">
-    <div class="schritt-kopf"><h2>7 · Zwischenstand speichern</h2><span class="ort buero">Büro</span></div>
+  <div class="karte schritt" data-schritt="7" data-titel="Etiketten">
+    <div class="schritt-kopf"><h2>7 · Etiketten drucken</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk7a"><label for="lk7a"><b>„Zwischenstand speichern“</b> oder <b>Strg+S</b> – speichert die Projektdatei, auch wenn noch Pflichtangaben fehlen.</label></li>
-        <li><input type="checkbox" id="lk7b"><label for="lk7b">Mit geöffnetem Projekt landet sie in „_Spektron/LabelKit“ als „…_Daten.json“ (bei älteren, noch nicht umgezogenen Projekten in „Laboraufträge“).</label></li>
-        <li><input type="checkbox" id="lk7c"><label for="lk7c">Ohne Projekt einmal einen Ordner wählen; ohne Ordnerzugriff gibt es einen Download.</label></li>
-        <li><input type="checkbox" id="lk7d"><label for="lk7d">Weiterarbeiten an einer Datei: über <b>„Laden“</b> öffnen.</label></li>
+        <li><input type="checkbox" id="lk7a"><label for="lk7a">Unten rechts <b>„Weiter zu Etiketten →“</b> – Schritt ② zeigt die Etiketten aller Probenarten untereinander.</label></li>
+        <li><input type="checkbox" id="lk7b"><label for="lk7b"><b>„Alle Etiketten drucken →“</b> – oder je Art „Nur diese drucken“ bzw. „Als PDF“ (für den Bypass-Druck empfohlen).</label></li>
+        <li><input type="checkbox" id="lk7c"><label for="lk7c">Druck: <b>Skalierung 100 %</b>, <b>Ränder: keine</b>, Papierfach „Bypass / Manuell“ (unter „Mehr …“ › „Druckeinstellungen …“).</label></li>
+        <li><input type="checkbox" id="lk7d"><label for="lk7d">Bohrkerne: hier auch <b>„✂ Schnittpläne drucken“</b> – je Kern ein Blatt, dem Kern beilegen.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Beim Download kann der Browser nicht bestätigen, wo die Datei abgelegt wurde – den Download selbst prüfen.</div>
+      <div class="tipp achtung">Ab dem Druck sind die <b>Probennummern fest</b> (🔒). Eine Probe wird danach <b>storniert</b> statt gelöscht – keine Lücken.</div>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="8" data-titel="Abschließen">
-    <div class="schritt-kopf"><h2>8 · Abschließen und übergeben</h2><span class="ort buero">Büro</span></div>
+  <div class="karte schritt" data-schritt="8" data-titel="Laborauftrag">
+    <div class="schritt-kopf"><h2>8 · Laborauftrag abschließen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="lk8a"><label for="lk8a">Reiter <b>„Probenerfassung abschließen“</b>: die „Projektprüfung“ lesen.</label></li>
-        <li><input type="checkbox" id="lk8b"><label for="lk8b">Bei <b>„kritisch“</b> auf die Probennummer klicken und die Probe korrigieren.</label></li>
-        <li><input type="checkbox" id="lk8c"><label for="lk8c"><b>„Alle EOL + Projektdatei speichern“</b> (EOL = Excel-Laborübergabe für Eurofins).</label></li>
-        <li><input type="checkbox" id="lk8d"><label for="lk8d"><b>„Alle Etiketten drucken“</b> (oder in den Unterreitern „Etiketten“ und „Übergabe“) – Druck: <b>Skalierung 100%</b>, <b>Ränder: Keine</b>, Papierfach „Bypass / Manuell“.</label></li>
+        <li><input type="checkbox" id="lk8a"><label for="lk8a">Schritt <b>③ Laborauftrag abschließen</b>: oben die <b>„Projektprüfung“</b> lesen; bei „kritisch“ auf die Probennummer klicken und korrigieren.</label></li>
+        <li><input type="checkbox" id="lk8b"><label for="lk8b">Je Probenart <b>„Kopieren (für Eurofins)“</b> und ins Eurofins-System einfügen – die Spalten kommen in der gewohnten Reihenfolge.</label></li>
+        <li><input type="checkbox" id="lk8c"><label for="lk8c">Unten rechts <b>„Laborauftrag speichern →“</b>: Laborübergaben (Excel), Brandgeruch- und PN 98-Protokolle und die Projektdatei landen in „Laboraufträge“.</label></li>
+        <li><input type="checkbox" id="lk8d"><label for="lk8d">Danach <b>„Weiter: Fotos →“</b> (wie „Weiter“ im Kopfband).</label></li>
       </ul>
     </div><div>
-      <div class="uebung quiz" data-quiz="lk-ampel"><h3>Kurz üben: Welche Farbe hat die Ampel?</h3></div>
-      <div class="tipp achtung">Bei kritischen Problemen ist das Speichern gesperrt; „Trotzdem speichern“ geht nur mit Rückfrage.</div>
+      <div class="uebung quiz" data-quiz="lk-ampel"><h3>Kurz üben: Vollständig oder nicht?</h3></div>
+      <div class="tipp achtung">Bei kritischen Problemen heißt der Knopf „Erst … beheben“; „Trotzdem speichern …“ geht nur mit Rückfrage.</div>
     </div></div>
   </div>
 
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
   <h2>Tastenkürzel</h2>
-  <div class="tasten"><span><kbd>Strg</kbd> <kbd>S</kbd></span><span>Zwischenstand speichern</span><span><kbd>Strg</kbd> <kbd>Z</kbd></span><span>rückgängig (nicht in einem Textfeld)</span><span><kbd>Strg</kbd> <kbd>Shift</kbd> <kbd>E</kbd></span><span>Geführte Eingabe (Reiter PAK, „Probenanlage“)</span><span><kbd>Strg</kbd> <kbd>Enter</kbd></span><span>neue Probe (Reiter PAK, „Probenanlage“)</span><span><kbd>Enter</kbd></span><span>in der Tabelle: gleiche Spalte, nächste Zeile – in der letzten Zeile neue Probe</span><span><kbd>Esc</kbd></span><span>Fenster schließen / Geführte Eingabe beenden</span></div>
+  <div class="tasten"><span><kbd>Strg</kbd> <kbd>S</kbd></span><span>Speichern (Projektdatei)</span><span><kbd>Strg</kbd> <kbd>Z</kbd></span><span>rückgängig (nicht in einem Textfeld)</span><span><kbd>Strg</kbd> <kbd>Shift</kbd> <kbd>E</kbd></span><span>Geführte Eingabe (PAK-Wischproben)</span><span><kbd>Strg</kbd> <kbd>Enter</kbd></span><span>neue Probe (PAK-Wischproben)</span><span><kbd>Enter</kbd></span><span>in der Tabelle: gleiche Spalte, nächste Zeile – in der letzten Zeile neue Probe</span><span><kbd>Esc</kbd></span><span>Fenster schließen / Geführte Eingabe beenden</span></div>
 </section>
 <section id="app-fotokit" class="ablauf" data-speicher="aidkit-app-fotokit-haken">
   <h1>FotoKit</h1>
@@ -1922,7 +1922,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.21.0';
+const VERSION = '0.22.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2124,7 +2124,7 @@ function initQuiz(el){
 QUIZ["pz-ordner"] = [{"frage": "Ordner <code>26.0123 Köln Nad</code>, „Nad“ steht in der Mitarbeiterliste. Was ist der <b>Ort</b>?", "antworten": ["Köln", "Köln Nad", "Nad"], "richtig": [0], "warum": "Gelesen wird von hinten: Am Ende steht ein bekanntes Kürzel (Nad), dazwischen der Ort."}, {"frage": "Ordner <code>26.0123 Musterstraße Köln Nad</code>. Was ist der Ort?", "antworten": ["Köln", "Musterstraße Köln", "Musterstraße"], "richtig": [1], "warum": "Alles zwischen Projektnummer und Kürzel ist der Ort – mit oder ohne Straße."}, {"frage": "Ordner <code>26.0123 Köln Dr. Ka</code>, in der Liste steht „Dr.Ka“. Wird das Kürzel erkannt?", "antworten": ["Ja", "Nein"], "richtig": [0], "warum": "Verglichen wird ohne Groß-/Kleinschreibung, Leerzeichen und Punkte – „Dr. Ka“ = „Dr.Ka“."}, {"frage": "Ordner <code>26.0123 Köln Xyz</code>, „Xyz“ steht nicht in der Liste. Was passiert?", "antworten": ["Ort ist „Köln“", "Ort ist „Köln Xyz“, mit Hinweis", "Das Projekt wird nicht angezeigt"], "richtig": [1], "warum": "Nichts wird geraten: ohne Treffer ist der ganze Rest der Ort, und die App meldet „Kein bekanntes Kürzel am Ende des Ordnernamens.“"}];
 QUIZ["pz-subs"] = [{"frage": "Welche Ordner meldet die Projektzentrale als fehlend und legt sie mit „Anlegen“ an?", "antworten": ["Fotos", "Pläne", "Laboraufträge", "Laborergebnisse", "Mitteilungen", "Emails", "Rechnung Labore", "Abrechnung", "Feldprotokolle"], "richtig": [0, 1, 2, 3, 4, 5, 6], "warum": "Das sind die sieben Standard-Unterordner. „Abrechnung“ (BelegKit) und „Feldprotokolle“ (LabelKit) legen die Apps selbst an, wenn sie sie brauchen.", "tipp": "Es sind sieben. Zwei der Ordner legen die Apps selbst an."}];
 QUIZ["lk-pflicht"] = [{"frage": "PAK-Wischprobe: welche Zellen sind gelb, solange sie leer sind?", "antworten": ["Probenahmedatum", "Projektnr.", "Raum / Ort", "Oberflächenart", "cm²", "Notiz"], "richtig": [0, 1, 2], "warum": "Dieselben Felder wie die Prüfung „kritisch“ beim Abschluss: Projektnummer, Probenahmedatum, Raum/Ort."}, {"frage": "Sonstige Probe, Bohrkern: welche Zellen sind Pflicht?", "antworten": ["Datum", "Projektnr.", "Raum / Ort", "BK-Bezeichnung", "Untersuchungsparameter", "Tiefe von–bis"], "richtig": [0, 1, 3, 4], "warum": "Bei Bohrkernen ersetzt die BK-Bezeichnung den Raum/Ort; bei „Sonstige“ kommen die Untersuchungsparameter dazu, weil Labor und Abrechnung sie brauchen."}];
-QUIZ["lk-ampel"] = [{"frage": "PAK-Wischprobe mit Datum, Projektnr., Raum / Ort und Matrix – aber <b>ohne</b> Oberflächenart und cm². Welche Ampel?", "antworten": ["Grün", "Gelb", "Rot"], "richtig": [1], "warum": "Grün braucht alle sechs Angaben, ab vier von sechs ist sie gelb („Fast fertig – Felder prüfen“). Beim Abschluss ist das nur eine Warnung, nicht kritisch."}, {"frage": "Dieselbe Probe ohne Raum / Ort – ist das beim Abschluss „kritisch“?", "antworten": ["Ja", "Nein"], "richtig": [0], "warum": "Raum/Ort gehört zu den kritischen Feldern (wie Projektnummer und Datum) – Speichern geht dann nur mit Rückfrage."}];
+QUIZ["lk-ampel"] = [{"frage": "PAK-Wischprobe mit Datum, Projektnr., Raum / Ort und Matrix – aber <b>ohne</b> Oberflächenart und cm². Zählt die Kachel sie als „unvollständig“?", "antworten": ["Ja", "Nein"], "richtig": [0], "warum": "Vollständig ist eine Probe erst mit allen Angaben. Beim Abschluss ist das nur eine Warnung, nicht kritisch – die fehlenden Felder sind gelb."}, {"frage": "Dieselbe Probe ohne Raum / Ort – ist das beim Abschluss „kritisch“?", "antworten": ["Ja", "Nein"], "richtig": [0], "warum": "Raum/Ort gehört zu den kritischen Feldern (wie Projektnummer und Datum) – „Laborauftrag speichern“ geht dann nur über „Trotzdem speichern …“ mit Rückfrage."}];
 QUIZ["fk-tasten"] = [{"frage": "Nächstes Foto?", "antworten": ["Enter", "Strg+D", "Alt+X"], "richtig": [0], "warum": "Enter (oder ↓) im Feld „Was ist zu sehen?“ springt weiter, Shift+Enter zurück."}, {"frage": "Den Abschnitt vom vorherigen Bild übernehmen?", "antworten": ["Alt+R", "Strg+D im Feld Abschnitt", "Shift+Enter"], "richtig": [1], "warum": "Strg+D übernimmt je nach Feld Beschreibung, Abschnitt oder Probe."}, {"frage": "Ein unscharfes Foto soll nicht in die Doku?", "antworten": ["Entf", "Alt+X", "Esc"], "richtig": [1], "warum": "Alt+X legt es auf „Weg“ (und holt es zurück) – wie der Haken auf der Kachel oder „Weg“ in der Fotokarte. Gelöscht wird nichts."}, {"frage": "Ein Bild nach links drehen?", "antworten": ["Alt+R", "Alt+Shift+R", "Strg+R"], "richtig": [1], "warum": "Alt+R dreht rechts, Alt+Shift+R links."}];
 QUIZ["fk-name"] = [{"frage": "Standard-Einstellungen. Bild 3 hat Probe-Nr. „P2“, Beschreibung „Küche Decke“ und heißt <code>IMG_0815.JPG</code>. Neuer Name?", "antworten": ["<code>03_P2_Küche_Decke.jpg</code>", "<code>3_Küche Decke.JPG</code>", "<code>03_Küche_Decke_P2.jpg</code>"], "richtig": [0], "warum": "Zweistellige Nummer, dann Probe-Nr. und Beschreibung; Leerzeichen werden zu „_“, die Endung klein. Der Abschnitt steht nicht im Dateinamen."}, {"frage": "Bild 3 hat <b>keine</b> Beschreibung. Was passiert beim Umbenennen?", "antworten": ["Es heißt „03.jpg“", "Es behält seinen Namen", "Es wird aussortiert"], "richtig": [1], "warum": "Ohne Beschreibung bleibt der Dateiname erhalten."}, {"frage": "Probe-Nr. „P1, P2“ – wie steht das im Namen?", "antworten": ["<code>P1,P2</code>", "<code>P1+P2</code>", "<code>P1_P2</code>"], "richtig": [1], "warum": "Mehrere Proben werden mit „+“ verbunden."}];
 QUIZ["rk-stand"] = [{"frage": "P3 steht in der Laborübergabe aus LabelKit, aber in keinem Prüfbericht. Welcher Stand?", "antworten": ["offen (ausstehend)", "nicht beauftragt", "nur vorläufig"], "richtig": [0], "warum": "Beauftragt, aber noch kein Ergebnis zurück – die Probe ist offen."}, {"frage": "P5 steht bisher nur in einem vorläufigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "nur vorläufig", "offen (ausstehend)"], "richtig": [1], "warum": "Es gibt Werte, aber nur vorläufige – sie können sich mit dem endgültigen Bericht noch ändern."}, {"frage": "Im Prüfbericht steht P9, in der Laborübergabe aus LabelKit nicht. Welcher Stand?", "antworten": ["offen (ausstehend)", "✓ Ergebnis", "nicht beauftragt"], "richtig": [2], "warum": "Die Probe war nicht beauftragt – mit LabelKit abgleichen, z. B. auf eine vertippte Probennummer."}, {"frage": "P1 steht im vorläufigen und im endgültigen Prüfbericht. Welcher Stand?", "antworten": ["✓ Ergebnis", "nur vorläufig", "zweimal, je Bericht einer"], "richtig": [0], "warum": "Endgültig geht vor vorläufig – der vorläufige Bericht ist ersetzt."}];
