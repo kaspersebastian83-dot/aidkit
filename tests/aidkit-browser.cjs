@@ -137,7 +137,7 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#app-berichtkit');
     assert.deepEqual(await page.locator('#app-berichtkit .schritte button').allInnerTexts().then(t => t.map(x => x.replace(/^\D*\d+\s*·?\s*/, '').replace(/\s*✓$/, '').trim())),
       ['Öffnen', 'Vorher erledigt', 'Bericht einstellen', 'Proben', 'Brandbericht', 'Brand-Texte', 'Personen', 'Lücken', 'Speichern']);
-    assert.match(await page.locator('#app-berichtkit .schritt.aktiv').innerText(), /„Asbestbericht“[\s\S]*„Brandbericht“[\s\S]*Hervorgehoben/);
+    assert.match(await page.locator('#app-berichtkit .schritt.aktiv').innerText(), /Kachel „Bericht“[\s\S]*„Asbestbericht öffnen“[\s\S]*„Brandbericht öffnen“/);
     const aq = page.locator('[data-quiz="br-art"]'); await aq.locator('[data-a="0"]').click(); assert.match(await aq.locator('.antwort').innerText(), /Nicht ganz/);
     await aq.locator('[data-a="1"]').click(); assert.match(await aq.locator('.antwort').innerText(), /Richtig\. Asbestproben aus einem Brandschaden/);
     await page.locator('#app-berichtkit .schritte [data-geh="6"]').click();
