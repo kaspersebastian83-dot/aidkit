@@ -147,6 +147,11 @@ const root = path.join(__dirname, '..');
     await page.locator('#app-berichtkit .schritte [data-geh="8"]').click();
     assert.match(await page.locator('#app-berichtkit .schritt.aktiv').innerText(), /Stellen noch offen[\s\S]*Kommentar löschen/);
     const lq = page.locator('[data-quiz="br-luecken"]'); await lq.locator('[data-a="1"]').click(); assert.match(await lq.locator('.antwort').innerText(), /Richtig\. Gelb und Kommentar/);
+    // Kapitel LabelKit neu (LabelKit 5.0): Haken der alten Fassung (anderer Schlüssel) zählen nicht für die neuen Schritte
+    await page.evaluate(() => localStorage.setItem('aidkit-app-labelkit-haken', JSON.stringify({lk7a: true, lk7b: true})));
+    await page.goto(base + '#app-labelkit'); await page.reload();
+    assert.equal(await page.locator('#lk7a').isChecked(), false, 'alte Haken nicht übernommen');
+    assert.equal(await page.evaluate(() => localStorage.getItem('aidkit-app-labelkit-haken')), null, 'alter Schlüssel entfernt');
     // Übung LabelKit: mehrere Antworten mit „Prüfen“
     await page.goto(base + '#app-labelkit'); await page.locator('#app-labelkit .schritte [data-geh="4"]').click();
     const l = page.locator('[data-quiz="lk-pflicht"]');
