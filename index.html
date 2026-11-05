@@ -462,7 +462,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b7a"><label for="b7a">Prüfbericht (<b>XML und PDF</b>) in <b>ResultKit</b> importieren: „📥 Berichte importieren“ oder die Dateien auf die Seite ziehen → „Ablegen“. ResultKit legt sie in „Laborergebnisse“ ab.</label></li>
         <li><input type="checkbox" id="b7g"><label for="b7g">In ResultKit prüfen: oben <b>„Jetzt dran“</b> mit dem nächsten Schritt, darunter je Probenart Probe · Probenahmestelle · Ergebnis in der Farbe der Bewertung; eine Zeile anklicken zeigt alle Parameter, Hinweise und den Prüfbericht. Dann in „Jetzt dran“ <b>„Ergebnisse übernehmen“</b> → <a href="#app-resultkit">ResultKit Schritt für Schritt</a>.</label></li>
         <li><input type="checkbox" id="b7b"><label for="b7b">PlanKit: <b>„Proben übernehmen …“</b> und den in ResultKit übernommenen Bericht wählen, <b>„Alle Konflikte: Aktualisieren“</b> – die Messwerte hängen dann an den Proben.</label></li>
-        <li><input type="checkbox" id="b7c"><label for="b7c"><b>Ergebnisse</b> (Taste K): Ergebniskarte. Bewertet wird nach VdS 2357, wenn es dafür eine Referenz gibt, sonst nach der eigenen Skala des Büros – beide lassen sich anpassen (Übung rechts). Chlorid nach VdS 2357: 5–10 µg/cm² ist die korrosionschemisch relevante Größenordnung – grün unter 5, amber 5 bis unter 10, rot ab 10 µg/cm², unabhängig von der Nutzung (in ResultKit, PlanKit und FotoKit gleich). Korrodieren können nur Metalle; wir wenden die Spanne auch auf Beton, Putz und andere Oberflächen an – dort als Hinweis auf das Korrosionspotenzial in der Umgebung, nicht als Befund am Metall selbst. Beim Export „Darstellung: Ergebniskarte“.</label></li>
+        <li><input type="checkbox" id="b7c"><label for="b7c">PlanKit <b>„Ergebnisfarben zeigen“</b> (Taste K): Ergebniskarte; einstellen in ③ › „Darstellung“ › „Ergebniskarte einstellen“. Bewertet wird nach VdS 2357, wenn es dafür eine Referenz gibt, sonst nach der eigenen Skala des Büros – beide lassen sich anpassen (Übung rechts). Chlorid nach VdS 2357: 5–10 µg/cm² ist die korrosionschemisch relevante Größenordnung – grün unter 5, amber 5 bis unter 10, rot ab 10 µg/cm², unabhängig von der Nutzung (in ResultKit, PlanKit und FotoKit gleich). Korrodieren können nur Metalle; wir wenden die Spanne auch auf Beton, Putz und andere Oberflächen an – dort als Hinweis auf das Korrosionspotenzial in der Umgebung, nicht als Befund am Metall selbst. Beim Export „Darstellung: Ergebniskarte“.</label></li>
         <li><input type="checkbox" id="b7f"><label for="b7f"><b>Vorläufiger Prüfbericht?</b> Die Karte trägt dann rot <b>VORLÄUFIG</b>, die Anlagen einen Hinweis. Kommt der endgültige Bericht: in ResultKit importieren und <b>„Erneut übernehmen“</b>, dann in PlanKit „Proben übernehmen …“ wiederholen – FotoKits „Ergebnistabelle …“ nimmt den übernommenen Stand von selbst.</label></li>
         <li><input type="checkbox" id="b7d"><label for="b7d"><b>Raumbuch</b>: je Raum Maßnahme und Bemerkung; Räume ohne Probe mit Status. Als Word-Anlage oder CSV.</label></li>
         <li><input type="checkbox" id="b7e"><label for="b7e"><b>Anlage Probenahme</b> (Word) aus PlanKit – die <b>Bezeichnung der Anlage</b> mit Nummer ist Pflicht („Anlage 5“, nicht nur „Anlage“). FotoKit <b>„Ergebnistabelle …“</b> (Werte aus ResultKit) für die Tabelle im Gutachten.</label></li>
@@ -642,7 +642,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="c6b"><label for="c6b">In <b>PlanKit</b> mit <b>„Proben übernehmen …“</b> den in ResultKit übernommenen Prüfbericht wählen und <b>„Alle Konflikte: Aktualisieren“</b> – die Werte werden den Proben über die Probennummer zugeordnet.</label></li>
         <li><input type="checkbox" id="c6c"><label for="c6c"><b>Raumbuch</b> in PlanKit: die Räume kommen aus den Proben (z. B. „EG Wohnzimmer“). Maßnahme je Raum eintragen.</label></li>
         <li><input type="checkbox" id="c6d"><label for="c6d">Zurückgestellte Segmente nachbeauftragen, wenn die Ergebnisse es verlangen – die Bezeichnung bleibt gleich.</label></li>
-        <li><input type="checkbox" id="c6f"><label for="c6f">In <b>PlanKit</b> Liste → <b>Wandansichten (Bohrkerne) …</b>: je Wand eine Zeichnung mit Tiefensäule T1, T2 … je Kern und eine Tabelle. Wert wählen (Vorschlag MKW C10–C40, dazu C10–C22), dann <b>Word-Anlage speichern</b>. Die Kerne müssen dafür nicht im Plan platziert sein.</label></li>
+        <li><input type="checkbox" id="c6f"><label for="c6f">In <b>PlanKit</b> Schritt ③ › „Weitere Anlagen“ → <b>Wandansichten (Bohrkerne) …</b>: je Wand eine Zeichnung mit Tiefensäule T1, T2 … je Kern und eine Tabelle. Wert wählen (Vorschlag MKW C10–C40, dazu C10–C22), dann <b>Word-Anlage speichern</b>. Die Kerne müssen dafür nicht im Plan platziert sein.</label></li>
         <li><input type="checkbox" id="c6e"><label for="c6e"><b>FotoKit</b>: bei Bohrloch-Fotos unter „Gehört zu Probe“ die Kern-ID eintragen (<code>EG-WZ-B-7</code>). Ergebnistabelle und PlanKit-Anlage ordnen das Foto über LabelKit allen analysierten Segmenten des Kerns zu; eine Segment-ID (<code>…-T2</code>) nur diesem.</label></li>
       </ul>
     </div><div>
@@ -1112,7 +1112,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk8c"><label for="fk8c"><b>„Tabelle kopieren“</b> und in Word mit <b>Strg+V</b> einfügen.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Eigene Skalen liegen im Archivordner (<code>_Spektron-Skalen.json</code>) und gelten fürs ganze Büro. Für Σ16 EPA-PAK mit Nutzung gilt die VdS-Referenz – ändern geht in PlanKit unter „Ergebnisse“.</div>
+      <div class="tipp">Eigene Skalen liegen im Archivordner (<code>_Spektron-Skalen.json</code>) und gelten fürs ganze Büro. Für Σ16 EPA-PAK mit Nutzung gilt die VdS-Referenz – ändern geht in PlanKit in ③ unter „Ergebniskarte einstellen“.</div>
       <div class="tipp">„Andere Datei …“ (eine XML direkt) gibt es nur ohne Projektordner. Im Projekt kommen die Werte immer aus ResultKit.</div>
     </div></div>
   </div>
@@ -1220,9 +1220,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <h2>Gut zu wissen</h2>
   <p>ResultKit liest den Projektordner; geschrieben wird nur beim <b>„Ablegen“</b> neuer Berichte und bei <b>„Ergebnisse übernehmen“</b>. Die Originaldateien vom Labor bleiben unverändert.</p>
 </section>
-<section id="app-plankit" class="ablauf" data-speicher="aidkit-app-plankit-haken">
+<section id="app-plankit" class="ablauf" data-speicher="aidkit-app-plankit-haken-v2">
   <h1>PlanKit</h1>
-  <div class="app-kopf"><span class="zweck">Probenpunkte, Brandherde und Flächen auf dem Grundriss setzen, Laborwerte übernehmen und Probenplan, Ergebniskarte, Raumbuch und Wandansichten ausgeben.</span><a class="app-oeffnen" style="margin:0" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a></div>
+  <div class="app-kopf"><span class="zweck">Probenplan in drei Schritten: ① Plan laden, ② Proben setzen, ③ Plan ausgeben – dazu Ergebniskarte, Raumbuch und Wandansichten. Die drei Schritte stehen oben links auf der Karte, rechts steht je Schritt nur, was dazugehört.</span><a class="app-oeffnen" style="margin:0" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a></div>
   <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
   <ol class="schritte" aria-label="Schritte"></ol>
 
@@ -1230,115 +1230,117 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk1a"><label for="pk1a">In der Projektzentrale die Kachel <b>„Plan“</b> – oder in PlanKit <b>„📁 Projekt“</b> und den Projektordner wählen.</label></li>
+        <li><input type="checkbox" id="pk1a"><label for="pk1a">In der Projektzentrale die Kachel <b>„Plan“</b> – oder in PlanKit unten <b>„Mehr …“ › „Projektordner öffnen …“</b> (ohne Plan auch auf der Startkarte).</label></li>
         <li><input type="checkbox" id="pk1b"><label for="pk1b">Nach einem Browserneustart: „Zugriff erlauben und Projekt öffnen“.</label></li>
-        <li><input type="checkbox" id="pk1c"><label for="pk1c">Fehlt der Ordner „Pläne“: die Frage mit „Anlegen“ beantworten.</label></li>
+        <li><input type="checkbox" id="pk1c"><label for="pk1c">Oben im Kopfband stehen Projekt, Objekt und die sechs Arbeitsschritte – „Plan“ ist hervorgehoben.</label></li>
         <li><input type="checkbox" id="pk1d"><label for="pk1d">Meldet PlanKit eine zwischenzeitlich geänderte Fassung: bewusst „Andere Fassung laden“, „Meine Fassung als Kopie sichern“ oder „Meine Fassung übernehmen“.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">PlanKit speichert jede Änderung selbst als „Probenplan &lt;Projekt&gt;.probenplan“ in „Pläne“.</div>
+      <div class="tipp">PlanKit speichert jede Änderung selbst – unten rechts steht <b>„✓ automatisch gespeichert“</b> mit Uhrzeit. Die Projektdatei liegt in „_Spektron/PlanKit“ (bei älteren Projekten in „Pläne“), Bilder und PDFs in „Pläne“.</div>
       <a class="app-oeffnen" href="../Probenplan/" target="plankit" rel="noopener">PlanKit öffnen ↗</a>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="2" data-titel="Plan">
-    <div class="schritt-kopf"><h2>2 · Plan laden</h2><span class="ort buero">Büro</span></div>
+  <div class="karte schritt" data-schritt="2" data-titel="Plan laden">
+    <div class="schritt-kopf"><h2>2 · ① Plan laden</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk2a"><label for="pk2a">Einen Grundriss aus der Liste „Aus „Pläne““ antippen oder „Grundriss auswählen“.</label></li>
+        <li><input type="checkbox" id="pk2a"><label for="pk2a">Auf der Startkarte einen Grundriss aus „Pläne“ antippen oder <b>„Grundriss auswählen“</b> (PDF, Polycam-ZIP, SVG, PNG, JPG).</label></li>
         <li><input type="checkbox" id="pk2b"><label for="pk2b">Mehrseitige PDF: „Diese Seite übernehmen“ oder „Alle Seiten als einzelne Pläne“.</label></li>
-        <li><input type="checkbox" id="pk2c"><label for="pk2c">Polycam-ZIP: möglichst die SVG nehmen.</label></li>
+        <li><input type="checkbox" id="pk2c"><label for="pk2c">Lageplan mit vielen Gebäuden? Das Angebot <b>„✂ Ausschnitt wählen“</b> nutzen – oder „Ganzen Plan behalten“.</label></li>
         <li><input type="checkbox" id="pk2d"><label for="pk2d">Kein Plan? <b>„Kein Plan? Skizze zeichnen“</b> und zum Schluss „Skizze fertig“.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">HEIC/HEIF-Bilder bitte zuvor als JPG exportieren.</div>
+      <div class="tipp">Polycam-ZIP: möglichst die SVG nehmen. HEIC/HEIF-Bilder bitte zuvor als JPG exportieren.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="3" data-titel="Geschosse">
-    <div class="schritt-kopf"><h2>3 · Geschosse und Vorbereitung</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-kopf"><h2>3 · ① Geschosse und Plan vorbereiten</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk3a"><label for="pk3a">Weiteres Geschoss mit <b>„＋ Plan“</b> unten; umbenennen per Doppelklick oder „⋯“ (EG, 1. OG, Keller).</label></li>
-        <li><input type="checkbox" id="pk3b"><label for="pk3b">Drehen <b>R</b> / Umschalt+R, zuschneiden <b>C</b>, ausrichten <b>A</b>, entzerren <b>W</b>.</label></li>
-        <li><input type="checkbox" id="pk3c"><label for="pk3c">Zwischen den Plänen mit <b>Bild↑ / Bild↓</b> wechseln.</label></li>
+        <li><input type="checkbox" id="pk3a"><label for="pk3a">Rechts unter „Pläne im Projekt“: <b>„＋ Weiteren Plan (Geschoss) …“</b> oder <b>„＋ Skizze als weiteren Plan“</b>; „⋯“ benennt um, verschiebt oder löscht (EG, 1. OG, Keller).</label></li>
+        <li><input type="checkbox" id="pk3b"><label for="pk3b">„Plan vorbereiten“: <b>Links/Rechts drehen</b>, <b>Zuschneiden</b>, <b>Ausrichten</b>, <b>Entzerren</b> (bei einer Skizze „Skizze bearbeiten“).</label></li>
+        <li><input type="checkbox" id="pk3c"><label for="pk3c">Zwischen den Plänen oben rechts auf der Karte wechseln (oder <b>Bild↑ / Bild↓</b>).</label></li>
+        <li><input type="checkbox" id="pk3d"><label for="pk3d">Falscher Grundriss? Ganz unten <b>„Diesen Plan ersetzen …“</b> – PlanKit fragt und sichert vorher.</label></li>
       </ul>
     </div><div>
       <div class="tipp achtung">Entzerren entfernt Maßstab und Nordrichtung – danach neu setzen.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Maßstab">
-    <div class="schritt-kopf"><h2>4 · Maßstab setzen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-kopf"><h2>4 · ① Maßstab setzen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk4a"><label for="pk4a">Mit <b>L</b> die Liste öffnen → „Maßstab &amp; Norden“.</label></li>
+        <li><input type="checkbox" id="pk4a"><label for="pk4a">In ① rechts unter „Maßstab &amp; Norden“.</label></li>
         <li><input type="checkbox" id="pk4b"><label for="pk4b"><b>„📏 Strecke messen …“</b> und zwei Punkte einer bekannten Strecke anklicken.</label></li>
         <li><input type="checkbox" id="pk4c"><label for="pk4c">Die Länge in <b>Metern</b> eingeben, z. B. 4,85.</label></li>
-        <li><input type="checkbox" id="pk4d"><label for="pk4d">Bei Bedarf „Nordpfeil im PDF“ (0° = oben, 90° = rechts).</label></li>
+        <li><input type="checkbox" id="pk4d"><label for="pk4d">Bei Bedarf „Nordpfeil im PDF“ (0° = oben, 90° = rechts). Dann unten <b>„Weiter: Proben setzen →“</b>.</label></li>
       </ul>
     </div><div>
       <div class="tipp">„Je länger die Strecke, desto genauer der Maßstab – z. B. eine ganze Wand statt einer Tür.“</div>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="5" data-titel="Markieren">
-    <div class="schritt-kopf"><h2>5 · Markieren</h2><span class="ort buero">Büro</span></div>
+  <div class="karte schritt" data-schritt="5" data-titel="Proben">
+    <div class="schritt-kopf"><h2>5 · ② Proben übernehmen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk5a"><label for="pk5a"><b>P</b> = Probe: „Nächste Probe“ und „Form“ (○ □ ◇) einstellen, dann in den Plan tippen.</label></li>
-        <li><input type="checkbox" id="pk5b"><label for="pk5b"><b>B</b> = Brandherd setzen; <b>F</b> = Fläche zeichnen, mit „Fläche abschließen“ beenden.</label></li>
-        <li><input type="checkbox" id="pk5c"><label for="pk5c"><b>E</b> = Punkte ziehen; „Beschriftung versetzen“ trennt Punkt und Schild, „Zurück an Punkt“ setzt zurück.</label></li>
-        <li><input type="checkbox" id="pk5d"><label for="pk5d">In der Liste „Kennung“, „Raum“, „Oberflächenart“ und „Notiz“ ergänzen.</label></li>
-      </ul>
-    </div><div>
-      <div class="uebung quiz" data-quiz="pk-tasten"><h3>Kurz üben: Welche Taste wählt welches Werkzeug?</h3></div>
-      <div class="tipp">Ziehen an einer freien Stelle verschiebt die Ansicht – das Werkzeug bleibt aktiv.</div>
-    </div></div>
-  </div>
-  <div class="karte schritt" data-schritt="6" data-titel="Proben">
-    <div class="schritt-kopf"><h2>6 · Proben übernehmen</h2><span class="ort buero">Büro</span></div>
-    <div class="schritt-grid"><div>
-      <ul class="check">
-        <li><input type="checkbox" id="pk6a"><label for="pk6a"><b>„Proben übernehmen …“</b>: „Probenerfassung aus LabelKit“ oder einen in <b>ResultKit</b> übernommenen Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Fehlt der Bericht: <b>„🧪 ResultKit öffnen“</b>, dort importieren und übernehmen.</label></li>
-        <li><input type="checkbox" id="pk6b"><label for="pk6b">In der Prüftabelle bei „Bei belegter Kennung“ wählen: „Überspringen“, „Nächste freie P-Nummer“ oder „Notiz, Labordaten und Herkunft ersetzen“.</label></li>
-        <li><input type="checkbox" id="pk6c"><label for="pk6c">Schon vorhandene LabelKit-Proben: <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“.</label></li>
-        <li><input type="checkbox" id="pk6d"><label for="pk6d">Die Einträge unter <b>„Noch zu platzieren“</b> auf den Plan ziehen (oder auswählen und in den Plan tippen).</label></li>
+        <li><input type="checkbox" id="pk5a"><label for="pk5a">In ② rechts <b>„Proben aus LabelKit übernehmen …“</b>: „Probenerfassung aus LabelKit“ oder einen in <b>ResultKit</b> übernommenen Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Fehlt der Bericht: <b>„🧪 ResultKit öffnen“</b>, dort importieren und übernehmen.</label></li>
+        <li><input type="checkbox" id="pk5b"><label for="pk5b">In der Prüftabelle bei „Bei belegter Kennung“ wählen: „Überspringen“, „Nächste freie P-Nummer“ oder „Notiz, Labordaten und Herkunft ersetzen“.</label></li>
+        <li><input type="checkbox" id="pk5c"><label for="pk5c">Schon vorhandene LabelKit-Proben: <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“.</label></li>
+        <li><input type="checkbox" id="pk5d"><label for="pk5d">Später neue Proben oder Werte: oben in der Liste <b>„Andere Proben übernehmen …“</b>.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Vorläufiger Prüfbericht? Die Werte werden als vorläufig gekennzeichnet; auf der Ergebniskarte steht dann rot VORLÄUFIG. Kommt der endgültige Bericht: in ResultKit importieren und erneut übernehmen, dann hier genauso übernehmen.</div>
       <div class="tipp">XML und PDF direkt einlesen geht nur noch bei einem freien Plan ohne Projektordner. Im Projekt kommen die Laborwerte immer aus ResultKit.</div>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="7" data-titel="Ergebnisse">
-    <div class="schritt-kopf"><h2>7 · Ergebniskarte</h2><span class="ort buero">Büro</span></div>
+  <div class="karte schritt" data-schritt="6" data-titel="Setzen">
+    <div class="schritt-kopf"><h2>6 · ② Proben setzen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk7a"><label for="pk7a"><b>„Ergebnisse“</b> (Taste <b>K</b>).</label></li>
-        <li><input type="checkbox" id="pk7b"><label for="pk7b">Den „Bewerteten Parameter“ prüfen (Vorschlag Σ16 EPA-PAK).</label></li>
-        <li><input type="checkbox" id="pk7c"><label for="pk7c">Unter „Nutzung / Referenz“: „Eigene / FotoKit-Skala“, „VdS 2357 · Wohn-/Büroräume · 10 µg/m²“ oder „VdS 2357 · Industrie · 100 µg/m²“.</label></li>
-        <li><input type="checkbox" id="pk7d"><label for="pk7d">Kategorien und „ab“-Werte bei Bedarf anpassen – eigene Skalen gelten fürs ganze Büro.</label></li>
+        <li><input type="checkbox" id="pk6a"><label for="pk6a">Unten links steht <b>„Als Nächstes setzen: P3 – EG Flur …“</b> – einfach in den Plan tippen. Danach ist gleich die nächste dran, erst im selben Raum.</label></li>
+        <li><input type="checkbox" id="pk6b"><label for="pk6b"><b>„Überspringen“</b> nimmt die nächste Probe, <b>„Pause“</b> (oder Esc) hält an, <b>„Weiter setzen“</b> macht weiter. Eine andere Probe rechts antippen = diese als Nächstes; oder sie auf den Plan ziehen.</label></li>
+        <li><input type="checkbox" id="pk6c"><label for="pk6c">Ein Tipp auf einen <b>vorhandenen Punkt</b> setzt keine Probe darauf, sondern zeigt rechts die Karte „Probe P3“.</label></li>
+        <li><input type="checkbox" id="pk6d"><label for="pk6d">Lieber eine Probe nach der anderen selbst wählen? „Mehr …“ › „Nach jeder Probe gleich die nächste wählen“ ausschalten.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Ziehen an einer freien Stelle verschiebt die Ansicht – das Setzen läuft weiter. Strg+Z nimmt einen Punkt zurück.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="7" data-titel="Markieren">
+    <div class="schritt-kopf"><h2>7 · ② Eigene Punkte, Brandherd, Flächen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="pk7a"><label for="pk7a">Ohne LabelKit-Proben: <b>„Probe von Hand“</b> (P) – unten links Nummer und Form (○ □ ◇) einstellen, dann in den Plan tippen.</label></li>
+        <li><input type="checkbox" id="pk7b"><label for="pk7b"><b>„Brandherd“</b> (B) setzen; <b>„Punkte verschieben“</b> (E) zieht Punkte und Schilder.</label></li>
+        <li><input type="checkbox" id="pk7c"><label for="pk7c">In der Karte „Probe …“: Form, Oberflächenart, Raum, Notiz; „Beschriftung versetzen“ / „Zurück an Punkt“. Die <b>Kennung einer Laborprobe</b> kommt aus LabelKit und lässt sich hier nicht ändern.</label></li>
+        <li><input type="checkbox" id="pk7d"><label for="pk7d">Schadensflächen: <b>„Mehr …“ › „Schadensflächen …“</b> (oder F), „Fläche zeichnen“, mit „Fläche abschließen“ beenden, dann „Fertig“.</label></li>
+      </ul>
+    </div><div>
+      <div class="uebung quiz" data-quiz="pk-tasten"><h3>Kurz üben: Welche Taste wählt welches Werkzeug?</h3></div>
+      <div class="tipp">Liegt ein Werkzeug in einem anderen Schritt, wechselt die Taste erst dorthin – z. B. C (zuschneiden) springt nach ①.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="8" data-titel="Ausgeben">
+    <div class="schritt-kopf"><h2>8 · ③ Plan ausgeben</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="pk8a"><label for="pk8a">In ② unten <b>„Plan fürs Gutachten ausgeben →“</b>. Rechts „Gutachtennummer“ und „Datum“ eintragen; ein gelber Hinweis nennt Proben, die noch nicht im Plan sind.</label></li>
+        <li><input type="checkbox" id="pk8b"><label for="pk8b">Dateiformat: im Projekt ist <b>„Word · Anlage Probenahme“</b> vorgewählt – dann <b>„Bezeichnung der Anlage“ mit Nummer</b> (z. B. „Anlage 3“) und „Fotos je Probe“. Sonst „PDF · A4/A3“, „PNG“, „JPG“; „Darstellung“ und „Umfang“ wie gewohnt.</label></li>
+        <li><input type="checkbox" id="pk8c"><label for="pk8c">Unten rechts <b>„Anlage Probenahme speichern →“</b> (bzw. „PDF speichern →“ / „Bild speichern →“). Danach „✓ gespeichert in „Mitteilungen““ bzw. „Pläne“ und <b>„Weiter: Bericht →“</b>.</label></li>
+        <li><input type="checkbox" id="pk8d"><label for="pk8d">„Darstellung“: Punktgröße, Beschriftung, Oberflächenart und Messwerte am Plan; aufklappbar <b>„Ergebniskarte einstellen“</b> (Parameter, Nutzung / VdS-Referenz, Skalen). Ergebnisfarben an/aus in ② unter der Liste (K).</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="pk-legende"><h3>Kurz üben: In welche Legendengruppe kommt der Wert?</h3></div>
-      <div class="tipp">Die VdS-Werte für Σ16 EPA-PAK auf Oberflächen sind Hintergrundreferenzen – keine pauschalen Freigabe- oder Sanierungsgrenzwerte.</div>
+      <div class="tipp">Ändert sich nach dem Speichern noch etwas am Plan, heißt der Knopf wieder „… speichern →“ – dann noch einmal ausgeben.</div>
+      <div class="tipp">Beim Drucken eines maßstäblichen PDFs „Tatsächliche Größe“ (100 %) wählen. Die VdS-Werte für Σ16 EPA-PAK auf Oberflächen sind Hintergrundreferenzen – keine pauschalen Freigabe- oder Sanierungsgrenzwerte.</div>
       <div class="tipp">Chlorid nach VdS 2357: 5–10 µg/cm² ist die korrosionschemisch relevante Größenordnung – grün unter 5, amber 5 bis unter 10, rot ab 10 µg/cm², unabhängig von der Nutzung (in ResultKit, PlanKit und FotoKit gleich). Korrodieren können nur Metalle; wir wenden die Spanne auch auf Beton, Putz und andere Oberflächen an – dort als Hinweis auf das Korrosionspotenzial in der Umgebung, nicht als Befund am Metall selbst. Ältere Berichte in mg/m² werden umgerechnet (1 µg/cm² = 10 mg/m²). Anpassbar wie die PAK-Referenz.</div>
     </div></div>
   </div>
-  <div class="karte schritt" data-schritt="8" data-titel="Export">
-    <div class="schritt-kopf"><h2>8 · Export und Anlage</h2><span class="ort buero">Büro</span></div>
-    <div class="schritt-grid"><div>
-      <ul class="check">
-        <li><input type="checkbox" id="pk8a"><label for="pk8a"><b>„↓ Export …“</b>: „Gutachtennummer“ und „Datum“ eintragen.</label></li>
-        <li><input type="checkbox" id="pk8b"><label for="pk8b">„Darstellung“: <b>Ergebniskarte</b>; „Umfang“: „Dieser Plan“ oder „Alle Pläne“.</label></li>
-        <li><input type="checkbox" id="pk8c"><label for="pk8c">Dateiformat wählen: „PNG · verlustfrei“, „JPG · hohe Qualität“, „PDF · A4“, „PDF · A3“ oder <b>„Word · Anlage Probenahme“</b>.</label></li>
-        <li><input type="checkbox" id="pk8d"><label for="pk8d">Word-Anlage: <b>„Bezeichnung der Anlage“ mit Nummer</b> (z. B. „Anlage 3“), „Fotos je Probe“ wählen, „↓ Anlage erstellen“.</label></li>
-      </ul>
-    </div><div>
-      <div class="tipp">Beim Drucken eines maßstäblichen PDFs „Tatsächliche Größe“ (100 %) wählen.</div>
-    </div></div>
-  </div>
   <div class="karte schritt" data-schritt="9" data-titel="Raumbuch">
-    <div class="schritt-kopf"><h2>9 · Raumbuch und Wandansichten</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-kopf"><h2>9 · ③ Raumbuch und Wandansichten</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="pk9a"><label for="pk9a">In der Liste <b>„Raumbuch bearbeiten …“</b>: je Raum „Maßnahme“ und „Bemerkung“.</label></li>
+        <li><input type="checkbox" id="pk9a"><label for="pk9a">In ③ unter „Weitere Anlagen“ <b>„Raumbuch bearbeiten …“</b>: je Raum „Maßnahme“ und „Bemerkung“.</label></li>
         <li><input type="checkbox" id="pk9b"><label for="pk9b">Räume ohne Probe mit „Raum hinzufügen“ anlegen und den Status setzen (Sichtprüfung unauffällig / auffällig, nicht begangen).</label></li>
         <li><input type="checkbox" id="pk9c"><label for="pk9c">„Word-Anlage speichern“ oder „Tabelle für Excel (CSV)“ – die Dateien landen in „Mitteilungen“.</label></li>
         <li><input type="checkbox" id="pk9d"><label for="pk9d">Bohrkerne: <b>„Wandansichten (Bohrkerne) …“</b>, „Farbe und Wert“ wählen, Anlage speichern.</label></li>
@@ -1350,7 +1352,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
   <h2>Tastenkürzel</h2>
-  <div class="tasten"><span><kbd>V</kbd></span><span>Ansicht</span><span><kbd>P</kbd></span><span>Probe</span><span><kbd>B</kbd></span><span>Brandherd</span><span><kbd>E</kbd></span><span>Bearbeiten</span><span><kbd>F</kbd></span><span>Fläche zeichnen</span><span><kbd>G</kbd></span><span>Fläche bearbeiten</span><span><kbd>R</kbd></span><span>drehen (Umschalt+R andersherum)</span><span><kbd>C</kbd></span><span>zuschneiden</span><span><kbd>A</kbd></span><span>ausrichten</span><span><kbd>W</kbd></span><span>entzerren</span><span><kbd>K</kbd></span><span>Ergebnisse</span><span><kbd>L</kbd></span><span>Liste ein/aus</span><span><kbd>+</kbd> <kbd>−</kbd> <kbd>0</kbd></span><span>Zoom, einpassen</span><span><kbd>Bild↑</kbd> <kbd>Bild↓</kbd></span><span>Plan wechseln</span><span><kbd>Strg</kbd> <kbd>Z</kbd></span><span>rückgängig (Strg+Y / Strg+Umschalt+Z wiederherstellen)</span><span><kbd>Entf</kbd></span><span>löschen</span><span><kbd>Esc</kbd></span><span>abwählen / Messen abbrechen</span></div>
+  <div class="tasten"><span><kbd>P</kbd></span><span>Probe von Hand</span><span><kbd>B</kbd></span><span>Brandherd</span><span><kbd>E</kbd></span><span>Punkte verschieben</span><span><kbd>V</kbd> <kbd>Esc</kbd></span><span>Pause / abwählen</span><span><kbd>F</kbd></span><span>Fläche zeichnen</span><span><kbd>G</kbd></span><span>Fläche bearbeiten</span><span><kbd>R</kbd></span><span>drehen (Umschalt+R andersherum)</span><span><kbd>C</kbd></span><span>zuschneiden</span><span><kbd>A</kbd></span><span>ausrichten</span><span><kbd>W</kbd></span><span>entzerren</span><span><kbd>K</kbd></span><span>Ergebnisfarben</span><span><kbd>L</kbd></span><span>Spalte rechts ein/aus</span><span><kbd>+</kbd> <kbd>−</kbd> <kbd>0</kbd></span><span>Zoom, einpassen</span><span><kbd>Bild↑</kbd> <kbd>Bild↓</kbd></span><span>Plan wechseln</span><span><kbd>Strg</kbd> <kbd>Z</kbd></span><span>rückgängig (Strg+Y wiederholen)</span><span><kbd>Entf</kbd></span><span>löschen</span></div>
 </section>
 <section id="app-berichtkit" class="ablauf" data-speicher="aidkit-app-berichtkit-haken">
   <h1>BerichtKit</h1>
@@ -1922,7 +1924,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.22.0';
+const VERSION = '0.23.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2138,7 +2140,7 @@ QUIZ["br-luecken"] = [{"frage": "In Word hast du „[Ortstermin]“ durch das Da
 QUIZ["br-quelle"] = [{"frage": "Im Brandbericht steht „[Schadendatum]“ gelb. Wo trägst du es nach?", "antworten": ["In BerichtKit in der Karte „Bericht & Auftrag“", "In LabelKit", "In der Projektzentrale (Projektdaten, Schadendatum – oder „nicht bekannt“)"], "richtig": [2], "warum": "Schadendatum, Ortstermin und Nutzung kommen aus der Projektzentrale. „nicht bekannt“ ergibt den Satz ohne Datum."}, {"frage": "In der Vorschau steht „Material: [Material]“ gelb. Wo trägst du das Material nach?", "antworten": ["In LabelKit, Asbest-Tabelle, Spalte „Bauteil / Material“", "In BerichtKit direkt im Text", "In ResultKit bei der Probe"], "richtig": [0], "warum": "Material und Entnahmestelle kommen aus LabelKit. Dort nachtragen und speichern – sobald du zu BerichtKit zurückwechselst, liest es neu („Daten neu gelesen“)."}, {"frage": "Unter „Hinweise“ steht „Keine Laborergebnisse“. Was fehlt?", "antworten": ["In ResultKit „Ergebnisse übernehmen“", "Der Prüfbericht muss in „Mitteilungen“ liegen", "Ein Foto mit Probe-Nr."], "richtig": [0], "warum": "BerichtKit liest nur die in ResultKit übernommenen Werte (_Ergebnisse.json)."}];
 QUIZ["br-kmf"] = [{"frage": "Dämmstoffprobe, KI-Wert steht nicht in den Labordaten. Was tun?", "antworten": ["KI-Wert genau wie im Prüfbericht (PDF) eintragen", "Feld leer lassen und schätzen", "KMF-Haken entfernen"], "richtig": [0], "warum": "Der KI-Wert wird immer genannt – aus den Labordaten oder, wenn er dort fehlt, wörtlich aus dem PDF. Nie schätzen."}, {"frage": "Niemand weiß, wann die Mineralwolle eingebaut wurde. Welches Einbaujahr?", "antworten": ["„nicht bekannt“ – sie wird wie alte Mineralwolle (TRGS 521) behandelt", "„vor 1996“", "Keins – KMF weglassen"], "richtig": [0], "warum": "Solange nicht belegt ist, dass es neue Mineralwolle ist, gilt sie als alte Mineralwolle im Sinne der TRGS 521."}];
 QUIZ["br-unterschrift"] = [{"frage": "Der Messtechniker hat die Proben genommen, die Sachverständige bewertet. Wer unterschreibt?", "antworten": ["Beide: links die Sachverständige, rechts der Messtechniker", "Nur der Messtechniker", "Nur die Sachverständige"], "richtig": [0], "warum": "Probenahme durch den Messtechniker → zwei Unterschriften."}, {"frage": "Der Kunde hat die Probe ins Büro geschickt. Wer unterschreibt?", "antworten": ["Nur die/der Sachverständige", "Sachverständige(r) und Messtechniker", "Niemand – zugestellte Proben brauchen keine Unterschrift"], "richtig": [0], "warum": "Bei zugestellten Proben reicht die Unterschrift der/des Sachverständigen; dazu kommt der Satz zur Gewährleistung."}];
-QUIZ["pk-tasten"] =[{"frage": "Probenpunkt setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe, B = Brandherd, E = Bearbeiten."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisse, L = Liste, V = Ansicht."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
+QUIZ["pk-tasten"] =[{"frage": "Eigene Probe von Hand setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe von Hand, B = Brandherd, E = Punkte verschieben."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisfarben, L = Spalte rechts, V = Pause."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
 QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengruppe?", "antworten": ["Unter BG (kein gemessener Nullwert)", "Ohne Bewertung", "unter Referenzwert"], "richtig": [0], "warum": "Werte unter der Bestimmungsgrenze sind kein gemessener Nullwert und bekommen eine eigene Gruppe (blaugrau)."}, {"frage": "Laborwert „n. n.“?", "antworten": ["Unter BG", "Nicht nachgewiesen (n.n.)", "Nicht bestimmt (n.b.)"], "richtig": [1], "warum": "Qualifikatoren werden nie zu Zahlen – n. n. hat eine eigene Gruppe."}, {"frage": "Laborwert „1.234“ (unklar, ob 1,234 oder 1234)?", "antworten": ["wird als 1234 bewertet", "Ohne Bewertung", "wird als 1,234 bewertet"], "richtig": [1], "warum": "Mehrdeutige Zahlen bleiben ohne Bewertung (grau) – lieber nachfragen als raten."}, {"frage": "Nutzung „Wohnen“, Σ16 EPA-PAK = 12 µg/m² auf einer Oberfläche?", "antworten": ["unter Referenzwert", "Referenzwert erreicht/überschritten"], "richtig": [1], "warum": "Für Wohn-/Büroräume liegt die VdS-Hintergrundreferenz bei 10 µg/m² (Industrie: 100 µg/m²)."}];
 QUIZ["ub-anlagen"] = [{"frage": "Im Projekt liegen: <code>Fotos/26.0560_Bilddokumentation.pdf</code>, <code>Mitteilungen/26.0560 Anlage Probenahme.docx</code>, <code>Mitteilungen/26.0560 Gutachten.docx</code> (gewählte Word-Datei), <code>Laborergebnisse/Prüfbericht 123.pdf</code>. Was ist <b>schon angehakt</b>?", "antworten": ["Bilddokumentation.pdf", "Anlage Probenahme.docx", "Gutachten.docx", "Prüfbericht 123.pdf"], "richtig": [0, 1], "warum": "Vorgeschlagen sind PDFs in „Fotos“ und Dateien mit „Anlage“ oder „Bilddokumentation“ im Namen. Das Gutachten selbst steht nicht in der Liste; Prüfberichte sind wählbar, aber nicht vorangehakt.", "tipp": "Zwei sind vorangehakt. Die Word-Datei des Gutachtens ist keine Anlage."}];
 QUIZ["ub-rechnung"] = [{"frage": "Stand gespeichert am 27.10. Am 29.10. trägt Nad noch 2 Stunden Auswertung nach. Was zeigt BüroKit?", "antworten": ["„⚠ … geändert: Zeiten NAD geändert“ – Rückfrage", "„✓ Stand ist aktuell“", "Die 2 Stunden sind automatisch in den Positionen"], "richtig": [0], "warum": "Die Positionen kommen aus dem gespeicherten Stand. BüroKit vergleicht die Zeitdateien und warnt – der/die Sachverständige speichert einen neuen Stand."}, {"frage": "Versandt, aber in „Abrechnung“ steht „Noch kein Abrechnungsstand“. Was tut das Büro?", "antworten": ["„Rückfrage stellen“ – Text ist vorbelegt", "Positionen selbst zählen", "Haken „Rechnung“ trotzdem setzen"], "richtig": [0], "warum": "Ohne Stand keine Rechnung: Die Rückfrage erscheint oben am Projekt in der Projektzentrale; danach geht es weiter."}, {"frage": "Wer trägt die Stunden von Ben ein, der als Probenehmer dabei war?", "antworten": ["Ben selbst in BelegKit", "Die/der zuständige Sachverständige", "Das Büro in BüroKit"], "richtig": [0], "warum": "Jede Person schreibt nur ihre eigene Zeitdatei. BüroKit liest sie nur."}, {"frage": "Das Gutachten ist versandt, „Rechnung“ ist noch nicht abgehakt. Was zeigt die Kachel „Abrechnung“ in der Projektzentrale (Stand liegt vor)?", "antworten": ["„Rechnung beim Büro“", "„Abgerechnet“", "„Noch keine Zeiten erfasst“"], "richtig": [0], "warum": "Die Abrechnung wartet auf das Büro. „Abgerechnet“ steht dort erst nach dem Haken „Rechnung“."}];
