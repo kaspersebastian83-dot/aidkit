@@ -152,6 +152,12 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#app-labelkit'); await page.reload();
     assert.equal(await page.locator('#lk7a').isChecked(), false, 'alte Haken nicht übernommen');
     assert.equal(await page.evaluate(() => localStorage.getItem('aidkit-app-labelkit-haken')), null, 'alter Schlüssel entfernt');
+    // Kapitel PlanKit neu (PlanKit 2.0): alte Haken (anderer Schlüssel) zählen nicht für die neuen Schritte
+    await page.evaluate(() => localStorage.setItem('aidkit-app-plankit-haken', JSON.stringify({pk6a: true, pk7a: true})));
+    await page.goto(base + '#app-plankit'); await page.reload();
+    assert.equal(await page.locator('#pk6a').isChecked(), false, 'PlanKit: alte Haken nicht übernommen');
+    assert.equal(await page.evaluate(() => localStorage.getItem('aidkit-app-plankit-haken')), null, 'PlanKit: alter Schlüssel entfernt');
+    assert.deepEqual(await page.locator('#app-plankit .schritte button').allInnerTexts().then(t => t.map(x => x.replace(/^\D*\d+\s*·?\s*/, '').replace(/\s*✓$/, '').trim())), ['Öffnen', 'Plan laden', 'Geschosse', 'Maßstab', 'Proben', 'Setzen', 'Markieren', 'Ausgeben', 'Raumbuch']);
     // Übung LabelKit: mehrere Antworten mit „Prüfen“
     await page.goto(base + '#app-labelkit'); await page.locator('#app-labelkit .schritte [data-geh="4"]').click();
     const l = page.locator('[data-quiz="lk-pflicht"]');
