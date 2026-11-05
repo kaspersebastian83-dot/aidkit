@@ -1134,9 +1134,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>1 · Projekt öffnen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk1a"><label for="rk1a">In der Projektzentrale die Kachel <b>„Labor“</b> – oder oben in der Spektron-Leiste der anderen Apps auf <b>ResultKit</b>. Das Projekt ist dann schon offen.</label></li>
-        <li><input type="checkbox" id="rk1b"><label for="rk1b">Sonst <b>„📁 Projekt“</b> bzw. <b>„📁 Projektordner öffnen“</b> und den Projektordner wählen (z. B. <code>26.0123 Köln</code>) oder dessen Ordner „Laborergebnisse“.</label></li>
-        <li><input type="checkbox" id="rk1c"><label for="rk1c">Prüfen, dass oben <b>Projektnummer und Ort</b> stehen.</label></li>
+        <li><input type="checkbox" id="rk1a"><label for="rk1a">In der Projektzentrale die Kachel <b>„Labor“</b> – oder im Kopfband der anderen Apps auf die Kachel <b>Labor</b>. Das Projekt ist dann schon offen.</label></li>
+        <li><input type="checkbox" id="rk1b"><label for="rk1b">Sonst unten rechts <b>„Projektordner öffnen →“</b> und den Projektordner wählen (z. B. <code>26.0123 Köln</code>) oder dessen Ordner „Laborergebnisse“. Später ein anderes Projekt: <b>„Mehr …“ → „Anderes Projekt öffnen …“</b> oder das Projektmenü im Kopfband.</label></li>
+        <li><input type="checkbox" id="rk1c"><label for="rk1c">Prüfen, dass im Kopfband <b>Projektnummer und Ort</b> stehen.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Wie alle Spektron-Apps nur in <b>Chrome oder Edge</b> – Firefox kann keine Ordner öffnen. Nach einem Browserneustart einmal den Zugriff erlauben.</div>
@@ -1147,10 +1147,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>2 · „Jetzt dran“ und Ergebnisse lesen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk2a"><label for="rk2a">Alles steht auf <b>einer Seite</b>. Ganz oben <b>„Jetzt dran“</b> mit dem einen nächsten Schritt und einem Knopf: <b>„📥 Berichte importieren“</b> (noch keine Berichte) → <b>„Ergebnisse übernehmen“</b> → grün <b>„Übernommen am … ✓“</b> (nichts zu tun) → nach Änderungen im Ordner <b>„Erneut übernehmen“</b>. Darunter der Stand in einem Satz, z. B. „3 von 4 Proben mit Ergebnis · 1 offen“.</label></li>
-        <li><input type="checkbox" id="rk2b"><label for="rk2b">Darunter die Ergebnisse: je Probenart eine Kachel (z. B. „PAK 34 / 40 · 12 auffällig · 6 offen“) und eine Tabelle <b>Probe · Probenahmestelle · Ergebnis</b> – die Probenahmestelle ist die Bezeichnung aus LabelKit, über der Tabelle stehen die Prüfberichte mit Datum. Das Ergebnis steht in der <b>Farbe der Bewertung</b> (Legende über der Tabelle); PAK als Σ16 EPA-PAK, Chlorid in µg/cm², Asbest mit dem Befund wie im Bericht – nachgewiesen zart rot. In der Zeile steht ggf. <b>„ausstehend“</b>, <b>„vorläufig“</b>, <b>„nicht beauftragt“</b> oder <b>„⚠ Hinweis“</b>. Mit „Nur auffällige“ und „Nur offene“ filtern, nach Ort oder Probennummer sortieren.</label></li>
-        <li><input type="checkbox" id="rk2c"><label for="rk2c"><b>Zeile anklicken</b> klappt die Probe auf: alle Parameter in der Farbe der Bewertung, Hinweise, Stand, Prüfbericht (vorläufig/endgültig, XML/PDF), Labor-Nr. und Probenahmedatum. Noch einmal klicken klappt sie zu. Steht oben <b>„⚠ 2 Hinweise“</b>, klappt ein Klick darauf alle betroffenen Proben und Berichte auf.</label></li>
-        <li><input type="checkbox" id="rk2d"><label for="rk2d">Neue Dateien im Ordner? <b>„⟳ Neu einlesen“</b> – das passiert auch von selbst, wenn man ins Fenster zurückkommt.</label></li>
+        <li><input type="checkbox" id="rk2a"><label for="rk2a">Alles steht auf <b>einer Seite</b>. Oben <b>„Jetzt dran“</b> mit dem Stand in einem Satz, darüber die kleine Zeile <b>„Berichte importiert · Geprüft · Übernommen“</b>. Den nächsten Schritt macht immer der große Knopf <b>unten rechts</b>: <b>„Prüfberichte importieren →“</b> → <b>„Ergebnisse übernehmen →“</b> → danach <b>„Weiter: …“</b> zum Probenplan. Daneben höchstens ein zweiter Knopf (z. B. „Berichte importieren“).</label></li>
+        <li><input type="checkbox" id="rk2b"><label for="rk2b">Darunter die Ergebnisse: je Probenart eine Kachel (z. B. „PAK 34 / 40 · 12 auffällig · 6 offen“) und eine ruhige Tabelle. Standard <b>„Nach Stelle“</b>: eine Zeile je Probenahmestelle, PAK und Chlorid nebeneinander, die Probennummer klein am Wert („12 · P1“). Jeder Wert hat einen <b>Farbpunkt</b> nach der Bewertung, auffällige Werte sind fett; die Legende steht in einer Zeile über der Tabelle (Maus drauf zeigt den Namen der Stufe). Nach Ort sortiert trennt eine graue Zeile die Geschosse. Die andere Ansicht <b>„Je Probenart“</b> gibt es unter <b>„Mehr …“</b>.</label></li>
+        <li><input type="checkbox" id="rk2c"><label for="rk2c"><b>Zeile anklicken</b> klappt die Probe auf: oben die Hinweise, links alle Parameter als kleine Tabelle, rechts Stand, Prüfbericht (vorläufig/endgültig, XML/PDF), Labor-Nr., Probenahme und die Beschreibung aus LabelKit. Noch einmal klicken klappt sie zu. Steht in „Jetzt dran“ <b>„⚠ 2 Hinweise“</b>, klappt ein Klick darauf alle Proben und Berichte mit Hinweisen auf. „Nur auffällige“ / „Nur offene“ filtern, <b>„Für Excel kopieren“</b> kopiert die Tabelle.</label></li>
+        <li><input type="checkbox" id="rk2d"><label for="rk2d">Neue Dateien im Ordner? <b>„Mehr …“ → „Ordner neu einlesen“</b> – das passiert auch von selbst, wenn man ins Fenster zurückkommt.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="rk-stand"><h3>Kurz üben: Welchen Stand hat die Probe?</h3></div>
@@ -1161,9 +1161,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>3 · Berichte importieren</h2><span class="ort buero">Büro</span><span class="dauer">→ Ordner „Laborergebnisse“</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk3a"><label for="rk3a"><b>„📥 Berichte importieren“</b> (oben oder in „Jetzt dran“) – oder XML und PDF des Prüfberichts auf die Seite ziehen (oder „Dateien wählen …“ im gestrichelten Feld unter „Prüfberichte“).</label></li>
+        <li><input type="checkbox" id="rk3a"><label for="rk3a">Unten <b>„Berichte importieren“</b> (bzw. groß <b>„Prüfberichte importieren →“</b>, solange noch keiner da ist) – oder XML und PDF des Prüfberichts einfach auf die Seite ziehen (oder „Dateien wählen …“ im gestrichelten Feld unter „Prüfberichte“).</label></li>
         <li><input type="checkbox" id="rk3b"><label for="rk3b">In der Vorschau <b>„In „Laborergebnisse“ ablegen?“</b> je Bericht Berichtsnummer, Zahl der Proben und Auftragsreferenz prüfen.</label></li>
-        <li><input type="checkbox" id="rk3c"><label for="rk3c"><b>„Ablegen“</b> – ResultKit legt eine unveränderte Kopie in „Laborergebnisse“ ab. Gibt es keine Hinweise, fragt „Jetzt dran“ gleich: <b>„AR-… eingelesen – Jetzt übernehmen?“</b> → <b>„Ergebnisse übernehmen“</b> (Schritt 5) oder erst <b>„Erst ansehen“</b>.</label></li>
+        <li><input type="checkbox" id="rk3c"><label for="rk3c"><b>„Ablegen“</b> – ResultKit legt eine unveränderte Kopie in „Laborergebnisse“ ab. Gibt es keine Hinweise, fragt „Jetzt dran“ gleich: <b>„AR-… eingelesen – Jetzt übernehmen?“</b> – unten <b>„Ergebnisse übernehmen →“</b> (Schritt 5) oder daneben erst <b>„Erst ansehen“</b>.</label></li>
         <li><input type="checkbox" id="rk3d"><label for="rk3d">Immer <b>XML und PDF</b> zusammen: Die Werte kommen nur aus der Eurofins-<b>XML</b>, die PDF ist zum Gegenlesen.</label></li>
       </ul>
     </div><div>
@@ -1176,7 +1176,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>4 · Berichte prüfen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk4a"><label for="rk4a">Ganz unten <b>„Prüfberichte“</b> aufklappen. Je Prüfbericht eine Karte: Berichtsnummer, <b>endgültig / vorläufig / ersetzt</b>, Zahl der Proben, Probenahmedatum.</label></li>
+        <li><input type="checkbox" id="rk4a"><label for="rk4a">Ganz unten <b>„Prüfberichte“</b> aufklappen (oder <b>„Mehr …“ → „Prüfberichte zeigen“</b>). Je Prüfbericht eine Karte: Berichtsnummer, <b>endgültig / vorläufig / ersetzt</b>, Zahl der Proben, Probenahmedatum.</label></li>
         <li><input type="checkbox" id="rk4b"><label for="rk4b">Die Kennwerte lesen (Σ16 EPA-PAK, BaP, Chlorid, Asbest), bei Bedarf <b>„Alle Parameter“</b> aufklappen und mit der PDF vergleichen.</label></li>
         <li><input type="checkbox" id="rk4c"><label for="rk4c">Hinweise auf der Karte lesen – z. B. eine fremde Projektnummer in der Auftragsreferenz oder eine PDF ohne XML (dann die XML beim Labor anfordern).</label></li>
         <li><input type="checkbox" id="rk4d"><label for="rk4d"><b>Vorläufiger Bericht?</b> Seine Werte gelten, bis der endgültige da ist. Diesen dann importieren – der vorläufige steht danach als <b>„ersetzt“</b> da und wird nicht mehr übernommen.</label></li>
@@ -1191,9 +1191,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>5 · Ergebnisse übernehmen</h2><span class="ort buero">Büro</span><span class="dauer">→ <code>Laborergebnisse/_Ergebnisse.json</code></span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk5a"><label for="rk5a">In „Jetzt dran“ <b>„Ergebnisse übernehmen“</b> – ResultKit schreibt die geltenden Werte nach <code>Laborergebnisse/_Ergebnisse.json</code>. PlanKit und FotoKit lesen nur diese Datei.</label></li>
+        <li><input type="checkbox" id="rk5a"><label for="rk5a">Unten rechts <b>„Ergebnisse übernehmen →“</b> – ResultKit schreibt die geltenden Werte nach <code>_Ergebnisse.json</code> (im Spektron-Ordner des Projekts). PlanKit und FotoKit lesen nur diese Datei. Danach steht unten <b>„✓ Übernommen am …“</b>.</label></li>
         <li><input type="checkbox" id="rk5b"><label for="rk5b">Noch nicht alles da? ResultKit fragt nach. <b>„Trotzdem übernehmen“</b> speichert einen Zwischenstand – PlanKit und FotoKit zeigen dann diesen.</label></li>
-        <li><input type="checkbox" id="rk5c"><label for="rk5c">Ändert sich danach der Ordner (neuer Bericht, neue LabelKit-Datei), steht in „Jetzt dran“ <b>„Geändert seit der Übernahme – bitte erneut übernehmen“</b>. Prüfen, dann <b>„Erneut übernehmen“</b>. Danach ist der Kasten wieder grün.</label></li>
+        <li><input type="checkbox" id="rk5c"><label for="rk5c">Ändert sich danach der Ordner (neuer Bericht, neue LabelKit-Datei), steht in „Jetzt dran“ <b>„Geändert seit der Übernahme – bitte erneut übernehmen“</b> und unten <b>„Übernahme nicht mehr aktuell“</b>. Prüfen, dann unten <b>„Erneut übernehmen →“</b>.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="rk-uebernehmen"><h3>Kurz üben: Übernehmen oder warten?</h3></div>
@@ -1204,9 +1204,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>6 · In PlanKit und FotoKit weiterarbeiten</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="rk6a"><label for="rk6a"><b>PlanKit</b> → <b>„Proben übernehmen …“</b>: Dort stehen die Probenerfassung aus LabelKit und jeder in ResultKit übernommene Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Den Bericht wählen.</label></li>
+        <li><input type="checkbox" id="rk6a"><label for="rk6a"><b>PlanKit</b> → Schritt <b>② Proben setzen</b> → <b>„Proben übernehmen …“</b>: Dort stehen die Probenerfassung aus LabelKit und jeder in ResultKit übernommene Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Den Bericht wählen.</label></li>
         <li><input type="checkbox" id="rk6b"><label for="rk6b">In der Prüftabelle <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“ – Labordaten und Messwerte hängen dann an den LabelKit-Proben.</label></li>
-        <li><input type="checkbox" id="rk6c"><label for="rk6c"><b>FotoKit</b> → <b>„Ergebnistabelle …“</b>: nimmt die in ResultKit übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle. Hat sich der Ordner seit der Übernahme geändert oder sind noch Proben offen, warnt FotoKit.</label></li>
+        <li><input type="checkbox" id="rk6c"><label for="rk6c"><b>FotoKit</b> → <b>„Mehr …“ → „Ergebnistabelle …“</b>: nimmt die in ResultKit übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle. Hat sich der Ordner seit der Übernahme geändert oder sind noch Proben offen, warnt FotoKit.</label></li>
         <li><input type="checkbox" id="rk6e"><label for="rk6e">Später ein neuer Bericht übernommen (z. B. endgültig statt vorläufig)? PlanKit zeigt oben die Leiste <b>„Neuerer Laborstand in ResultKit“</b>. <b>„Proben übernehmen …“</b>, den Bericht wählen, <b>„Alle Konflikte: Aktualisieren“</b> – die Proben bleiben, wo sie im Plan stehen.</label></li>
         <li><input type="checkbox" id="rk6d"><label for="rk6d">Aus PlanKit und FotoKit führt <b>„🧪 ResultKit öffnen“</b> hierher zurück.</label></li>
       </ul>
@@ -1219,6 +1219,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
   <h2>Gut zu wissen</h2>
   <p>ResultKit liest den Projektordner; geschrieben wird nur beim <b>„Ablegen“</b> neuer Berichte und bei <b>„Ergebnisse übernehmen“</b>. Die Originaldateien vom Labor bleiben unverändert.</p>
+  <p>Seltenes steht unter <b>„Mehr …“</b> unten links: Prüfberichte zeigen, Ansicht „Nach Stelle“ / „Je Probenart“, Ordner neu einlesen, anderes Projekt öffnen, Kurzanleitung, Version, Handbuch und Rückmeldung.</p>
 </section>
 <section id="app-plankit" class="ablauf" data-speicher="aidkit-app-plankit-haken-v2">
   <h1>PlanKit</h1>
@@ -1924,7 +1925,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.23.0';
+const VERSION = '0.24.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
