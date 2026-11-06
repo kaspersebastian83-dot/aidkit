@@ -164,7 +164,31 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 .fluss .pfeil{align-self:center;color:var(--muted);font-size:16px}
 .wo-tab td:first-child{font-family:var(--mono);white-space:nowrap}
 @media (max-width:820px){ .schritt-grid{grid-template-columns:1fr} .fluss .pfeil{display:none} .wo-tab td:first-child{white-space:normal} .layout{grid-template-columns:minmax(0,1fr)} th,td{padding:6px 8px} }
+/* Checkliste Ortstermin: am Bildschirm kurz, gedruckt ein A4-Blatt hochkant */
+.nur-druck{display:none}
+.ot-blatt{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start}
+.ot-gruppe{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--shadow)}
+.ot-gruppe h2{margin:0 0 6px;font-size:17px}
+.ot-gruppe h2 small{font-size:12px;font-weight:400;color:var(--muted);margin-left:6px}
+.ot-liste{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.ot-liste li{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 8px;padding-left:26px;position:relative;max-width:none}
+.ot-liste li::before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border:1.5px solid var(--line2);border-radius:3px;background:var(--panel2)}
+@page ortstermin{size:A4 portrait;margin:11mm 13mm}
 @media print{
+  #ortstermin{page:ortstermin;color:#000;font:10pt/1.3 var(--sans)} #ortstermin > h1,#ortstermin .lead{display:none} #ortstermin .nur-druck{display:block}
+  #ortstermin .ot-blatt{display:block}
+  #ortstermin .ot-kopf{border-bottom:1.5pt solid #000;padding-bottom:2.5mm;margin-bottom:3.5mm}
+  #ortstermin .ot-titel{display:flex;justify-content:space-between;align-items:baseline} #ortstermin .ot-titel b{font-size:15pt} #ortstermin .ot-titel span{font-size:8.5pt;color:#444}
+  #ortstermin .ot-felder{display:grid;grid-template-columns:1fr 1.4fr 1fr 1.6fr;gap:5mm;margin-top:3mm;font-size:9pt}
+  #ortstermin .ot-felder span{display:flex;gap:2mm;align-items:flex-end;white-space:nowrap} #ortstermin .ot-felder i{flex:1;border-bottom:.6pt solid #000;height:5mm}
+  #ortstermin .ot-gruppe{background:none;border:0;box-shadow:none;border-radius:0;padding:0;margin:0 0 3mm;break-inside:avoid}
+  #ortstermin .ot-gruppe h2{font-size:11.5pt;margin:0 0 1.2mm;padding:.8mm 2mm;background:none;border-left:2.5pt solid #000} #ortstermin .ot-gruppe h2 small{color:#444;font-size:8.5pt}
+  #ortstermin .ot-liste{gap:0;font-size:10pt}
+  #ortstermin .ot-liste li{padding:1mm 0 1mm 7mm;border-bottom:.4pt solid #bbb}
+  #ortstermin .ot-liste li::before{top:1.15mm;width:3.6mm;height:3.6mm;border:.9pt solid #000;border-radius:.6mm;background:none}
+  #ortstermin .ot-linie{display:inline-block;flex:1 1 40mm;min-width:40mm;border-bottom:.6pt solid #000;height:4mm}
+  #ortstermin .ot-notizen{margin-top:2mm} #ortstermin .ot-notizen b{font-size:11.5pt;display:block;margin-bottom:1mm}
+  #ortstermin .ot-notizen i{display:block;height:7mm;border-bottom:.6pt solid #000}
   .appbar,nav,#wasserzeichen,.baukasten-karte,.schritte,.nav-schritte,.uebung,.kein-druck{display:none!important} .layout{display:block;padding:0} main section{display:block} body{background:#fff}
   body[data-druck] main section:not(.druckziel){display:none!important}
   .schritt{display:block!important;break-inside:avoid;margin:0 0 12px} .schritt-grid{display:block} .check input{display:none} .check li::before{content:"☐";margin-right:6px}
@@ -179,6 +203,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#start">Start</a>
   <div class="gruppe">Abläufe</div>
   <a href="#brandschaden">Brandschaden von A bis Z</a>
+  <a href="#ortstermin">Checkliste Ortstermin</a>
   <a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a>
   <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>
   <div class="gruppe">Apps Schritt für Schritt</div>
@@ -227,9 +252,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="karte"><h3>Die Leiste oben</h3><p>In jeder App: <b>⌂</b> zur Projektzentrale, das Projekt (▾ andere Projekte), die sechs Schritte mit <b>✓</b> für erledigt und <b>„Weiter: … →“</b> zum nächsten offenen Schritt – mit der Maus darauf steht, wohin und warum. In <b>BerichtKit</b> ist daraus schon das große <b>Kopfband</b> geworden: das Projekt groß (darunter Objekt, Nutzung, Schadendatum, Zuständig), sechs Kacheln mit Symbol – <b>Proben · Fotos · Labor · Plan · Bericht · Abrechnung</b> –, „Weiter“ mit dem Grund darunter; die anderen Apps folgen. Unten links steht dort <b>„Mehr …“</b> mit Handbuch, Rückmeldung und allem, was nicht auf den ersten Blick muss. Jede App öffnet in ihrem <b>eigenen Fenster</b>; ein zweiter Klick öffnet dasselbe Fenster neu mit diesem Projekt (vorher dort speichern). Der Bericht heißt „Brandbericht“ bzw. „Asbestbericht“, sobald BerichtKit sich die Art gemerkt hat; nach dem gespeicherten Bericht führt „Weiter: Ans Büro übergeben →“ in die Projektzentrale.</p></div>
     <div class="karte"><h3>Etwas klemmt?</h3><p>Hilfe: Knopf <b>📘</b> (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b> in der App; F1 in Projektzentrale und FotoKit. Fehler oder Wunsch: <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> – kurzes Formular, auf Wunsch mit Screenshot, es geht direkt an den Betreuer. Klappt das nicht: Screenshot und zwei Sätze an sebastian.kasper@dr-schiffers.de.</p></div>
   </div>
-  <p class="wo">Neu im Team? Mit <a href="#brandschaden">Brandschaden von A bis Z</a> anfangen – Schritt 1 richtet den eigenen Rechner ein. Jede App hat außerdem ein eigenes Kapitel <b>Schritt für Schritt</b> mit Übungen (Menü links).</p>
+  <p class="wo">Neu im Team? Mit <a href="#brandschaden">Brandschaden von A bis Z</a> anfangen – Schritt 1 richtet den eigenen Rechner ein. Zum ersten Ortstermin die <a href="#ortstermin">Checkliste Ortstermin Brandschaden</a> ausdrucken und mitnehmen. Jede App hat außerdem ein eigenes Kapitel <b>Schritt für Schritt</b> mit Übungen (Menü links).</p>
   <h2>Abläufe</h2>
   <p><a href="#brandschaden"><b>Brandschaden von A bis Z</b></a> – der normale Weg durch alle Apps, vom Projekt bis zur Abrechnung</p>
+  <p><a href="#ortstermin"><b>Checkliste Ortstermin Brandschaden</b></a> – ein A4-Blatt zum Abhaken: vorher, vor Ort, nachher</p>
   <p><a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a> – von der Vorbereitung im Büro bis zum Labor</p>
   <p><a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a> – was Sachverständige übergeben und wie das Büro versendet und abrechnet</p>
   <h2>Konventionen</h2>
@@ -397,12 +423,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>3 · Vor Ort</h2><span class="ort vorort">vor Ort</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
+        <li><input type="checkbox" id="b3e"><label for="b3e"><b>Checkliste Ortstermin</b> ausdrucken und mitnehmen – ein A4-Blatt: vorher, vor Ort, nachher → <a href="#ortstermin">Checkliste Ortstermin Brandschaden</a>.</label></li>
         <li><input type="checkbox" id="b3a"><label for="b3a">Vorher drucken, falls nötig: <b>Feldbögen</b> aus LabelKit (Raumluft Asbest/KMF, Schimmel, Materialprobe Asbest, PN 98, Bohrkerne).</label></li>
         <li><input type="checkbox" id="b3b"><label for="b3b">Proben nehmen und beschriften. Wischproben von groß nach klein benennen: <b>Geschoss, Raum, Zusatz, Bauteil</b>, z. B. „EG Küche Brandraum Decke“; Beaufschlagung und Oberflächenart kommen in LabelKit in eigene Spalten → <a href="#wischprobe">Probenbezeichnung Wischproben</a>.</label></li>
         <li><input type="checkbox" id="b3c"><label for="b3c"><b>Fotos</b> machen: Übersicht je Raum, jede Probenahmestelle.</label></li>
         <li><input type="checkbox" id="b3d"><label for="b3d">Grundriss mitnehmen oder vor Ort scannen (Polycam) – sonst später in PlanKit skizzieren.</label></li>
       </ul>
     </div><div>
+      <div class="tipp">Auf Papier abhaken: <a href="#ortstermin"><b>Checkliste Ortstermin Brandschaden</b></a> – Material, Proben, Fotos, Sanierer, und was danach im Büro dran ist.</div>
       <div class="tipp">Bohrkerne? Dafür gibt es einen eigenen Ablauf: <a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a>.</div>
     </div></div>
   </div>
@@ -531,6 +559,65 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   </table></div>
   <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) und der Ordner <code>_Spektron-Unterschriften</code>. Nicht löschen oder umbenennen.</p>
   <p class="wo">Hilfe: Knopf <b>📘</b> in der App (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Mehr“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
+</section>
+
+<section id="ortstermin">
+  <h1>Checkliste Ortstermin Brandschaden</h1>
+  <p class="lead">Für alle Brandschaden-Sachverständigen, vor allem in der Einarbeitung. Vor Ort arbeiten wir auf Papier – also ausdrucken (ein A4-Blatt), mitnehmen, abhaken. Ausführlich steht alles im <a href="#brandschaden">Brandschaden von A bis Z</a>.</p>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="primaer" id="ot-drucken">Drucken</button></div>
+
+  <div class="ot-blatt">
+    <div class="ot-kopf nur-druck">
+      <div class="ot-titel"><b>Checkliste Ortstermin Brandschaden</b><span>Dr. Schiffers &amp; Partner · Spektron</span></div>
+      <div class="ot-felder"><span>Projekt-Nr. <i></i></span><span>Ort <i></i></span><span>Datum <i></i></span><span>Sachverständige/r <i></i></span></div>
+    </div>
+
+    <div class="ot-gruppe">
+      <h2>Vorher <small>Büro</small></h2>
+      <ul class="ot-liste">
+        <li>Auftrags-E-Mail lesen</li>
+        <li>Pläne einpacken (falls vorhanden)</li>
+        <li>Probengläschen PAK und Chlorid, farbige Watte für Chlorid, Tücher für PAK</li>
+        <li>Etiketten und Stift</li>
+        <li>Kamera bzw. Handy laden</li>
+        <li>Externe Hilfe klären: Hebebühne, Bauteilöffnung? <i class="ot-linie nur-druck"></i></li>
+      </ul>
+    </div>
+
+    <div class="ot-gruppe">
+      <h2>Vor Ort</h2>
+      <ul class="ot-liste">
+        <li>Außenaufnahme mit Hausnummer</li>
+        <li>Brandraum finden und fotografieren</li>
+        <li>Nutzung des Gebäudes notieren (VdS-Kategorie) <i class="ot-linie nur-druck"></i></li>
+        <li>Räume so benennen, wie die Proben heißen: Gebäude → Etage → Raum → Oberfläche</li>
+        <li>Referenzprobe nehmen</li>
+        <li>Je Stelle PAK und Chlorid – Gläschen sofort beschriften, feste Plätze: oben PAK, unten Chlorid</li>
+        <li>Oberflächenart notieren: Aufsicht / Ansicht / Untersicht</li>
+        <li>Brandgeruch bewerten</li>
+        <li>Asbestverdacht? Materialprobe nehmen</li>
+        <li>Probenstellen in den Plan einzeichnen</li>
+        <li>Fotos je Probenstelle</li>
+        <li>Sanierer vor Ort? Firma, Ansprechpartner, E-Mail notieren <i class="ot-linie nur-druck"></i></li>
+        <li>Zweiter Termin nötig? Grund notieren <i class="ot-linie nur-druck"></i></li>
+      </ul>
+    </div>
+
+    <div class="ot-gruppe">
+      <h2>Nachher <small>Büro, spätestens am Folgetag</small></h2>
+      <ul class="ot-liste">
+        <li>Fotos in den Projektordner – FotoKit „Fotos übernehmen“</li>
+        <li>Proben in LabelKit: erfassen, Etiketten, Laborübergabe</li>
+        <li>Proben zum Labor bzw. Kurier</li>
+        <li>Plan in PlanKit</li>
+        <li>Notizen für den Bericht festhalten</li>
+      </ul>
+    </div>
+
+    <div class="ot-notizen nur-druck"><b>Notizen</b><i></i><i></i><i></i><i></i><i></i></div>
+  </div>
+
+  <p class="wo kein-druck">Danach geht es weiter mit <a href="#brandschaden">Brandschaden von A bis Z</a>, Schritt 4 „Proben erfassen“. Wie Wischproben heißen: <a href="#wischprobe">Probenbezeichnung Wischproben</a>.</p>
 </section>
 
 <section id="bohrkern-ablauf" class="ablauf" data-speicher="aidkit-bohrkern-haken">
@@ -1925,7 +2012,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.24.0';
+const VERSION = '0.25.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2033,6 +2120,10 @@ function initAblauf(sec){
   zeige(1);
 }
 document.querySelectorAll('section.ablauf').forEach(initAblauf);
+/* Checkliste Ortstermin: „Drucken“ und auch Strg+P drucken nur das A4-Blatt, nicht das ganze Handbuch */
+function druckeOrtstermin(){ document.body.dataset.druck = '1'; $('ortstermin').classList.add('druckziel'); }
+$('ot-drucken').onclick = () => { druckeOrtstermin(); window.print(); };
+window.addEventListener('beforeprint', () => { if (!document.body.dataset.druck && $('ortstermin').classList.contains('aktiv')) druckeOrtstermin(); });
 window.addEventListener('afterprint', () => { delete document.body.dataset.druck; document.querySelectorAll('.druckziel').forEach(x => x.classList.remove('druckziel')); });
 document.addEventListener('keydown', e => { const A = ABLAEUFE[location.hash.slice(1)]; if (!A || /input|select|textarea/i.test(e.target.tagName)) return; if (e.key === 'ArrowRight') A.zeige(A.schritt + 1); if (e.key === 'ArrowLeft') A.zeige(A.schritt - 1); });
 
