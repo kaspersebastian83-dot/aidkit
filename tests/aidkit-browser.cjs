@@ -213,6 +213,26 @@ const root = path.join(__dirname, '..');
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'kein waagerechtes Scrollen bei 390 px');
     await page.goto(base + '#brandschaden'); await page.waitForTimeout(100);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Brandschaden: kein waagerechtes Scrollen bei 390 px');
+    // Checkliste Ortstermin: erreichbar von Start, Menü und Brandschaden Schritt 3; drei Gruppen; gedruckt nur das Blatt, ein A4-Blatt
+    await page.setViewportSize({ width: 1280, height: 900 }); await page.goto(base + '#start');
+    assert.ok(await page.locator('#start a[href="#ortstermin"]').count() >= 1, 'Startseite verlinkt die Checkliste');
+    await page.goto(base + '#brandschaden'); await page.locator('#brandschaden .schritte [data-geh="3"]').click();
+    await page.locator('#brandschaden .schritt.aktiv a[href="#ortstermin"]').first().click();
+    await page.locator('#ortstermin').waitFor({ state: 'visible', timeout: 2000 }).catch(() => {});
+    assert.equal(await page.locator('#ortstermin').isVisible(), true, 'Brandschaden Schritt 3 führt zur Checkliste');
+    assert.equal(await page.locator('nav a[href="#ortstermin"]').getAttribute('aria-current'), 'page');
+    assert.deepEqual(await page.locator('#ortstermin .ot-gruppe').evaluateAll(gs => gs.map(g => g.querySelectorAll('li').length)), [6, 13, 5]);
+    assert.equal(await page.locator('#ortstermin .ot-notizen').isVisible(), false, 'Notizlinien nur im Druck');
+    await page.evaluate(() => druckeOrtstermin()); await page.emulateMedia({ media: 'print' });
+    assert.equal(await page.locator('#ortstermin .ot-notizen').isVisible(), true, 'Druck: Notizlinien');
+    assert.equal(await page.locator('#brandschaden').isVisible(), false, 'Druck: nur die Checkliste');
+    assert.equal(await page.locator('#ot-drucken').isVisible(), false, 'Druck: ohne Knopf');
+    const pdf = (await page.pdf({ preferCSSPageSize: true })).toString('latin1');
+    assert.equal((pdf.match(/\/Type\s*\/Page[^s]/g) || []).length, 1, 'Checkliste passt auf ein A4-Blatt');
+    await page.emulateMedia({ media: 'screen' }); await page.evaluate(() => window.dispatchEvent(new Event('afterprint')));
+    assert.equal(await page.evaluate(() => document.body.dataset.druck), undefined, 'nach dem Druck wieder normal');
+    await page.setViewportSize({ width: 390, height: 800 }); await page.waitForTimeout(100);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Checkliste: kein waagerechtes Scrollen bei 390 px');
     // Rückmeldung: Links auf der Startseite und im Brandschaden-Ablauf, Programm + Version vorbelegt, eigenes Fenster
     await page.goto(base + '#start');
     const rm = await page.locator('a.rueckmeldung').evaluateAll(as => as.map(a => [a.getAttribute('href'), a.target, a.rel]));
@@ -221,6 +241,6 @@ const root = path.join(__dirname, '..');
     for (const [href, target, rel] of rm) { assert.equal(href, `../rueckmeldung/?app=handbuch&version=${ver}`); assert.equal(target, 'rueckmeldung'); assert.equal(rel, 'noopener'); }
 
     assert.deepEqual(errors, []);
-    console.log(`OK ${name}: Kapitel, ID-Baukasten, Prüfung, Raumsuche, Bohrkern-Ablauf, Brandschaden, 390 px`);
+    console.log(`OK ${name}: Kapitel, ID-Baukasten, Prüfung, Raumsuche, Bohrkern-Ablauf, Brandschaden, Checkliste Ortstermin, 390 px`);
   } finally { if (browser) await browser.close(); server.close(); }
 })().catch(e => { console.error(e); process.exit(1); });
