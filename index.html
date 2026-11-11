@@ -1103,7 +1103,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Projektnummer und Schadenort kommen aus dem Ordnernamen; die Projektdatei aus „_Spektron/LabelKit“ (ältere Projekte: „Laboraufträge“) wird automatisch geladen. Geladen wird nur eine „…_Daten.json“, deren Name mit der Projektnummer beginnt.</div>
-      <div class="tipp achtung">Liegt die eigene Projektdatei an einem Ort und nur die Datei eines anderen Projekts am anderen (z. B. in „_Spektron/LabelKit“ nur eine fremde), ist LabelKit <b>ausgegraut und gesperrt</b>: Es lädt und speichert nichts, die gelbe Zeile nennt beide Orte. Die fremde Datei aus dem genannten Ordner herausnehmen (z. B. in ihr eigenes Projekt), dann <b>„Neu prüfen“</b>.</div>
+      <div class="tipp achtung">Liegt die eigene Projektdatei an einem anderen Ort als dem, den LabelKit gerade nutzt, und dort nur die Datei eines anderen Projekts (z. B. nach einem unterbrochenen Umzug), ist LabelKit <b>ausgegraut und gesperrt</b>: Es lädt und speichert nichts, die gelbe Zeile nennt beide Orte. Die fremde Datei aus dem genannten Ordner herausnehmen (z. B. in ihr eigenes Projekt), dann <b>„Neu prüfen“</b>.</div>
       <a class="app-oeffnen" href="../labelkit/" target="labelkit" rel="noopener">LabelKit öffnen ↗</a>
     </div></div>
   </div>
@@ -1413,7 +1413,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </div><div>
       <div class="uebung quiz" data-quiz="rk-uebernehmen"><h3>Kurz üben: Übernehmen oder warten?</h3></div>
       <div class="tipp achtung">Steht in „Jetzt dran“ <b>„Zwei Prüfberichte für dieselben Proben – erst klären“</b>, haben zwei verschiedene Berichte Werte für dieselbe Probe. ResultKit übernimmt dann nichts: „Prüfberichte zeigen“, die falsche Datei aus „Laborergebnisse“ nehmen, danach übernehmen. Ein „Trotzdem“ gibt es dafür nicht.</div>
-      <div class="tipp"><b>Nur für Fachkundige:</b> Von einem Prüfbericht gilt immer die höhere Fassung (-02 vor -01) – auch wenn sie den Wert in einer anderen Einheit nennt (z. B. µg/cm² statt mg/m²); dabei wird nichts umgerechnet. Verschiedene Berichte ersetzen einander dagegen nie, auch nicht bei anderer Einheit. Ging aus der älteren Übernahme schon eine Mitteilung hinaus, den Wert darin mit der Fassung -02 vergleichen; im Datenarchiv listet „Zu prüfen“ die betroffenen Projekte.</div>
+      <div class="tipp"><b>Nur für Fachkundige:</b> Von mehreren Fassungen eines Prüfberichts gilt die höhere (-02 vor -01) – auch wenn sie den Wert in einer anderen Einheit nennt (z. B. µg/cm² statt mg/m²); dabei wird nichts umgerechnet. Verschiedene Berichte ersetzen einander dagegen nie, auch nicht bei anderer Einheit. Ging aus der älteren Übernahme schon eine Mitteilung hinaus, den Wert darin mit der Fassung -02 vergleichen; im Datenarchiv listet „Zu prüfen“ die betroffenen Projekte.</div>
       <div class="tipp">Die vorige Übernahme bleibt als <code>_Ergebnisse.vorher.json</code> erhalten. Beide Dateien schreibt nur ResultKit – nicht von Hand ändern, löschen oder umbenennen.</div>
     </div></div>
   </div>
@@ -1621,7 +1621,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Was du hier einstellst, liegt im Projektordner (<code>_Spektron/BerichtKit</code>) und gilt für alle Kollegen. Hat jemand inzwischen gespeichert, übernimmt BerichtKit dessen Stand und sagt es – nichts wird stumm überschrieben. Das <b>Auftragsdatum</b> kommt aus der Projektzentrale; dort ändern.</div>
-      <div class="tipp achtung">Steht gelb <b>„Die Angaben zum Bericht (_BerichtKit.json) lassen sich nicht lesen“</b> (abgeschnitten oder Sync-Konflikt), schreibt BerichtKit die Datei nicht; was du eingibst, bleibt vorerst nur in diesem Browser. Gespeicherte Berichte in „Mitteilungen“ sind nicht betroffen. <b>„Neu anlegen …“</b> legt die Angaben neu an und bewahrt den alten Inhalt als <code>_BerichtKit.unlesbar.json</code>.</div>
+      <div class="tipp achtung">Steht rot <b>„Die Angaben zum Bericht (_BerichtKit.json) lassen sich nicht lesen“</b> (abgeschnitten oder Sync-Konflikt), schreibt BerichtKit die Datei nicht; was du eingibst, bleibt vorerst nur in diesem Browser. Gespeicherte Berichte in „Mitteilungen“ sind nicht betroffen. <b>„Neu anlegen …“</b> legt die Angaben neu an und bewahrt den alten Inhalt als <code>_BerichtKit.unlesbar.json</code>.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Proben">
