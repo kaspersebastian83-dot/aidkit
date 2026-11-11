@@ -233,6 +233,26 @@ const root = path.join(__dirname, '..');
     assert.equal(await page.evaluate(() => document.body.dataset.druck), undefined, 'nach dem Druck wieder normal');
     await page.setViewportSize({ width: 390, height: 800 }); await page.waitForTimeout(100);
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Checkliste: kein waagerechtes Scrollen bei 390 px');
+    // Aufbau eines Gutachtens: erreichbar von Start, Menü und Brandschaden Schritt 8; sechs Kapitel; KI-Teil eingeklappt; gedruckt nur diese Seite
+    await page.setViewportSize({ width: 1280, height: 900 }); await page.goto(base + '#start');
+    assert.ok(await page.locator('#start a[href="#gutachten-aufbau"]').count() >= 1, 'Startseite verlinkt den Aufbau');
+    assert.equal(await page.locator('nav a[href="#gutachten-aufbau"]').count(), 1);
+    await page.goto(base + '#brandschaden'); await page.locator('#brandschaden .schritte [data-geh="8"]').click();
+    await page.locator('#brandschaden .schritt.aktiv a[href="#gutachten-aufbau"]').first().click();
+    await page.locator('#gutachten-aufbau').waitFor({ state: 'visible', timeout: 2000 }).catch(() => {});
+    assert.equal(await page.locator('#gutachten-aufbau').isVisible(), true, 'Brandschaden Schritt 8 führt zum Aufbau');
+    assert.equal(await page.locator('nav a[href="#gutachten-aufbau"]').getAttribute('aria-current'), 'page');
+    assert.equal(await page.locator('#gutachten-aufbau .gu-kapitel').count(), 5);
+    assert.equal(await page.locator('#gutachten-aufbau .gu-check li').count(), 8);
+    assert.equal(await page.locator('#gutachten-aufbau .gu-ki pre').first().isVisible(), false, 'KI-Prompts eingeklappt');
+    assert.equal(await page.locator('#gutachten-aufbau .gu-ki pre').count(), 4);
+    await page.evaluate(() => druckeGutachtenAufbau()); await page.emulateMedia({ media: 'print' });
+    assert.equal(await page.locator('#ortstermin').isVisible(), false, 'Druck: nur der Aufbau');
+    assert.equal(await page.locator('#gutachten-aufbau .gu-ki').isVisible(), false, 'Druck: ohne KI-Teil');
+    assert.equal(await page.locator('#gu-drucken').isVisible(), false, 'Druck: ohne Knopf');
+    await page.emulateMedia({ media: 'screen' }); await page.evaluate(() => window.dispatchEvent(new Event('afterprint')));
+    await page.setViewportSize({ width: 390, height: 800 }); await page.waitForTimeout(100);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), 'Aufbau: kein waagerechtes Scrollen bei 390 px');
     // Rückmeldung: Links auf der Startseite und im Brandschaden-Ablauf, Programm + Version vorbelegt, eigenes Fenster
     await page.goto(base + '#start');
     const rm = await page.locator('a.rueckmeldung').evaluateAll(as => as.map(a => [a.getAttribute('href'), a.target, a.rel]));
@@ -241,6 +261,6 @@ const root = path.join(__dirname, '..');
     for (const [href, target, rel] of rm) { assert.equal(href, `../rueckmeldung/?app=handbuch&version=${ver}`); assert.equal(target, 'rueckmeldung'); assert.equal(rel, 'noopener'); }
 
     assert.deepEqual(errors, []);
-    console.log(`OK ${name}: Kapitel, ID-Baukasten, Prüfung, Raumsuche, Bohrkern-Ablauf, Brandschaden, Checkliste Ortstermin, 390 px`);
+    console.log(`OK ${name}: Kapitel, ID-Baukasten, Prüfung, Raumsuche, Bohrkern-Ablauf, Brandschaden, Checkliste Ortstermin, Aufbau Gutachten, 390 px`);
   } finally { if (browser) await browser.close(); server.close(); }
 })().catch(e => { console.error(e); process.exit(1); });

@@ -164,6 +164,15 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 .fluss .pfeil{align-self:center;color:var(--muted);font-size:16px}
 .wo-tab td:first-child{font-family:var(--mono);white-space:nowrap}
 @media (max-width:820px){ .schritt-grid{grid-template-columns:1fr} .fluss .pfeil{display:none} .wo-tab td:first-child{white-space:normal} .layout{grid-template-columns:minmax(0,1fr)} th,td{padding:6px 8px} }
+/* Aufbau eines Gutachtens */
+.gu-tab td:first-child{white-space:nowrap}
+.gu-kapitel h2{margin-top:0}.gu-kapitel ul{margin:6px 0 4px;padding-left:20px}.gu-kapitel li{margin:4px 0}
+.gu-ki{margin:22px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px}
+.gu-ki summary{cursor:pointer;font-weight:600}
+.gu-ki h3{font-size:14px;margin:14px 0 4px}
+.gu-ki pre{white-space:pre-wrap;margin:0;padding:10px 12px;background:var(--panel2);border:1px solid var(--line2);border-radius:8px;font:13px/1.45 var(--mono);user-select:all}
+@media (max-width:820px){ .gu-tab td:first-child{white-space:normal} }
+@media print{ #gutachten-aufbau .gu-kapitel,#gutachten-aufbau table,#gutachten-aufbau .gu-check{break-inside:avoid} #gutachten-aufbau h2{break-after:avoid} }
 /* Checkliste Ortstermin: am Bildschirm kurz, gedruckt ein A4-Blatt hochkant */
 .nur-druck{display:none}
 .ot-blatt{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;align-items:start}
@@ -204,6 +213,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="gruppe">Abläufe</div>
   <a href="#brandschaden">Brandschaden von A bis Z</a>
   <a href="#ortstermin">Checkliste Ortstermin</a>
+  <a href="#gutachten-aufbau">Aufbau eines Gutachtens</a>
   <a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a>
   <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>
   <div class="gruppe">Apps Schritt für Schritt</div>
@@ -252,10 +262,11 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="karte"><h3>Die Leiste oben</h3><p>In jeder App: <b>⌂</b> zur Projektzentrale, das Projekt (▾ andere Projekte), die sechs Schritte mit <b>✓</b> für erledigt und <b>„Weiter: … →“</b> zum nächsten offenen Schritt – mit der Maus darauf steht, wohin und warum. In <b>BerichtKit</b> ist daraus schon das große <b>Kopfband</b> geworden: das Projekt groß (darunter Objekt, Nutzung, Schadendatum, Zuständig), sechs Kacheln mit Symbol – <b>Proben · Fotos · Labor · Plan · Bericht · Abrechnung</b> –, „Weiter“ mit dem Grund darunter; die anderen Apps folgen. Unten links steht dort <b>„Mehr …“</b> mit Handbuch, Rückmeldung und allem, was nicht auf den ersten Blick muss. Jede App öffnet in ihrem <b>eigenen Fenster</b>; ein zweiter Klick öffnet dasselbe Fenster neu mit diesem Projekt (vorher dort speichern). Der Bericht heißt „Brandbericht“ bzw. „Asbestbericht“, sobald BerichtKit sich die Art gemerkt hat; nach dem gespeicherten Bericht führt „Weiter: Ans Büro übergeben →“ in die Projektzentrale.</p></div>
     <div class="karte"><h3>Etwas klemmt?</h3><p>Hilfe: Knopf <b>📘</b> (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b> in der App; F1 in Projektzentrale und FotoKit. Fehler oder Wunsch: <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> – kurzes Formular, auf Wunsch mit Screenshot, es geht direkt an den Betreuer. Klappt das nicht: Screenshot und zwei Sätze an sebastian.kasper@dr-schiffers.de.</p></div>
   </div>
-  <p class="wo">Neu im Team? Mit <a href="#brandschaden">Brandschaden von A bis Z</a> anfangen – Schritt 1 richtet den eigenen Rechner ein. Zum ersten Ortstermin die <a href="#ortstermin">Checkliste Ortstermin Brandschaden</a> ausdrucken und mitnehmen. Jede App hat außerdem ein eigenes Kapitel <b>Schritt für Schritt</b> mit Übungen (Menü links).</p>
+  <p class="wo">Neu im Team? Mit <a href="#brandschaden">Brandschaden von A bis Z</a> anfangen – Schritt 1 richtet den eigenen Rechner ein. Zum ersten Ortstermin die <a href="#ortstermin">Checkliste Ortstermin Brandschaden</a> ausdrucken und mitnehmen, fürs erste Gutachten den <a href="#gutachten-aufbau">Aufbau eines Gutachtens Brandschaden</a> lesen. Jede App hat außerdem ein eigenes Kapitel <b>Schritt für Schritt</b> mit Übungen (Menü links).</p>
   <h2>Abläufe</h2>
   <p><a href="#brandschaden"><b>Brandschaden von A bis Z</b></a> – der normale Weg durch alle Apps, vom Projekt bis zur Abrechnung</p>
   <p><a href="#ortstermin"><b>Checkliste Ortstermin Brandschaden</b></a> – ein A4-Blatt zum Abhaken: vorher, vor Ort, nachher</p>
+  <p><a href="#gutachten-aufbau"><b>Aufbau eines Gutachtens Brandschaden</b></a> – was in welches Kapitel gehört, immer vom Brandbereich weg</p>
   <p><a href="#bohrkern-ablauf">Bohrkerne: Schritt für Schritt</a> – von der Vorbereitung im Büro bis zum Labor</p>
   <p><a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a> – was Sachverständige übergeben und wie das Büro versendet und abrechnet</p>
   <h2>Konventionen</h2>
@@ -521,6 +532,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b8d"><label for="b8d">Büro: in <b>BüroKit</b> abhaken – Gegenlesen, PDF, Versand je Empfänger, danach Rechnung (<a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>).</label></li>
       </ul>
     </div><div>
+      <div class="tipp">Was inhaltlich in welches Kapitel gehört: <a href="#gutachten-aufbau"><b>Aufbau eines Gutachtens Brandschaden</b></a>.</div>
       <div class="tipp">Nach dem Gegenlesen ist keine weitere Freigabe nötig.</div>
       <a class="app-oeffnen" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a>
     </div></div>
@@ -618,6 +630,112 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   </div>
 
   <p class="wo kein-druck">Danach geht es weiter mit <a href="#brandschaden">Brandschaden von A bis Z</a>, Schritt 4 „Proben erfassen“. Wie Wischproben heißen: <a href="#wischprobe">Probenbezeichnung Wischproben</a>.</p>
+</section>
+
+<section id="gutachten-aufbau">
+  <h1>Aufbau eines Gutachtens Brandschaden</h1>
+  <p class="lead">Wie eine Mitteilung inhaltlich aufgebaut ist – für alle, die ihre ersten Brandgutachten schreiben. Ein Schema, das sich durch alle Kapitel zieht: am Brandbereich anfangen und systematisch davon weggehen. Wie BerichtKit den Bericht zusammensetzt, steht in <a href="#app-berichtkit">BerichtKit Schritt für Schritt</a>.</p>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" id="gu-drucken">Drucken</button></div>
+
+  <h2>Grundprinzip</h2>
+  <p>Jede Mitteilung folgt demselben Weg: am <b>Brandbereich</b> anfangen und systematisch von dort weggehen. Erst die Bereiche auf der Brandetage, dann Etage für Etage weiter.</p>
+  <p>Diese Reihenfolge gilt in jedem Kapitel wieder: Schadenbild, Ergebnisse, Sanierung, Arbeitssicherheit. Der Leser findet sich so überall sofort zurecht, und du musst die Gliederung nur einmal festlegen.</p>
+  <div class="tipp">Wer schon vor Ort in dieser Reihenfolge fotografiert und beprobt, hat Bilddokumentation und Probenplan gleich mit sortiert (<a href="#ortstermin">Checkliste Ortstermin</a>).</div>
+
+  <h2>Aufbau auf einen Blick</h2>
+  <p>Die Kapitel stehen immer in dieser Reihenfolge: <b>1 Schadenbild · 2 Untersuchungsergebnisse · 3 Sanierungsmaßnahmen · 4 Arbeitssicherheitsmaßnahmen · 5 Zusammenfassung in Punkten · 6 Anlagen</b>. In den Kapiteln 1 bis 4 gehst du jeweils dieselben Bereiche in derselben Reihenfolge durch:</p>
+  <div style="overflow-x:auto"><table class="gu-tab">
+    <thead><tr><th>Bereich</th><th>Schadenbild</th><th>Ergebnisse</th><th>Sanierung</th><th>Arbeitssicherheit</th></tr></thead>
+    <tbody>
+      <tr><td><b>Brandbereich</b></td><td>Was ist zerstört, wo hat es gebrannt</td><td>Hohe Werte (PAK, Chloride)</td><td>Zerstörtes demontieren, Rest reinigen</td><td>Meist die höchste Stufe: GB 1 oder GB 2</td></tr>
+      <tr><td><b>Verrußte Bereiche</b></td><td>Verrußung beschreiben, Übersichtsbilder</td><td>Geringere Werte</td><td>Alles reinigen</td><td>Noch GB 1</td></tr>
+      <tr><td><b>Saubere bzw. gereinigte Bereiche</b></td><td>Kurz festhalten, Übersichtsbilder</td><td>Geringe bzw. keine Belastung</td><td>Nichts mehr zu tun</td><td>Nur normaler Arbeitsschutz</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="karte gu-kapitel">
+    <h2>1 · Schadenbild</h2>
+    <p>Das Schadenbild beantwortet zwei Fragen: <b>Was ist kaputt, und wo hat es gebrannt?</b> Jede Aussage bekommt Fotos.</p>
+    <ul>
+      <li>Mit dem Brandbereich beginnen: Brandraum, zerstörte Bauteile und Einrichtung.</li>
+      <li>Dann systematisch vom Brandbereich weggehen. Beispiel Mehrfamilienhaus: EG, Wohnungen auf der Brandseite, dann die übrigen Wohnungen der Etage.</li>
+      <li>Danach die nächste Etage, wieder Wohnung für Wohnung, dann die nächste Etage und so weiter.</li>
+      <li>Je Wohnung bzw. Bereich reichen ein paar Übersichtsbilder.</li>
+    </ul>
+    <div class="tipp"><b>Fotografieren, raumweise:</b> einmal von der linken Seite nach rechts, dann noch einmal von rechts nach links. Damit ist der Raum praktisch vollständig erfasst.</div>
+    <p class="wo">Ist das Schadenbild in dieser Reihenfolge geschrieben, ist die Bilddokumentation schon sortiert und der Probenplan folgt derselben Logik.</p>
+  </div>
+
+  <div class="karte gu-kapitel">
+    <h2>2 · Untersuchungsergebnisse</h2>
+    <p>Die Ergebnisse folgen dem Schema des Schadenbilds und bleiben <b>kurz</b>.</p>
+    <ul>
+      <li>Brandbereich zuerst: hier liegen die höchsten Werte (PAK, Chloride usw.).</li>
+      <li>Dann die übrigen Bereiche in derselben Reihenfolge wie im Schadenbild: geringere Werte.</li>
+      <li>Nur das Wesentliche in den Text. Die Einzelwerte stehen in den Anlagen.</li>
+    </ul>
+    <p class="wo">Den Ergebnisteil liest kaum jemand im Detail. Wichtig wird er erst, wenn sich die Beteiligten streiten. Dann müssen die Werte stimmen und eindeutig einem Bereich zugeordnet sein.</p>
+  </div>
+
+  <div class="karte gu-kapitel">
+    <h2>3 · Sanierungsmaßnahmen</h2>
+    <p>Jeder Bereich bekommt einen eigenen Absatz mit einer klaren Aussage: <b>Was ist zu tun?</b> Reihenfolge wie im Schadenbild, erst der Brandbereich, dann etagenweise.</p>
+    <ul>
+      <li><b>Brandbereich:</b> Zerstörtes demontieren, den Rest reinigen.</li>
+      <li><b>Verrußte Bereiche:</b> alles reinigen.</li>
+      <li><b>Saubere Bereiche:</b> nichts mehr zu tun. Auch das ausdrücklich hinschreiben.</li>
+    </ul>
+  </div>
+
+  <div class="karte gu-kapitel">
+    <h2>4 · Arbeitssicherheitsmaßnahmen</h2>
+    <p>Gleiche Bereiche, gleiche Reihenfolge. Die Stufe nimmt mit dem Abstand zum Brand ab.</p>
+    <ul>
+      <li><b>Brandbereich:</b> meist die höchste Stufe, also GB 1 oder GB 2.</li>
+      <li><b>Verschmutzte Bereiche:</b> noch GB 1.</li>
+      <li><b>Gereinigte Bereiche:</b> keine besonderen Maßnahmen mehr, nur normaler Arbeitsschutz.</li>
+    </ul>
+  </div>
+
+  <div class="karte gu-kapitel">
+    <h2>5 · Zusammenfassung in Punkten · 6 · Anlagen</h2>
+    <p>Die Zusammenfassung ist für alle, die nur diese eine Stelle lesen. Sie muss <b>ohne den Rest verständlich</b> sein.</p>
+    <ul>
+      <li>Kurze Punkte: was ist passiert, was wurde gefunden, was ist zu tun, welche Schutzstufe gilt wo.</li>
+      <li>Keine neuen Aussagen. Alles steht schon in den Kapiteln davor.</li>
+    </ul>
+    <p>In die <b>Anlagen</b> kommen die Bilddokumentation und die Pläne mit den Probenstellen, sortiert in der Reihenfolge des Schadenbilds.</p>
+  </div>
+
+  <h2>Kurz-Check vor der Abgabe</h2>
+  <ul class="check gu-check">
+    <li><input type="checkbox" id="gu1"><label for="gu1">Schadenbild beginnt am Brandbereich und geht systematisch davon weg, etagenweise.</label></li>
+    <li><input type="checkbox" id="gu2"><label for="gu2">Zu jedem beschriebenen Bereich gibt es Fotos.</label></li>
+    <li><input type="checkbox" id="gu3"><label for="gu3">Ergebnisse, Sanierung und Arbeitssicherheit nennen dieselben Bereiche in derselben Reihenfolge wie das Schadenbild.</label></li>
+    <li><input type="checkbox" id="gu4"><label for="gu4">Ergebnisteil ist kurz, die Einzelwerte stehen in den Anlagen.</label></li>
+    <li><input type="checkbox" id="gu5"><label for="gu5">Für jeden Bereich steht da, was zu tun ist – auch wenn nichts zu tun ist.</label></li>
+    <li><input type="checkbox" id="gu6"><label for="gu6">Für jeden Bereich ist die Arbeitsschutzstufe genannt.</label></li>
+    <li><input type="checkbox" id="gu7"><label for="gu7">Zusammenfassung in Punkten ist für sich allein verständlich.</label></li>
+    <li><input type="checkbox" id="gu8"><label for="gu8">Bilddokumentation und Pläne hängen an, in der Reihenfolge des Texts.</label></li>
+  </ul>
+  <p class="wo kein-druck">Die Haken gelten nur für dieses Mal und werden nicht gespeichert.</p>
+
+  <details class="gu-ki kein-druck">
+    <summary>Später: Ergebnistext mit ChatGPT</summary>
+    <p><b>Erst selbst schreiben, dann mit KI.</b> Wer die Ergebnisse nicht selbst einordnen kann, erkennt auch keinen Fehler im KI-Text. Die Prompts sind für später gedacht, wenn das Thema sitzt – und ein erster Entwurf, der noch ausgearbeitet wird.</p>
+    <p>So geht es: Prüfbericht im ChatGPT-Projektordner des Büros hochladen und für jede Schadstoffklasse einen eigenen Prompt stellen. Der Projektordner enthält bereits die Grundanweisungen, die Prompts können deshalb kurz bleiben.</p>
+    <h3>PAK</h3>
+    <pre>Im Anhang ist der Prüfbericht zu den PAK-Wischproben. Schreibe einen kurzen beschreibenden Fließtext der Ergebnisse. Reihenfolge: zuerst der Brandbereich, dann die übrigen Bereiche etagenweise. Fasse Proben mit ähnlichen Werten je Bereich zusammen und nenne die Spanne der Werte. Nur beschreiben, keine Sanierungsempfehlung.</pre>
+    <h3>Chloride</h3>
+    <pre>Im Anhang ist der Prüfbericht zu den Chlorid-Wischproben. Schreibe einen kurzen beschreibenden Fließtext der Ergebnisse in µg/cm². Reihenfolge: zuerst der Brandbereich, dann die übrigen Bereiche etagenweise. Fasse Proben mit ähnlichen Werten je Bereich zusammen und nenne die Spanne der Werte. Nur beschreiben, keine Sanierungsempfehlung.</pre>
+    <h3>Asbest (Materialproben)</h3>
+    <pre>Im Anhang ist der Prüfbericht zu den Asbest-Materialproben. Schreibe einen kurzen beschreibenden Fließtext: welches Material wurde wo beprobt, und in welchen Proben wurde Asbest nachgewiesen bzw. nicht nachgewiesen. Reihenfolge: zuerst der Brandbereich, dann die übrigen Bereiche etagenweise.</pre>
+    <h3>Gegenprüfung (nach jedem Text)</h3>
+    <pre>Vergleiche deinen Text mit dem Prüfbericht: Stimmen alle Werte, Einheiten und Probenbezeichnungen? Fehlt eine Probe? Liste Abweichungen auf.</pre>
+    <div class="tipp achtung">Der Text von ChatGPT ist ein Entwurf. Werte, Einheiten und Probenbezeichnungen vor der Übernahme selbst mit dem Prüfbericht abgleichen.</div>
+  </details>
+
+  <p class="wo kein-druck">Vorher: <a href="#ortstermin">Checkliste Ortstermin</a>. Danach: <a href="#brandschaden">Brandschaden von A bis Z</a>, Schritt 8 „Gutachten und Übergabe ans Büro“.</p>
 </section>
 
 <section id="bohrkern-ablauf" class="ablauf" data-speicher="aidkit-bohrkern-haken">
@@ -2012,7 +2130,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.25.0';
+const VERSION = '0.26.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2123,7 +2241,10 @@ document.querySelectorAll('section.ablauf').forEach(initAblauf);
 /* Checkliste Ortstermin: „Drucken“ und auch Strg+P drucken nur das A4-Blatt, nicht das ganze Handbuch */
 function druckeOrtstermin(){ document.body.dataset.druck = '1'; $('ortstermin').classList.add('druckziel'); }
 $('ot-drucken').onclick = () => { druckeOrtstermin(); window.print(); };
-window.addEventListener('beforeprint', () => { if (!document.body.dataset.druck && $('ortstermin').classList.contains('aktiv')) druckeOrtstermin(); });
+/* Aufbau eines Gutachtens: „Drucken“ und Strg+P drucken nur diese Seite */
+function druckeGutachtenAufbau(){ document.body.dataset.druck = '1'; $('gutachten-aufbau').classList.add('druckziel'); }
+$('gu-drucken').onclick = () => { druckeGutachtenAufbau(); window.print(); };
+window.addEventListener('beforeprint', () => { if (document.body.dataset.druck) return; if ($('ortstermin').classList.contains('aktiv')) druckeOrtstermin(); else if ($('gutachten-aufbau').classList.contains('aktiv')) druckeGutachtenAufbau(); });
 window.addEventListener('afterprint', () => { delete document.body.dataset.druck; document.querySelectorAll('.druckziel').forEach(x => x.classList.remove('druckziel')); });
 document.addEventListener('keydown', e => { const A = ABLAEUFE[location.hash.slice(1)]; if (!A || /input|select|textarea/i.test(e.target.tagName)) return; if (e.key === 'ArrowRight') A.zeige(A.schritt + 1); if (e.key === 'ArrowLeft') A.zeige(A.schritt - 1); });
 
