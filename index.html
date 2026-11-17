@@ -476,7 +476,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="b5a"><label for="b5a">In der Projektzentrale die Kachel <b>„Fotos“</b> – FotoKit öffnet den Ordner „Fotos“.</label></li>
         <li><input type="checkbox" id="b5b"><label for="b5b">Je Bild <b>Beschreibung</b>, optional <b>Abschnitt</b> (z. B. „Küche“, gilt für die folgenden Bilder) und <b>Probe-Nr.</b> (z. B. „P1“, bei Bohrkernen die Kern-ID wie „EG-WZ-B-7“). Enter springt weiter.</label></li>
-        <li><input type="checkbox" id="b5c"><label for="b5c">Unbrauchbare Bilder <b>aussortieren</b> (Alt+X), schiefe <b>drehen</b> (Alt+R), Reihenfolge ziehen oder „nach Abschnitt“ sortieren.</label></li>
+        <li><input type="checkbox" id="b5c"><label for="b5c">Unbrauchbare Bilder <b>aussortieren</b> (Alt+X), schiefe <b>drehen</b> (Alt+R), Reihenfolge ziehen oder „nach Abschnitt“ bzw. „nach Probe“ sortieren.</label></li>
         <li><input type="checkbox" id="b5e"><label for="b5e"><b>Deckblatt</b> prüfen: Im Dialog von „Bilddokumentation erstellen →“ (nächster Punkt) zeigt die Zahl neben „Deckblatt“, wie viele Pflichtangaben fehlen (u. a. <b>Anlagen-Nr.</b>, z. B. „Anlage 3“). Leere Felder lässt das PDF weg.</label></li>
         <li><input type="checkbox" id="b5d"><label for="b5d"><b>Bilddokumentation erstellen …</b> → PDF im Büro-Design (wird automatisch in Dateien ≤ 14 MB geteilt). <b>Umbenennen</b> ist ein eigener Schritt.</label></li>
       </ul>
@@ -1229,7 +1229,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk2a"><label for="fk2a">In der Projektzentrale die Kachel <b>„Fotos“</b> – oder in FotoKit „Projekt öffnen …“ (bzw. unten „Mehr …“ › „Anderen Ordner öffnen …“) und den Projektordner wählen (z. B. <code>26.0123 Köln</code>).</label></li>
         <li><input type="checkbox" id="fk2b"><label for="fk2b">Prüfen, dass oben im dunklen <b>Kopfband</b> Projektnummer und Ort groß stehen – daneben die sechs Schritte, „Fotos“ ist weiß umrandet.</label></li>
         <li><input type="checkbox" id="fk2c"><label for="fk2c">Steht über den Fotos „Projekt unbekannt“ (nur der Ordner „Fotos“ gewählt): <b>„Projekt zuordnen …“</b>.</label></li>
-        <li><input type="checkbox" id="fk2d"><label for="fk2d">Liegen Fotos von Kollegen noch in Unterordnern, steht über den Fotos eine Karte: <b>„Fotos übernehmen →“</b>. Neue Fotos später in den Ordner kopieren und <b>„Mehr …“ › „Fotos neu einlesen“</b>.</label></li>
+        <li><input type="checkbox" id="fk2d"><label for="fk2d">Liegen Fotos von Kollegen noch in Unterordnern, steht über den Fotos eine Karte: <b>„Fotos übernehmen →“</b>. Neue Fotos später – auch nach einer schon erstellten Bilddokumentation – einfach in den Ordner „Fotos“ kopieren: Beim Zurückkommen ins Fenster meldet FotoKit <b>„n neue Fotos“</b> mit <b>„Jetzt einlesen“</b> (sonst „Mehr …“ › „Fotos neu einlesen“). Alles Eingetragene bleibt, die neuen Fotos kommen ans Ende.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Den Ordner kann man auch einfach hineinziehen.</div>
@@ -1268,7 +1268,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="fk4a"><label for="fk4a">Jede Kachel hat oben links den Haken <b>„in der Doku“</b>. Unbrauchbares Foto: Haken weg – oder in der Fotokarte <b>„Weg“</b> (Alt+X). Das Foto wird abgeblendet, bleibt an seinem Platz und bekommt keine Bildnummer. Gelöscht wird nichts.</label></li>
         <li><input type="checkbox" id="fk4d"><label for="fk4d">Sollen nur wenige Fotos in die Doku: über den Kacheln <b>„Keine“</b>, dann die gewünschten anhaken. „Alle“, „Keine“ und „Umkehren“ lassen sich rückgängig machen.</label></li>
-        <li><input type="checkbox" id="fk4b"><label for="fk4b">Reihenfolge = Bildnummern im PDF: Kachel <b>ziehen</b> oder in der Fotokarte <b>„◂ Früher“ / „Später ▸“</b>. „Mehr …“ › „Sortierung …“ ordnet nach Dateiname, Aufnahmedatum oder Abschnitt (Begehung).</label></li>
+        <li><input type="checkbox" id="fk4b"><label for="fk4b">Reihenfolge = Bildnummern im PDF: Kachel <b>ziehen</b> oder in der Fotokarte <b>„◂ Früher“ / „Später ▸“</b>. „Mehr …“ › „Sortierung …“ ordnet nach Dateiname, Aufnahmedatum, Abschnitt (Begehung) oder <b>Probe</b> (P1, P2 … – Fotos ohne Probe ans Ende, bei mehreren Proben zählt die erste; mit „Rückgängig“).</label></li>
         <li><input type="checkbox" id="fk4c"><label for="fk4c">Schiefe Fotos mit <b>„↻ Drehen“</b> (Alt+R).</label></li>
       </ul>
     </div><div>
@@ -1294,7 +1294,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="fk7a"><label for="fk7a">Bei Bedarf <b>„Einstellungen“</b> aufklappen: Bildqualität, „Bilder pro Seite“, „max. Dateigröße“, „neuer Abschnitt beginnt auf neuer Seite“, „nur Fotos mit Beschreibung“ – dann <b>„PDF erstellen“</b>.</label></li>
         <li><input type="checkbox" id="fk7b"><label for="fk7b">Das PDF liegt in „Fotos“, z. B. <code>Bilddokumentation_26.0123_Köln_2026-10-19.pdf</code>; große Dokus werden in Teile bis 14 MB geteilt.</label></li>
-        <li><input type="checkbox" id="fk7c"><label for="fk7c">Ältere PDFs werden nie überschrieben – es wird „(2)“ angehängt.</label></li>
+        <li><input type="checkbox" id="fk7c"><label for="fk7c">Ältere PDFs werden nie überschrieben – es wird „(2)“ angehängt. Fotos nachgereicht? Einlesen und die Bilddokumentation einfach neu erstellen – BerichtKit nimmt automatisch die neueste als Anlage.</label></li>
         <li><input type="checkbox" id="fk7d"><label for="fk7d">Optional <b>„Mehr …“ › „ZIP für KI exportieren …“</b> – Fotos mit neuen Namen plus Anweisung für eine KI.</label></li>
       </ul>
     </div><div>
@@ -1466,7 +1466,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pk2a"><label for="pk2a">Auf der Startkarte einen Grundriss aus „Pläne“ antippen oder <b>„Grundriss auswählen“</b> (PDF, Polycam-ZIP, SVG, PNG, JPG).</label></li>
         <li><input type="checkbox" id="pk2b"><label for="pk2b">Mehrseitige PDF: „Diese Seite übernehmen“ oder „Alle Seiten als einzelne Pläne“.</label></li>
         <li><input type="checkbox" id="pk2c"><label for="pk2c">Lageplan mit vielen Gebäuden? Das Angebot <b>„✂ Ausschnitt wählen“</b> nutzen – oder „Ganzen Plan behalten“.</label></li>
-        <li><input type="checkbox" id="pk2d"><label for="pk2d">Kein Plan? <b>„Kein Plan? Skizze zeichnen“</b> und zum Schluss „Skizze fertig“.</label></li>
+        <li><input type="checkbox" id="pk2d"><label for="pk2d">Kein Plan? <b>„Kein Plan? Skizze zeichnen“</b> und zum Schluss „Skizze fertig“. Raumnamen zu klein? Unter <b>„↖ Auswählen“</b> den Raum antippen und bei <b>„Schrift“</b> eine Größe wählen (automatisch, klein, mittel, groß, sehr groß).</label></li>
       </ul>
     </div><div>
       <div class="tipp">Polycam-ZIP: möglichst die SVG nehmen. HEIC/HEIF-Bilder bitte zuvor als JPG exportieren.</div>
@@ -2149,7 +2149,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.27.0';
+const VERSION = '0.28.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
