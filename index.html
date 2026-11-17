@@ -226,6 +226,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#app-belegkit">BelegKit</a>
   <a href="#app-spesenkit">SpesenKit</a>
   <a href="#app-buerokit">BüroKit</a>
+  <a href="#app-teamkit">TeamKit</a>
   <div class="gruppe">Auswerten</div>
   <a href="#app-datenarchiv">Datenarchiv</a>
   <div class="gruppe">Konventionen</div>
@@ -250,6 +251,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../berichtkit/" target="berichtkit">BerichtKit</a></td><td>Asbest- oder Brandbericht als Word-Datei aus Projektdaten, Proben, Ergebnissen und Fotos · <a href="#app-berichtkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../aufwandkit/" target="aufwandkit">BelegKit</a></td><td>Zeiten, km, Proben, Berichtsseiten für die Rechnung · <a href="#app-belegkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../buerokit/" target="buerokit">BüroKit</a></td><td>Tagesliste des Büros: Gutachten gegenlesen, PDF, Versand, Rechnung, eigene Aufgaben · <a href="#app-buerokit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../teamkit/" target="teamkit">TeamKit</a></td><td>Was heute und morgen los ist, Termine, was im Büro ab jetzt gilt – in der Projektzentrale über „Team“ · <a href="#app-teamkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../reisekosten-pro/" target="reisekosten">SpesenKit</a></td><td>Spesenabrechnung für den Monat · <a href="#app-spesenkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Projektzentrale/archiv/" target="spektron-archiv">Datenarchiv</a></td><td>Messwerte aller Projekte vergleichen, PAK-Muster, Freimessungen · <a href="#app-datenarchiv">Schritt für Schritt</a></td></tr>
     </tbody>
@@ -576,7 +578,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen</td><td>LabelKit</td></tr>
     </tbody>
   </table></div>
-  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) und der Ordner <code>_Spektron-Unterschriften</code>. Nicht löschen oder umbenennen.</p>
+  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) den Ordner <code>_Spektron-Unterschriften</code> und den Ordner <code>_TeamKit</code> (Beiträge aus TeamKit, je Beitrag eine kleine Datei; Fotos der Kollegen in <code>_TeamKit\Fotos</code>). Nicht löschen oder umbenennen.</p>
   <p class="wo">Hilfe: Knopf <b>📘</b> in der App (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Mehr“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
@@ -1076,6 +1078,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pz8b"><label for="pz8b"><b>„📊 Auslastung“</b>: In Bearbeitung / Beim Büro / Rückfrage / Offen je Person – eine Zahl antippen zeigt die Projekte.</label></li>
         <li><input type="checkbox" id="pz8c"><label for="pz8c"><b>„📈 Durchlaufzeiten“</b>: wie lange es vom Ortstermin bis zum Versand dauert, aus vorhandenen Daten.</label></li>
         <li><input type="checkbox" id="pz8d"><label for="pz8d">Ebenfalls unter <b>„⋯ Büro &amp; Apps“</b>: Auslastung, Durchlaufzeiten, Handbuch (AidKit), BüroKit, SpesenKit, Rückmeldung, Datenarchiv.</label></li>
+        <li><input type="checkbox" id="pz8e"><label for="pz8e">Oben neben „Kurzanleitung“: <b>„Team“</b> öffnet <a href="#app-teamkit">TeamKit</a> über dem Projekt (Zahl = neue „Gilt jetzt“-Beiträge, Punkt = heute/morgen etwas los). Eine gelbe Zeile unter dem Kopf zeigt nur Beiträge mit „Wichtig“ – „Gesehen“ blendet sie aus.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Wer nicht mehr im Büro ist, wird auf inaktiv gesetzt – alte Projekte zeigen den Namen weiter.</div>
@@ -1084,7 +1087,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
   <h2>Tastenkürzel</h2>
-  <div class="tasten"><span><kbd>F1</kbd></span><span>Kurzanleitung</span><span><kbd>Esc</kbd></span><span>offenes Fenster schließen</span></div>
+  <div class="tasten"><span><kbd>F1</kbd></span><span>Kurzanleitung</span><span><kbd>Esc</kbd></span><span>offenes Fenster schließen, auch TeamKit</span></div>
 </section>
 <section id="app-labelkit" class="ablauf" data-speicher="aidkit-app-labelkit-haken-v5">
   <h1>LabelKit</h1>
@@ -1979,6 +1982,89 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
 </section>
 
+<section id="app-teamkit" class="ablauf" data-speicher="aidkit-app-teamkit-haken">
+  <h1>TeamKit Schritt für Schritt</h1>
+  <div class="app-kopf"><span class="zweck">Das Brett fürs ganze Team – auch im Homeoffice: was heute und morgen los ist (Kuchen, Frühstück, Termine) und was im Büro ab jetzt gilt (neue Regeln, Änderungen, Neuigkeiten). Öffnet sich in der Projektzentrale über den Knopf <b>„Team“</b>.</span><a class="app-oeffnen" style="margin:0" href="../teamkit/" target="teamkit" rel="noopener">TeamKit allein öffnen ↗</a></div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+  <div class="karte schritt" data-schritt="1" data-titel="Öffnen">
+    <div class="schritt-kopf"><h2>1 · Öffnen und einmal einrichten</h2><span class="ort buero">alle</span><span class="dauer">einmal je Laptop</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="tk1a"><label for="tk1a">In der Projektzentrale oben der Knopf <b>„Team“</b> (neben „Kurzanleitung“). Eine <b>Zahl</b> = so viele neue „Gilt jetzt“-Beiträge für dich; ein <b>Punkt</b> = heute oder morgen ist etwas los; <b>„Guten Morgen“</b> = dein erster Blick heute.</label></li>
+        <li><input type="checkbox" id="tk1b"><label for="tk1b">Fragt TeamKit nach dem Zugriff: <b>„Zugriff erlauben“</b> klicken. Fehlt der Ordner <code>_TeamKit</code>, legt ihn <b>„Ordner „_TeamKit“ anlegen“</b> an – nur einmal fürs ganze Büro.</label></li>
+        <li><input type="checkbox" id="tk1c"><label for="tk1c">Dein Name steht automatisch an deinen Beiträgen – er kommt aus <b>„Ich bin …“</b> der Projektzentrale.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">TeamKit liegt unsichtbar in der Projektzentrale bereit und liest jede Minute neu – die Zahl am Knopf stimmt also auch, wenn du TeamKit nicht offen hast. Ohne Archivordner öffnet „Team“ TeamKit im eigenen Fenster. Zum Ausprobieren ohne Ordner: „Nur ausprobieren“ – dann sieht niemand sonst deine Beiträge.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Guten Morgen">
+    <div class="schritt-kopf"><h2>2 · Guten Morgen</h2><span class="ort buero">alle</span><span class="dauer">einmal am Tag</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="tk2a"><label for="tk2a">Beim ersten Öffnen am Tag (nur wenn etwas los oder neu ist): links <b>„Heute &amp; morgen“</b>, rechts <b>„Neu für dich“</b> – die neuen „Gilt jetzt“-Beiträge gleich aufgeklappt.</label></li>
+        <li><input type="checkbox" id="tk2b"><label for="tk2b"><b>„Los geht’s“</b> (oder „Heute nicht mehr zeigen“) – zurück zur Arbeit. Sind es mehr als drei neue Beiträge, heißt der Knopf <b>„Los geht’s · noch … neu“</b> und zeigt alles, damit nichts ungelesen untergeht.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Jederzeit wieder: „⋯“ oben rechts in TeamKit › „Guten-Morgen-Seite zeigen“.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Heute &amp; morgen">
+    <div class="schritt-kopf"><h2>3 · Heute &amp; morgen – kurz posten</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="tk3a"><label for="tk3a">Links oben ins Feld <b>„Was gibt’s Neues?“</b> schreiben, z. B. „Kuchen in der Küche“, und <b>„Posten“</b>.</label></li>
+        <li><input type="checkbox" id="tk3b"><label for="tk3b">Wie lange es bleibt, liest TeamKit aus dem Text: „morgen“, „übermorgen“, ein Wochentag („Freitag“) oder ein Datum („18.12.“). Sonst <b>bis heute Abend</b>. Der Hinweis darunter zeigt es vorher („„Freitag“ erkannt → bleibt bis Freitag“); von Hand höchstens eine Woche.</label></li>
+        <li><input type="checkbox" id="tk3c"><label for="tk3c"><b>„Als Umfrage“</b> anhaken: Alle sehen <b>„Bin dabei“ / „Diesmal nicht“</b> und wer schon geantwortet hat.</label></li>
+        <li><input type="checkbox" id="tk3d"><label for="tk3d">Unter jedem Beitrag: <b>Danke</b> und <b>Antworten</b>. Eigener Beitrag erledigt? <b>„Abnehmen“</b>.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Alles hier verschwindet von selbst – kein Aufräumen nötig. Für Dinge, die länger gelten, ist „Gilt jetzt“ da (Schritt 5).</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="Termine">
+    <div class="schritt-kopf"><h2>4 · Termine im Kalender</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="tk4a"><label for="tk4a">Im Kalender (rechts oben, am Handy ganz oben) den <b>Tag wählen</b> – bis ein Jahr im Voraus.</label></li>
+        <li><input type="checkbox" id="tk4b"><label for="tk4b">Links den Text eintragen, freiwillig eine <b>Uhrzeit</b>, „Posten“. Der Termin steht unter seinem Tag, jeder in seiner eigenen Farbe, und verschwindet, wenn der Tag vorbei ist.</label></li>
+        <li><input type="checkbox" id="tk4c"><label for="tk4c">Ein Klick auf einen farbigen Tag hebt seine Termine links kurz hervor. Termin fällt aus? <b>„Abnehmen“</b>.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Termin und Umfrage gehen zusammen: Tag wählen, „Weihnachtsfeier“, „Als Umfrage“ anhaken – alle sagen zu oder ab.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="5" data-titel="Gilt jetzt">
+    <div class="schritt-kopf"><h2>5 · Gilt jetzt – was ab jetzt anders ist</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="tk5a"><label for="tk5a"><b>„Neue Regel / Neuigkeit“</b>: Überschrift, kurzer Text (worum geht es, was ist ab jetzt anders?), freiwillig ein Link oder Dateipfad – die anderen bekommen <b>„Pfad kopieren“</b>.</label></li>
+        <li><input type="checkbox" id="tk5b"><label for="tk5b"><b>„Wichtig – oben anheften“</b> nur für das, was alle sofort wissen müssen: Es steht oben, und in der Projektzentrale erscheint eine schmale Zeile unter dem Kopf mit <b>„Ansehen“</b> und <b>„Gesehen“</b>.</label></li>
+        <li><input type="checkbox" id="tk5c"><label for="tk5c">Neue Beiträge tragen <b>„Neu“</b>. Ein Klick auf die Zeile klappt den Text auf; Danke und Antworten wie in Schritt 3.</label></li>
+        <li><input type="checkbox" id="tk5d"><label for="tk5d">Nur wer geschrieben hat: <b>„Bearbeiten“</b> oder <b>„Erledigt – ins Archiv“</b>. Im <b>Archiv</b> (unten, mit Suche) bleibt alles lesbar; „Wieder aktiv machen“ holt es zurück.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">„Gilt jetzt“ bleibt, bis der Schreiber es erledigt – es läuft nicht ab. Eine Lesebestätigung gibt es nicht.</div>
+      <div class="uebung quiz" data-quiz="tk-wohin"><h3>Kurz üben: Wohin damit?</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="6" data-titel="Zurück">
+    <div class="schritt-kopf"><h2>6 · Zurück zur Arbeit</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="tk6a"><label for="tk6a">Oben links <b>„Zurück zum Projekt …“</b> (bzw. „Zurück zur Projektzentrale“), <kbd>Esc</kbd> oder noch einmal <b>„Team“</b> – das offene Projekt ist noch da.</label></li>
+        <li><input type="checkbox" id="tk6b"><label for="tk6b">Was du gesehen hast, zählt der Knopf nicht mehr mit; die Zeile „Wichtig“ verschwindet von selbst.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Foto statt Initialen: ein Bild als <code>_TeamKit\Fotos\&lt;Kürzel&gt;.jpg</code> in den Archivordner legen, z. B. <code>Nad.jpg</code> (jpg, png oder webp, höchstens 2 MB). Nichts davon verlässt das Büro.</div>
+    </div></div>
+  </div>
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+  <h2>Tastenkürzel</h2>
+  <div class="tasten"><span><kbd>Esc</kbd></span><span>TeamKit schließen, zurück zur Projektzentrale</span></div>
+</section>
+
 <section id="app-datenarchiv" class="ablauf" data-speicher="aidkit-app-datenarchiv-haken">
   <h1>Datenarchiv</h1>
   <div class="app-kopf"><span class="zweck">Die Messwerte aller Projekte an einem Ort – zum Vergleichen und Lernen. Liest nur, bewertet nichts.</span><a class="app-oeffnen" style="margin:0" href="../Projektzentrale/archiv/" target="spektron-archiv" rel="noopener">Datenarchiv öffnen ↗</a></div>
@@ -2149,7 +2235,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.28.0';
+const VERSION = '0.29.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2378,6 +2464,7 @@ QUIZ["ub-anlagen"] = [{"frage": "Im Projekt liegen: <code>Fotos/26.0560_Bilddoku
 QUIZ["ub-rechnung"] = [{"frage": "Stand gespeichert am 27.10. Am 29.10. trägt Nad noch 2 Stunden Auswertung nach. Was zeigt BüroKit?", "antworten": ["„⚠ … geändert: Zeiten NAD geändert“ – Rückfrage", "„✓ Stand ist aktuell“", "Die 2 Stunden sind automatisch in den Positionen"], "richtig": [0], "warum": "Die Positionen kommen aus dem gespeicherten Stand. BüroKit vergleicht die Zeitdateien und warnt – der/die Sachverständige speichert einen neuen Stand."}, {"frage": "Versandt, aber in „Abrechnung“ steht „Noch kein Abrechnungsstand“. Was tut das Büro?", "antworten": ["„Rückfrage stellen“ – Text ist vorbelegt", "Positionen selbst zählen", "Haken „Rechnung“ trotzdem setzen"], "richtig": [0], "warum": "Ohne Stand keine Rechnung: Die Rückfrage erscheint oben am Projekt in der Projektzentrale; danach geht es weiter."}, {"frage": "Wer trägt die Stunden von Ben ein, der als Probenehmer dabei war?", "antworten": ["Ben selbst in BelegKit", "Die/der zuständige Sachverständige", "Das Büro in BüroKit"], "richtig": [0], "warum": "Jede Person schreibt nur ihre eigene Zeitdatei. BüroKit liest sie nur."}, {"frage": "Das Gutachten ist versandt, „Rechnung“ ist noch nicht abgehakt. Was zeigt die Kachel „Abrechnung“ in der Projektzentrale (Stand liegt vor)?", "antworten": ["„Rechnung beim Büro“", "„Abgerechnet“", "„Noch keine Zeiten erfasst“"], "richtig": [0], "warum": "Die Abrechnung wartet auf das Büro. „Abgerechnet“ steht dort erst nach dem Haken „Rechnung“."}];
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
 QUIZ["bk-proben"] = [{"frage": "LabelKit, Sonstige Proben, Spalte „Untersuchungsparameter“: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
+QUIZ["tk-wohin"] = [{"frage": "„Kuchen in der Küche!“ – wohin?", "antworten": ["Heute &amp; morgen", "Gilt jetzt", "Gilt jetzt mit „Wichtig“"], "richtig": [0], "warum": "Lockeres für heute: kurz posten, es verschwindet heute Abend von selbst."}, {"frage": "„Ab sofort Asbest-Materialproben immer doppelt verpacken.“ – wohin?", "antworten": ["Heute &amp; morgen, eine Woche", "Gilt jetzt", "Kalender"], "richtig": [1], "warum": "Eine Regel, die gilt, bis sie erledigt ist – also „Gilt jetzt“. „Wichtig“ nur, wenn alle es sofort wissen müssen."}, {"frage": "Weihnachtsfeier am 18.12. – wer kommt mit?", "antworten": ["Kalender: Tag 18.12. wählen, Text, „Als Umfrage“", "Gilt jetzt", "Heute &amp; morgen ohne Datum"], "richtig": [0], "warum": "Ein Termin an einem Tag mit Zu- und Absagen: im Kalender und als Umfrage."}, {"frage": "Heute ist Dienstag. Du schreibst „Frühstück Freitag“ und wählst nichts. Wie lange bleibt der Beitrag?", "antworten": ["Bis heute Abend", "Bis Freitag", "Eine Woche"], "richtig": [1], "warum": "TeamKit erkennt „Freitag“ im Text und lässt den Beitrag bis Freitagabend stehen."}, {"frage": "Wer kann einen „Gilt jetzt“-Beitrag ins Archiv legen?", "antworten": ["Jeder im Team", "Nur wer ihn geschrieben hat", "Nur das Büro"], "richtig": [1], "warum": "Bearbeiten und „Erledigt – ins Archiv“ gibt es nur für den Schreiber."}];
 QUIZ["sk-naechste"] = [{"frage": "Dienstreise vom 14.07. bis 15.07.2026, dann „Speichern & nächste“. Welches Datum hat der neue Entwurf?", "antworten": ["14.07.2026", "15.07.2026", "16.07.2026"], "richtig": [2], "warum": "Der nächste Entwurf beginnt am Tag nach dem Ende der vorigen Reise."}, {"frage": "Was bleibt im neuen Entwurf erhalten?", "antworten": ["Fahrzeug", "Startort", "Uhrzeiten", "Projekt", "Reiseziel", "km"], "richtig": [0, 1, 2], "warum": "Fahrzeug, Startort und Uhrzeiten werden übernommen; Projekt, Zweck, Ziel und km sind leer."}];
 QUIZ["wp-regel"] = [{"frage": "Welche Reihenfolge ist richtig?", "antworten": ["EG Küche Brandraum Decke verrußt Untersicht", "EG Küche Decke Untersicht verrußt Brandraum", "Decke Küche EG verrußt Untersicht"], "richtig": [0], "warum": "Von groß nach klein: Geschoss, Raum – „Brandraum“ beschreibt den Raum und steht gleich dahinter –, Bauteil, dann Beaufschlagung und Oberflächenart in der Reihenfolge der LabelKit-Übergabe an Eurofins."}, {"frage": "Probe von der Oberseite eines Schranks. Oberflächenart?", "antworten": ["Aufsicht", "Ansicht", "Untersicht"], "richtig": [0], "warum": "Aufsicht = von oben auf eine waagerechte Fläche. Ansicht = senkrecht, Untersicht = von unten (Decke)."}, {"frage": "Wohin gehört „verrußt“ in LabelKit?", "antworten": ["In die Spalte Beaufschlagung", "Ans Ende von Raum / Ort", "In die Notiz"], "richtig": [0], "warum": "Oberflächenart und Beaufschlagung haben eigene Spalten; ans Labor geht alles zusammen."}, {"frage": "Vergleichsprobe im Gästezimmer im 1OG ohne Brandeinfluss. Welcher Zusatz?", "antworten": ["Referenz unbelastet", "keiner", "Brandraum"], "richtig": [0], "warum": "„Referenz“ erkennt das Datenarchiv als Vergleichsstelle – wichtig für den Mustervergleich."}];
 QUIZ["fk-vorschlag"] = [{"frage": "In LabelKit steht P7 (Küche, verrußt, Untersicht). Sie tippen in die Beschreibung „P7“ und drücken Enter. Was passiert?", "antworten": ["Beschreibung „Küche verrußt Untersicht“, P7 im Feld „Gehört zu Probe“", "Beschreibung bleibt „P7“", "FotoKit ändert die LabelKit-Datei"], "richtig": [0], "warum": "Die Nummer holt die Beschreibung aus LabelKit und wandert ins Feld „Gehört zu Probe“. LabelKit wird nur gelesen."}, {"frage": "Sie tippen „Kü“, FotoKit schlägt „Küche Decke“ vor – Sie wollen aber „Küche Decke Detail“. Am schnellsten?", "antworten": ["Tab, dann „ Detail“ tippen", "Esc und alles selbst tippen", "Enter, dann zurück"], "richtig": [0], "warum": "Tab übernimmt den Vorschlag und lässt den Cursor im Feld; Enter würde übernehmen und zum nächsten Foto springen."}, {"frage": "Der Vorschlag passt gar nicht. Was tun?", "antworten": ["Einfach weitertippen", "Erst Einstellungen öffnen", "Foto auf „Weg“"], "richtig": [0], "warum": "Der markierte Rest wird durch das Weitertippen ersetzt. Esc verwirft ihn ausdrücklich."}];
