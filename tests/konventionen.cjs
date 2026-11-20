@@ -6,7 +6,7 @@ let n = 0; const ok = (name, fn) => { fn(); n++; console.log('OK Konventionen: '
 ok('ID aus Teilen', () => {
   assert.equal(K.bohrkernId({ geschoss: 'EG', raum: 'WZ', flaeche: 'B', punkt: '7', tiefe: '2' }), 'EG-WZ-B-7-T2');
   assert.equal(K.bohrkernId({ geschoss: 'EG', raum: 'WZ', flaeche: 'B', punkt: '7' }), 'EG-WZ-B-7', 'ohne Tiefe = ganzer Kern');
-  assert.equal(K.bohrkernId({ geschoss: '1OG', raum: 'KZ', raumNr: '2', flaeche: 'B', punkt: '7', zusatz: 'a', tiefe: '2' }), '1OG-KZ2-B-7a-T2');
+  assert.equal(K.bohrkernId({ geschoss: '1OG', raum: 'KIZ', raumNr: '2', flaeche: 'B', punkt: '7', zusatz: 'a', tiefe: '2' }), '1OG-KIZ2-B-7a-T2');
   assert.equal(K.bohrkernId({ referenz: true, refNr: '1', tiefe: '2' }), 'REF-1-T2');
   assert.equal(K.bohrkernId({ freimessung: true, geschoss: 'EG', raum: 'WZ', flaeche: 'B', punkt: '7', tiefe: '1' }), 'F-EG-WZ-B-7-T1');
   assert.equal(K.bohrkernId({ geschoss: 'EG', raum: 'WZ', flaeche: 'B' }), '', 'unvollständig');
@@ -39,8 +39,20 @@ ok('gesprochene Form', () => {
   assert.match(K.pruefeId('EG-WZ-B-12-T1').gesprochen, /außerhalb des Rasters/);
 });
 ok('Raumkürzel eindeutig, ohne Umlaute, passend zum Muster', () => {
-  const k = K.RAEUME.map(r => r[0]); assert.equal(new Set(k).size, k.length);
+  const k = [...K.RAEUME, ...K.RAEUME_ALT].map(r => r[0]); assert.equal(new Set(k).size, k.length);
   for (const x of k) assert.match(x, /^[A-Z]{2,3}$/);
+});
+ok('KIZ/TRH neu, alte IDs mit KZ und TH bleiben gültig (Audit Lauf 4, D14)', () => {
+  assert.equal(K.raumName('KIZ'), 'Kinderzimmer'); assert.equal(K.raumName('TRH'), 'Treppenhaus');
+  assert.ok(!K.RAEUME.some(r => r[0] === 'KZ' || r[0] === 'TH'), 'KZ/TH nicht mehr in der Liste für Baukasten und Wandblatt');
+  const kz = K.pruefeId('EG-KZ2-B-7-T1'), th = K.pruefeId('EG-TH-A-3');
+  assert.equal(kz.ok, true); assert.deepEqual(kz.fehler, []); assert.deepEqual(kz.hinweise, [], 'alte ID mit KZ: kein Hinweis');
+  assert.equal(kz.gesprochen, 'Erdgeschoss, Kinderzimmer 2, Wand B, Punkt 7 (bodennah links), Tiefe 1');
+  assert.equal(th.ok, true); assert.ok(!th.hinweise.some(h => /nicht in der Liste/.test(h)), 'alte ID mit TH: Raum bekannt');
+  assert.match(th.gesprochen, /^Erdgeschoss, Treppenhaus, Wand A, Punkt 3/);
+  const neu = K.pruefeId('EG-KIZ2-B-7-T1'); assert.equal(neu.ok, true); assert.deepEqual(neu.hinweise, []);
+  assert.equal(K.pruefeId('EG-TRH-A-3-T1').gesprochen, 'Erdgeschoss, Treppenhaus, Wand A, Punkt 3 (deckennah rechts), Tiefe 1');
+  assert.equal(K.pruefeId('EG-KiZ-B-7-T1').ok, false, 'Kern-IDs nur in Großbuchstaben');
 });
 ok('Wischproben: von groß nach klein, lesbar, leere Teile entfallen', () => {
   assert.equal(K.wischBezeichnung({ gebaeude: 'Haus A', geschoss: 'EG', raum: 'Küche', bauteil: 'Decke', oberflaeche: 'Untersicht', beaufschlagung: 'verrußt', zusatz: 'Brandraum' }),

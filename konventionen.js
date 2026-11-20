@@ -13,12 +13,17 @@
 
   /** Raumkürzel: hier ergänzen, dann gelten sie überall. */
   const RAEUME = [
-    ['WZ', 'Wohnzimmer'], ['SZ', 'Schlafzimmer'], ['KZ', 'Kinderzimmer'], ['AZ', 'Arbeitszimmer'],
+    ['WZ', 'Wohnzimmer'], ['SZ', 'Schlafzimmer'], ['KIZ', 'Kinderzimmer'], ['AZ', 'Arbeitszimmer'],
     ['GZ', 'Gästezimmer'], ['EZ', 'Esszimmer'], ['KUE', 'Küche'], ['BA', 'Bad'], ['WC', 'Gäste-WC'],
-    ['FL', 'Flur, Diele'], ['TH', 'Treppenhaus'], ['HWR', 'Hauswirtschaftsraum'], ['HK', 'Heizungskeller, Heizraum'],
+    ['FL', 'Flur, Diele'], ['TRH', 'Treppenhaus'], ['HWR', 'Hauswirtschaftsraum'], ['HK', 'Heizungskeller, Heizraum'],
     ['TR', 'Tankraum'], ['KE', 'Kellerraum'], ['AR', 'Abstellraum'], ['GA', 'Garage'], ['BU', 'Büro'],
     ['LA', 'Lager'], ['WS', 'Werkstatt'],
   ];
+
+  /** Frühere Schreibweisen (Audit Lauf 4, D14, Entscheidung 20.11.2026): Kinderzimmer und Treppenhaus heißen jetzt KIZ und TRH
+      (im lesbaren Text und im Bericht KiZ/TRH – Kern-IDs bleiben in Großbuchstaben). KZ und TH bleiben gültig: vorhandene IDs werden
+      nie umgeschrieben, die Prüfung nimmt sie ohne Hinweis an. Nicht im Baukasten und nicht auf dem LabelKit-Wandblatt. [alt, Raum, neu] */
+  const RAEUME_ALT = [['KZ', 'Kinderzimmer', 'KIZ'], ['TH', 'Treppenhaus', 'TRH']];
 
   const FLAECHEN = [
     ['A', 'Wand A (Wand mit der Zugangstür)'], ['B', 'Wand B'], ['C', 'Wand C'], ['D', 'Wand D'],
@@ -33,7 +38,7 @@
 
   const MUSTER = /^(F-)?(?:(REF)-(\d{1,2})|(KG|UG|EG|[1-9]OG|DG)-([A-Z]{2,3})([1-9]?)-([A-H]|BO|DE)-([1-9]\d?)([a-z]?))(?:-T([1-9]))?$/;
   const geschossName = k => (GESCHOSSE.find(g => g[0] === k) || [k, k])[1];
-  const raumName = k => (RAEUME.find(r => r[0] === k) || [])[1];
+  const raumName = k => (RAEUME.find(r => r[0] === k) || RAEUME_ALT.find(r => r[0] === k) || [])[1];
   const lage = (flaeche, punkt) => { const n = Number(punkt); if (n >= 10) return 'außerhalb des Rasters'; return (flaeche === 'BO' || flaeche === 'DE' ? RASTER_BODEN : RASTER)[n] || ''; };
 
   /**
@@ -106,7 +111,7 @@
     return { raumOrt: [t.gebaeude, t.geschoss, t.raum, t.zusatz, t.bauteil].map(sauber).filter(Boolean).join(W_TRENNER), oberflaeche: sauber(t.oberflaeche), beaufschlagung: sauber(t.beaufschlagung) };
   }
 
-  const api = Object.freeze({ MAX_LAENGE, GESCHOSSE, RAEUME, FLAECHEN, RASTER, RASTER_BODEN, bohrkernId, pruefeId, gesprochen, lage, raumName,
+  const api = Object.freeze({ MAX_LAENGE, GESCHOSSE, RAEUME, RAEUME_ALT, FLAECHEN, RASTER, RASTER_BODEN, bohrkernId, pruefeId, gesprochen, lage, raumName,
     W_TRENNER, W_BAUTEILE, W_OBERFLAECHEN, W_BEAUFSCHLAGUNG, W_ZUSAETZE, wischBezeichnung, wischLabelKit });
   root.SpektronKonventionen = api;
   if (typeof module !== 'undefined') module.exports = api;

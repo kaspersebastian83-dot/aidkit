@@ -336,7 +336,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         </svg>
         <div class="karte pruef" style="margin:14px 0 0">
           <label for="pruefen" style="font-size:12px;font-weight:600;color:var(--muted)">ID prüfen</label>
-          <input id="pruefen" class="mono" style="width:100%;margin-top:4px" placeholder="z. B. 1OG-KZ2-B-7-T2" autocomplete="off" spellcheck="false">
+          <input id="pruefen" class="mono" style="width:100%;margin-top:4px" placeholder="z. B. 1OG-KIZ2-B-7-T2" autocomplete="off" spellcheck="false">
           <div id="pruef-ergebnis" aria-live="polite"></div>
         </div>
       </div>
@@ -345,7 +345,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 
   <h2>Regeln je Baustein</h2>
   <p><b>Geschoss.</b> Immer angeben, auch bei nur einem Geschoss, damit „WZ“ im EG und im OG nie verwechselt werden: <code>KG</code>, <code>UG</code>, <code>EG</code>, <code>1OG</code>, <code>2OG</code>, <code>DG</code>. In PlanKit heißt der Plan weiterhin „1. OG“.</p>
-  <p><b>Raum.</b> Kürzel aus der <a href="#raumkuerzel">Liste</a>. Gibt es einen Raum mehrfach, wird angehängt: <code>KZ1</code>, <code>KZ2</code>, in der Reihenfolge der Begehung. Die Zuordnung Kürzel → Raumname steht im Raumbuch.</p>
+  <p><b>Raum.</b> Kürzel aus der <a href="#raumkuerzel">Liste</a>. Gibt es einen Raum mehrfach, wird angehängt: <code>KIZ1</code>, <code>KIZ2</code>, in der Reihenfolge der Begehung. Die Zuordnung Kürzel → Raumname steht im Raumbuch.</p>
   <p><b>Fläche.</b> Die Wand mit der Zugangstür ist <code>A</code>, dann im Uhrzeigersinn von oben gesehen <code>B</code>, <code>C</code>, <code>D</code> – in der Tür stehend, Blick in den Raum: B links, C gegenüber, D rechts; mehr Ecken: <code>E</code>, <code>F</code> … Bei mehreren Türen gilt die Tür vom Flur. Boden <code>BO</code>, Decke <code>DE</code>.</p>
   <p><b>Punkt.</b> Raster 3 × 3 wie eine Telefontastatur, von vorn auf die Wand gesehen: 1–3 deckennah, 4–6 Mitte, 7–9 bodennah, jeweils links → rechts. Boden und Decke: wie im Grundriss, Wand A oben, D links – 1 = Ecke A/D, 3 = Ecke A/B, 7 = Ecke C/D, 9 = Ecke B/C. Die Decke genauso, also wie von oben durch sie hindurch gesehen, nicht von unten (sonst wären links und rechts vertauscht). Weitere Punkte ab <code>10</code>. Lage jedes Kerns einmessen: Abstand von der linken Wandecke und Höhe über Oberkante Fertigfußboden (OKFF), auf 5 cm.</p>
   <p><b>Tiefe.</b> <code>T1</code> ist das Segment an der Oberfläche, dann <code>T2</code>, <code>T3</code> nach innen. Die Tiefen in cm stehen im Protokoll, nicht in der ID (z. B. T1 = 0–2 cm, Putz). Gleiche Tiefenstufen im ganzen Projekt.</p>
@@ -2239,7 +2239,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 </section>
 <section id="raumkuerzel">
   <h1>Raumkürzel</h1>
-  <p class="lead">Für Probenbezeichnungen. Fehlt ein Raum, bitte melden – die Liste gilt dann für alle.</p>
+  <p class="lead">Für Probenbezeichnungen. Fehlt ein Raum, bitte melden – die Liste gilt dann für alle. Kinderzimmer und Treppenhaus heißen seit 20.11.2026 <code>KIZ</code> und <code>TRH</code> (im Text und im Bericht „KiZ“, „TRH“); Kern-IDs mit den früheren <code>KZ</code> und <code>TH</code> bleiben gültig und werden nicht umgeschrieben.</p>
   <input type="search" id="raum-suche" class="suche" placeholder="Raum oder Kürzel suchen" aria-label="Raum oder Kürzel suchen">
   <table><thead><tr><th style="width:110px">Kürzel</th><th>Raum</th></tr></thead><tbody id="raum-tabelle"></tbody></table>
 </section>
@@ -2249,7 +2249,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.30.0';
+const VERSION = '0.31.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2271,7 +2271,10 @@ window.addEventListener('load', () => window.scrollTo(0, 0));   // Kapitel-Anker
 function raumTabelle(){
   const q = $('raum-suche').value.trim().toLowerCase();
   const rows = K.RAEUME.filter(([k, n]) => !q || k.toLowerCase().includes(q) || n.toLowerCase().includes(q));
-  $('raum-tabelle').innerHTML = rows.length ? rows.map(([k, n]) => `<tr><td><code>${esc(k)}</code></td><td>${esc(n)}</td></tr>`).join('') : '<tr><td colspan="2">Kein Treffer – bitte melden, dann wird der Raum ergänzt.</td></tr>';
+  const alt = K.RAEUME_ALT.filter(([k, n, neu]) => !q || k.toLowerCase().includes(q) || n.toLowerCase().includes(q) || neu.toLowerCase().includes(q));
+  $('raum-tabelle').innerHTML = rows.length || alt.length ? rows.map(([k, n]) => `<tr><td><code>${esc(k)}</code></td><td>${esc(n)}</td></tr>`).join('')
+    + alt.map(([k, n, neu]) => `<tr class="alt"><td><code>${esc(k)}</code></td><td>${esc(n)} – <i>frühere Schreibweise, gilt weiter</i>; neu <code>${esc(neu)}</code></td></tr>`).join('')
+    : '<tr><td colspan="2">Kein Treffer – bitte melden, dann wird der Raum ergänzt.</td></tr>';
 }
 $('raum-suche').addEventListener('input', raumTabelle); raumTabelle();
 
