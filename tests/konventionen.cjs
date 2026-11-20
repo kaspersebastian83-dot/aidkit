@@ -57,7 +57,7 @@ ok('Wischproben: Aufteilung für LabelKit (Raum / Ort, Oberflächenart, Beaufsch
 });
 ok('Wischproben-Listen gleich wie in LabelKit (falls LabelKit daneben liegt)', () => {
   const fs = require('node:fs'), path = require('node:path'), f = path.join(__dirname, '..', '..', 'labelkit', 'index.html');
-  if (!fs.existsSync(f)) return;
+  if (!fs.existsSync(f)){ assert.ok(!process.env.LABELKIT_PFLICHT, '../labelkit fehlt – Listen nicht verglichen (in der CI Pflicht, Audit Lauf 4 D18)'); return; }
   const h = fs.readFileSync(f, 'utf8'), liste = name => JSON.parse(h.match(new RegExp('const ' + name + '=(\\[[^\\]]*\\])'))[1].replace(/'/g, '"'));
   assert.deepEqual(liste('BEAUFSCHLAGUNG'), K.W_BEAUFSCHLAGUNG); assert.deepEqual(liste('OBERFLAECHEN'), K.W_OBERFLAECHEN);
 });
