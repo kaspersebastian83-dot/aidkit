@@ -535,8 +535,8 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="b8f"><label for="b8f"><b>Bericht entwerfen:</b> Projektzentrale → Kachel <b>„Bericht“</b> – sie heißt „Brandbericht“ (Sanierungsvorschlag oder Untersuchungsbericht, mit Chlorid, PAK, Asbest, Brandgeruch) oder „Asbestbericht“, sobald die Proben oder BerichtKit es festlegen; ausdrücklich unter „Mehr zum Projekt …“ › <b>„Brandbericht öffnen“</b> / <b>„Asbestbericht öffnen“</b>. BerichtKit setzt den Bericht zusammen, lässt die gutachterlichen Teile als gelbe Lücken und legt ihn in „Mitteilungen“ ab (<a href="#app-berichtkit">BerichtKit Schritt für Schritt</a>).</label></li>
         <li><input type="checkbox" id="b8a"><label for="b8a">Gutachten in Word schreiben, Anlagen aus „Mitteilungen“ einfügen.</label></li>
-        <li><input type="checkbox" id="b8e"><label for="b8e"><b>Abrechnungsstand</b> vor der Übergabe: alle Beteiligten haben in BelegKit ihre Zeiten eingetragen (Schritt 9), dann BelegKit → „Abrechnung“ → Hinweise klären → <b>„💾 Stand speichern“</b>. Nach diesem Stand schreibt das Büro die Rechnung.</label></li>
-        <li><input type="checkbox" id="b8b"><label for="b8b">Projektzentrale → Karte <b>„Ans Büro“</b>: Word-Datei, Empfänger und <b>Anlagen</b> prüfen (sind vorausgefüllt), <b>„Ans Büro übergeben“</b>.</label></li>
+        <li><input type="checkbox" id="b8e"><label for="b8e"><b>Zeiten</b>: alle Beteiligten haben in BelegKit ihre Zeiten eingetragen (Schritt 9). Den <b>Abrechnungsstand</b> speicherst du erst <i>nach</i> der Übergabe, sobald die PDF des Büros da ist (Schritt 9).</label></li>
+        <li><input type="checkbox" id="b8b"><label for="b8b">Projektzentrale → Karte <b>„Ans Büro“</b>: Word-Datei, Empfänger und <b>Anlagen</b> prüfen (sind vorausgefüllt), <b>„Ans Büro übergeben“</b>. „Noch kein Abrechnungsstand – der kommt, sobald die PDF des Büros … liegt“ ist dort richtig so.</label></li>
         <li><input type="checkbox" id="b8c"><label for="b8c">Die <b>Papiermappe</b> bleibt Teil des Ablaufs.</label></li>
         <li><input type="checkbox" id="b8d"><label for="b8d">Büro: in <b>BüroKit</b> abhaken – Gegenlesen, PDF, Versand je Empfänger, danach Rechnung (<a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>).</label></li>
       </ul>
@@ -554,10 +554,10 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="b9a"><label for="b9a">Jede Person trägt unter <b>„Meine Zeiten“</b> ihre Ortstermine selbst ein: <b>Datum und Stunden</b> (Pflicht, Fahrzeit gehört dazu), km nur der Fahrer, Spesen, Übernachtung.</label></li>
         <li><input type="checkbox" id="b9b"><label for="b9b">Auswertung und Bericht als eigene Tätigkeit „Auswertung / Bericht“.</label></li>
         <li><input type="checkbox" id="b9c"><label for="b9c">Proben (aus LabelKit), Berichtsseiten und Fotos zählt BelegKit selbst – Hinweise prüfen. Sonstige Proben zählen <b>je Parameter</b>; ein neuer Parameter wird einmal unter „Proben“ einer Position zugeordnet (bis dahin markiert).</label></li>
-        <li><input type="checkbox" id="b9d"><label for="b9d"><b>„Abrechnung“</b>: Den Stand hast du vor der Übergabe gespeichert (Schritt 8). Kommt danach noch etwas dazu (Nachtrag, weitere Zeiten), erneut <b>„💾 Stand speichern“</b> – das Büro sieht die Änderung in BüroKit und rechnet erst danach ab.</label></li>
+        <li><input type="checkbox" id="b9d"><label for="b9d"><b>„Abrechnung“</b> – <i>nach</i> „Ans Büro übergeben“, sobald das Büro die PDF erstellt hat (sie liegt in „Mitteilungen“, dann steht die Seitenzahl fest): Hinweise klären → <b>„💾 Stand speichern“</b>. Spätestens wenn die Kachel „Abrechnung“ in der Projektzentrale „Das Büro braucht für die Rechnung den Abrechnungsstand“ zeigt. Kommt danach noch etwas dazu (Nachtrag, weitere Zeiten), erneut speichern – das Büro sieht die Änderung in BüroKit und rechnet erst danach ab.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Die Rechnung selbst (Nummer, Umsatzsteuer, Archiv) bleibt im Rechnungsprogramm. Ablauf mit dem Büro: <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>. Spesen ohne Projektbezug: SpesenKit in der Projektzentrale unter „⋯ Mehr“.</div>
+      <div class="tipp">Die Rechnung selbst (Nummer, Umsatzsteuer, Archiv) bleibt im Rechnungsprogramm. Ablauf mit dem Büro: <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>. Spesen ohne Projektbezug: SpesenKit in der Projektzentrale unter „⋯ Büro &amp; Apps“.</div>
       <a class="app-oeffnen" href="../aufwandkit/" target="aufwandkit" rel="noopener">BelegKit öffnen ↗</a>
     </div></div>
   </div>
@@ -579,7 +579,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </tbody>
   </table></div>
   <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) den Ordner <code>_Spektron-Unterschriften</code> und den Ordner <code>_TeamKit</code> (Beiträge aus TeamKit, je Beitrag eine kleine Datei; Fotos der Kollegen in <code>_TeamKit\Fotos</code>). Nicht löschen oder umbenennen.</p>
-  <p class="wo">Hilfe: Knopf <b>📘</b> in der App (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Mehr“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
+  <p class="wo">Hilfe: Knopf <b>📘</b> in der App (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Büro &amp; Apps“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
 <section id="ortstermin">
@@ -873,24 +873,24 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
   <p class="wo" style="margin:0 0 8px">Wer macht was – tippen springt zum Schritt. <span class="ort sv">Sachverständige</span> arbeiten in Projektzentrale und BelegKit, das <span class="ort sek">Büro</span> in BüroKit.</p>
   <div class="fluss kein-druck" role="group" aria-label="Ablauf">
-    <button type="button" data-geh="1"><b>BelegKit</b><span>Stand speichern</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="1"><b>BelegKit</b><span>Zeiten erfassen</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="2"><b>Projekt&shy;zentrale</b><span>Ans Büro</span></button><span class="pfeil" aria-hidden="true">→</span>
-    <button type="button" data-geh="3"><b>BüroKit</b><span>Gegenlesen · PDF · Versand</span></button><span class="pfeil" aria-hidden="true">→</span>
+    <button type="button" data-geh="3"><b>BüroKit · BelegKit</b><span>Gegenlesen · PDF · Stand · Versand</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="4"><b>BüroKit</b><span>Rechnung</span></button><span class="pfeil" aria-hidden="true">→</span>
     <button type="button" data-geh="5"><b>Beide</b><span>Rückfragen · fertig</span></button>
   </div>
   <ol class="schritte" aria-label="Schritte"></ol>
 
-  <div class="karte schritt" data-schritt="1" data-titel="Stand speichern">
-    <div class="schritt-kopf"><h2>1 · Zeiten erfassen, Stand speichern</h2><span class="ort sv">Sachverständige</span><span class="dauer">BelegKit</span></div>
+  <div class="karte schritt" data-schritt="1" data-titel="Zeiten">
+    <div class="schritt-kopf"><h2>1 · Zeiten erfassen</h2><span class="ort sv">Sachverständige</span><span class="dauer">BelegKit</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="bu1a"><label for="bu1a"><b>Jede Person</b>, die am Projekt gearbeitet hat, trägt unter „Meine Zeiten“ ihre eigenen Stunden, km, Spesen und Übernachtungen ein (km nur der Fahrer).</label></li>
-        <li><input type="checkbox" id="bu1b"><label for="bu1b">Zuständige/r: <b>„Abrechnung“</b> öffnen und alle <b>Hinweise</b> klären (fehlende Seitenzahl, unklare Zahl, nicht zugeordnete Probe …).</label></li>
-        <li><input type="checkbox" id="bu1c"><label for="bu1c"><b>„💾 Stand speichern“</b> – <i>vor</i> der Übergabe ans Büro.</label></li>
+        <li><input type="checkbox" id="bu1b"><label for="bu1b">Zuständige/r: <b>„Abrechnung“</b> ansehen und klären, was schon geht (unklare Zahl, nicht zugeordnete Probe …). Die Seitenzahl des Berichts kommt erst mit der PDF des Büros.</label></li>
+        <li><input type="checkbox" id="bu1c"><label for="bu1c"><b>„💾 Stand speichern“ noch nicht</b> – erst nach der Übergabe, sobald die PDF des Büros da ist (Schritt 3).</label></li>
       </ul>
     </div><div>
-      <div class="tipp"><b>Der Stand ist die Grundlage der Rechnung.</b> Das Büro rechnet genau nach dem zuletzt gespeicherten Stand ab. Ändert sich danach etwas (Nachtrag, weitere Zeiten, neue Proben), einfach erneut „Stand speichern“ – BüroKit merkt Änderungen und warnt das Büro.</div>
+      <div class="tipp"><b>Der Stand ist die Grundlage der Rechnung.</b> Das Büro rechnet genau nach dem zuletzt gespeicherten Stand ab. Gespeichert wird er <i>nach</i> „Ans Büro übergeben“, sobald die PDF des Büros in „Mitteilungen“ liegt – dann steht die Seitenzahl fest (BelegKit ab 1.17). Ändert sich danach etwas (Nachtrag, weitere Zeiten, neue Proben), einfach erneut „Stand speichern“ – BüroKit merkt Änderungen und warnt das Büro.</div>
       <a class="app-oeffnen" href="../aufwandkit/" target="aufwandkit" rel="noopener">BelegKit öffnen ↗</a>
     </div></div>
   </div>
@@ -902,7 +902,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="bu2a"><label for="bu2a">Projektzentrale → Karte <b>„Danach: ans Büro übergeben“</b> unter den Kacheln. <b>Word-Datei</b> prüfen (die neueste aus „Mitteilungen“ ist gewählt).</label></li>
         <li><input type="checkbox" id="bu2b"><label for="bu2b"><b>Empfänger</b> anhaken und Anschrift prüfen (Verteiler).</label></li>
         <li><input type="checkbox" id="bu2c"><label for="bu2c"><b>Anlagen</b> anhaken, die mitgeschickt werden (Bilddokumentation, Anlage Probenahme, Pläne, Prüfberichte). Was nicht als Datei im Ordner liegt, unten eintragen – mehrere mit „;“ trennen.</label></li>
-        <li><input type="checkbox" id="bu2d"><label for="bu2d">Zeile <b>Abrechnungsstand</b> prüfen: „✓ Abrechnungsstand vom …“ ist gut. Steht dort „⚠ Noch kein Abrechnungsstand“ → zurück zu Schritt 1.</label></li>
+        <li><input type="checkbox" id="bu2d"><label for="bu2d">Zeile <b>Abrechnungsstand</b>: „Noch kein Abrechnungsstand – der kommt, sobald die PDF des Büros in „Mitteilungen“ liegt“ ist richtig so – übergeben geht schon jetzt. Steht schon „✓ Abrechnungsstand vom …“ da, ist das auch gut.</label></li>
         <li><input type="checkbox" id="bu2e"><label for="bu2e">Optional „Fällig bis“ und Hinweis, dann <b>„Ans Büro übergeben“</b>. Die Papiermappe geht wie immer ans Büro.</label></li>
       </ul>
     </div><div>
@@ -913,16 +913,17 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   </div>
 
   <div class="karte schritt" data-schritt="3" data-titel="Versand">
-    <div class="schritt-kopf"><h2>3 · Gegenlesen, PDF, Versand</h2><span class="ort sek">Büro</span><span class="dauer">BüroKit</span></div>
+    <div class="schritt-kopf"><h2>3 · Gegenlesen, PDF, Stand, Versand</h2><span class="ort sek">Büro</span><span class="ort sv">Sachverständige</span><span class="dauer">BüroKit · BelegKit</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="bu3a"><label for="bu3a">BüroKit: das Gutachten unter Überfällig / Heute fällig / Offen, <b>„mehr“</b> aufklappen.</label></li>
-        <li><input type="checkbox" id="bu3b"><label for="bu3b">Word-Datei gegenlesen → Haken <b>Gegenlesen</b>; PDF erstellen → Haken <b>PDF</b>.</label></li>
-        <li><input type="checkbox" id="bu3c"><label for="bu3c">Liste <b>Anlagen</b>: alles mitschicken, was dort steht (Pfade lassen sich kopieren).</label></li>
-        <li><input type="checkbox" id="bu3d"><label for="bu3d"><b>Versand ▾</b>: je Empfänger abhaken, sobald verschickt.</label></li>
+        <li><input type="checkbox" id="bu3a"><label for="bu3a">BüroKit: das Gutachten unter <b>„⚠ Überfällig“</b>, <b>„Heute fällig“</b> oder <b>„Später fällig“</b>. Der große Knopf auf der Karte ist der nächste Handgriff; <b>„Details“</b> zeigt alles.</label></li>
+        <li><input type="checkbox" id="bu3b"><label for="bu3b"><b>„📝 In Word öffnen“</b>, gegenlesen → <b>„Gegengelesen ✓“</b>; PDF erstellen → <b>„PDF ist gemacht ✓“</b>.</label></li>
+        <li><input type="checkbox" id="bu3e"><label for="bu3e"><span class="ort sv">Sachverständige</span> Sobald die PDF in „Mitteilungen“ liegt: in BelegKit „Abrechnung“ → Hinweise klären → <b>„💾 Stand speichern“</b>.</label></li>
+        <li><input type="checkbox" id="bu3c"><label for="bu3c"><b>„📎 Das geht mit“</b>: Bericht und alle Anlagen mitschicken („Pfad kopieren“ für Outlook).</label></li>
+        <li><input type="checkbox" id="bu3d"><label for="bu3d"><b>„✉ An wen“</b>: je Empfänger <b>„Versandt ✓“</b>, sobald verschickt; einen Begleitbrief macht <b>„📄 Anschreiben“</b> (<a href="#app-buerokit">BüroKit</a>, Schritt 3).</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Nach dem letzten Empfänger wandert das Gutachten in die Gruppe <b>„Versandt – Rechnung schreiben“</b>. Fertig ist es erst mit der Rechnung.</div>
+      <div class="tipp">Nach dem letzten Empfänger wandert das Gutachten in die Gruppe <b>„Rechnung schreiben“</b>. Fertig ist es erst mit der Rechnung. Fehlt dann noch der Stand, zeigt die Projektzentrale den Sachverständigen an der Kachel „Abrechnung“: „Das Büro braucht für die Rechnung den Abrechnungsstand“.</div>
       <a class="app-oeffnen" href="../buerokit/" target="buerokit" rel="noopener">BüroKit öffnen ↗</a>
     </div></div>
   </div>
@@ -931,14 +932,15 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>4 · Rechnung schreiben</h2><span class="ort sek">Büro</span><span class="dauer">BüroKit · Rechnungsprogramm</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="bu4a"><label for="bu4a">Gruppe „Versandt – Rechnung schreiben“ → <b>„mehr“</b> → Block <b>Abrechnung</b>.</label></li>
-        <li><input type="checkbox" id="bu4b"><label for="bu4b">Steht dort <b>„✓ Stand ist aktuell“</b>: <b>„⧉ Positionen kopieren“</b> und im Rechnungsprogramm einfügen (Position, Text, Menge, Einheit).</label></li>
-        <li><input type="checkbox" id="bu4c"><label for="bu4c">Steht dort <b>„⚠ Seit diesem Stand hat sich etwas geändert“</b> oder <b>„Noch kein Abrechnungsstand“</b>: <b>„Rückfrage stellen“</b> (Text ist vorbelegt) und warten.</label></li>
-        <li><input type="checkbox" id="bu4d"><label for="bu4d">Zum Abgleich: <b>„Je Person“</b> aufklappen – Stunden, km, Spesen und Ortstermine je Kolleg/in.</label></li>
-        <li><input type="checkbox" id="bu4e"><label for="bu4e">Rechnung geschrieben → Haken <b>Rechnung</b>. BüroKit merkt sich, nach welchem Stand abgerechnet wurde.</label></li>
+        <li><input type="checkbox" id="bu4a"><label for="bu4a">Gruppe „Rechnung schreiben“ → <b>„Rechnung schreiben →“</b> – darunter die Positionen aus BelegKit und die Anleitung ① ② ③.</label></li>
+        <li><input type="checkbox" id="bu4b"><label for="bu4b">Steht dort <b>„✓ Die Angaben sind aktuell“</b>: <b>„① Positionen kopieren“</b> und in MOS'aik einfügen (Position, Text, Menge, Einheit); <b>„Rechnungskopf kopieren“</b> bringt Anschrift, Ihr Zeichen, Unser Zeichen und Objekt mit.</label></li>
+        <li><input type="checkbox" id="bu4c"><label for="bu4c">Steht dort <b>„⚠ Seit diesen Angaben … hat sich etwas geändert“</b> oder <b>„Noch keine Rechnungsangaben“</b>: <b>„Rückfrage …“</b> (Text ist vorbelegt) und warten.</label></li>
+        <li><input type="checkbox" id="bu4d"><label for="bu4d">Zum Abgleich: <b>„Stunden &amp; km je Person“</b> aufklappen – Stunden, km, Spesen und Ortstermine je Kolleg/in.</label></li>
+        <li><input type="checkbox" id="bu4e"><label for="bu4e">Rechnung geschrieben → <b>„③ Rechnung geschrieben ✓“</b>. BüroKit merkt sich, nach welchem Stand abgerechnet wurde.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">„Je Person“ gibt es nur in BüroKit. In den anderen Apps sieht jede/r nur die eigenen Zeiten. Die Summen müssen zu Titel 1 (Ortstermin) und Titel 3 (Bericht) passen; stehen dort „unklar“-Einträge, hat BelegKit dazu einen Hinweis – Rückfrage stellen.</div>
+      <div class="tipp">„① Positionen kopieren“ setzt „Ich kümmere mich“, damit niemand die Rechnung doppelt schreibt; hat eine Kollegin sie schon geschrieben, steht das oben und es wird nichts kopiert.<!-- BÜRO-PC PRÜFEN (Lauf 4): Wortlaut „Die Rechnung hat … schon geschrieben“ und die Warnung „fast gleichzeitig“ mit zwei PCs ansehen --></div>
+      <div class="tipp">„Stunden &amp; km je Person“ gibt es nur in BüroKit. In den anderen Apps sieht jede/r nur die eigenen Zeiten. Die Summen müssen zu Titel 1 (Ortstermin) und Titel 3 (Bericht) passen; stehen dort „unklar“-Einträge, hat BelegKit dazu einen Hinweis – Rückfrage stellen.</div>
       <div class="uebung quiz" data-quiz="ub-rechnung"><h3>Kurz üben: Darf das Büro jetzt abrechnen?</h3></div>
     </div></div>
   </div>
@@ -949,11 +951,11 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="bu5a"><label for="bu5a">Rückfragen des Büros stehen in der Projektzentrale <b>oben am Projekt</b> – dort direkt antworten (bei „neuen Stand“: erst in BelegKit „Stand speichern“, dann antworten).</label></li>
         <li><input type="checkbox" id="bu5b"><label for="bu5b">Das Büro sieht die Antwort in BüroKit und macht mit Schritt 4 weiter.</label></li>
-        <li><input type="checkbox" id="bu5c"><label for="bu5c">Fertig: die Kachel „Abrechnung“ der Projektzentrale zeigt <b>„Abgerechnet TT.MM. (Kürzel)“</b>; in BüroKit steht das Gutachten unter „Erledigt“.</label></li>
+        <li><input type="checkbox" id="bu5c"><label for="bu5c">Fertig: die Kachel „Abrechnung“ der Projektzentrale zeigt <b>„Abgerechnet TT.MM. (Kürzel)“</b>; in BüroKit steht das Gutachten unter „Diese Woche erledigt“.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Haken versehentlich gesetzt? Einfach wieder wegnehmen – ohne Begründung. Jeder Haken bleibt mit Name und Zeit im Verlauf.</div>
-      <div class="tipp">Kachel „Abrechnung“ in der Projektzentrale: <b>„Rechnung beim Büro“</b> = versandt, Büro rechnet ab · <b>„Das Büro braucht … Abrechnungsstand“</b> = du bist dran (Schritt 1).</div>
+      <div class="tipp">Kachel „Abrechnung“ in der Projektzentrale: <b>„Rechnung beim Büro“</b> = versandt, Büro rechnet ab · <b>„Das Büro braucht … Abrechnungsstand“</b> = du bist dran (Schritt 3: in BelegKit „Stand speichern“).</div>
     </div></div>
   </div>
 
@@ -1052,7 +1054,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pz6a"><label for="pz6a">In der Karte <b>„Danach: ans Büro übergeben“</b> auf <b>„Ans Büro übergeben“</b> klicken (ist es dran, steht das Formular schon offen).</label></li>
         <li><input type="checkbox" id="pz6b"><label for="pz6b"><b>Word-Datei</b>: die neueste aus „Mitteilungen“ ist schon gewählt – prüfen.</label></li>
         <li><input type="checkbox" id="pz6c"><label for="pz6c"><b>Empfänger</b> anhaken und Anschrift prüfen (Auftraggeber und beteiligte Sachverständige sind aus den Projektdaten vorausgefüllt).</label></li>
-        <li><input type="checkbox" id="pz6e"><label for="pz6e"><b>Anlagen</b> anhaken, die mitgehen; weitere unten eintragen. Darunter steht, ob es einen <b>Abrechnungsstand</b> aus BelegKit gibt – sonst erst „Stand speichern“.</label></li>
+        <li><input type="checkbox" id="pz6e"><label for="pz6e"><b>Anlagen</b> anhaken, die mitgehen; weitere unten eintragen. Darunter steht, ob es schon einen <b>Abrechnungsstand</b> aus BelegKit gibt – ohne Stand ist das richtig so: Er kommt, sobald die PDF des Büros da ist, übergeben geht schon jetzt.</label></li>
         <li><input type="checkbox" id="pz6d"><label for="pz6d">Optional <b>„Fällig bis“</b> und Hinweis fürs Büro, dann <b>„Ans Büro übergeben“</b>.</label></li>
       </ul>
     </div><div>
@@ -1128,7 +1130,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="lk3a"><label for="lk3a">„Welche Proben hast du genommen?“ – die <b>Kachel</b> der Probenart wählen (PAK-Wischproben, Chlorid-Wischproben, Asbestproben, Brandgeruch; Sonstige, Bohrkerne, PN 98 unter „+ Weitere Art …“).</label></li>
-        <li><input type="checkbox" id="lk3b"><label for="lk3b"><b>„+ Probe“</b> oder <b>„+ 5“</b> über der Tabelle – oder <b>„Vorbelegung …“</b>: Anzahl, Probenahmedatum, cm² → „Neue Proben hinzufügen“.</label></li>
+        <li><input type="checkbox" id="lk3b"><label for="lk3b"><b>„+ Probe“</b> oder <b>„+ 5“</b> über der Tabelle – oder <b>„Vorbelegung …“</b>: Anzahl, Probenahmedatum, cm² → „Neue Proben hinzufügen“. Als <b>Probenahmedatum</b> nimmt LabelKit das der vorigen Probe der Liste, sonst den <b>Ortstermin</b> aus der Projektzentrale (ohne Ortstermin: heute) – kurz prüfen.</label></li>
         <li><input type="checkbox" id="lk3c"><label for="lk3c">Im selben Dialog: fehlende Angaben mit „Leere Angaben ergänzen“, vorhandene mit „Bestehende Angaben ändern …“ (erst nach der Vorschau mit „Genannte Angaben jetzt ändern“).</label></li>
         <li><input type="checkbox" id="lk3d"><label for="lk3d">Oder Probe für Probe mit der <b>Geführten Eingabe</b> – großer Knopf bei leerer Tabelle, sonst „Mehr …“ › „Geführte Eingabe“ (Strg+Shift+E).</label></li>
       </ul>
@@ -1145,10 +1147,12 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="lk4c"><label for="lk4c">Mit <b>„↑“</b> den Wert der Zeile darüber übernehmen (erscheint beim Überfahren); <b>Doppelklick</b> auf eine Zeile öffnet die Probe als Karte („✓ Speichern &amp; Schließen“).</label></li>
         <li><input type="checkbox" id="lk4d"><label for="lk4d">Chlorid: in PAK die Proben <b>anhaken</b> → „→ Als Chlorid-Wischproben übernehmen“ – oder in Chlorid „Alle PAK-Proben übernehmen“.</label></li>
         <li><input type="checkbox" id="lk4e"><label for="lk4e">Zwischendurch unten rechts <b>„Speichern“</b> (Strg+S) – speichert die Projektdatei, auch wenn noch etwas fehlt. Daneben steht, ob gespeichert ist.</label></li>
+        <li><input type="checkbox" id="lk4f"><label for="lk4f">Steht oben gelb <b>„Ungespeicherte Eingaben vom …“</b> (Fenster vor dem Speichern geschlossen, Tablet neu geladen): <b>„Wiederherstellen“</b> und danach speichern – oder „Verwerfen“.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="lk-pflicht"><h3>Kurz üben: Welche Zellen sind Pflicht?</h3></div>
-      <div class="tipp">Gelb blockiert nichts. Vorlagen, Karten-Ansicht und „Projektdatei laden …“ stehen unter „Mehr …“.</div>
+      <div class="tipp">Gelb blockiert nichts. Vorlagen, Karten-Ansicht und „Projektdatei laden …“ stehen unter „Mehr …“; leere Datumsfelder füllt „Mehr …“ › „Ortstermin/heute in leere Datumsfelder“.</div>
+      <div class="tipp">Bis zum Speichern hält LabelKit eine <b>Kopie im Browser</b> – auch auf dem iPad ohne Ordnerzugriff. Steht rot „Eingaben NICHT im Browser gesichert“, bald speichern. Auf dem iPad lädt „Speichern“ die Projektdatei herunter; am PC dann in LabelKit „Mehr …“ › „Projektdatei laden …“ und speichern.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="5" data-titel="Bögen erfassen">
@@ -1195,8 +1199,8 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="lk8a"><label for="lk8a">Schritt <b>③ Laborauftrag abschließen</b>: oben die <b>„Projektprüfung“</b> lesen; bei „kritisch“ auf die Probennummer klicken und korrigieren.</label></li>
-        <li><input type="checkbox" id="lk8b"><label for="lk8b">Je Probenart <b>„Kopieren (für Eurofins)“</b> und ins Eurofins-System einfügen – die Spalten kommen in der gewohnten Reihenfolge.</label></li>
-        <li><input type="checkbox" id="lk8c"><label for="lk8c">Unten rechts <b>„Laborauftrag speichern →“</b>: Laborübergaben (Excel), Brandgeruch- und PN 98-Protokolle landen in „Laboraufträge“, die Projektdatei in „_Spektron/LabelKit“ (ältere, noch nicht umgezogene Projekte: „Laboraufträge“).</label></li>
+        <li><input type="checkbox" id="lk8b"><label for="lk8b">Je Probenart <b>„Kopieren (für Eurofins)“</b> und ins Eurofins-System einfügen – die Spalten kommen in der gewohnten Reihenfolge. Kommt <b>„Nicht kopiert …“</b>, noch einmal klicken und vorher <i>nichts</i> einfügen – in der Zwischenablage steht sonst noch der vorige Inhalt.</label></li>
+        <li><input type="checkbox" id="lk8c"><label for="lk8c">Unten rechts <b>„Laborauftrag speichern →“</b>: Laborübergaben (Excel), Brandgeruch- und PN 98-Protokolle landen in „Laboraufträge“, die Projektdatei in „_Spektron/LabelKit“ (ältere, noch nicht umgezogene Projekte: „Laboraufträge“). <b>„Excel“</b> bei einer Probenart schreibt dieselbe Laborübergabe nach „Laboraufträge“.</label></li>
         <li><input type="checkbox" id="lk8d"><label for="lk8d">Danach <b>„Weiter: Fotos →“</b> (wie „Weiter“ im Kopfband).</label></li>
       </ul>
     </div><div>
@@ -1247,7 +1251,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk3a"><label for="fk3a">Eine <b>Foto-Kachel</b> anklicken – rechts erscheint die <b>Fotokarte</b> mit dem großen Foto. Gelb umrandete Kacheln haben noch keine Beschreibung; unten <b>„n Fotos ohne Beschreibung“</b> springt zum nächsten.</label></li>
         <li><input type="checkbox" id="fk3b"><label for="fk3b">In <b>„Was ist zu sehen?“</b> eintippen; <b>Enter</b> springt zum nächsten Foto.</label></li>
         <li><input type="checkbox" id="fk3c"><label for="fk3c">Optional <b>„Raum / Abschnitt“</b> (z. B. „Küche“) – gilt für die folgenden Fotos mit, wird im PDF eine Zwischenüberschrift und steht im Raster als Trennzeile.</label></li>
-        <li><input type="checkbox" id="fk3d"><label for="fk3d"><b>„Gehört zu Probe“</b> eintragen oder aus der Liste wählen (Vorschläge aus LabelKit; z. B. „P1“, mehrere mit Komma; bei Bohrkernen die Kern-ID wie <code>EG-WZ-B-7</code>).</label></li>
+        <li><input type="checkbox" id="fk3d"><label for="fk3d"><b>„Gehört zu Probe“</b> eintragen oder aus der Liste wählen (Vorschläge aus LabelKit; z. B. „P1“, mehrere mit Komma; bei Bohrkernen die Kern-ID wie <code>EG-WZ-B-7</code>). Solange in LabelKit noch keine Nummer fest ist (keine Etiketten gedruckt, nichts ans Labor übergeben), steht oben gelb ein Hinweis: Nummern können sich noch verschieben. <b>„⚠ P13 nicht in LabelKit“</b> an einer Kachel heißt: diese Nummer gibt es in LabelKit nicht – vertippt?</label></li>
         <li><input type="checkbox" id="fk3e"><label for="fk3e"><b>Probenfoto am schnellsten:</b> in die Beschreibung nur die Nummer tippen, z. B. <b>„P7“</b>, dann <b>Enter</b> – die Beschreibung kommt aus LabelKit (Raum / Ort, Beaufschlagung, Oberflächenart), „P7“ wandert ins Feld „Gehört zu Probe“. Geht nur mit eingeschalteten <b>„Vorschlägen beim Tippen“</b> und leerem Feld „Gehört zu Probe“.</label></li>
         <li><input type="checkbox" id="fk3f"><label for="fk3f"><b>Vorschlag beim Tippen:</b> nach zwei Buchstaben ergänzt FotoKit aus diesem Projekt und LabelKit – der Rest ist markiert. <b>Enter</b> übernimmt und geht weiter, <b>Tab</b> übernimmt und man tippt weiter, einfach weitertippen ersetzt ihn, <b>Esc</b> verwirft ihn.</label></li>
       </ul>
@@ -1385,7 +1389,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Nichts wird überschrieben. „Liegt schon unverändert im Ordner“ heißt: Die Datei ist schon da, nichts zu tun. Eine gleichnamige, aber andere Datei bekommt einen eigenen Namen mit „(2)“.</div>
-      <div class="tipp achtung">Nennt die Auftragsreferenz eine <b>andere Projektnummer</b>, ist der Bericht nicht vorausgewählt und steht danach als <b>„anderes Projekt (Nr)“</b> in der Liste – seine Werte zählen nicht. Ist nur die Auftragsreferenz falsch geschrieben, beim Labor berichtigen lassen (der berichtigte Bericht kommt als neue Fassung). Gehört der Bericht nicht hierher, die Datei aus „Laborergebnisse“ nehmen.</div>
+      <div class="tipp achtung">Nennt die Auftragsreferenz eine <b>andere Projektnummer</b>, ist der Bericht nicht vorausgewählt und steht danach als <b>„anderes Projekt (Nr)“</b> in der Liste – seine Werte zählen nicht. Ein Datum („Ortstermin 18.11.2026“) gilt nicht als Projektnummer; stehen mehrere Nummern da, zählt die dieses Projekts. Ist nur die Auftragsreferenz falsch geschrieben, beim Labor berichtigen lassen (der berichtigte Bericht kommt als neue Fassung). Gehört der Bericht nicht hierher, die Datei aus „Laborergebnisse“ nehmen.</div>
       <div class="tipp">Im Projekt werden Prüfberichte <b>nur hier</b> importiert – nicht mehr in PlanKit oder FotoKit.</div>
     </div></div>
   </div>
@@ -1425,7 +1429,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="rk6a"><label for="rk6a"><b>PlanKit</b> → Schritt <b>② Proben setzen</b> → <b>„Proben übernehmen …“</b>: Dort stehen die Probenerfassung aus LabelKit und jeder in ResultKit übernommene Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Den Bericht wählen.</label></li>
-        <li><input type="checkbox" id="rk6b"><label for="rk6b">In der Prüftabelle <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“ – Labordaten und Messwerte hängen dann an den LabelKit-Proben.</label></li>
+        <li><input type="checkbox" id="rk6b"><label for="rk6b">In der Prüftabelle <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“ – Labordaten und Messwerte hängen dann an den LabelKit-Proben. <b>Gelbe Zeilen</b> (am Punkt steht eine andere Beschreibung) lässt der Knopf aus – dort einzeln wählen.</label></li>
         <li><input type="checkbox" id="rk6c"><label for="rk6c"><b>FotoKit</b> → <b>„Mehr …“ → „Ergebnistabelle …“</b>: nimmt die in ResultKit übernommenen Werte, alle geltenden Prüfberichte in einer Tabelle. Hat sich der Ordner seit der Übernahme geändert oder sind noch Proben offen, warnt FotoKit.</label></li>
         <li><input type="checkbox" id="rk6e"><label for="rk6e">Später ein neuer Bericht übernommen (z. B. endgültig statt vorläufig)? PlanKit zeigt oben die Leiste <b>„Neuerer Laborstand in ResultKit“</b>. <b>„Proben übernehmen …“</b>, den Bericht wählen, <b>„Alle Konflikte: Aktualisieren“</b> – die Proben bleiben, wo sie im Plan stehen.</label></li>
         <li><input type="checkbox" id="rk6d"><label for="rk6d">Aus PlanKit und FotoKit führt <b>„🧪 ResultKit öffnen“</b> hierher zurück.</label></li>
@@ -1486,6 +1490,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp achtung">Entzerren entfernt Maßstab und Nordrichtung – danach neu setzen.</div>
+      <div class="tipp"><b>Räume nachzeichnen</b> (Schritt ①, bei Bild- und PDF-Plänen): Räume, Wände, Türen und Fenster über den Plan legen – erst ausrichten, dann nachzeichnen (danach sind Ausrichten und Entzerren gesperrt). Zum Schluss <b>„Nachzeichnung prüfen“</b> mit Kürzel: Erst eine geprüfte Nachzeichnung zeigt GlasKit mit Wänden; ungeprüft bleibt das Geschoss dort flach.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Maßstab">
@@ -1507,7 +1512,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="pk5a"><label for="pk5a">In ② rechts <b>„Proben aus LabelKit übernehmen …“</b>: „Probenerfassung aus LabelKit“ oder einen in <b>ResultKit</b> übernommenen Prüfbericht (mit „vorläufig“ / „bereits im Plan“). Fehlt der Bericht: <b>„🧪 ResultKit öffnen“</b>, dort importieren und übernehmen.</label></li>
         <li><input type="checkbox" id="pk5b"><label for="pk5b">In der Prüftabelle bei „Bei belegter Kennung“ wählen: „Überspringen“ oder „Notiz, Labordaten und Herkunft ersetzen“ („Nächste freie P-Nummer“ gibt es nur bei einem freien Plan). Kommen die Proben aus LabelKit oder ResultKit, sind Nummer, Beschreibung, Probenart und Datum nur lesbar – Fehler dort korrigieren und erneut übernehmen.</label></li>
-        <li><input type="checkbox" id="pk5c"><label for="pk5c">Schon vorhandene LabelKit-Proben: <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“.</label></li>
+        <li><input type="checkbox" id="pk5c"><label for="pk5c">Schon vorhandene LabelKit-Proben: <b>„Alle Konflikte: Aktualisieren“</b>, dann „Übernehmen“. <b>Gelbe Zeilen</b> („Beschreibung am Punkt: … – im Prüfbericht: … Gehört der Wert zu dieser Stelle?“) lässt der Knopf aus – je Zeile selbst entscheiden.</label></li>
         <li><input type="checkbox" id="pk5d"><label for="pk5d">Später neue Proben oder Werte: oben in der Liste <b>„Andere Proben übernehmen …“</b>.</label></li>
       </ul>
     </div><div>
@@ -1677,7 +1682,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="br7a"><label for="br7a"><b>Probenahme durch</b> (im Brandbericht „Vor Ort / Probenahme“): wer vor Ort war. Kommt aus dem LabelKit-Feldbogen; sonst angenommen – <b>„angenommen – bitte prüfen“</b> und „✓ stimmt“.</label></li>
         <li><input type="checkbox" id="br7b"><label for="br7b"><b>Unterschrift</b> und <b>zweite Unterschrift</b>, je mit <b>„als Sachverständige(r)“</b> oder <b>„als Messtechniker(in)“</b>. Standard folgt den Einstellungen, für diesen Bericht änderbar.</label></li>
         <li><input type="checkbox" id="br7c"><label for="br7c"><b>Labor</b> mit vollem Namen (z. B. „Eurofins Boden und Grundwasser Südwest GmbH“) – vorbelegt aus den Einstellungen.</label></li>
-        <li><input type="checkbox" id="br7d"><label for="br7d">Einmal fürs Büro: unten links <b>„Mehr …“ › „Einstellungen …“</b> → je Person Frau/Herr und <b>Rolle festlegen</b> („nicht festgelegt“ gilt als SV). Hat eine Sachverständige ohne festgelegte Rolle die Proben genommen, kommt der Hinweis „… die Rolle ist in den Einstellungen noch nicht festgelegt …“ mit „Einstellungen öffnen“. Unterschriften als <code>&lt;Kürzel&gt;.png</code> in <code>_Spektron-Unterschriften</code>; ohne Bild bleibt eine Linie.</label></li>
+        <li><input type="checkbox" id="br7d"><label for="br7d">Einmal fürs Büro: unten links <b>„Mehr …“ › „Einstellungen …“</b> → je Person Frau/Herr und <b>Rolle festlegen</b> („nicht festgelegt“ gilt als SV). Hat eine Sachverständige ohne festgelegte Rolle die Proben genommen, kommt der Hinweis „… die Rolle ist in den Einstellungen noch nicht festgelegt …“ mit „Einstellungen öffnen“. Unterschriften als <code>&lt;Kürzel&gt;.png</code> in <code>_Spektron-Unterschriften</code>; ohne Bild bleibt eine Linie und ein Hinweis sagt „Für … ist keine Unterschrift hinterlegt“ (sperrt nichts).</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-unterschrift"><h3>Kurz üben: Wer unterschreibt?</h3></div>
@@ -1694,7 +1699,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-luecken"><h3>Kurz üben: Gelbe Stellen</h3></div>
-      <div class="tipp">Lücken sperren das Speichern nicht – BerichtKit fragt nur nach. Gesperrt (nur „Entwurf herunterladen“) wird bei Datenfehlern: LabelKit-Datei aus einem anderen Projekt, Asbestprobe ohne Ergebnis (oder unter den Proben abwählen), im Asbestbericht: alle Asbestproben storniert. Fehlende Chlorid-/PAK-Ergebnisse sperren nicht – sie stehen als Lücke da.</div>
+      <div class="tipp">Lücken sperren das Speichern nicht – BerichtKit fragt nur nach. Gesperrt (nur „Entwurf herunterladen“) wird bei Datenfehlern: LabelKit-Datei aus einem anderen Projekt; <b>Prüfberichte in „Laborergebnisse“ seit der ResultKit-Übernahme geändert</b> (neu, geändert, nicht mehr da) – gelbe Zeile mit „In ResultKit erneut übernehmen ↗“, danach ist die Sperre beim Zurückkommen weg; Übernahme aus einem anderen Projekt; Asbestprobe ohne Ergebnis (oder unter den Proben abwählen); im Asbestbericht: alle Asbestproben storniert. Hat sich nur die LabelKit-Datei seit der Übernahme geändert, steht eine gelbe Zeile – keine Sperre. Fehlende Chlorid-/PAK-Ergebnisse sperren nicht – sie stehen als Lücke da. Weicht das Probenahmedatum in LabelKit vom Ortstermin ab, sagt ein Hinweis das (Brand- und Asbestbericht).</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="9" data-titel="Speichern">
@@ -1754,7 +1759,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>3 · Meine Zeiten</h2><span class="ort buero">Büro</span><span class="dauer">je Ortstermin</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="bk3a"><label for="bk3a"><b>„+ Ortstermin“</b> oder <b>„+ Auswertung / Bericht“</b> – je Termin ein Eintrag.</label></li>
+        <li><input type="checkbox" id="bk3a"><label for="bk3a"><b>„+ Ortstermin“</b> oder <b>„+ Auswertung / Bericht“</b> – je Termin ein Eintrag. „+ Ortstermin“ trägt das Datum des Ortstermins aus der Projektzentrale ein, solange es für diesen Tag noch keine Zeile gibt (sonst heute).</label></li>
         <li><input type="checkbox" id="bk3b"><label for="bk3b"><b>Datum und Stunden</b> sind gelb, solange sie leer sind – Pflicht.</label></li>
         <li><input type="checkbox" id="bk3c"><label for="bk3c">km trägt <b>nur der Fahrer</b> ein; die Fahrzeit gehört zum Ortstermin.</label></li>
         <li><input type="checkbox" id="bk3d"><label for="bk3d">Übernachtung: Anzahl <b>und</b> Betrag lt. Beleg.</label></li>
@@ -1783,6 +1788,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="bk5a"><label for="bk5a">Reiter <b>„Proben“</b>: jeder Probenart einmal eine Position zuordnen – oder „nicht abrechnen“.</label></li>
         <li><input type="checkbox" id="bk5b"><label for="bk5b">Sonstige Proben zählen <b>je Parameter</b>; ein neuer Parameter erscheint markiert, bis er zugeordnet ist.</label></li>
+        <li><input type="checkbox" id="bk5c"><label for="bk5c">In LabelKit <b>stornierte Proben</b> werden nie abgerechnet; ein Hinweis nennt sie („P2 PAK, P5 Chlorid“). Hat eine laut ResultKit trotzdem ein Laborergebnis, steht sie vorne hervorgehoben – soll sie berechnet werden, in LabelKit das Storno aufheben.</label></li>
         <li><input type="checkbox" id="bk5c"><label for="bk5c">Fehlt eine Laborposition: unter „Einstellungen“ mit „+ Laborposition“ anlegen.</label></li>
       </ul>
     </div><div>
@@ -1808,7 +1814,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="bk7a"><label for="bk7a">Zuerst alle <b>Hinweise</b> klären („bitte vor dem Übertragen klären“).</label></li>
         <li><input type="checkbox" id="bk7b"><label for="bk7b"><b>„⧉ Kopieren“</b> – Position, Text, Menge, Einheit – und ins Rechnungsprogramm einfügen.</label></li>
-        <li><input type="checkbox" id="bk7c"><label for="bk7c"><b>„💾 Stand speichern“</b>: Datei in „Abrechnung“ – nichts wird überschrieben. <b>Das Büro schreibt die Rechnung nach dem neuesten Stand</b>: vor „Ans Büro“ und nach jeder Änderung neu speichern.</label></li>
+        <li><input type="checkbox" id="bk7c"><label for="bk7c"><b>„💾 Stand speichern“</b>: Datei in „Abrechnung“ – nichts wird überschrieben. <b>Das Büro schreibt die Rechnung nach dem neuesten Stand</b>: nach „Ans Büro übergeben“, sobald die PDF des Büros in „Mitteilungen“ liegt – und nach jeder Änderung neu speichern.</label></li>
         <li><input type="checkbox" id="bk7d"><label for="bk7d">Positionen, Preise und Personen unter „Einstellungen“ → „Einstellungen speichern“ (gilt für alle Kollegen und Projekte).</label></li>
       </ul>
     </div><div>
@@ -1886,12 +1892,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="sk5a"><label for="sk5a">Die Prüfzeilen abarbeiten: ungeprüfte Reisen und Kosten, <b>„Fehlende Belege“</b>, „Mögliche Duplikate“.</label></li>
+        <li><input type="checkbox" id="sk5e"><label for="sk5e"><b>Zwischenhalt im Büro oder zu Hause</b> zwischen zwei Fahrten am selben Tag (z. B. 8–11 Uhr Ortstermin, 11–13 Uhr Büro, 13–16 Uhr zweiter Termin): SpesenKit nennt ihn mit Uhrzeiten. Trag an einer Reise dieses Tages unter „Weitere Angaben“ <b>„Manuelle Abwesenheit (Min.)“</b> ein – die <b>kürzere Abwesenheit, ohne den Zwischenhalt</b> (SpesenKit zeigt die Dauer „ohne sie“, in Minuten umrechnen: 6 Std. 30 Min. = 390). Ohne diese Angabe lässt sich der Monat nicht abschließen.</label></li>
         <li><input type="checkbox" id="sk5b"><label for="sk5b">Vollständige Fahrten gesammelt mit „Eindeutige Zeiten bestätigen“.</label></li>
         <li><input type="checkbox" id="sk5c"><label for="sk5c">Wartende Belege mit „Nacheinander zuordnen“.</label></li>
         <li><input type="checkbox" id="sk5d"><label for="sk5d">Je Tag den „Rechenweg“ in „Monat im Überblick“ ansehen.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Ein Klick auf eine Zeile öffnet sie zum Bearbeiten oder Löschen.</div>
+      <div class="tipp achtung"><b>Zwischenhalt – bis das Steuerbüro geantwortet hat:</b> Ob die Zeit im Büro oder zu Hause zwischen zwei Fahrten als Abwesenheit zählt, wird gerade mit dem Steuerbüro geklärt. Bis dahin gilt: <b>die kürzere Abwesenheit ohne den Zwischenhalt eintragen</b>. Ändert sich die Regel, steht es hier und in SpesenKit.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="6" data-titel="Abschließen">
@@ -1914,7 +1922,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 </section>
 <section id="app-buerokit" class="ablauf" data-speicher="aidkit-app-buerokit-haken">
   <h1>BüroKit Schritt für Schritt</h1>
-  <div class="app-kopf"><span class="zweck">Die Tagesliste des Büros: übergebene Gutachten (gegenlesen, PDF, Versand, Rechnung) und eigene Aufgaben je Projekt. Läuft auch allein – nur Chrome oder Edge und der Archivordner.</span><a class="app-oeffnen" style="margin:0" href="../buerokit/" target="buerokit" rel="noopener">BüroKit öffnen ↗</a></div>
+  <div class="app-kopf"><span class="zweck">Die Tagesliste des Büros: übergebene Gutachten (gegenlesen, PDF, Anschreiben, Versand, Rechnung) und eigene Aufgaben je Projekt. Läuft auch allein – nur Chrome oder Edge und der Archivordner. Stand: BüroKit 1.10.</span><a class="app-oeffnen" style="margin:0" href="../buerokit/" target="buerokit" rel="noopener">BüroKit öffnen ↗</a></div>
   <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
   <ol class="schritte" aria-label="Schritte"></ol>
   <div class="karte schritt" data-schritt="1" data-titel="Einrichten">
@@ -1923,60 +1931,66 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="bue1a"><label for="bue1a">BüroKit in Chrome oder Edge öffnen, am besten als Lesezeichen oder „App installieren“.</label></li>
         <li><input type="checkbox" id="bue1b"><label for="bue1b"><b>„📁 Archivordner wählen …“</b>: den Ordner mit allen Projektordnern (z. B. „Mosaik Archivordner“), Zugriff erlauben.</label></li>
-        <li><input type="checkbox" id="bue1c"><label for="bue1c">Oben bei <b>„Ich bin“</b> das eigene Kürzel wählen.</label></li>
+        <li><input type="checkbox" id="bue1c"><label for="bue1c">Beim ersten Start fragt BüroKit nach dem <b>eigenen Kürzel</b> – dann stehen an jedem Haken Name und Zeit. Ändern: <b>„Mehr …“ › „Kürzel wählen“</b>.</label></li>
+        <li><input type="checkbox" id="bue1d"><label for="bue1d">Einmal <b>„Mehr …“ › „Pfad im Explorer …“</b> prüfen (z. B. <code>C:\Daten\Mosaik Archivordner</code>) – daraus macht BüroKit die vollen Pfade für Outlook und „In Word öffnen“.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Gespeichert wird nur im Projektordner („_Spektron/Buero“) – nichts wird hochgeladen. Der Browser merkt sich den Archivordner; nach einem Neustart ggf. einmal „Zugriff erlauben“.</div>
+      <div class="tipp">Unter <b>„Mehr …“</b>: Jetzt neu laden, Kürzel wählen, Pfad im Explorer, Handbuch, Fehler oder Wunsch melden, Archivordner wechseln, Version.</div>
+      <div class="tipp">Gespeichert wird nur im Projektordner („_Spektron/Buero“) und Anschreiben in „Mitteilungen“ – nichts wird hochgeladen. Der Browser merkt sich den Archivordner; nach einem Neustart ggf. einmal „Zugriff erlauben“.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="2" data-titel="Liste lesen">
     <div class="schritt-kopf"><h2>2 · Die Liste lesen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="bue2a"><label for="bue2a">Oben <b>Überfällig</b>, dann <b>Heute fällig</b>, dann <b>Offen</b> (älteste zuerst), dann <b>Versandt – Rechnung schreiben</b>. Erledigtes der letzten 7 Tage ist eingeklappt.</label></li>
-        <li><input type="checkbox" id="bue2b"><label for="bue2b">Je Zeile: Projektnummer, Ort, zuständige Person, was zu tun ist, wer es übergeben hat.</label></li>
-        <li><input type="checkbox" id="bue2c"><label for="bue2c"><b>„Meine“</b> zeigt nur, was mir zugewiesen ist oder ich übernommen habe; die Suche findet Projekt, Ort oder Aufgabe.</label></li>
+        <li><input type="checkbox" id="bue2a"><label for="bue2a">Oben fünf <b>Zahl-Kacheln</b>: überfällig · heute fällig · später fällig · Rechnung schreiben · diese Woche erledigt – ein Klick springt zur Gruppe. Darunter die Gruppen <b>„⚠ Überfällig“</b>, <b>„Heute fällig“</b>, <b>„Später fällig“</b>, <b>„Rechnung schreiben“</b> (früheste Fälligkeit zuerst).</label></li>
+        <li><input type="checkbox" id="bue2b"><label for="bue2b">Je Karte: Projekt, Ort, zuständige Person, die <b>Schritt-Leiste</b> Gegenlesen → PDF → Versand → Rechnung (✓ erledigt · jetzt · später) und <b>ein großer Knopf</b> für den nächsten Handgriff.</label></li>
+        <li><input type="checkbox" id="bue2c"><label for="bue2c"><b>„Für mich“</b> zeigt nur, was für dich angelegt ist oder du übernommen hast; die Suche findet Projekt, Ort oder Aufgabe.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Die Liste liest sich jede Minute selbst neu (und beim Zurückkommen ins Fenster) – Haken der Kollegen erscheinen von allein.</div>
+      <div class="tipp">Die Liste liest sich jede Minute selbst neu (und beim Zurückkommen ins Fenster) – Haken der Kollegen erscheinen von allein, auch nach „Pfad kopieren“ und dem Wechsel zu Outlook.<!-- BÜRO-PC PRÜFEN (Lauf 4): „Pfad kopieren“ → Outlook → zurück, aktualisiert sich die Liste? --> Die Zahl der fälligen Aufgaben steht auch im Fenstertitel.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="3" data-titel="Abhaken">
-    <div class="schritt-kopf"><h2>3 · Gutachten abhaken</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-kopf"><h2>3 · Gutachten: gegenlesen, PDF, versenden</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="bue3a"><label for="bue3a"><b>„mehr“</b>: Pfad der Word-Datei und <b>Anlagen</b> (zum Kopieren), Empfänger, Abrechnung, Rückfrage, Fälligkeit. Optional <b>„Ich mache das“</b>.</label></li>
-        <li><input type="checkbox" id="bue3b"><label for="bue3b">Original in Word gegenlesen → Haken <b>Gegenlesen</b>; PDF erstellen → Haken <b>PDF</b>.</label></li>
-        <li><input type="checkbox" id="bue3c"><label for="bue3c"><b>Versand ▾</b> aufklappen und je Empfänger abhaken, sobald verschickt.</label></li>
-        <li><input type="checkbox" id="bue3d"><label for="bue3d">Versehentlich gehakt? Haken einfach wieder wegnehmen – ohne Begründung.</label></li>
+        <li><input type="checkbox" id="bue3a"><label for="bue3a"><b>„Details“</b>: Unterlagen und Empfänger, Rückfrage, Fälligkeit, Verlauf. <b>„Ich kümmere mich“</b> zeigt den anderen, dass du dran bist.</label></li>
+        <li><input type="checkbox" id="bue3b"><label for="bue3b"><b>„📝 In Word öffnen“</b> öffnet die Mitteilung zum Gegenlesen (geht Word nicht auf, ist der Pfad kopiert). Dann <b>„Gegengelesen ✓“</b>; PDF erstellen → <b>„PDF ist gemacht ✓“</b>.<!-- BÜRO-PC PRÜFEN (Lauf 4): „In Word öffnen“ am Terminal (Edge-Rückfrage beim ersten Mal?) --></label></li>
+        <li><input type="checkbox" id="bue3c"><label for="bue3c">Versand: links <b>„📎 Das geht mit“</b> – Bericht und Anlagen mit „Pfad kopieren“ (für Outlook: „Datei anfügen“ → „Diesen PC durchsuchen“ → Pfad ins Feld „Dateiname“). Rechts <b>„✉ An wen“</b> – je Empfänger <b>„Versandt ✓“</b>, dazu „E-Mail-Adresse kopieren“ bzw. „Anschrift kopieren“.</label></li>
+        <li><input type="checkbox" id="bue3e"><label for="bue3e"><b>„📄 Anschreiben“</b> je Empfänger: Brief mit Firmenkopf, vorausgefüllt aus den Projektdaten und dem Bericht (Anrede, Betreff, Anlagen, Unterschrift) – vor dem Speichern änderbar. <b>„Word speichern“</b> legt <code>Anschreiben_&lt;Mitteilung&gt;_&lt;Empfänger&gt;.docx</code> in „Mitteilungen“; „E-Mail-Text kopieren“ und „Betreff kopieren“ für die E-Mail.<!-- BÜRO-PC PRÜFEN (Lauf 4): Wortlaut der Knöpfe im Anschreiben-Dialog --></label></li>
+        <li><input type="checkbox" id="bue3d"><label for="bue3d">Versehentlich abgehakt? In der Schritt-Leiste auf den ✓ klicken – nach einer Rückfrage ist er wieder weg, ohne Begründung.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Sind Gegenlesen, PDF und alle Empfänger abgehakt, wandert das Gutachten zu „Versandt – Rechnung schreiben“ (Schritt 4). An jedem Haken stehen Name und Zeit (Maus darauf).</div>
+      <div class="tipp">Sind Gegenlesen, PDF und alle Empfänger erledigt, wandert das Gutachten zu „Rechnung schreiben“ (Schritt 4). An jedem Haken stehen Name und Zeit (Maus darauf).</div>
+      <div class="tipp">2., 3. Mitteilung im selben Projekt: jede Karte zeigt ihre eigene Mitteilung mit ihren Anschreiben; die übrigen stehen zugeklappt unter „Andere Mitteilungen in diesem Projekt“.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Rechnung">
-    <div class="schritt-kopf"><h2>4 · Rechnung</h2><span class="ort buero">Büro</span><span class="dauer">BüroKit · Rechnungsprogramm</span></div>
+    <div class="schritt-kopf"><h2>4 · Rechnung</h2><span class="ort buero">Büro</span><span class="dauer">BüroKit · MOS'aik</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="bue5a"><label for="bue5a">„mehr“ → <b>Abrechnung</b>: die Positionen aus dem neuesten BelegKit-Stand.</label></li>
-        <li><input type="checkbox" id="bue5b"><label for="bue5b"><b>„✓ Stand ist aktuell“</b> → <b>„⧉ Positionen kopieren“</b>, im Rechnungsprogramm einfügen. <b>„⚠ … geändert“</b> oder kein Stand → <b>„Rückfrage stellen“</b>.</label></li>
-        <li><input type="checkbox" id="bue5c"><label for="bue5c"><b>„Je Person“</b> zeigt Stunden, km, Spesen und Ortstermine je Kolleg/in – zum Abgleich.</label></li>
-        <li><input type="checkbox" id="bue5d"><label for="bue5d">Rechnung geschrieben → Haken <b>Rechnung</b>. Dann ist das Gutachten erledigt.</label></li>
+        <li><input type="checkbox" id="bue5a"><label for="bue5a"><b>„Rechnung schreiben →“</b>: die Positionen aus den neuesten BelegKit-Angaben, darüber die Anleitung ① Positionen kopieren · ② in MOS'aik einfügen · ③ „Rechnung geschrieben ✓“.</label></li>
+        <li><input type="checkbox" id="bue5b"><label for="bue5b"><b>„✓ Die Angaben sind aktuell“</b> → <b>„① Positionen kopieren“</b> und in MOS'aik einfügen. <b>„Rechnungskopf kopieren“</b> bringt Anschrift des Auftraggebers, Ihr Zeichen (Schaden-Nr.), Unser Zeichen (Projekt-Nr.) und Objekt.<!-- BÜRO-PC PRÜFEN (Lauf 4): „Rechnungskopf kopieren“ in MOS'aik einfügen --></label></li>
+        <li><input type="checkbox" id="bue5e"><label for="bue5e"><b>„⚠ Seit diesen Angaben … hat sich etwas geändert“</b> oder <b>„Noch keine Rechnungsangaben“</b> → <b>„Rückfrage …“</b> (Text vorbelegt). Gelbe Zeilen zu <b>stornierten Proben</b> oder einer <b>geänderten Seitenzahl</b> lesen – sie sagen, ob neue Angaben nötig sind.</label></li>
+        <li><input type="checkbox" id="bue5c"><label for="bue5c"><b>„Stunden &amp; km je Person“</b> zeigt Stunden, km, Spesen und Ortstermine je Kolleg/in – zum Abgleich.</label></li>
+        <li><input type="checkbox" id="bue5d"><label for="bue5d"><b>„③ Rechnung geschrieben ✓“</b>. Dann ist das Gutachten erledigt.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Ausführlich mit Übung: <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>, Schritt 4. Gutachten aus der Zeit vor BüroKit 1.1 haben keinen Rechnungs-Haken.</div>
+      <div class="tipp achtung"><b>Keine doppelte Rechnung:</b> „① Positionen kopieren“ setzt „Ich kümmere mich“. Kümmert sich schon jemand anderes, fragt BüroKit vorher. Hat eine Kollegin die Rechnung schon geschrieben, steht das oben und es wird nichts kopiert bzw. gespeichert; klicken zwei fast gleichzeitig, warnt BüroKit beide („fast gleichzeitig … bitte absprechen“).<!-- BÜRO-PC PRÜFEN (Lauf 4): mit zwei PCs und einem Testprojekt ansehen --></div>
+      <div class="tipp">Ausführlich mit Übung: <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>, Schritt 4. Gutachten aus der Zeit vor BüroKit 1.1 haben keinen Rechnungs-Schritt.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="5" data-titel="Eigene Aufgaben">
     <div class="schritt-kopf"><h2>5 · Eigene Aufgaben und Rückfragen</h2><span class="ort buero">Büro</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="bue4a"><label for="bue4a"><b>„＋ Aufgabe“</b>: Projekt wählen, was zu tun ist (z. B. „Laborrechnung prüfen“), fällig am, für wen.</label></li>
-        <li><input type="checkbox" id="bue4b"><label for="bue4b">Erledigt? Haken <b>Erledigt</b>. Nicht mehr nötig? „mehr“ → <b>„Entfernen“</b>.</label></li>
-        <li><input type="checkbox" id="bue4c"><label for="bue4c">Unklar? „mehr“ → <b>„Rückfrage stellen“</b>. Der Sachverständige sieht sie oben am Projekt in der Projektzentrale und antwortet dort.</label></li>
+        <li><input type="checkbox" id="bue4a"><label for="bue4a"><b>„＋ Neue Aufgabe“</b>: Projekt wählen, was zu tun ist (z. B. „Laborrechnung prüfen“), fällig am, für wen.</label></li>
+        <li><input type="checkbox" id="bue4b"><label for="bue4b">Erledigt? <b>„✓ Erledigt“</b>. Nicht mehr nötig? „Details“ → <b>„Entfernen“</b>.</label></li>
+        <li><input type="checkbox" id="bue4c"><label for="bue4c">Unklar? <b>„Rückfrage …“</b>. Der Sachverständige sieht sie oben am Projekt in der Projektzentrale und antwortet dort; in der Karte steht „Wartet auf Antwort: …“ mit „Antwort eintragen“.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Fälligkeit ändern: „mehr“ → Datum bei „Fällig“.</div>
+      <div class="tipp">Fälligkeit ändern: „Details“ → Datum bei „Fällig“ eintippen; gespeichert wird beim Verlassen des Felds oder mit Enter.<!-- BÜRO-PC PRÜFEN (Lauf 4): Fälligkeit per Tastatur eintippen --></div>
     </div></div>
   </div>
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
@@ -2235,7 +2249,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.29.0';
+const VERSION = '0.30.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2461,7 +2475,7 @@ QUIZ["br-unterschrift"] = [{"frage": "Der Messtechniker hat die Proben genommen,
 QUIZ["pk-tasten"] =[{"frage": "Eigene Probe von Hand setzen?", "antworten": ["P", "B", "E"], "richtig": [0], "warum": "P = Probe von Hand, B = Brandherd, E = Punkte verschieben."}, {"frage": "Eine Fläche zeichnen?", "antworten": ["G", "F", "A"], "richtig": [1], "warum": "F zeichnet, G bearbeitet eine Fläche."}, {"frage": "Ergebniskarte ein-/ausschalten?", "antworten": ["K", "L", "V"], "richtig": [0], "warum": "K = Ergebnisfarben, L = Spalte rechts, V = Pause."}, {"frage": "Den Plan gerade ausrichten?", "antworten": ["R", "W", "A"], "richtig": [2], "warum": "A richtet aus, R dreht um 90°, W entzerrt."}];
 QUIZ["pk-legende"] = [{"frage": "Laborwert „&lt; 0,5“ – welche Legendengruppe?", "antworten": ["Unter BG (kein gemessener Nullwert)", "Ohne Bewertung", "unter Referenzwert"], "richtig": [0], "warum": "Werte unter der Bestimmungsgrenze sind kein gemessener Nullwert und bekommen eine eigene Gruppe (blaugrau)."}, {"frage": "Laborwert „n. n.“?", "antworten": ["Unter BG", "Nicht nachgewiesen (n.n.)", "Nicht bestimmt (n.b.)"], "richtig": [1], "warum": "Qualifikatoren werden nie zu Zahlen – n. n. hat eine eigene Gruppe."}, {"frage": "Laborwert „1.234“ (unklar, ob 1,234 oder 1234)?", "antworten": ["wird als 1234 bewertet", "Ohne Bewertung", "wird als 1,234 bewertet"], "richtig": [1], "warum": "Mehrdeutige Zahlen bleiben ohne Bewertung (grau) – lieber nachfragen als raten."}, {"frage": "Nutzung „Wohnen“, Σ16 EPA-PAK = 12 µg/m² auf einer Oberfläche?", "antworten": ["unter Referenzwert", "Referenzwert erreicht/überschritten"], "richtig": [1], "warum": "Für Wohn-/Büroräume liegt die VdS-Hintergrundreferenz bei 10 µg/m² (Industrie: 100 µg/m²)."}];
 QUIZ["ub-anlagen"] = [{"frage": "Im Projekt liegen: <code>Fotos/26.0560_Bilddokumentation.pdf</code>, <code>Mitteilungen/26.0560 Anlage Probenahme.docx</code>, <code>Mitteilungen/26.0560 Gutachten.docx</code> (gewählte Word-Datei), <code>Laborergebnisse/Prüfbericht 123.pdf</code>. Was ist <b>schon angehakt</b>?", "antworten": ["Bilddokumentation.pdf", "Anlage Probenahme.docx", "Gutachten.docx", "Prüfbericht 123.pdf"], "richtig": [0, 1], "warum": "Vorgeschlagen sind PDFs in „Fotos“ und Dateien mit „Anlage“ oder „Bilddokumentation“ im Namen. Das Gutachten selbst steht nicht in der Liste; Prüfberichte sind wählbar, aber nicht vorangehakt.", "tipp": "Zwei sind vorangehakt. Die Word-Datei des Gutachtens ist keine Anlage."}];
-QUIZ["ub-rechnung"] = [{"frage": "Stand gespeichert am 27.10. Am 29.10. trägt Nad noch 2 Stunden Auswertung nach. Was zeigt BüroKit?", "antworten": ["„⚠ … geändert: Zeiten NAD geändert“ – Rückfrage", "„✓ Stand ist aktuell“", "Die 2 Stunden sind automatisch in den Positionen"], "richtig": [0], "warum": "Die Positionen kommen aus dem gespeicherten Stand. BüroKit vergleicht die Zeitdateien und warnt – der/die Sachverständige speichert einen neuen Stand."}, {"frage": "Versandt, aber in „Abrechnung“ steht „Noch kein Abrechnungsstand“. Was tut das Büro?", "antworten": ["„Rückfrage stellen“ – Text ist vorbelegt", "Positionen selbst zählen", "Haken „Rechnung“ trotzdem setzen"], "richtig": [0], "warum": "Ohne Stand keine Rechnung: Die Rückfrage erscheint oben am Projekt in der Projektzentrale; danach geht es weiter."}, {"frage": "Wer trägt die Stunden von Ben ein, der als Probenehmer dabei war?", "antworten": ["Ben selbst in BelegKit", "Die/der zuständige Sachverständige", "Das Büro in BüroKit"], "richtig": [0], "warum": "Jede Person schreibt nur ihre eigene Zeitdatei. BüroKit liest sie nur."}, {"frage": "Das Gutachten ist versandt, „Rechnung“ ist noch nicht abgehakt. Was zeigt die Kachel „Abrechnung“ in der Projektzentrale (Stand liegt vor)?", "antworten": ["„Rechnung beim Büro“", "„Abgerechnet“", "„Noch keine Zeiten erfasst“"], "richtig": [0], "warum": "Die Abrechnung wartet auf das Büro. „Abgerechnet“ steht dort erst nach dem Haken „Rechnung“."}];
+QUIZ["ub-rechnung"] = [{"frage": "Stand gespeichert am 27.10. Am 29.10. trägt Nad noch 2 Stunden Auswertung nach. Was zeigt BüroKit?", "antworten": ["„⚠ Seit diesen Angaben … hat sich etwas geändert“ – Rückfrage", "„✓ Die Angaben sind aktuell“", "Die 2 Stunden sind automatisch in den Positionen"], "richtig": [0], "warum": "Die Positionen kommen aus dem gespeicherten Stand. BüroKit vergleicht die Zeitdateien und warnt – der/die Sachverständige speichert einen neuen Stand."}, {"frage": "Versandt, aber im Rechnungsblock steht „Noch keine Rechnungsangaben“. Was tut das Büro?", "antworten": ["„Rückfrage …“ – Text ist vorbelegt", "Positionen selbst zählen", "Haken „Rechnung“ trotzdem setzen"], "richtig": [0], "warum": "Ohne Stand keine Rechnung: Die Rückfrage erscheint oben am Projekt in der Projektzentrale; danach geht es weiter."}, {"frage": "Wer trägt die Stunden von Ben ein, der als Probenehmer dabei war?", "antworten": ["Ben selbst in BelegKit", "Die/der zuständige Sachverständige", "Das Büro in BüroKit"], "richtig": [0], "warum": "Jede Person schreibt nur ihre eigene Zeitdatei. BüroKit liest sie nur."}, {"frage": "Das Gutachten ist versandt, „Rechnung“ ist noch nicht abgehakt. Was zeigt die Kachel „Abrechnung“ in der Projektzentrale (Stand liegt vor)?", "antworten": ["„Rechnung beim Büro“", "„Abgerechnet“", "„Noch keine Zeiten erfasst“"], "richtig": [0], "warum": "Die Abrechnung wartet auf das Büro. „Abgerechnet“ steht dort erst nach dem Haken „Rechnung“."}];
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
 QUIZ["bk-proben"] = [{"frage": "LabelKit, Sonstige Proben, Spalte „Untersuchungsparameter“: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
 QUIZ["tk-wohin"] = [{"frage": "„Kuchen in der Küche!“ – wohin?", "antworten": ["Heute &amp; morgen", "Gilt jetzt", "Gilt jetzt mit „Wichtig“"], "richtig": [0], "warum": "Lockeres für heute: kurz posten, es verschwindet heute Abend von selbst."}, {"frage": "„Ab sofort Asbest-Materialproben immer doppelt verpacken.“ – wohin?", "antworten": ["Heute &amp; morgen, eine Woche", "Gilt jetzt", "Kalender"], "richtig": [1], "warum": "Eine Regel, die gilt, bis sie erledigt ist – also „Gilt jetzt“. „Wichtig“ nur, wenn alle es sofort wissen müssen."}, {"frage": "Weihnachtsfeier am 18.12. – wer kommt mit?", "antworten": ["Kalender: Tag 18.12. wählen, Text, „Als Umfrage“", "Gilt jetzt", "Heute &amp; morgen ohne Datum"], "richtig": [0], "warum": "Ein Termin an einem Tag mit Zu- und Absagen: im Kalender und als Umfrage."}, {"frage": "Heute ist Dienstag. Du schreibst „Frühstück Freitag“ und wählst nichts. Wie lange bleibt der Beitrag?", "antworten": ["Bis heute Abend", "Bis Freitag", "Eine Woche"], "richtig": [1], "warum": "TeamKit erkennt „Freitag“ im Text und lässt den Beitrag bis Freitagabend stehen."}, {"frage": "Wer kann einen „Gilt jetzt“-Beitrag ins Archiv legen?", "antworten": ["Jeder im Team", "Nur wer ihn geschrieben hat", "Nur das Büro"], "richtig": [1], "warum": "Bearbeiten und „Erledigt – ins Archiv“ gibt es nur für den Schreiber."}];
