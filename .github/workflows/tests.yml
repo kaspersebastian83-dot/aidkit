@@ -1,6 +1,8 @@
 name: Tests
 
 on:
+  schedule:
+    - cron: '19 5 * * *'  # UTC
   pull_request:
   push:
     branches: [main]
