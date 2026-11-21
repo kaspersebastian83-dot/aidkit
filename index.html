@@ -227,6 +227,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#app-spesenkit">SpesenKit</a>
   <a href="#app-buerokit">BüroKit</a>
   <a href="#app-teamkit">TeamKit</a>
+  <a href="#app-lagerkit">LagerKit</a>
   <div class="gruppe">Auswerten</div>
   <a href="#app-datenarchiv">Datenarchiv</a>
   <div class="gruppe">Konventionen</div>
@@ -252,6 +253,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../aufwandkit/" target="aufwandkit">BelegKit</a></td><td>Zeiten, km, Proben, Berichtsseiten für die Rechnung · <a href="#app-belegkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../buerokit/" target="buerokit">BüroKit</a></td><td>Tagesliste des Büros: Gutachten gegenlesen, PDF, Versand, Rechnung, eigene Aufgaben · <a href="#app-buerokit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../teamkit/" target="teamkit">TeamKit</a></td><td>Was heute und morgen los ist, Termine, was im Büro ab jetzt gilt – in der Projektzentrale über „Team“ · <a href="#app-teamkit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../Lagerkit/" target="lagerkit">LagerKit</a></td><td>Rückstellproben im Büro: Etikett, Regalplatz, „Aufbewahren bis“, Fällige einsammeln, Inventur – in der Projektzentrale unter „⋯ Büro &amp; Apps“ · <a href="#app-lagerkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../reisekosten-pro/" target="reisekosten">SpesenKit</a></td><td>Spesenabrechnung für den Monat · <a href="#app-spesenkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Projektzentrale/archiv/" target="spektron-archiv">Datenarchiv</a></td><td>Messwerte aller Projekte vergleichen, PAK-Muster, Freimessungen · <a href="#app-datenarchiv">Schritt für Schritt</a></td></tr>
     </tbody>
@@ -467,6 +469,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Zwischendurch genügt <b>Strg+S</b> (speichert nur die Projektdatei). Die Leiste unten führt durch: Projektnummer → Proben → Etiketten → Abschließen.</div>
+      <div class="tipp">Bleibt von einer Probe ein Rest im Büro (Rückstellprobe)? In <a href="#app-lagerkit">LagerKit</a> „Aus Laborproben übernehmen …“ – Etikett, Regalplatz und „Aufbewahren bis“.</div>
       <div class="tipp">Mehrere Parameter mit Komma trennen, z. B. <code>PCB, Schwermetalle</code> – BelegKit rechnet dann je Parameter ab. Ein Paket bleibt eins: <code>MKW (KW-Index C10–C40 und C10–C22)</code>, <code>Schwermetalle (As, Pb, Cd)</code>.</div>
       <a class="app-oeffnen" href="../labelkit/" target="labelkit" rel="noopener">LabelKit öffnen ↗</a>
     </div></div>
@@ -578,7 +581,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen</td><td>LabelKit</td></tr>
     </tbody>
   </table></div>
-  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) den Ordner <code>_Spektron-Unterschriften</code> und den Ordner <code>_TeamKit</code> (Beiträge aus TeamKit, je Beitrag eine kleine Datei; Fotos der Kollegen in <code>_TeamKit\Fotos</code>). Nicht löschen oder umbenennen.</p>
+  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) den Ordner <code>_Spektron-Unterschriften</code> und den Ordner <code>_TeamKit</code> (Beiträge aus TeamKit, je Beitrag eine kleine Datei; Fotos der Kollegen in <code>_TeamKit\Fotos</code>) und den Ordner <code>_LagerKit</code> (LagerKit: Übersicht, Proben ohne Projekt, Regalplätze, Inventuren, feste Entsorgungslisten; die Rückstellproben eines Projekts liegen im Projekt in <code>_Spektron/LagerKit</code>). Nicht löschen oder umbenennen.</p>
   <p class="wo">Hilfe: Knopf <b>📘</b> in der App (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Büro &amp; Apps“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
@@ -1079,7 +1082,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pz8a"><label for="pz8a">Oben unter <b>„⋯ Büro &amp; Apps“</b> › <b>„👥 Mitarbeiter“</b>: Ordnerkürzel, Name, App-Kürzel, Aktiv – „+ Person“, dann „Speichern“ (liegt in <code>_Spektron-Mitarbeiter.json</code>).</label></li>
         <li><input type="checkbox" id="pz8b"><label for="pz8b"><b>„📊 Auslastung“</b>: In Bearbeitung / Beim Büro / Rückfrage / Offen je Person – eine Zahl antippen zeigt die Projekte.</label></li>
         <li><input type="checkbox" id="pz8c"><label for="pz8c"><b>„📈 Durchlaufzeiten“</b>: wie lange es vom Ortstermin bis zum Versand dauert, aus vorhandenen Daten.</label></li>
-        <li><input type="checkbox" id="pz8d"><label for="pz8d">Ebenfalls unter <b>„⋯ Büro &amp; Apps“</b>: Auslastung, Durchlaufzeiten, Handbuch (AidKit), BüroKit, SpesenKit, Rückmeldung, Datenarchiv.</label></li>
+        <li><input type="checkbox" id="pz8d"><label for="pz8d">Ebenfalls unter <b>„⋯ Büro &amp; Apps“</b>: Auslastung, Durchlaufzeiten, Handbuch (AidKit), BüroKit, SpesenKit, <a href="#app-lagerkit">LagerKit</a> (Rückstellproben), Rückmeldung, Datenarchiv.</label></li>
         <li><input type="checkbox" id="pz8e"><label for="pz8e">Oben neben „Kurzanleitung“: <b>„Team“</b> öffnet <a href="#app-teamkit">TeamKit</a> über dem Projekt (Zahl = neue „Gilt jetzt“-Beiträge, Punkt = heute/morgen etwas los). Eine gelbe Zeile unter dem Kopf zeigt nur Beiträge mit „Wichtig“ – „Gesehen“ blendet sie aus.</label></li>
       </ul>
     </div><div>
@@ -2079,6 +2082,125 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="tasten"><span><kbd>Esc</kbd></span><span>TeamKit schließen, zurück zur Projektzentrale</span></div>
 </section>
 
+<section id="app-lagerkit" class="ablauf" data-speicher="aidkit-app-lagerkit-haken">
+  <h1>LagerKit Schritt für Schritt</h1>
+  <div class="app-kopf"><span class="zweck">Rückstellproben im Büro: was, woher, bis wann – und was weg kann. Jede Rückstellprobe bekommt ein Etikett mit QR-Code, ein „Aufbewahren bis“ und einen festen Regalplatz; LagerKit zeigt, was fällig ist, und führt einmal am Regal entlang. Öffnen in der Projektzentrale unter <b>„⋯ Büro &amp; Apps“</b> › <b>„LagerKit“</b>.</span><a class="app-oeffnen" style="margin:0" href="../Lagerkit/" target="lagerkit" rel="noopener">LagerKit öffnen ↗</a></div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+  <div class="karte schritt" data-schritt="1" data-titel="Einrichten">
+    <div class="schritt-kopf"><h2>1 · Öffnen und einmal einrichten</h2><span class="ort buero">Büro</span><span class="dauer">einmal fürs Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg1a"><label for="lg1a">Projektzentrale → oben <b>„⋯ Büro &amp; Apps“</b> › <b>„LagerKit“</b> öffnet die Lager-Übersicht (alle Projekte). Für ein Projekt: <b>„Mehr zum Projekt …“</b> › <b>„Rückstellproben (LagerKit)“</b> – darunter steht dort auch „Rückstellproben im Lager: n · n fällig“.</label></li>
+        <li><input type="checkbox" id="lg1b"><label for="lg1b">Beim allerersten Mal: <b>„Ordner _LagerKit anlegen“</b> – einmal fürs ganze Büro, im Archivordner.</label></li>
+        <li><input type="checkbox" id="lg1c"><label for="lg1c">Oben rechts <b>„Du bist“</b> wählen. Verlängern, Sperren, Platz ändern, Entsorgen und die Inventur speichern immer deinen Namen mit.</label></li>
+        <li><input type="checkbox" id="lg1d"><label for="lg1d">Einmal die <b>Regalplätze</b> anlegen: unten links <b>„Mehr …“</b> › <b>„Regalplätze …“</b>, z. B. „Regal A · Fach 1“, „Boden links“, „+ Platz anlegen“. Dann <b>„Platz-Etiketten drucken …“</b> und je ein Etikett ans Regal kleben.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Ein Platz wird nie gelöscht, nur „nicht mehr benutzt“ – sonst verlieren alte Proben ihren Ort. Ohne Regalplatz gibt es kein Etikett.</div>
+      <div class="tipp">LagerKit braucht Edge oder Chrome und nimmt den Archivordner der Projektzentrale. Fragt es danach, LagerKit einmal aus der Projektzentrale öffnen.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Erfassen">
+    <div class="schritt-kopf"><h2>2 · Rückstellprobe erfassen</h2><span class="ort buero">Büro</span><span class="dauer">im Projekt</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg2a"><label for="lg2a">Im Projekt <b>„Aus Laborproben übernehmen …“</b>: die LabelKit-Proben anhaken, von denen ein Rest im Büro bleibt → „Als Rückstellprobe übernehmen“. Daraus wird z. B. <b>„R2 · Rest von Probe 4“</b>; Was und Raum/Ort kommen aus LabelKit und werden nur dort geändert.</label></li>
+        <li><input type="checkbox" id="lg2b"><label for="lg2b">Ohne Laborprobe: <b>„+ Rückstellprobe“</b> (in der Übersicht „+ Rückstellprobe … (Projekt wählen)“).</label></li>
+        <li><input type="checkbox" id="lg2c"><label for="lg2c"><b>Gelb = Pflicht:</b> Was, Raum/Ort, Probenahme (vorbelegt mit dem Ortstermin), Regalplatz. Raum/Ort wie immer von groß nach klein (<a href="#wischprobe">Probenbezeichnung</a>).</label></li>
+        <li><input type="checkbox" id="lg2d"><label for="lg2d">Unten bei der gewählten Probe: Oberfläche/Attribute, Behälter, <b>„Notiz / warum aufbewahrt“</b> und der Haken <b>„Asbest / schadstoffhaltig (Verdacht)“</b>. „Asbest nachgewiesen“ holt LagerKit selbst aus ResultKit.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">LagerKit speichert von selbst (unten links „✓ gespeichert“). Die Datei liegt im Projekt in <code>_Spektron/LagerKit</code>.</div>
+      <div class="tipp">Eine R-Nummer heißt nie „Probe“: R1, R2 … zählen nur die Rückstellproben im Projekt. „Probe 4“ ist die Laborprobe aus LabelKit.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Etikett">
+    <div class="schritt-kopf"><h2>3 · Etikett drucken und kleben</h2><span class="ort buero">Büro</span><span class="dauer">LabelKit-Bogen</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg3a"><label for="lg3a">Unten rechts <b>„Etiketten drucken (R1, R2) →“</b>. Gleicher Bogen und gleiche Einstellungen wie LabelKit: A4, 12 Etiketten 97 × 42,3 mm, Skalierung 100 %, keine Ränder, Kopf- und Fußzeilen aus. Angebrochener Bogen: das erste freie Feld wählen.</label></li>
+        <li><input type="checkbox" id="lg3b"><label for="lg3b"><b>Etikett aufs Gefäß kleben – nie auf den Deckel</b> (Deckel werden vertauscht). Nasse Proben, Eimer, verrußte Gefäße: Polyester-Etiketten im selben Format.</label></li>
+        <li><input type="checkbox" id="lg3c"><label for="lg3c">Ab dem ersten Druck ist die Nummer <b>fest</b> (🔒): danach „Stornieren …“ statt löschen, die Nummer kommt nie wieder. Ändert sich etwas, das auf dem Etikett steht, bietet LagerKit <b>„Etikett neu drucken“</b> an.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Auf dem Etikett: schwarzer Balken „RÜCKSTELLPROBE · NICHT ANS LABOR“, QR-Code, R-Nummer, Was, Raum/Ort, „Aufbewahren bis mind. …“ und der Regalplatz.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="Frist">
+    <div class="schritt-kopf"><h2>4 · Bis wann? Verlängern, sperren, Platz ändern</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg4a"><label for="lg4a"><b>Aufbewahren bis:</b> 3 Monate nach Übergabe des Berichts (<b>„Ans Büro übergeben“</b> in der Projektzentrale), bis Monatsende. Bei mehreren Mitteilungen zählt die zuletzt übergebene.</label></li>
+        <li><input type="checkbox" id="lg4b"><label for="lg4b">Noch kein Bericht übergeben? Dann vorläufig Probenahme + 3 Monate. Wird sie so fällig, steht gelb <b>„kein Bericht übergeben – bitte prüfen“</b> dabei – nichts ist gesperrt, du entscheidest.</label></li>
+        <li><input type="checkbox" id="lg4c"><label for="lg4c"><b>„Verlängern …“</b> (z. B. Rückfrage des Versicherers) und <b>„Nicht entsorgen (sperren) …“</b> (Streitfall, Gutachten angefochten) – immer mit Name und kurzem Grund. Eine gesperrte Probe bleibt auf ihrem Platz, bis jemand die Sperre mit Name und Grund aufhebt.</label></li>
+        <li><input type="checkbox" id="lg4d"><label for="lg4d">Umgeräumt? <b>„Platz ändern …“</b> mit Grund – oder am Regal einräumen (Schritt 5).</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Maßgeblich ist immer LagerKit, nicht das Datum auf dem Etikett – ein Scan zeigt das aktuelle „Aufbewahren bis“. Die Standardfrist (3 Monate) steht unter „Mehr …“ › „Standardfrist“.</div>
+      <div class="uebung quiz" data-quiz="lg-frist"><h3>Kurz üben: Bis wann?</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="5" data-titel="Scannen">
+    <div class="schritt-kopf"><h2>5 · Scannen und einräumen</h2><span class="ort buero">am Regal</span><span class="dauer">USB-Handscanner</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg5a"><label for="lg5a">Handscanner einstecken, das LagerKit-Fenster nach vorne holen, scannen. Ein <b>Proben-Code</b> öffnet die Probe, ein <b>Platz-Code</b> zeigt, was dort liegt.</label></li>
+        <li><input type="checkbox" id="lg5b"><label for="lg5b">Proben auf einen Platz räumen: Platz-Code scannen → <b>„Proben hier einräumen“</b>. Oben steht grün <b>„📥 Einräumen auf …“</b> – jede gescannte Probe kommt jetzt auf diesen Platz (mit deinem Namen, „rückgängig“ geht). Danach <b>„Fertig“</b>.</label></li>
+        <li><input type="checkbox" id="lg5c"><label for="lg5c">Ohne „Proben hier einräumen“ verschiebt ein Scan <b>nie</b> etwas.</label></li>
+        <li><input type="checkbox" id="lg5d"><label for="lg5d">Ohne Scanner: in der Übersicht ins Suchfeld <code>26.0612 R2</code> tippen und <kbd>Enter</kbd> – wie ein Scan.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Landet ein Scan aus Versehen in einem Textfeld, nimmt LagerKit die Zeichen wieder heraus. Im Erfassen füllt ein Platz-Scan den Regalplatz der gewählten Zeile.</div>
+      <div class="uebung quiz" data-quiz="lg-scan"><h3>Kurz üben: Was macht der Scan?</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="6" data-titel="Einsammeln">
+    <div class="schritt-kopf"><h2>6 · Fällige einsammeln</h2><span class="ort buero">am Regal</span><span class="dauer">wenn etwas fällig ist</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg6a"><label for="lg6a">Übersicht → <b>„Fällige einsammeln →“</b>. Die Liste ist nach Regalplatz sortiert – das Regal einmal abgehen. Wer lieber Papier mitnimmt: <b>„Entsorgungsliste drucken“</b>.</label></li>
+        <li><input type="checkbox" id="lg6b"><label for="lg6b">Jede Probe, die du rausnimmst, <b>scannen</b>: Sie ist als „entsorgt“ vorgemerkt. Der Rest per Klick: <b>„entsorgt“</b> · <b>„nicht gefunden“</b> · <b>„behalten (verlängern …)“</b>. Gesperrte lassen sich nicht abhaken.</label></li>
+        <li><input type="checkbox" id="lg6c"><label for="lg6c">Freiwillig <b>„wohin“</b> je Probe: Restmüll · Gefährlicher Abfall / Entsorger · Asbestabfall · zurück an Auftraggeber · Sonstiges. Bei „Asbest nachgewiesen“ ist „Asbestabfall“ schon gewählt; oben <b>„Für alle markierten: …“</b> setzt es auf einmal. <i>(ab LagerKit 0.2.0)</i></label></li>
+        <li><input type="checkbox" id="lg6d"><label for="lg6d">Erst <b>„Eintragen →“</b> speichert – mit deinem Namen und dem Datum. Dabei legt LagerKit die Liste als <b>festen Beleg</b> ab: in der Übersicht unter <b>„Entsorgt“</b> › „Liste vom … · Kürzel · n Proben“, mit „Drucken“ (als PDF: im Druckdialog „Als PDF speichern“). <i>(ab LagerKit 0.2.0)</i></label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Nichts wird gelöscht: Entsorgtes bleibt grau mit Name und Datum sichtbar. Versehen? „Doch nicht entsorgt …“ mit Grund – der Beleg bleibt, wie er war, die Korrektur steht im Verlauf der Probe.</div>
+      <div class="uebung quiz" data-quiz="lg-einsammeln"><h3>Kurz üben: Einsammeln</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="7" data-titel="Inventur">
+    <div class="schritt-kopf"><h2>7 · Inventur – stimmt das Regal?</h2><span class="ort buero">am Regal</span><span class="dauer">alle 3 Monate je Platz</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg7a"><label for="lg7a"><b>„Mehr …“</b> › <b>„Inventur …“</b> – oder nach einem Platz-Scan <b>„🔍 Diesen Platz prüfen“</b>. <i>(ab LagerKit 0.2.0)</i></label></li>
+        <li><input type="checkbox" id="lg7b"><label for="lg7b">Platz scannen → <b>alle Proben darauf scannen</b> → <b>„Platz fertig“</b>; dann der nächste Platz. Oben steht <b>lila „🔍 Prüfen: …“</b> – beim Prüfen bucht ein Scan <b>nie</b> etwas um.</label></li>
+        <li><input type="checkbox" id="lg7c"><label for="lg7c">Ergebnis je Platz: <b>✓ da</b> · <b>fehlt</b> → „als nicht gefunden eintragen“ · <b>woanders gebucht</b> → „hierher umbuchen“ · <b>als entsorgt eingetragen</b> → „doch da – Eintrag zurücknehmen“ · <b>unbekannter Code</b>. Jede Korrektur ist ein Klick mit deinem Namen – nichts ändert sich von selbst.</label></li>
+        <li><input type="checkbox" id="lg7d"><label for="lg7d"><b>„Drucken“</b> für die Ablage, dann <b>„Inventur beenden“</b>. In der Übersicht steht je Platz „zuletzt geprüft MM/JJJJ“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Liegt ein Platz drei Monate ungeprüft, erscheint in der Übersicht eine ruhige gelbe Zeile <b>„Inventur fällig: … – Regal durchgehen →“</b>. Sie sperrt nichts; „später“ blendet sie an diesem PC für zwei Wochen aus.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="8" data-titel="Altbestand &amp; Blanko">
+    <div class="schritt-kopf"><h2>8 · Altbestand und Blanko-Etiketten</h2><span class="ort buero">Büro</span><span class="dauer">bei Bedarf</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lg8a"><label for="lg8a"><b>Aufräumtag</b> für unbeschriftete Altproben: <b>„Aufräumtag: Altbestand erfassen …“</b> – platzweise: Platz wählen, Proben erfassen, „Speichern und Etiketten drucken →“, kleben, nächster Platz. Datum „unbekannt“ ist erlaubt (Frist ab heute, „nachträglich erfasst“).</label></li>
+        <li><input type="checkbox" id="lg8b"><label for="lg8b">Weiß niemand das Projekt: Haken <b>„unklar“</b> und „Wo gefunden“ → die Probe kommt unter <b>„Herkunft unklar“</b> (U1, U2 …). Später <b>„Einem Projekt zuordnen …“</b> – sie bekommt dort die nächste R-Nummer, neues Etikett drüberkleben.</label></li>
+        <li><input type="checkbox" id="lg8c"><label for="lg8c"><b>Blanko-Etiketten</b> für den Ortstermin und den Aufräumtag: „Mehr …“ › <b>„Blanko-Etiketten drucken …“</b>. Projekt, Was und Datum von Hand draufschreiben. Jede Nummer (<code>LKB0001</code> …) gibt es nur einmal. <i>(ab LagerKit 0.2.0)</i></label></li>
+        <li><input type="checkbox" id="lg8d"><label for="lg8d">Zurück im Büro das Blanko-Etikett <b>scannen</b> → <b>„Neue Rückstellprobe mit diesem Etikett“</b> → Projekt wählen (oder „Herkunft unklar …“) → die Zeile wie gewohnt ausfüllen. Gefunden wird die Probe danach über beide Codes; ein LagerKit-Etikett ist freiwillig.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Proben ohne Projekt und die Einstellungen (Regalplätze, Blanko-Nummern) liegen im Archivordner in <code>_LagerKit</code>, ebenso die Inventuren und die festen Entsorgungslisten.</div>
+      <div class="uebung quiz" data-quiz="lg-blanko"><h3>Kurz üben: Blanko-Etikett</h3></div>
+    </div></div>
+  </div>
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+  <h2>Tastenkürzel</h2>
+  <div class="tasten"><span><kbd>Enter</kbd> im Suchfeld</span><span>„26.0612 R2“ oder „U2“ öffnet die Probe – wie ein Scan</span></div>
+</section>
+
 <section id="app-datenarchiv" class="ablauf" data-speicher="aidkit-app-datenarchiv-haken">
   <h1>Datenarchiv</h1>
   <div class="app-kopf"><span class="zweck">Die Messwerte aller Projekte an einem Ort – zum Vergleichen und Lernen. Liest nur, bewertet nichts.</span><a class="app-oeffnen" style="margin:0" href="../Projektzentrale/archiv/" target="spektron-archiv" rel="noopener">Datenarchiv öffnen ↗</a></div>
@@ -2249,7 +2371,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.31.1';
+const VERSION = '0.32.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2482,6 +2604,10 @@ QUIZ["ub-rechnung"] = [{"frage": "Stand gespeichert am 27.10. Am 29.10. trägt N
 QUIZ["bk-km"] = [{"frage": "Drei Kollegen fahren zusammen zum Ortstermin. Wer trägt die km ein?", "antworten": ["Alle drei", "Nur der Fahrer", "Niemand, BelegKit rechnet sie"], "richtig": [1], "warum": "km trägt nur der Fahrer ein – sonst wären sie dreifach in der Rechnung."}, {"frage": "Wohin gehört die Fahrzeit?", "antworten": ["Zum Ortstermin", "Zu „Auswertung / Bericht“", "Gar nicht"], "richtig": [0], "warum": "Fahrzeit gehört zum Ortstermin."}];
 QUIZ["bk-proben"] = [{"frage": "LabelKit, Sonstige Proben, Spalte „Untersuchungsparameter“: „PCB, Schwermetalle“. Wie viele Analysen?", "antworten": ["1", "2", "3"], "richtig": [1], "warum": "Je Parameter eine Analyse: 1× PCB + 1× Schwermetalle."}, {"frage": "Notiz: „Schwermetalle (As, Pb, Cd)“?", "antworten": ["1", "3", "4"], "richtig": [0], "warum": "Kommas in Klammern trennen nicht – das Paket ist eine Analyse."}, {"frage": "Notiz: „1,2-Dichlorethan“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Komma zwischen Ziffern gehört zum Stoffnamen."}, {"frage": "Notiz: „MKW (KW-Index C10–C40 und C10–C22)“?", "antworten": ["1", "2"], "richtig": [0], "warum": "Ein Paket in einem Begriff bleibt eine Analyse."}];
 QUIZ["tk-wohin"] = [{"frage": "„Kuchen in der Küche!“ – wohin?", "antworten": ["Heute &amp; morgen", "Gilt jetzt", "Gilt jetzt mit „Wichtig“"], "richtig": [0], "warum": "Lockeres für heute: kurz posten, es verschwindet heute Abend von selbst."}, {"frage": "„Ab sofort Asbest-Materialproben immer doppelt verpacken.“ – wohin?", "antworten": ["Heute &amp; morgen, eine Woche", "Gilt jetzt", "Kalender"], "richtig": [1], "warum": "Eine Regel, die gilt, bis sie erledigt ist – also „Gilt jetzt“. „Wichtig“ nur, wenn alle es sofort wissen müssen."}, {"frage": "Weihnachtsfeier am 18.12. – wer kommt mit?", "antworten": ["Kalender: Tag 18.12. wählen, Text, „Als Umfrage“", "Gilt jetzt", "Heute &amp; morgen ohne Datum"], "richtig": [0], "warum": "Ein Termin an einem Tag mit Zu- und Absagen: im Kalender und als Umfrage."}, {"frage": "Heute ist Dienstag. Du schreibst „Frühstück Freitag“ und wählst nichts. Wie lange bleibt der Beitrag?", "antworten": ["Bis heute Abend", "Bis Freitag", "Eine Woche"], "richtig": [1], "warum": "TeamKit erkennt „Freitag“ im Text und lässt den Beitrag bis Freitagabend stehen."}, {"frage": "Wer kann einen „Gilt jetzt“-Beitrag ins Archiv legen?", "antworten": ["Jeder im Team", "Nur wer ihn geschrieben hat", "Nur das Büro"], "richtig": [1], "warum": "Bearbeiten und „Erledigt – ins Archiv“ gibt es nur für den Schreiber."}];
+QUIZ["lg-frist"] = [{"frage": "Probenahme 18.11.2026, Bericht am 05.12.2026 ans Büro übergeben. Bis wann wird die Rückstellprobe aufbewahrt?", "antworten": ["28.02.2027", "05.03.2027", "31.03.2027"], "richtig": [2], "warum": "3 Monate ab Übergabe des Berichts, bis Monatsende: Dezember + 3 = März → 31.03.2027. Der Bericht schiebt nur nach hinten."}, {"frage": "Probenahme 14.07.2026, noch kein Bericht übergeben, heute ist der 21.11.2026. Was zeigt LagerKit?", "antworten": ["Nicht fällig – erst muss der Bericht kommen", "Fällig, mit gelbem Hinweis „kein Bericht übergeben – bitte prüfen“", "Gesperrt"], "richtig": [1], "warum": "Ohne Bericht gilt vorläufig Probenahme + 3 Monate (31.10.2026) – fällig, mit Hinweis. Nichts ist gesperrt: prüfen, ob der Bericht noch kommt, sonst verlängern oder einsammeln."}, {"frage": "Auf dem Etikett steht „Aufbewahren bis mind. 30.11.2026“, in LagerKit „31.03.2027 · verlängert“. Was gilt?", "antworten": ["Das Etikett", "LagerKit"], "richtig": [1], "warum": "Das Etikett zeigt den Stand beim Druck. Maßgeblich ist LagerKit – ein Scan zeigt das aktuelle Datum."}, {"frage": "Eine gesperrte Probe („nicht entsorgen – Streitfall“) ist fällig. Darf sie weg?", "antworten": ["Ja, beim Einsammeln abhaken", "Nein – erst hebt jemand die Sperre mit Name und Grund auf"], "richtig": [1], "warum": "Gesperrte Proben lassen sich beim Einsammeln nicht abhaken; die Sperre bleibt, bis jemand sie mit Name und Grund aufhebt."}];
+QUIZ["lg-scan"] = [{"frage": "Oben steht keine Leiste. Du scannst am Regal eine Probe. Was passiert?", "antworten": ["Sie wird auf den Platz gebucht, vor dem du stehst", "Sie öffnet sich – nichts wird verschoben"], "richtig": [1], "warum": "Ohne „Proben hier einräumen“ verschiebt ein Scan nie etwas."}, {"frage": "Oben steht grün „📥 Einräumen auf Boden links“. Du scannst R2.", "antworten": ["R2 kommt auf „Boden links“ – mit deinem Namen, rückgängig möglich", "Nichts, R2 öffnet sich nur"], "richtig": [0], "warum": "Im Einräumen bucht jeder Proben-Scan auf diesen Platz um."}, {"frage": "Oben steht lila „🔍 Prüfen: Regal A · Fach 1“. Du scannst eine Probe, die laut LagerKit auf Regal B liegt.", "antworten": ["Sie wird auf Regal A umgebucht", "Nichts – nach „Platz fertig“ steht sie unter „woanders gebucht“; umbuchen ist ein eigener Klick"], "richtig": [1], "warum": "Beim Prüfen (Inventur) bucht ein Scan nie um. Was nicht stimmt, korrigierst du danach mit einem Klick."}, {"frage": "Nach „Platz fertig“ steht R3 unter „fehlt“. Was tust du?", "antworten": ["Nichts – LagerKit trägt es selbst ein", "Erst suchen; ist sie nicht da: „als nicht gefunden eintragen“", "R3 stornieren"], "richtig": [1], "warum": "Nichts ändert sich von selbst. Ist die Probe wirklich weg, trägst du sie mit deinem Namen als nicht gefunden ein."}];
+QUIZ["lg-einsammeln"] = [{"frage": "Fällige Probe mit „⚠ Asbest nachgewiesen“. Was steht bei „wohin“?", "antworten": ["Nichts – „wohin“ ist leer", "Asbestabfall (schon gewählt)", "Restmüll"], "richtig": [1], "warum": "Bei „Asbest nachgewiesen“ belegt LagerKit „Asbestabfall“ vor – als asbesthaltigen Abfall getrennt entsorgen."}, {"frage": "Du hast fünf Proben gescannt und abgehakt, aber noch nicht „Eintragen“ geklickt. Gelten sie als entsorgt?", "antworten": ["Ja", "Nein – erst „Eintragen“ speichert, mit Name und Datum"], "richtig": [1], "warum": "Scannen und Klicks merken nur vor. Erst „Eintragen“ trägt ein und legt die Liste als festen Beleg ab."}, {"frage": "Eine Probe wurde versehentlich als entsorgt eingetragen. Was jetzt?", "antworten": ["Den Beleg unter „Entsorgt“ löschen", "„Doch nicht entsorgt …“ mit Name und Grund – der Beleg bleibt, wie er war"], "richtig": [1], "warum": "Belege werden nie geändert. Die Korrektur steht im Verlauf der Probe; die Probe ist wieder im Lager."}];
+QUIZ["lg-blanko"] = [{"frage": "Du scannst ein Blanko-Etikett LKB0013, das noch zu keiner Probe gehört.", "antworten": ["Fehlermeldung", "„Neue Rückstellprobe mit diesem Etikett“: Projekt wählen oder „Herkunft unklar“", "LagerKit legt die Probe im zuletzt offenen Projekt an"], "richtig": [1], "warum": "Ein freies Blanko-Etikett führt zur neuen Rückstellprobe – du wählst, wohin sie gehört."}, {"frage": "LKB0013 ist schon 26.0612 R5. Eine Kollegin scannt es an einem anderen PC.", "antworten": ["Sie kann es einem anderen Projekt zuordnen", "Es öffnet R5 in 26.0612"], "richtig": [1], "warum": "Jeder Blanko-Code wird genau einmal vergeben. Danach öffnet der Scan die Probe."}, {"frage": "Braucht R5 noch ein LagerKit-Etikett?", "antworten": ["Ja, sonst findet der Scan sie nicht", "Nein – es ist freiwillig, zum Überkleben"], "richtig": [1], "warum": "Die Probe wird über beide Codes gefunden: LKB0013 und LK260612R005."}, {"frage": "Der Drucker hat beim Blanko-Druck gestreikt. Kommen die Nummern beim nächsten Druck wieder?", "antworten": ["Ja", "Nein – reservierte Nummern kommen nie wieder, der nächste Druck nimmt neue"], "richtig": [1], "warum": "LagerKit reserviert die Nummern vor dem Druck für alle PCs. So kann es kein Etikett zweimal geben."}];
 QUIZ["sk-naechste"] = [{"frage": "Dienstreise vom 14.07. bis 15.07.2026, dann „Speichern & nächste“. Welches Datum hat der neue Entwurf?", "antworten": ["14.07.2026", "15.07.2026", "16.07.2026"], "richtig": [2], "warum": "Der nächste Entwurf beginnt am Tag nach dem Ende der vorigen Reise."}, {"frage": "Was bleibt im neuen Entwurf erhalten?", "antworten": ["Fahrzeug", "Startort", "Uhrzeiten", "Projekt", "Reiseziel", "km"], "richtig": [0, 1, 2], "warum": "Fahrzeug, Startort und Uhrzeiten werden übernommen; Projekt, Zweck, Ziel und km sind leer."}];
 QUIZ["wp-regel"] = [{"frage": "Welche Reihenfolge ist richtig?", "antworten": ["EG Küche Brandraum Decke verrußt Untersicht", "EG Küche Decke Untersicht verrußt Brandraum", "Decke Küche EG verrußt Untersicht"], "richtig": [0], "warum": "Von groß nach klein: Geschoss, Raum – „Brandraum“ beschreibt den Raum und steht gleich dahinter –, Bauteil, dann Beaufschlagung und Oberflächenart in der Reihenfolge der LabelKit-Übergabe an Eurofins."}, {"frage": "Probe von der Oberseite eines Schranks. Oberflächenart?", "antworten": ["Aufsicht", "Ansicht", "Untersicht"], "richtig": [0], "warum": "Aufsicht = von oben auf eine waagerechte Fläche. Ansicht = senkrecht, Untersicht = von unten (Decke)."}, {"frage": "Wohin gehört „verrußt“ in LabelKit?", "antworten": ["In die Spalte Beaufschlagung", "Ans Ende von Raum / Ort", "In die Notiz"], "richtig": [0], "warum": "Oberflächenart und Beaufschlagung haben eigene Spalten; ans Labor geht alles zusammen."}, {"frage": "Vergleichsprobe im Gästezimmer im 1OG ohne Brandeinfluss. Welcher Zusatz?", "antworten": ["Referenz unbelastet", "keiner", "Brandraum"], "richtig": [0], "warum": "„Referenz“ erkennt das Datenarchiv als Vergleichsstelle – wichtig für den Mustervergleich."}];
 QUIZ["fk-vorschlag"] = [{"frage": "In LabelKit steht P7 (Küche, verrußt, Untersicht). Sie tippen in die Beschreibung „P7“ und drücken Enter. Was passiert?", "antworten": ["Beschreibung „Küche verrußt Untersicht“, P7 im Feld „Gehört zu Probe“", "Beschreibung bleibt „P7“", "FotoKit ändert die LabelKit-Datei"], "richtig": [0], "warum": "Die Nummer holt die Beschreibung aus LabelKit und wandert ins Feld „Gehört zu Probe“. LabelKit wird nur gelesen."}, {"frage": "Sie tippen „Kü“, FotoKit schlägt „Küche Decke“ vor – Sie wollen aber „Küche Decke Detail“. Am schnellsten?", "antworten": ["Tab, dann „ Detail“ tippen", "Esc und alles selbst tippen", "Enter, dann zurück"], "richtig": [0], "warum": "Tab übernimmt den Vorschlag und lässt den Cursor im Feld; Enter würde übernehmen und zum nächsten Foto springen."}, {"frage": "Der Vorschlag passt gar nicht. Was tun?", "antworten": ["Einfach weitertippen", "Erst Einstellungen öffnen", "Foto auf „Weg“"], "richtig": [0], "warum": "Der markierte Rest wird durch das Weitertippen ersetzt. Esc verwirft ihn ausdrücklich."}];

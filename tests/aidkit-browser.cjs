@@ -60,7 +60,7 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
     // Apps Schritt für Schritt: jedes Kapitel per Adresse, Schrittleiste, eigene Haken, Übung und App-Knopf
-    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-berichtkit', 9, '../berichtkit/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/']]) {
+    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-berichtkit', 9, '../berichtkit/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/'], ['app-lagerkit', 8, '../Lagerkit/']]) {
       await page.goto(base + '#' + id);
       assert.equal(await page.locator(`#${id}`).isVisible(), true, id + ' sichtbar');
       assert.equal(await page.locator(`#${id} .schritte button`).count(), n, id + ': Schritte');
@@ -68,6 +68,14 @@ const root = path.join(__dirname, '..');
       assert.ok(await page.locator(`#${id} .quiz`).count() >= 1, id + ': mindestens eine Übung');
       for (const q of await page.locator(`#${id} .quiz`).all()) assert.ok(await q.locator('[data-a]').count() >= 2, id + ': Übung hat Antworten');
     }
+    // LagerKit: Schritte, Menü, Startseite, eine Übung
+    await page.goto(base + '#app-lagerkit');
+    assert.deepEqual(await page.locator('#app-lagerkit .schritte button').allInnerTexts().then(t => t.map(x => x.replace(/^\D*\d+\s*·?\s*/, '').replace(/\s*✓$/, '').trim())), ['Einrichten', 'Erfassen', 'Etikett', 'Frist', 'Scannen', 'Einsammeln', 'Inventur', 'Altbestand & Blanko']);
+    assert.equal(await page.locator('nav a[href="#app-lagerkit"]').getAttribute('aria-current'), 'page');
+    await page.locator('#app-lagerkit .schritte [data-geh="5"]').click();
+    const lgq = page.locator('[data-quiz="lg-scan"]'); await lgq.locator('[data-a="1"]').click(); assert.match(await lgq.locator('.antwort').innerText(), /Richtig\. Ohne „Proben hier einräumen“/);
+    await lgq.locator('.quiz-weiter').click(); assert.match(await lgq.locator('.zaehler').innerText(), /Frage 2 von 4/);
+    await page.goto(base + '#start'); assert.equal(await page.locator('#start a[href="#app-lagerkit"]').count(), 1, 'Startseite: LagerKit in „Die Apps“');
     // Wischproben: Baukasten von groß nach klein, Aufteilung für LabelKit
     await page.goto(base + '#wischprobe');
     assert.equal(await page.locator('nav a[href="#wischprobe"]').count(), 1);
