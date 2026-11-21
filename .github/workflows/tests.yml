@@ -27,6 +27,12 @@ jobs:
         run: node tests/konventionen.cjs
         env:
           LABELKIT_PFLICHT: '1'
+      - name: Projektzentrale daneben holen (rolleAuto vergleichen)
+        run: git clone --quiet --depth 1 --branch "${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}" https://github.com/kaspersebastian83-dot/projektzentrale.git ../projektzentrale 2>/dev/null || git clone --quiet --depth 1 https://github.com/kaspersebastian83-dot/projektzentrale.git ../projektzentrale
+      - name: Rolle einer Probe wie in der Projektzentrale (ohne Browser)
+        run: node tests/kopien-pz.cjs
+        env:
+          ROLLE_PFLICHT: '1'
       - name: Hilfe-Adressen der Apps vorhanden
         run: node tests/hilfe-anker.cjs
       - name: Install Playwright (pinned, not part of the repository)
