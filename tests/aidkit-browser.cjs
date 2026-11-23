@@ -60,7 +60,7 @@ const root = path.join(__dirname, '..');
     await page.goto(base + '#brandschaden');
     assert.equal(await page.locator('#brandschaden .schritte button').count(), 9);
     // Apps Schritt für Schritt: jedes Kapitel per Adresse, Schrittleiste, eigene Haken, Übung und App-Knopf
-    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-berichtkit', 9, '../berichtkit/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/'], ['app-lagerkit', 8, '../Lagerkit/']]) {
+    for (const [id, n, href] of [['app-projektzentrale', 8, '../Projektzentrale/'], ['app-labelkit', 8, '../labelkit/'], ['app-fotokit', 8, '../Bildumbenenner/'], ['app-resultkit', 6, '../resultkit/'], ['app-plankit', 9, '../Probenplan/'], ['app-berichtkit', 9, '../berichtkit/'], ['app-belegkit', 7, '../aufwandkit/'], ['app-spesenkit', 6, '../reisekosten-pro/'], ['app-datenarchiv', 6, '../Projektzentrale/archiv/'], ['app-lagerkit', 8, '../Lagerkit/'], ['app-lektorkit', 4, '../lektorkit/'], ['app-lexikit', 7, '../lexikit/'], ['app-glaskit', 5, '../glaskit/']]) {
       await page.goto(base + '#' + id);
       assert.equal(await page.locator(`#${id}`).isVisible(), true, id + ' sichtbar');
       assert.equal(await page.locator(`#${id} .schritte button`).count(), n, id + ': Schritte');
@@ -76,6 +76,18 @@ const root = path.join(__dirname, '..');
     const lgq = page.locator('[data-quiz="lg-scan"]'); await lgq.locator('[data-a="1"]').click(); assert.match(await lgq.locator('.antwort').innerText(), /Richtig\. Ohne „Proben hier einräumen“/);
     await lgq.locator('.quiz-weiter').click(); assert.match(await lgq.locator('.zaehler').innerText(), /Frage 2 von 4/);
     await page.goto(base + '#start'); assert.equal(await page.locator('#start a[href="#app-lagerkit"]').count(), 1, 'Startseite: LagerKit in „Die Apps“');
+    // LektorKit, LexiKit, GlasKit (0.33.0): Startseite, Menü, je eine Übung
+    for (const id of ['app-lektorkit', 'app-lexikit', 'app-glaskit']) {
+      await page.goto(base + '#start'); assert.equal(await page.locator(`#start a[href="#${id}"]`).count(), 1, `Startseite: ${id} in „Die Apps“`);
+      await page.goto(base + '#' + id); assert.equal(await page.locator(`nav a[href="#${id}"]`).getAttribute('aria-current'), 'page', id + ': Menü');
+    }
+    await page.goto(base + '#app-lektorkit'); await page.locator('#app-lektorkit .schritte [data-geh="2"]').click();
+    const ltq = page.locator('[data-quiz="lt-marke"]'); await ltq.locator('[data-a="1"]').click(); assert.match(await ltq.locator('.antwort').innerText(), /Richtig\. LektorKit rundet nicht/);
+    await ltq.locator('.quiz-weiter').click(); assert.match(await ltq.locator('.zaehler').innerText(), /Frage 2 von 5/);
+    await page.goto(base + '#app-lexikit'); await page.locator('#app-lexikit .schritte [data-geh="5"]').click();
+    const lxq = page.locator('[data-quiz="lx-absatz"]'); await lxq.locator('[data-a="0"]').click(); assert.match(await lxq.locator('.antwort').innerText(), /Nicht ganz\./);
+    await page.goto(base + '#app-glaskit'); await page.locator('#app-glaskit .schritte [data-geh="2"]').click();
+    const gkq = page.locator('[data-quiz="gk-lesen"]'); await gkq.locator('[data-a="1"]').click(); assert.match(await gkq.locator('.antwort').innerText(), /Richtig\. Raute = Asbest/);
     // Wischproben: Baukasten von groß nach klein, Aufteilung für LabelKit
     await page.goto(base + '#wischprobe');
     assert.equal(await page.locator('nav a[href="#wischprobe"]').count(), 1);

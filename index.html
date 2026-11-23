@@ -223,11 +223,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <a href="#app-resultkit">ResultKit</a>
   <a href="#app-plankit">PlanKit</a>
   <a href="#app-berichtkit">BerichtKit</a>
+  <a href="#app-lektorkit">LektorKit</a>
   <a href="#app-belegkit">BelegKit</a>
   <a href="#app-spesenkit">SpesenKit</a>
   <a href="#app-buerokit">BüroKit</a>
   <a href="#app-teamkit">TeamKit</a>
   <a href="#app-lagerkit">LagerKit</a>
+  <a href="#app-lexikit">LexiKit</a>
+  <a href="#app-glaskit">GlasKit</a>
   <div class="gruppe">Auswerten</div>
   <a href="#app-datenarchiv">Datenarchiv</a>
   <div class="gruppe">Konventionen</div>
@@ -250,10 +253,13 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td><a href="../resultkit/" target="resultkit">ResultKit</a></td><td>Laborergebnisse prüfen: Prüfberichte importieren, mit dem Laborauftrag abgleichen, für PlanKit und FotoKit übernehmen · <a href="#app-resultkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Probenplan/" target="plankit">PlanKit</a></td><td>Probenplan, Ergebniskarte, Raumbuch · <a href="#app-plankit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../berichtkit/" target="berichtkit">BerichtKit</a></td><td>Asbest- oder Brandbericht als Word-Datei aus Projektdaten, Proben, Ergebnissen und Fotos · <a href="#app-berichtkit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../lektorkit/" target="lektorkit">LektorKit</a></td><td>Gegenleser: prüft den gespeicherten Brandbericht gegen die Projektdaten – Werte, Proben, Daten, Reste aus anderen Projekten; in BerichtKit über „Gegenlesen (LektorKit) ↗“ · <a href="#app-lektorkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../aufwandkit/" target="aufwandkit">BelegKit</a></td><td>Zeiten, km, Proben, Berichtsseiten für die Rechnung · <a href="#app-belegkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../buerokit/" target="buerokit">BüroKit</a></td><td>Tagesliste des Büros: Gutachten gegenlesen, PDF, Versand, Rechnung, eigene Aufgaben · <a href="#app-buerokit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../teamkit/" target="teamkit">TeamKit</a></td><td>Was heute und morgen los ist, Termine, was im Büro ab jetzt gilt – in der Projektzentrale über „Team“ · <a href="#app-teamkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Lagerkit/" target="lagerkit">LagerKit</a></td><td>Rückstellproben im Büro: Etikett, Regalplatz, „Aufbewahren bis“, Fällige einsammeln, Inventur – in der Projektzentrale unter „⋯ Büro &amp; Apps“ · <a href="#app-lagerkit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../lexikit/" target="lexikit">LexiKit</a></td><td>„Wie haben wir das früher gemacht?“ – frühere Fälle und unsere Absätze aus den fertigen Berichten, nach Themen; in der Projektzentrale unter „⋯ Büro &amp; Apps“ · <a href="#app-lexikit">Schritt für Schritt</a></td></tr>
+      <tr><td><a href="../glaskit/" target="glaskit">GlasKit</a></td><td>Das Gebäude aus Glas: Geschosse und Proben aus PlanKit in 3D, mit Fotos und Rundgang; in der Projektzentrale unter „Mehr zum Projekt …“ · <a href="#app-glaskit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../reisekosten-pro/" target="reisekosten">SpesenKit</a></td><td>Spesenabrechnung für den Monat · <a href="#app-spesenkit">Schritt für Schritt</a></td></tr>
       <tr><td><a href="../Projektzentrale/archiv/" target="spektron-archiv">Datenarchiv</a></td><td>Messwerte aller Projekte vergleichen, PAK-Muster, Freimessungen · <a href="#app-datenarchiv">Schritt für Schritt</a></td></tr>
     </tbody>
@@ -545,6 +551,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Was inhaltlich in welches Kapitel gehört: <a href="#gutachten-aufbau"><b>Aufbau eines Gutachtens Brandschaden</b></a>.</div>
+      <div class="tipp">Vor der Übergabe: <a href="#app-lektorkit">LektorKit</a> prüft Werte, Proben und Reste aus anderen Projekten. Wie wir einen ähnlichen Fall früher gelöst haben: <a href="#app-lexikit">LexiKit</a>.</div>
       <div class="tipp">Nach dem Gegenlesen ist keine weitere Freigabe nötig.</div>
       <a class="app-oeffnen" href="../Projektzentrale/" target="projektzentrale" rel="noopener">Projektzentrale öffnen ↗</a>
     </div></div>
@@ -571,7 +578,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div style="overflow-x:auto"><table class="wo-tab">
     <thead><tr><th>Ordner im Projekt</th><th>Was dort liegt</th><th>App</th></tr></thead>
     <tbody>
-      <tr><td><b>_Spektron</b></td><td><b>Bitte nicht anfassen.</b> Alles, was ohne App nicht nutzbar ist: Projektdaten (<code>_Projekt.json</code>), LabelKit-Projektdatei (…_Daten.json), FotoKit-Daten, übernommene Laborwerte (<code>_Ergebnisse.json</code>), PlanKit-Projekt (.probenplan), Angaben zum Bericht (BerichtKit), Zeiten und Abrechnungsstände (JSON), Büroaufgaben. Je App ein Unterordner. Nichts löschen, umbenennen oder verschieben – auch nicht beim Aufräumen.</td><td>alle</td></tr>
+      <tr><td><b>_Spektron</b></td><td><b>Bitte nicht anfassen.</b> Alles, was ohne App nicht nutzbar ist: Projektdaten (<code>_Projekt.json</code>), LabelKit-Projektdatei (…_Daten.json), FotoKit-Daten, übernommene Laborwerte (<code>_Ergebnisse.json</code>), PlanKit-Projekt (.probenplan), Angaben zum Bericht (BerichtKit), Zeiten und Abrechnungsstände (JSON), Büroaufgaben, Vermerke „Ist so gewollt“ aus LektorKit. Je App ein Unterordner. Nichts löschen, umbenennen oder verschieben – auch nicht beim Aufräumen.</td><td>alle</td></tr>
       <tr><td>Laboraufträge</td><td>Laborübergaben (Excel), Protokolle</td><td>LabelKit</td></tr>
       <tr><td>Fotos</td><td>Projektfotos, Bilddokumentation (PDF), Ordner „_aussortiert“</td><td>FotoKit</td></tr>
       <tr><td>Pläne</td><td>Grundrisse, exportierte Pläne (Bilder, PDF)</td><td>PlanKit</td></tr>
@@ -581,7 +588,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <tr><td>Feldprotokolle</td><td>Scans der ausgefüllten Feldbögen</td><td>LabelKit</td></tr>
     </tbody>
   </table></div>
-  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) den Ordner <code>_Spektron-Unterschriften</code> und den Ordner <code>_TeamKit</code> (Beiträge aus TeamKit, je Beitrag eine kleine Datei; Fotos der Kollegen in <code>_TeamKit\Fotos</code>) und den Ordner <code>_LagerKit</code> (LagerKit: Übersicht, Proben ohne Projekt, Regalplätze, Inventuren, feste Entsorgungslisten; die Rückstellproben eines Projekts liegen im Projekt in <code>_Spektron/LagerKit</code>). Nicht löschen oder umbenennen.</p>
+  <p class="wo">Im <b>Archivordner</b> selbst (eine Ebene über den Projekten): <code>_Spektron-Mitarbeiter.json</code> (Mitarbeiterliste), <code>_Spektron-Skalen.json</code> (Bewertungsskalen des Büros), BelegKit-Einstellungen, <code>_Spektron-BerichtKit.json</code> (BerichtKit: Rollen, Frau/Herr, Labor) den Ordner <code>_Spektron-Unterschriften</code> und den Ordner <code>_TeamKit</code> (Beiträge aus TeamKit, je Beitrag eine kleine Datei; Fotos der Kollegen in <code>_TeamKit\Fotos</code>) und den Ordner <code>_LagerKit</code> (LagerKit: Übersicht, Proben ohne Projekt, Regalplätze, Inventuren, feste Entsorgungslisten; die Rückstellproben eines Projekts liegen im Projekt in <code>_Spektron/LagerKit</code>) und den Ordner <code>_LexiKit</code> (LexiKit: Index der Berichte, Themen, Kopier-Zähler, Markierungen). Nicht löschen oder umbenennen.</p>
   <p class="wo">Hilfe: Knopf <b>📘</b> in der App (in BerichtKit und FotoKit unter „Mehr …“; öffnet dieses Handbuch an der passenden Stelle) oder <b>?</b>; F1 in Projektzentrale und FotoKit. Etwas klemmt oder fehlt? <a class="rueckmeldung" href="../rueckmeldung/?app=handbuch" target="rueckmeldung" rel="noopener">💬 Rückmeldung schreiben</a> (in der Projektzentrale unter „⋯ Büro &amp; Apps“); klappt das nicht: Screenshot und kurze Beschreibung an sebastian.kasper@dr-schiffers.de.</p>
 </section>
 
@@ -1082,7 +1089,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pz8a"><label for="pz8a">Oben unter <b>„⋯ Büro &amp; Apps“</b> › <b>„👥 Mitarbeiter“</b>: Ordnerkürzel, Name, App-Kürzel, Aktiv – „+ Person“, dann „Speichern“ (liegt in <code>_Spektron-Mitarbeiter.json</code>).</label></li>
         <li><input type="checkbox" id="pz8b"><label for="pz8b"><b>„📊 Auslastung“</b>: In Bearbeitung / Beim Büro / Rückfrage / Offen je Person – eine Zahl antippen zeigt die Projekte.</label></li>
         <li><input type="checkbox" id="pz8c"><label for="pz8c"><b>„📈 Durchlaufzeiten“</b>: wie lange es vom Ortstermin bis zum Versand dauert, aus vorhandenen Daten.</label></li>
-        <li><input type="checkbox" id="pz8d"><label for="pz8d">Ebenfalls unter <b>„⋯ Büro &amp; Apps“</b>: Auslastung, Durchlaufzeiten, Handbuch (AidKit), BüroKit, SpesenKit, <a href="#app-lagerkit">LagerKit</a> (Rückstellproben), Rückmeldung, Datenarchiv.</label></li>
+        <li><input type="checkbox" id="pz8d"><label for="pz8d">Ebenfalls unter <b>„⋯ Büro &amp; Apps“</b>: Auslastung, Durchlaufzeiten, Handbuch (AidKit), <a href="#app-lexikit">LexiKit</a> (frühere Fälle), BüroKit, SpesenKit, <a href="#app-lagerkit">LagerKit</a> (Rückstellproben), <a href="#app-glaskit">GlasKit</a>, Rückmeldung, Datenarchiv.</label></li>
         <li><input type="checkbox" id="pz8e"><label for="pz8e">Oben neben „Kurzanleitung“: <b>„Team“</b> öffnet <a href="#app-teamkit">TeamKit</a> über dem Projekt (Zahl = neue „Gilt jetzt“-Beiträge, Punkt = heute/morgen etwas los). Eine gelbe Zeile unter dem Kopf zeigt nur Beiträge mit „Wichtig“ – „Gesehen“ blendet sie aus.</label></li>
       </ul>
     </div><div>
@@ -1493,7 +1500,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp achtung">Entzerren entfernt Maßstab und Nordrichtung – danach neu setzen.</div>
-      <div class="tipp"><b>Räume nachzeichnen</b> (Schritt ①, bei Bild- und PDF-Plänen): Räume, Wände, Türen und Fenster über den Plan legen – erst ausrichten, dann nachzeichnen (danach sind Ausrichten und Entzerren gesperrt). Zum Schluss <b>„Nachzeichnung prüfen“</b> mit Kürzel: Erst eine geprüfte Nachzeichnung zeigt GlasKit mit Wänden; ungeprüft bleibt das Geschoss dort flach.</div>
+      <div class="tipp"><b>Räume nachzeichnen</b> (Schritt ①, bei Bild- und PDF-Plänen): Räume, Wände, Türen und Fenster über den Plan legen – erst ausrichten, dann nachzeichnen (danach sind Ausrichten und Entzerren gesperrt). Zum Schluss <b>„Nachzeichnung prüfen“</b> mit Kürzel: Erst eine geprüfte Nachzeichnung zeigt <a href="#app-glaskit">GlasKit</a> mit Wänden; ungeprüft bleibt das Geschoss dort flach.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Maßstab">
@@ -1717,6 +1724,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </div><div>
       <div class="tipp"><b>Nur für Fachkundige:</b> Bei Bilddokumentation oder Probenplan heißt <b>„veraltet“</b>: nach dem Erstellen in FotoKit bzw. PlanKit geändert (BerichtKit erkennt eine veraltete Bilddokumentation inzwischen auch selbst). Sie ist dann nicht angehakt – neu erstellen oder bewusst „trotzdem anhaken“. <b>„Plan unklar“</b> heißt: BerichtKit kann die Plan-PDF nicht eindeutig zuordnen (früherer Ordnername, oder den Plan gibt es in PlanKit nicht) – in PlanKit neu exportieren (und den alten Plan löschen) oder trotzdem anhaken.</div>
       <div class="tipp">Ohne Ordnerzugriff: <b>„Mehr …“ › „Word nur herunterladen“</b> speichert die Word-Datei im Download-Ordner. Entwürfe kommen nie in den Projektordner.</div>
+      <div class="tipp">Gleich nach dem Speichern gegenlesen: <b>„Gegenlesen (LektorKit) ↗“</b> neben „Ans Büro übergeben →“ – <a href="#app-lektorkit">LektorKit Schritt für Schritt</a>.</div>
       <div class="tipp">Weiter mit <a href="#brandschaden">Brandschaden</a> Schritt 8 und <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>.</div>
     </div></div>
   </div>
@@ -2201,6 +2209,242 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="tasten"><span><kbd>Enter</kbd> im Suchfeld</span><span>„26.0612 R2“ oder „U2“ öffnet die Probe – wie ein Scan</span></div>
 </section>
 
+<section id="app-lektorkit" class="ablauf" data-speicher="aidkit-app-lektorkit-haken">
+  <h1>LektorKit Schritt für Schritt</h1>
+  <div class="app-kopf"><span class="zweck">Der Gegenleser: LektorKit liest einen Brandbericht (Word) und hält jede Angabe gegen die Projektdaten – Messwerte, Proben, Raumnamen, Daten, Schaden-Nr., Adressen. Vor allem findet es Reste aus einem anderen Projekt, wenn Text aus einem alten Bericht kopiert wurde. LektorKit liest nur, am Bericht ändert es nichts. Öffnen nach dem Speichern in BerichtKit über <b>„Gegenlesen (LektorKit) ↗“</b>.</span><a class="app-oeffnen" style="margin:0" href="../lektorkit/" target="lektorkit" rel="noopener">LektorKit öffnen ↗</a></div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+  <div class="karte schritt" data-schritt="1" data-titel="Öffnen">
+    <div class="schritt-kopf"><h2>1 · Bericht öffnen</h2><span class="ort sv">Sachverständige</span><span class="dauer">nach dem Speichern in BerichtKit</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lt1a"><label for="lt1a">In BerichtKit den Bericht speichern. Unten rechts steht dann neben <b>„Ans Büro übergeben →“</b> der Knopf <b>„Gegenlesen (LektorKit) ↗“</b> – LektorKit öffnet sich im eigenen Fenster mit genau diesem Bericht und liest ihn sofort.</label></li>
+        <li><input type="checkbox" id="lt1b"><label for="lt1b">Ohne BerichtKit: LektorKit öffnen → <b>„Projektordner öffnen …“</b> bzw. <b>„Projekt öffnen“</b>, dann unter <b>„Bericht in „Mitteilungen““</b> die Datei wählen → <b>„Gegenlesen“</b>.</label></li>
+        <li><input type="checkbox" id="lt1c"><label for="lt1c">Von Hand geschriebener Bericht (nicht aus BerichtKit): ins Startfeld ziehen oder <b>„Word-Datei wählen …“</b>. Geprüft wird gegen das geöffnete Projekt; die Datei wird nur gelesen, nirgends gespeichert.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">LektorKit prüft (Stand 1.0) nur den <b>Brandbericht</b>. Asbest-Ergebnisse, KI-Werte und Brandgeruch-Bewertungen vergleicht es nicht – dort nur Probe und Raumname.</div>
+      <div class="tipp">Steht oben <b>„Andere Projekte nicht geprüft“</b>, wurde der Ordner nicht über das Archiv geöffnet – dann sucht LektorKit keine Reste aus anderen Projekten. Am besten immer über BerichtKit oder die Projektzentrale.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Marken lesen">
+    <div class="schritt-kopf"><h2>2 · Die vier Marken lesen</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lt2a"><label for="lt2a">Links steht der Bericht, jede geprüfte Angabe markiert; rechts die Übersicht und die Befunde.</label></li>
+        <li><input type="checkbox" id="lt2b"><label for="lt2b"><b>belegt</b> (hellblau, Haken): stimmt mit der Quelle – Wert, Einheit, Parameter und Probe wie im Prüfbericht, Raumname wie in LabelKit, Datum und Schaden-Nr. wie in den Projektdaten.</label></li>
+        <li><input type="checkbox" id="lt2c"><label for="lt2c"><b>weicht ab</b> (orange, Warndreieck): die Quelle sagt etwas anderes – anderer Wert, anderer Raumname, Probe gibt es nicht, überholte Prüfberichtsfassung (-01, obwohl -02 im Ordner liegt), Anlage passt nicht zur Anlagenliste.</label></li>
+        <li><input type="checkbox" id="lt2d"><label for="lt2d"><b>anderes Projekt</b> (dunkel, Kreuz): Projektnummer, Schaden-Nr., Straße mit Hausnummer oder ein Name aus einem <b>anderen Projekt</b> im Archiv, der in diesem Projekt nirgends vorkommt – fast immer ein Rest aus einem kopierten alten Bericht.</label></li>
+        <li><input type="checkbox" id="lt2e"><label for="lt2e"><b>ohne Beleg</b> (weiß, gestrichelt): eigene Angabe, Bezugsgröße („5 bis 10 µg/cm²“), Datum des Berichts oder eine Zahl, die sich nicht genau einer Probe zuordnen lässt. <b>Nie ein Fehler</b>, nur zur Kenntnis.</label></li>
+        <li><input type="checkbox" id="lt2f"><label for="lt2f">Klick auf eine Angabe zeigt den <b>Beleg</b>: Prüfbericht mit Probe und Labor-Nr., LabelKit-Zeile, Stand der ResultKit-Übernahme. <b>„Prüfbericht öffnen“</b> öffnet die PDF aus „Laborergebnisse“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp"><b>Gelbe Zeile oben „nicht prüfbar“:</b> Für diese Zahlen gibt es keinen geltenden Laborwert – z. B. die Übernahme in ResultKit ist nicht aktuell, es liegt nur eine PDF da oder es gibt noch kein Ergebnis. Dann heißt die Übersicht nie einfach „Keine Abweichung gefunden“. Erst in ResultKit übernehmen, dann <b>„Bericht neu einlesen“</b>.</div>
+      <div class="uebung quiz" data-quiz="lt-marke"><h3>Kurz üben: Welche Marke?</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Klären">
+    <div class="schritt-kopf"><h2>3 · Abweichungen klären</h2><span class="ort sv">Sachverständige</span><span class="dauer">Word · LektorKit</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lt3a"><label for="lt3a">Jede orange und jede dunkle Stelle ansehen. Ein Fehler im Text: in <b>Word</b> korrigieren, speichern, dann in LektorKit <b>„Bericht neu einlesen“</b>.</label></li>
+        <li><input type="checkbox" id="lt3b"><label for="lt3b">Gerundet wird nicht: <b>„12 µg/cm²“</b> bei 12,3 im Prüfbericht ist „weicht ab“, der Befund sagt „gerundet? Prüfbericht: 12,3“. Passen nur die Ziffern vertauscht, steht „Ziffern vertauscht?“ dabei.</label></li>
+        <li><input type="checkbox" id="lt3c"><label for="lt3c">Liegt der Fehler in der Quelle (Raumname in LabelKit, Ergebnisse nicht übernommen), dort richtigstellen – Laborwerte selbst werden nie geändert, nur über das Labor.</label></li>
+        <li><input type="checkbox" id="lt3d"><label for="lt3d">Bewusst so geschrieben (bei „weicht ab“ und „anderes Projekt“)? <b>„Ist so gewollt“</b> – mit deinem Kürzel und dem Datum; die Stelle wird grau und zählt nicht mehr als offen. <b>„Zurücknehmen“</b> hebt das auf.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">„Ist so gewollt“ steht im Projekt in <code>_Spektron/LektorKit</code> (bei Projekten vor Spektron in „Mitteilungen“) und gilt weiter, wenn aus dem Entwurf die fertige Mitteilung wird. Kommt ein neuer Prüfbericht (z. B. -03), ist die Stelle wieder offen.</div>
+      <div class="tipp">Nur „Ist so gewollt“ und „Zurücknehmen“ schreiben etwas – sonst liest LektorKit nur.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="Abschließen">
+    <div class="schritt-kopf"><h2>4 · Prüfprotokoll und weiter ans Büro</h2><span class="ort sv">Sachverständige</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lt4a"><label for="lt4a"><b>„Prüfprotokoll drucken“</b> – eine Seite für die Papiermappe.</label></li>
+        <li><input type="checkbox" id="lt4b"><label for="lt4b">Zurück in BerichtKit <b>„Ans Büro übergeben →“</b> (<a href="#app-berichtkit">BerichtKit</a> Schritt 9). Ein zweiter Bericht? <b>„Anderer Bericht …“</b>.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp"><b>Was LektorKit nicht prüft:</b> Mengenangaben („drei Wischproben“), Spannen („zwischen 4,1 und 12,3“), Seitenzahlen, Asbest- und Brandgeruch-Bewertungen und ob der Fachtext stimmt. Selbst gegenlesen und das Gegenlesen im Büro bleiben.</div>
+    </div></div>
+  </div>
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+</section>
+
+<section id="app-lexikit" class="ablauf" data-speicher="aidkit-app-lexikit-haken">
+  <h1>LexiKit Schritt für Schritt</h1>
+  <div class="app-kopf"><span class="zweck">„Wie haben wir das früher gemacht?“ – LexiKit findet frühere Fälle in den fertigen Word-Berichten des Büros: was untersucht wurde, welche Maßnahmen wir empfohlen haben und wie wir sie formuliert haben. Ohne KI, ohne Netz; es liest die Projektordner nur. Öffnen in der Projektzentrale unter <b>„⋯ Büro &amp; Apps“</b> › <b>„🔎 LexiKit“</b>.</span><a class="app-oeffnen" style="margin:0" href="../lexikit/" target="lexikit" rel="noopener">LexiKit öffnen ↗</a></div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+  <div class="karte schritt" data-schritt="1" data-titel="Öffnen">
+    <div class="schritt-kopf"><h2>1 · Öffnen und einmal einrichten</h2><span class="ort buero">alle</span><span class="dauer">einmal je PC</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lx1a"><label for="lx1a">Projektzentrale → oben <b>„⋯ Büro &amp; Apps“</b> › <b>„🔎 LexiKit“</b>. LexiKit nimmt den Archivordner der Projektzentrale; fragt es, <b>„Zugriff erlauben“</b>.</label></li>
+        <li><input type="checkbox" id="lx1b"><label for="lx1b">Steht <b>„Ordner „_LexiKit“ fehlt“</b>: LexiKit legt ihn nicht selbst an – im Archivordner den Ordner <code>_LexiKit</code> anlegen (einmal fürs ganze Büro) und <b>„Noch einmal prüfen“</b>.</label></li>
+        <li><input type="checkbox" id="lx1c"><label for="lx1c">Beim allerersten Mal liest LexiKit alle Berichte ein (<b>„Die Berichte werden einmal eingelesen“</b>). Suchen geht schon währenddessen: <b>„Schon suchen“</b>; <b>„Anhalten“</b> / <b>„Weiter einlesen“</b>. Danach liest es nur neue oder geänderte Berichte nach.</label></li>
+        <li><input type="checkbox" id="lx1d"><label for="lx1d">Für „Bericht in Word öffnen“ einmal je PC: <b>„Mehr …“</b> › <b>„Einstellungen …“</b> › Pfad des Archivordners, im Büro <code>C:\Daten\Mosaik Archivordner</code> → „Speichern“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp"><b>Was gelesen wird:</b> fertige Mitteilungen als Word-Datei aus allen Projektordnern, je Mitteilung nur die neueste Fassung. <b>Nicht:</b> Anschreiben, Entwürfe, Vorbereitung/Vorlage, die Rohdateien „Gutachten_…“, vorerst auch PDF, alte .doc und die Ordner ALT_2022/ALT_2023.</div>
+      <div class="tipp">Rote Zeile „In _LexiKit lässt sich nicht schreiben“: Suchen geht, gespeichert wird in dieser Sitzung nichts (Index, Themen, Markierungen).</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Suchen">
+    <div class="schritt-kopf"><h2>2 · Fälle suchen</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lx2a"><label for="lx2a">Links ein <b>Thema</b> antippen (z. B. Löschpulver, Löschwasser, Entsorgungswege) oder unter <b>„Art des Falls“</b> (z. B. Photovoltaik, Lithium-Akku, Tiefgarage). Noch einmal antippen wählt es ab.</label></li>
+        <li><input type="checkbox" id="lx2b"><label for="lx2b">Oder oben <b>„Fall in ein paar Worten beschreiben“</b>: jedes Wort muss im Fall vorkommen, Teile von Wörtern reichen, Groß/Klein egal; „…“ hält Wörter zusammen. Thema und Wörter gehen zusammen.</label></li>
+        <li><input type="checkbox" id="lx2c"><label for="lx2c">Eingrenzen mit <b>„Untersucht auf“</b> (z. B. nur Fälle mit Chlorid-Messung) und <b>Jahr</b>.</label></li>
+        <li><input type="checkbox" id="lx2d"><label for="lx2d">Oben stehen die Fälle, in denen das Gesuchte schon in der Veranlassung steht – da ging es wirklich darum. Fälle, die es nur im Arbeitsschutz nennen, kommen zuletzt.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Ein <b>Fall</b> ist ein Projektordner mit allen seinen Mitteilungen. Überschriften zählen bei der Suche nicht mit.</div>
+      <div class="uebung quiz" data-quiz="lx-suche"><h3>Kurz üben: Was findet LexiKit?</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Fall lesen">
+    <div class="schritt-kopf"><h2>3 · Einen Fall lesen</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lx3a"><label for="lx3a">Die Fallkarte zeigt <b>„Was war“</b> (Anfang der Veranlassung), <b>„Untersucht“</b> und den <b>Verlauf</b> (alle Mitteilungen). Ein Klick auf ein Schildchen bei „Untersucht“ zeigt die Stelle im Bericht.</label></li>
+        <li><input type="checkbox" id="lx3b"><label for="lx3b"><b>„Fall öffnen“</b> oder gleich <b>„Maßnahmen zeigen“</b>. Im Fall: Reiter Veranlassung · Probenahme · Befund · Schlussfolgerungen · Sanierungsmaßnahmen · Arbeitsschutz.</label></li>
+        <li><input type="checkbox" id="lx3c"><label for="lx3c"><b>„Bericht in Word öffnen“</b> öffnet die Mitteilung; <b>„Projektordner“</b> kopiert den Pfad (im Explorer oben in die Adresszeile einfügen).</label></li>
+        <li><input type="checkbox" id="lx3d"><label for="lx3d"><b>„Abschnitt kopieren“</b> kopiert den gezeigten Reiter; Namen und Adressen aus dem alten Bericht werden dabei zu Platzhaltern wie <code>[VN]</code> oder <code>[Risikoort]</code>.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">„Untersucht“ heißt <b>gemessen</b>, nicht nur erwähnt: Steht PAK nur in „ggf. PAK untersuchen“, ist PAK nicht dabei.</div>
+      <div class="tipp">LexiKit fügt nirgends etwas ein und ändert keinen Bericht – kopiert wird nur in die Zwischenablage.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="Unsere Absätze">
+    <div class="schritt-kopf"><h2>4 · So machen wir es meist · Unsere Absätze</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lx4a"><label for="lx4a">Über den Fällen eines Themas steht <b>„So machen wir es meist“</b>: worauf meist untersucht wurde, wie viele Proben, welche Berichtsform. Nur gezählt, nicht bewertet; ein Klick auf einen Balken setzt den Filter.</label></li>
+        <li><input type="checkbox" id="lx4b"><label for="lx4b">Darunter <b>„Unsere Absätze“</b> aus Sanierungsmaßnahmen, Schlussfolgerungen und Arbeitsschutz – so, wie sie im Bericht stehen. Je Absatz: <b>„n × kopiert“</b>, <b>„zuletzt verwendet …“</b>, „in n Fällen im Archiv“, „n Fassungen“.</label></li>
+        <li><input type="checkbox" id="lx4c"><label for="lx4c">Sortieren: <b>„Oft verwendet“</b> (Kopien der letzten zwei Jahre) oder <b>„Oft im Archiv“</b>. <b>„Ähnliche Absätze zeigen“</b> und <b>„Fälle zeigen“</b> führen weiter.</label></li>
+        <li><input type="checkbox" id="lx4d"><label for="lx4d"><b>„Kopieren“</b>, in Word einfügen – und die Platzhalter (<code>[VN]</code>, <code>[Risikoort]</code>, <code>[Projekt]</code> …) durch die Angaben deines Projekts ersetzen. Probennummern und Zahlen stammen aus dem alten Fall: an deinen Fall anpassen.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp"><b>Oft verwendet heißt nicht richtig.</b> Jahr ansehen, Markierungen beachten (Schritt 5) und selbst prüfen, ob der Absatz zu deinem Fall und zum heutigen Stand passt.</div>
+      <div class="tipp">LektorKit findet übersehene Reste aus dem alten Fall (Schaden-Nr., Adressen) – siehe <a href="#app-lektorkit">LektorKit</a>.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="5" data-titel="Markieren">
+    <div class="schritt-kopf"><h2>5 · „Vorbild“ und „So nicht mehr“</h2><span class="ort buero">alle</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lx5a"><label for="lx5a">Ein Absatz ist gut so: <b>„Vorbild …“</b>. Überholt: <b>„So nicht mehr …“</b>. Jeder darf markieren.</label></li>
+        <li><input type="checkbox" id="lx5b"><label for="lx5b">Im Formular <b>„Wer bist du?“</b> wählen und <b>„Warum? (Pflicht)“</b> kurz begründen; <b>„Stattdessen“</b> darf auf einen besseren Absatz zeigen.</label></li>
+        <li><input type="checkbox" id="lx5c"><label for="lx5c">„So nicht mehr“ stellt den Absatz grau ans Ende, mit Name, Datum und Grund. Er bleibt in Suche, Fall und Word – nichts wird versteckt oder gelöscht.</label></li>
+        <li><input type="checkbox" id="lx5d"><label for="lx5d"><b>„Zurücknehmen“</b> braucht ebenfalls Name und Grund; die frühere Markierung bleibt als Verlauf sichtbar.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Wie streng fast gleiche Absätze zusammengefasst werden, steht unter „Mehr …“ › „Ähnlichkeit der Absätze …“ (streng · normal · locker). Das gilt fürs ganze Büro – nur nach Absprache ändern.</div>
+      <div class="uebung quiz" data-quiz="lx-absatz"><h3>Kurz üben: Absätze und Markierungen</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="6" data-titel="Für ChatGPT">
+    <div class="schritt-kopf"><h2>6 · Später: Fälle für ChatGPT kopieren</h2><span class="ort sv">Sachverständige</span><span class="dauer">nach der Einarbeitung</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lx6a"><label for="lx6a">An bis zu drei Fallkarten <b>„Auswählen“</b>, dann in der Leiste <b>„Ausgewählte für ChatGPT kopieren …“</b> – oder im offenen Fall „Für ChatGPT kopieren“.</label></li>
+        <li><input type="checkbox" id="lx6b"><label for="lx6b">Eine <b>Frage</b> wählen (z. B. „Wortlaut der Maßnahmen“, „Was wurde gemessen und warum“, „Vergleich mit meinem Fall“) oder eine eigene schreiben.</label></li>
+        <li><input type="checkbox" id="lx6c"><label for="lx6c">Rechts steht <b>„Das wird kopiert“</b> – genau dieser Text. Jede markierte Stelle (Name, Adresse, Telefon, Firma) entfernen oder als <b>„ist kein Name“</b> bestätigen; vorher lässt sich nicht kopieren.</label></li>
+        <li><input type="checkbox" id="lx6d"><label for="lx6d"><b>„In die Zwischenablage kopieren“</b> und selbst in ChatGPT einfügen. LexiKit sendet nichts.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Nie mitkopiert werden Veranlassung, Aufgabenstellung, Ortstermin/Probenahme und Berichte ohne Überschriften – dort stehen Namen, die sich nicht sicher trennen lassen. Namen ohne „Herr/Frau“, Firmenform oder Adresse erkennt keine Regel: <b>die Vorschau lesen</b>.</div>
+      <div class="tipp">Wie im <a href="#gutachten-aufbau">Aufbau eines Gutachtens</a>: erst selbst verstehen und schreiben, dann KI. Was ChatGPT antwortet, ist ein Vorschlag – prüfen und in eigenen Worten schreiben.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="7" data-titel="Themen">
+    <div class="schritt-kopf"><h2>7 · Themen pflegen</h2><span class="ort buero">alle</span><span class="dauer">bei Bedarf</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="lx7a"><label for="lx7a"><b>„+ Neues Thema …“</b>: Name, Gruppe („Themen“ oder „Art des Falls“) und Wörter, die es auch finden soll – ein Wort pro Zeile, Teile von Wörtern reichen.</label></li>
+        <li><input type="checkbox" id="lx7b"><label for="lx7b">Ein Thema ist nur eine gespeicherte Suche. Änderungen gelten für alle; <b>„Thema löschen …“</b> fragt nach.</label></li>
+        <li><input type="checkbox" id="lx7c"><label for="lx7c">Ein neuer Bericht fehlt? <b>„Mehr …“</b> › <b>„Neue Berichte suchen“</b>.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Index, Themen, Kopier-Zähler und Markierungen liegen im Archivordner in <code>_LexiKit</code>. Der Index enthält Berichtstext und ist so vertraulich wie die Berichte.</div>
+    </div></div>
+  </div>
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+</section>
+
+<section id="app-glaskit" class="ablauf" data-speicher="aidkit-app-glaskit-haken">
+  <h1>GlasKit Schritt für Schritt</h1>
+  <div class="app-kopf"><span class="zweck">Das Gebäude aus Glas: GlasKit stapelt die Geschosse aus PlanKit zu einem Modell, in dem jede Probe an ihrer Stelle leuchtet – in der Farbe ihrer Bewertung, mit den Fotos aus FotoKit. Gut, um einen Fall im Team oder mit dem Auftraggeber durchzugehen. GlasKit liest nur und schreibt nie in den Projektordner. Öffnen in der Projektzentrale unter <b>„Mehr zum Projekt …“</b> › <b>„GlasKit öffnen“</b>.</span><a class="app-oeffnen" style="margin:0" href="../glaskit/" target="glaskit" rel="noopener">GlasKit öffnen ↗</a></div>
+  <div class="kein-druck" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px"><button type="button" class="ablauf-drucken">Als Spickzettel drucken</button><button type="button" class="ablauf-zuruecksetzen">Haken zurücksetzen</button></div>
+  <ol class="schritte" aria-label="Schritte"></ol>
+  <div class="karte schritt" data-schritt="1" data-titel="Öffnen">
+    <div class="schritt-kopf"><h2>1 · Öffnen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="gk1a"><label for="gk1a">In der Projektzentrale das Projekt wählen → <b>„Mehr zum Projekt …“</b> › <b>„GlasKit öffnen“</b>. Fragt der Browser nach dem Zugriff, steht ein Knopf „Projekt … öffnen“ da – ein Klick reicht.</label></li>
+        <li><input type="checkbox" id="gk1b"><label for="gk1b">Gibt es im Projekt noch keinen Plan, sagt GlasKit das und bietet PlanKit an. Erst Plan und Proben in <a href="#app-plankit">PlanKit</a>, dann GlasKit.</label></li>
+        <li><input type="checkbox" id="gk1c"><label for="gk1c">Zum Ausprobieren ohne Projekt: <b>„Beispielgebäude ansehen“</b> (alle Werte frei erfunden). Ohne Projektzentrale: „Projektordner öffnen“ oder „Plan-Datei öffnen …“.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">GlasKit läuft auch über den Terminalserver (RDP). Es fragt nur nach Leserecht.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="2" data-titel="Ansehen">
+    <div class="schritt-kopf"><h2>2 · Ansehen und lesen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="gk2a"><label for="gk2a">Ziehen = drehen · Umschalt + Ziehen = verschieben · Mausrad = Zoom. <b>„Ganzes Gebäude“</b> holt alles zurück ins Bild, <b>„Abstand“</b> zieht die Geschosse auseinander.</label></li>
+        <li><input type="checkbox" id="gk2b"><label for="gk2b">Unten die Darstellung: <b>Modell</b> (weißes Kartonmodell, Standard) · <b>Glas</b> · <b>Papier</b>.</label></li>
+        <li><input type="checkbox" id="gk2c"><label for="gk2c">Jede Probe: <b>Form</b> = Probenart (Kreis PAK, Quadrat Chlorid, Raute Asbest), <b>Farbe</b> = Bewertung wie in der Ergebniskarte von PlanKit, <b>Höhe</b> = Oberflächenart (Aufsicht unten, Ansicht in der Mitte, Untersicht oben).</label></li>
+        <li><input type="checkbox" id="gk2d"><label for="gk2d"><b>Gestrichelter Umriss</b> = die Probe liegt unter dem Geschoss darüber oder hinter einer Wand. Klick darauf zeigt sie.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Eine graue Probe hat keine Bewertung – z. B. noch kein Laborergebnis oder keine Bewertungsskala im Projekt; die Karte der Probe sagt, warum. Werte stehen so da wie im Prüfbericht; GlasKit rechnet nichts dazwischen.</div>
+      <div class="uebung quiz" data-quiz="gk-lesen"><h3>Kurz üben: Was zeigt das Modell?</h3></div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="3" data-titel="Probe und Fotos">
+    <div class="schritt-kopf"><h2>3 · Probe anklicken, Fotos ansehen</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="gk3a"><label for="gk3a">Klick auf eine Probe: Karte mit dem Wert wie im Prüfbericht, <b>„Alle Werte dieser Probe“</b>. Die Geschosse darüber werden durchsichtig.</label></li>
+        <li><input type="checkbox" id="gk3b"><label for="gk3b">Proben mit Fotos tragen ein kleines <b>Kamera-Zeichen</b>: die Karte zeigt die FotoKit-Fotos dieser Probe mit Beschreibung. Klick = Großansicht (Pfeiltasten, <kbd>Esc</kbd>).</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Fotos erscheinen nur, wenn das Projekt als Ordner geöffnet ist und das Foto in FotoKit eine Probe-Nr. hat. Aussortierte Fotos fehlen.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="4" data-titel="Wände">
+    <div class="schritt-kopf"><h2>4 · Wände, Wischfelder, Fotowände</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="gk4a"><label for="gk4a"><b>Wände</b> gibt es bei Plänen, die in PlanKit als Skizze gezeichnet oder <b>geprüft nachgezeichnet</b> sind. Steht „Nachzeichnung noch nicht geprüft – in PlanKit bestätigen“, bleibt das Geschoss flach. Schalter „Wände“ unten.</label></li>
+        <li><input type="checkbox" id="gk4b"><label for="gk4b"><b>Wischfelder:</b> Eine Probe mit Oberflächenart ist ein farbiges Feld auf der gewischten Fläche – am Boden, an der Wand, unter der Decke.</label></li>
+        <li><input type="checkbox" id="gk4c"><label for="gk4c"><b>„Fotowände (n)“</b> hängt die FotoKit-Fotos eines Raums an seine Wände. Zugeordnet wird über FotoKits „Raum / Abschnitt“ = Raumname in PlanKit – gleich schreiben, sonst bleibt das Foto weg.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp"><b>Nichts ablesen, was GlasKit nicht weiß:</b> Die Größe eines Wischfelds ist ein Zeichen, keine Fläche; an welcher Wand ein Foto hängt, ist nicht belegt; sind nicht alle Pläne kalibriert, ist das Modell nicht maßstäblich. Der Rauch am Brandherd ist Dekoration.</div>
+    </div></div>
+  </div>
+  <div class="karte schritt" data-schritt="5" data-titel="Rundgang">
+    <div class="schritt-kopf"><h2>5 · Rundgang und Bild</h2><span class="ort buero">Büro</span></div>
+    <div class="schritt-grid"><div>
+      <ul class="check">
+        <li><input type="checkbox" id="gk5a"><label for="gk5a"><b>„▶ Rundgang starten“</b>: Kamerafahrt von Probe zu Probe, das Foto erscheint mit der Karte. <kbd>Leertaste</kbd> = Pause, Pfeiltasten = vor/zurück, <kbd>Esc</kbd> = Ende.</label></li>
+        <li><input type="checkbox" id="gk5b"><label for="gk5b"><b>„Bild speichern“</b> lädt die aktuelle Ansicht als PNG herunter – in der Darstellung, die gerade zu sehen ist.</label></li>
+      </ul>
+    </div><div>
+      <div class="tipp">Das Bild landet im Download-Ordner, nicht im Projekt.</div>
+    </div></div>
+  </div>
+  <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
+  <h2>Tastenkürzel</h2>
+  <div class="tasten"><span><kbd>Leertaste</kbd></span><span>Rundgang anhalten / weiter</span><span>Pfeiltasten</span><span>Rundgang und Großansicht: vor / zurück</span><span><kbd>Esc</kbd></span><span>Großansicht oder Rundgang beenden</span></div>
+</section>
+
 <section id="app-datenarchiv" class="ablauf" data-speicher="aidkit-app-datenarchiv-haken">
   <h1>Datenarchiv</h1>
   <div class="app-kopf"><span class="zweck">Die Messwerte aller Projekte an einem Ort – zum Vergleichen und Lernen. Liest nur, bewertet nichts.</span><a class="app-oeffnen" style="margin:0" href="../Projektzentrale/archiv/" target="spektron-archiv" rel="noopener">Datenarchiv öffnen ↗</a></div>
@@ -2371,7 +2615,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.32.0';
+const VERSION = '0.33.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -2608,6 +2852,10 @@ QUIZ["lg-frist"] = [{"frage": "Probenahme 18.11.2026, Bericht am 05.12.2026 ans 
 QUIZ["lg-scan"] = [{"frage": "Oben steht keine Leiste. Du scannst am Regal eine Probe. Was passiert?", "antworten": ["Sie wird auf den Platz gebucht, vor dem du stehst", "Sie öffnet sich – nichts wird verschoben"], "richtig": [1], "warum": "Ohne „Proben hier einräumen“ verschiebt ein Scan nie etwas."}, {"frage": "Oben steht grün „📥 Einräumen auf Boden links“. Du scannst R2.", "antworten": ["R2 kommt auf „Boden links“ – mit deinem Namen, rückgängig möglich", "Nichts, R2 öffnet sich nur"], "richtig": [0], "warum": "Im Einräumen bucht jeder Proben-Scan auf diesen Platz um."}, {"frage": "Oben steht lila „🔍 Prüfen: Regal A · Fach 1“. Du scannst eine Probe, die laut LagerKit auf Regal B liegt.", "antworten": ["Sie wird auf Regal A umgebucht", "Nichts – nach „Platz fertig“ steht sie unter „woanders gebucht“; umbuchen ist ein eigener Klick"], "richtig": [1], "warum": "Beim Prüfen (Inventur) bucht ein Scan nie um. Was nicht stimmt, korrigierst du danach mit einem Klick."}, {"frage": "Nach „Platz fertig“ steht R3 unter „fehlt“. Was tust du?", "antworten": ["Nichts – LagerKit trägt es selbst ein", "Erst suchen; ist sie nicht da: „als nicht gefunden eintragen“", "R3 stornieren"], "richtig": [1], "warum": "Nichts ändert sich von selbst. Ist die Probe wirklich weg, trägst du sie mit deinem Namen als nicht gefunden ein."}];
 QUIZ["lg-einsammeln"] = [{"frage": "Fällige Probe mit „⚠ Asbest nachgewiesen“. Was steht bei „wohin“?", "antworten": ["Nichts – „wohin“ ist leer", "Asbestabfall (schon gewählt)", "Restmüll"], "richtig": [1], "warum": "Bei „Asbest nachgewiesen“ belegt LagerKit „Asbestabfall“ vor – als asbesthaltigen Abfall getrennt entsorgen."}, {"frage": "Du hast fünf Proben gescannt und abgehakt, aber noch nicht „Eintragen“ geklickt. Gelten sie als entsorgt?", "antworten": ["Ja", "Nein – erst „Eintragen“ speichert, mit Name und Datum"], "richtig": [1], "warum": "Scannen und Klicks merken nur vor. Erst „Eintragen“ trägt ein und legt die Liste als festen Beleg ab."}, {"frage": "Eine Probe wurde versehentlich als entsorgt eingetragen. Was jetzt?", "antworten": ["Den Beleg unter „Entsorgt“ löschen", "„Doch nicht entsorgt …“ mit Name und Grund – der Beleg bleibt, wie er war"], "richtig": [1], "warum": "Belege werden nie geändert. Die Korrektur steht im Verlauf der Probe; die Probe ist wieder im Lager."}];
 QUIZ["lg-blanko"] = [{"frage": "Du scannst ein Blanko-Etikett LKB0013, das noch zu keiner Probe gehört.", "antworten": ["Fehlermeldung", "„Neue Rückstellprobe mit diesem Etikett“: Projekt wählen oder „Herkunft unklar“", "LagerKit legt die Probe im zuletzt offenen Projekt an"], "richtig": [1], "warum": "Ein freies Blanko-Etikett führt zur neuen Rückstellprobe – du wählst, wohin sie gehört."}, {"frage": "LKB0013 ist schon 26.0612 R5. Eine Kollegin scannt es an einem anderen PC.", "antworten": ["Sie kann es einem anderen Projekt zuordnen", "Es öffnet R5 in 26.0612"], "richtig": [1], "warum": "Jeder Blanko-Code wird genau einmal vergeben. Danach öffnet der Scan die Probe."}, {"frage": "Braucht R5 noch ein LagerKit-Etikett?", "antworten": ["Ja, sonst findet der Scan sie nicht", "Nein – es ist freiwillig, zum Überkleben"], "richtig": [1], "warum": "Die Probe wird über beide Codes gefunden: LKB0013 und LK260612R005."}, {"frage": "Der Drucker hat beim Blanko-Druck gestreikt. Kommen die Nummern beim nächsten Druck wieder?", "antworten": ["Ja", "Nein – reservierte Nummern kommen nie wieder, der nächste Druck nimmt neue"], "richtig": [1], "warum": "LagerKit reserviert die Nummern vor dem Druck für alle PCs. So kann es kein Etikett zweimal geben."}];
+QUIZ["lt-marke"] = [{"frage": "Im Bericht steht „Chlorid 12 µg/cm²“, im Prüfbericht 12,3 µg/cm². Welche Marke?", "antworten": ["belegt", "weicht ab", "ohne Beleg"], "richtig": [1], "warum": "LektorKit rundet nicht: Der Befund sagt „gerundet? Prüfbericht: 12,3“. Ist es bewusst gerundet, „Ist so gewollt“."}, {"frage": "Im Text steht die Spanne aus VdS 2357: „5 bis 10 µg/cm²“. Welche Marke?", "antworten": ["weicht ab", "anderes Projekt", "ohne Beleg"], "richtig": [2], "warum": "Eine Bezugsgröße ist keine Messung dieses Projekts – ohne Beleg, nur zur Kenntnis, nie ein Fehler."}, {"frage": "Im Bericht steht eine Schaden-Nr., die zu einem anderen Projekt im Archiv gehört. Was ist das meist?", "antworten": ["Ein Tippfehler im Prüfbericht", "Ein Rest aus einem kopierten alten Bericht", "Egal, die Schaden-Nr. prüft das Büro"], "richtig": [1], "warum": "„anderes Projekt“ heißt: Das steht in einem anderen Projekt, in diesem nirgends – fast immer kopierter Text. In Word korrigieren."}, {"frage": "Der Bericht nennt Prüfbericht …-01, im Ordner „Laborergebnisse“ liegt schon die -02. Was zeigt LektorKit?", "antworten": ["belegt – -01 gab es ja", "weicht ab – überholte Fassung", "nichts, Fassungen prüft es nicht"], "richtig": [1], "warum": "Die -02 ersetzt die -01. Bericht auf die neue Fassung bringen (Werte und Nummer)."}, {"frage": "Oben steht gelb: drei Zahlen nicht prüfbar. Darfst du von „keine Abweichung“ ausgehen?", "antworten": ["Ja", "Nein – für diese Zahlen gibt es keinen geltenden Laborwert"], "richtig": [1], "warum": "Z. B. ist die Übernahme in ResultKit nicht aktuell. Erst in ResultKit übernehmen, dann „Bericht neu einlesen“."}];
+QUIZ["lx-suche"] = [{"frage": "Du tippst <i>Löschpulver Elektronik</i> ins Feld „Fall in ein paar Worten beschreiben“. Welche Fälle kommen?", "antworten": ["Fälle mit einem der beiden Wörter", "Fälle, in denen beide Wörter vorkommen", "Nur Fälle mit beiden Wörtern in einer Überschrift"], "richtig": [1], "warum": "Jedes Wort muss im Fall vorkommen; Teile von Wörtern reichen („Elektronikschrott“). Überschriften zählen nicht mit."}, {"frage": "Ein Bericht empfiehlt nur „ggf. PAK untersuchen“. Steht PAK auf der Fallkarte unter „Untersucht“?", "antworten": ["Ja", "Nein"], "richtig": [1], "warum": "„Untersucht“ heißt gemessen – nicht erwähnt und nicht erst empfohlen."}, {"frage": "Den Bericht gibt es, LexiKit findet ihn aber nicht. Er liegt nur als PDF im Projekt. Warum?", "antworten": ["Der Index ist kaputt – alles neu einlesen", "LexiKit liest vorerst nur Word-Mitteilungen", "PDFs liegen im falschen Ordner"], "richtig": [1], "warum": "Gelesen werden fertige Mitteilungen als Word-Datei. PDF, alte .doc, Entwürfe und Anschreiben bleiben draußen."}];
+QUIZ["lx-absatz"] = [{"frage": "Ein Absatz zeigt „34 × kopiert“ und „zuletzt verwendet 2023“. Ist er damit fachlich richtig?", "antworten": ["Ja, sonst würde ihn keiner kopieren", "Nicht unbedingt – Jahr und Markierungen ansehen, selbst prüfen"], "richtig": [1], "warum": "Oft verwendet heißt nicht richtig. Passt er zu deinem Fall und zum heutigen Stand?"}, {"frage": "Ein Kollege markiert einen Absatz mit „So nicht mehr“. Was passiert?", "antworten": ["Der Absatz wird gelöscht", "Er steht grau am Ende, mit Name, Datum und Grund – bleibt aber in Suche, Fall und Word", "Nur der Kollege sieht ihn nicht mehr"], "richtig": [1], "warum": "Das Archiv bleibt vollständig; die Markierung zeigt nur, dass wir es heute anders machen."}, {"frage": "Nach „Kopieren“ stehen im Text <code>[VN]</code> und <code>[Risikoort]</code>. Was tust du?", "antworten": ["So lassen, das Büro füllt es", "In Word durch die Angaben deines Projekts ersetzen", "Noch einmal kopieren, dann ist es weg"], "richtig": [1], "warum": "LexiKit ersetzt Namen und Adressen aus dem alten Bericht durch Platzhalter – die Angaben deines Projekts trägst du selbst ein."}, {"frage": "Was kopiert LexiKit für ChatGPT nie mit?", "antworten": ["Sanierungsmaßnahmen", "Befund", "Veranlassung und Ortstermin/Probenahme"], "richtig": [2], "warum": "Dort stehen Namen und Adressen, die sich nicht sicher abtrennen lassen. Die Vorschau trotzdem lesen."}];
+QUIZ["gk-lesen"] = [{"frage": "Eine Raute sitzt oben im Raum. Was ist das?", "antworten": ["PAK-Wischprobe an der Decke", "Asbestprobe an der Decke (Untersicht)", "Chlorid-Wischprobe am Boden"], "richtig": [1], "warum": "Raute = Asbest, oben = Untersicht. Kreis = PAK, Quadrat = Chlorid; unten = Aufsicht, Mitte = Ansicht."}, {"frage": "Ein Geschoss bleibt flach, obwohl es in PlanKit nachgezeichnet ist. Warum?", "antworten": ["GlasKit kann keine PDF-Pläne", "Die Nachzeichnung ist noch nicht geprüft", "Die Proben fehlen"], "richtig": [1], "warum": "Wände kommen nur aus einer Skizze oder einer geprüften Nachzeichnung: in PlanKit „Nachzeichnung prüfen“."}, {"frage": "Ein Wischfeld ist groß gezeichnet. Wie groß war die gewischte Fläche?", "antworten": ["So groß wie das Feld im Modell", "Steht nicht da – die Feldgröße ist nur ein Zeichen"], "richtig": [1], "warum": "GlasKit zeigt keine Flächen oder Längen. Die gewischte Fläche steht im Probenahmeprotokoll."}];
 QUIZ["sk-naechste"] = [{"frage": "Dienstreise vom 14.07. bis 15.07.2026, dann „Speichern & nächste“. Welches Datum hat der neue Entwurf?", "antworten": ["14.07.2026", "15.07.2026", "16.07.2026"], "richtig": [2], "warum": "Der nächste Entwurf beginnt am Tag nach dem Ende der vorigen Reise."}, {"frage": "Was bleibt im neuen Entwurf erhalten?", "antworten": ["Fahrzeug", "Startort", "Uhrzeiten", "Projekt", "Reiseziel", "km"], "richtig": [0, 1, 2], "warum": "Fahrzeug, Startort und Uhrzeiten werden übernommen; Projekt, Zweck, Ziel und km sind leer."}];
 QUIZ["wp-regel"] = [{"frage": "Welche Reihenfolge ist richtig?", "antworten": ["EG Küche Brandraum Decke verrußt Untersicht", "EG Küche Decke Untersicht verrußt Brandraum", "Decke Küche EG verrußt Untersicht"], "richtig": [0], "warum": "Von groß nach klein: Geschoss, Raum – „Brandraum“ beschreibt den Raum und steht gleich dahinter –, Bauteil, dann Beaufschlagung und Oberflächenart in der Reihenfolge der LabelKit-Übergabe an Eurofins."}, {"frage": "Probe von der Oberseite eines Schranks. Oberflächenart?", "antworten": ["Aufsicht", "Ansicht", "Untersicht"], "richtig": [0], "warum": "Aufsicht = von oben auf eine waagerechte Fläche. Ansicht = senkrecht, Untersicht = von unten (Decke)."}, {"frage": "Wohin gehört „verrußt“ in LabelKit?", "antworten": ["In die Spalte Beaufschlagung", "Ans Ende von Raum / Ort", "In die Notiz"], "richtig": [0], "warum": "Oberflächenart und Beaufschlagung haben eigene Spalten; ans Labor geht alles zusammen."}, {"frage": "Vergleichsprobe im Gästezimmer im 1OG ohne Brandeinfluss. Welcher Zusatz?", "antworten": ["Referenz unbelastet", "keiner", "Brandraum"], "richtig": [0], "warum": "„Referenz“ erkennt das Datenarchiv als Vergleichsstelle – wichtig für den Mustervergleich."}];
 QUIZ["fk-vorschlag"] = [{"frage": "In LabelKit steht P7 (Küche, verrußt, Untersicht). Sie tippen in die Beschreibung „P7“ und drücken Enter. Was passiert?", "antworten": ["Beschreibung „Küche verrußt Untersicht“, P7 im Feld „Gehört zu Probe“", "Beschreibung bleibt „P7“", "FotoKit ändert die LabelKit-Datei"], "richtig": [0], "warum": "Die Nummer holt die Beschreibung aus LabelKit und wandert ins Feld „Gehört zu Probe“. LabelKit wird nur gelesen."}, {"frage": "Sie tippen „Kü“, FotoKit schlägt „Küche Decke“ vor – Sie wollen aber „Küche Decke Detail“. Am schnellsten?", "antworten": ["Tab, dann „ Detail“ tippen", "Esc und alles selbst tippen", "Enter, dann zurück"], "richtig": [0], "warum": "Tab übernimmt den Vorschlag und lässt den Cursor im Feld; Enter würde übernehmen und zum nächsten Foto springen."}, {"frage": "Der Vorschlag passt gar nicht. Was tun?", "antworten": ["Einfach weitertippen", "Erst Einstellungen öffnen", "Foto auf „Weg“"], "richtig": [0], "warum": "Der markierte Rest wird durch das Weitertippen ersetzt. Esc verwirft ihn ausdrücklich."}];
