@@ -1028,6 +1028,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Gespeichert wird von selbst: „Änderungen werden gespeichert …“ wechselt zu „✓ Gespeichert“. Speichern geht auch mit leeren Pflichtfeldern.</div>
+      <div class="tipp">Zweiter Besuch im selben Projekt (Nachbeprobung, Freimessung …)? Unter „Ortstermin“ auf <b>„+ Weiterer Ortstermin“</b> klicken und Datum, Bezeichnung und „Wer war da“ eintragen – gespeichert wird, sobald das Datum steht; Termin 1 bleibt das Feld „Ortstermin“, „Entfernen“ fragt vorher nach (ab Projektzentrale 1.53.0).</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="4" data-titel="Apps">
@@ -2615,7 +2616,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.33.0';
+const VERSION = '0.33.1';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
