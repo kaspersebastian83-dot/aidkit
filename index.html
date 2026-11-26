@@ -637,7 +637,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="ot-gruppe">
       <h2>Nachher <small>Büro, spätestens am Folgetag</small></h2>
       <ul class="ot-liste">
-        <li>Fotos in den Projektordner – FotoKit „Fotos übernehmen“</li>
+        <li>Fotos in den Projektordner – je Person/Termin ein Unterordner in „Fotos“ (z. B. „fotos ka 20.08“), FotoKit liest sie dort</li>
         <li>Proben in LabelKit: erfassen, Etiketten, Laborübergabe</li>
         <li>Proben zum Labor bzw. Kurier</li>
         <li>Plan in PlanKit</li>
@@ -1231,13 +1231,13 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <ol class="schritte" aria-label="Schritte"></ol>
 
   <div class="karte schritt" data-schritt="1" data-titel="iPhone">
-    <div class="schritt-kopf"><h2>1 · Vorher: iPhone einstellen</h2><span class="ort vorort">vor Ort</span><span class="dauer">einmal</span></div>
+    <div class="schritt-kopf"><h2>1 · Vorher: iPhone-Fotos</h2><span class="ort vorort">vor Ort</span><span class="dauer">einmal</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="fk1a"><label for="fk1a">Am iPhone: <b>Einstellungen → Kamera → Formate → „Maximale Kompatibilität“</b>.</label></li>
+        <li><input type="checkbox" id="fk1a"><label for="fk1a">Am iPhone muss <b>nichts umgestellt</b> werden – „Maximale Kompatibilität“ ist nicht nötig. Liegen iPhone-Fotos (HEIC) im Ordner, steht über den Fotos <b>„n iPhone-Fotos umwandeln“</b>: ein Klick, und FotoKit macht daraus JPG.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Der Browser kann iPhone-Fotos im Format HEIC nicht lesen.</div>
+      <div class="tipp">Seit FotoKit 2.3.0 wandelt FotoKit HEIC auf Klick in JPG um (Aufnahmedatum, Gerät und GPS bleiben). Das Original kommt unverändert nach <code>_Originale</code> – bei Fotos in einem Unterordner nach <code>&lt;Ordner&gt;/_Originale</code>.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="2" data-titel="Öffnen">
@@ -1247,10 +1247,12 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk2a"><label for="fk2a">In der Projektzentrale die Kachel <b>„Fotos“</b> – oder in FotoKit „Projekt öffnen …“ (bzw. unten „Mehr …“ › „Anderen Ordner öffnen …“) und den Projektordner wählen (z. B. <code>26.0123 Köln</code>).</label></li>
         <li><input type="checkbox" id="fk2b"><label for="fk2b">Prüfen, dass oben im dunklen <b>Kopfband</b> Projektnummer und Ort groß stehen – daneben die sechs Schritte, „Fotos“ ist weiß umrandet.</label></li>
         <li><input type="checkbox" id="fk2c"><label for="fk2c">Steht über den Fotos „Projekt unbekannt“ (nur der Ordner „Fotos“ gewählt): <b>„Projekt zuordnen …“</b>.</label></li>
-        <li><input type="checkbox" id="fk2d"><label for="fk2d">Liegen Fotos von Kollegen noch in Unterordnern, steht über den Fotos eine Karte: <b>„Fotos übernehmen →“</b>. Neue Fotos später – auch nach einer schon erstellten Bilddokumentation – einfach in den Ordner „Fotos“ kopieren: Beim Zurückkommen ins Fenster meldet FotoKit <b>„n neue Fotos“</b> mit <b>„Jetzt einlesen“</b> (sonst „Mehr …“ › „Fotos neu einlesen“). Alles Eingetragene bleibt, die neuen Fotos kommen ans Ende.</label></li>
+        <li><input type="checkbox" id="fk2d"><label for="fk2d">Fotos von Kollegen in <b>Unterordnern</b> von „Fotos“ (z. B. „Bilder Stefan“, „fotos ka 20.08“) zeigt FotoKit von selbst – sie bleiben dort liegen und behalten ihren Namen; über den Kacheln jedes Ordners steht eine Zeile mit seinem Namen. „Fotos übernehmen“ gibt es nicht mehr. Neue Fotos später – auch nach einer schon erstellten Bilddokumentation – einfach in den Ordner „Fotos“ kopieren: Beim Zurückkommen ins Fenster meldet FotoKit <b>„n neue Fotos“</b> mit <b>„Jetzt einlesen“</b> (sonst „Mehr …“ › „Fotos neu einlesen“). Alles Eingetragene bleibt, die neuen Fotos kommen ans Ende.</label></li>
+        <li><input type="checkbox" id="fk2e"><label for="fk2e"><b>Mehrere Ortstermine</b> (in der Projektzentrale „+ Weiterer Ortstermin“): FotoKit fragt je Ordner einmal, zu welchem Termin er gehört, z. B. <b>„Ortstermin am 20.08.2026 (Nachbeprobung)? Ja“</b> – Vorschlag aus dem Datum im Ordnernamen, sonst dem Aufnahmedatum. Sonst <b>„anderer …“</b> wählen. Passt das Datum zu keinem Termin, legt <b>„Anlegen“</b> ihn in den Projektdaten an. Gelb gestrichelte Kacheln haben noch keinen Termin.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Den Ordner kann man auch einfach hineinziehen.</div>
+      <div class="tipp">FotoKit liest eine Ebene unter „Fotos“. Ordner mit „_“ vorn (<code>_aussortiert</code>, <code>_Originale</code>) zählen nicht; Fotos in tieferen Ordnern erscheinen nicht (eine Zeile sagt es). Über den Fotos wählt <b>„Termin 1 · Termin 2 · Alle“</b>, welche Fotos zu sehen sind – Bildnummern zählen je Termin.</div>
       <div class="tipp">Öffnen und Ansehen schreiben nichts: <code>_Bildumbenenner.json</code> und der Ordner „_Spektron/FotoKit“ entstehen erst mit der ersten Eingabe. Fehlen sie in einem neuen Projekt, ist das normal.</div>
       <a class="app-oeffnen" href="../Bildumbenenner/" target="bildumbenenner" rel="noopener">FotoKit öffnen ↗</a>
     </div></div>
@@ -1290,7 +1292,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk4c"><label for="fk4c">Schiefe Fotos mit <b>„↻ Drehen“</b> (Alt+R).</label></li>
       </ul>
     </div><div>
-      <div class="tipp">„Weg“ und der Haken sind dasselbe – zwei Wege zu einem Zustand. Ins Unterverzeichnis <code>_aussortiert</code> kommen Weg-Fotos erst mit „Dateien umbenennen“ (Schritt 7, wenn so eingestellt).</div>
+      <div class="tipp">„Weg“ und der Haken sind dasselbe – zwei Wege zu einem Zustand. Ins Unterverzeichnis <code>_aussortiert</code> kommen Weg-Fotos erst mit „Dateien umbenennen“ (Schritt 7, wenn so eingestellt) – und nur Fotos direkt in „Fotos“; in einem Unterordner ist „Weg“ nur eine Markierung.</div>
       <div class="tipp">Sortieren ändert keine Dateien.</div>
     </div></div>
   </div>
@@ -1317,6 +1319,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Das PDF trägt nur die Firmenmarke: Kopf mit Logo und Anschrift, Deckblatt mit den Projektdaten.</div>
+      <div class="tipp"><b>Mehrere Ortstermine:</b> Der Dialog fragt zuerst <b>„Für welchen Termin?“</b> (oder „Alle Termine“). Das Deckblatt nennt Datum und Bezeichnung des Termins, die PDF trägt dessen Datum im Namen (z. B. <code>…_2026-08-20.pdf</code>), und FotoKit merkt sich je Termin eine Bilddokumentation – eine neue für Termin 2 lässt die von Termin 1 aktuell. Das Datum eines späteren Termins ändert man in der Projektzentrale, nicht im Deckblatt. Bis BerichtKit Termine kennt, für eine 2. Mitteilung die richtige Bilddoku dort von Hand anhaken.</div>
       <div class="tipp">Gesperrt, solange zwei Fotos denselben Dateinamen bekämen (rote Kachel „Dateiname doppelt“) – dann eine Beschreibung ändern.</div>
     </div></div>
   </div>
@@ -1331,7 +1334,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="fk-name"><h3>Kurz üben: Wie heißt die Datei danach?</h3></div>
-      <div class="tipp">Originale werden nur umbenannt oder nach <code>_aussortiert</code> verschoben – nie verändert.</div>
+      <div class="tipp">Originale werden nur umbenannt oder nach <code>_aussortiert</code> verschoben – nie verändert. Fotos in Unterordnern von „Fotos“ behalten ihren Namen; ist nichts direkt in „Fotos“ umzubenennen, bietet der Dialog es auch nicht an.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="8" data-titel="Ergebnistabelle">
@@ -2616,7 +2619,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.33.1';
+const VERSION = '0.34.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
