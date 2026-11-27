@@ -1398,6 +1398,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </div><div>
       <div class="uebung quiz" data-quiz="rk-stand"><h3>Kurz üben: Welchen Stand hat die Probe?</h3></div>
       <div class="tipp">„nicht beauftragt“ heißt: Die Probe steht im Prüfbericht, aber nicht in der Laborübergabe aus LabelKit. Mit LabelKit abgleichen, z. B. auf eine vertippte Probennummer.</div>
+      <div class="tipp"><b>Mehrere Laboraufträge</b> (Nachauftrag in LabelKit): Oben steht der Stand <b>je Auftrag</b>, z. B. „Auftrag 1 (14.08.): 13 von 13 ✓ · Auftrag 2 (22.08.): 5 von 8 · 3 offen“, an jeder Probe klein „A1“/„A2“. Neue Proben, die noch keinem Auftrag angehören, heißen <b>„noch nicht beim Labor“</b> – sie zählen weiter mit, bis ihr Ergebnis da ist. Ein Projekt mit einem Laborauftrag sieht aus wie bisher.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="3" data-titel="Importieren">
@@ -1437,11 +1438,11 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="rk5a"><label for="rk5a">Unten rechts <b>„Ergebnisse übernehmen →“</b> – ResultKit schreibt die geltenden Werte nach <code>_Ergebnisse.json</code> (im Spektron-Ordner des Projekts). PlanKit und FotoKit lesen nur diese Datei. Danach steht unten <b>„✓ Übernommen am …“</b>.</label></li>
         <li><input type="checkbox" id="rk5b"><label for="rk5b">Noch nicht alles da? ResultKit fragt nach. <b>„Trotzdem übernehmen“</b> speichert einen Zwischenstand – PlanKit und FotoKit zeigen dann diesen.</label></li>
         <li><input type="checkbox" id="rk5c"><label for="rk5c">Ändert sich danach der Ordner (neuer Bericht, neue LabelKit-Datei), steht in „Jetzt dran“ <b>„Geändert seit der Übernahme – bitte erneut übernehmen“</b> und unten <b>„Übernahme nicht mehr aktuell“</b>. Prüfen, dann unten <b>„Erneut übernehmen →“</b>.</label></li>
-        <li><input type="checkbox" id="rk5d"><label for="rk5d">Nach einem Update kann in „Jetzt dran“ <b>„Bitte einmal erneut übernehmen“</b> stehen, mit „Neu: …“ dahinter. Steht dort, dass sich übernommene Werte ändern, zuerst die Übersicht ansehen. Dann <b>„Erneut übernehmen“</b> und in PlanKit <b>„Proben übernehmen …“</b> wiederholen.</label></li>
+        <li><input type="checkbox" id="rk5d"><label for="rk5d">Nach einem Update kann in „Jetzt dran“ <b>„Bitte einmal erneut übernehmen“</b> stehen, mit „Neu: …“ dahinter. Steht dort, dass sich übernommene Werte ändern, zuerst die Übersicht ansehen. Dann <b>„Erneut übernehmen“</b> und in PlanKit <b>„Proben übernehmen …“</b> wiederholen. Steht dort <b>„Neuere ResultKit-Fassung – bitte die Seite neu laden“</b>: Strg+F5 drücken (übernehmen geht in diesem Fenster nicht).</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="rk-uebernehmen"><h3>Kurz üben: Übernehmen oder warten?</h3></div>
-      <div class="tipp achtung">Steht in „Jetzt dran“ <b>„Zwei Prüfberichte für dieselben Proben – erst klären“</b>, haben zwei verschiedene Berichte Werte für dieselbe Probe. ResultKit übernimmt dann nichts: „Prüfberichte zeigen“, die falsche Datei aus „Laborergebnisse“ nehmen, danach übernehmen. Ein „Trotzdem“ gibt es dafür nicht.</div>
+      <div class="tipp achtung">Steht in „Jetzt dran“ <b>„Zwei Prüfberichte für dieselben Proben – erst klären“</b>, haben zwei verschiedene Berichte Werte für dieselbe Probe. ResultKit übernimmt dann nichts, die Proben zählen als <b>„strittig“</b>: „Prüfberichte zeigen“, die falsche Datei aus „Laborergebnisse“ nehmen, danach übernehmen. Ein „Trotzdem“ gibt es dafür nicht. Steht dort <b>„vermutlich gingen sie doppelt ans Labor“</b>, keine Datei herausnehmen (das würde Werte verlieren), sondern mit dem Labor klären, welcher Bericht gilt.</div>
       <div class="tipp"><b>Nur für Fachkundige:</b> Von mehreren Fassungen eines Prüfberichts gilt die höhere (-02 vor -01) – auch wenn sie den Wert in einer anderen Einheit nennt (z. B. µg/cm² statt mg/m²); dabei wird nichts umgerechnet. Verschiedene Berichte ersetzen einander dagegen nie, auch nicht bei anderer Einheit. Ging aus der älteren Übernahme schon eine Mitteilung hinaus, den Wert darin mit der Fassung -02 vergleichen; im Datenarchiv listet „Zu prüfen“ die betroffenen Projekte.</div>
       <div class="tipp">Die vorige Übernahme bleibt als <code>_Ergebnisse.vorher.json</code> erhalten. Beide Dateien schreibt nur ResultKit – nicht von Hand ändern, löschen oder umbenennen.</div>
     </div></div>
@@ -2627,7 +2628,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.36.0';
+const VERSION = '0.37.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
