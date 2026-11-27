@@ -637,7 +637,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="ot-gruppe">
       <h2>Nachher <small>Büro, spätestens am Folgetag</small></h2>
       <ul class="ot-liste">
-        <li>Fotos in den Projektordner – FotoKit „Fotos übernehmen“</li>
+        <li>Fotos in den Projektordner – je Person/Termin ein Unterordner in „Fotos“ (z. B. „fotos ka 20.08“), FotoKit liest sie dort</li>
         <li>Proben in LabelKit: erfassen, Etiketten, Laborübergabe</li>
         <li>Proben zum Labor bzw. Kurier</li>
         <li>Plan in PlanKit</li>
@@ -1038,7 +1038,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pz4a"><label for="pz4a">Oben steht <b>„Jetzt dran“</b> mit einem blauen Knopf – das ist der nächste Schritt. Wartet das Projekt auf Labor oder Büro, steht das dort.</label></li>
         <li><input type="checkbox" id="pz4b"><label for="pz4b">Darunter sechs <b>Kacheln</b> – dieselben wie oben in den Apps: <b>„Proben“</b> (LabelKit), <b>„Fotos“</b> (FotoKit), <b>„Labor“</b> (ResultKit), <b>„Plan“</b> (PlanKit), <b>„Bericht“</b> (BerichtKit – heißt „Brandbericht“ oder „Asbestbericht“, sobald gemerkt oder nach den LabelKit-Proben) und <b>„Abrechnung“</b> (BelegKit). Ein Klick öffnet die App im richtigen Ordner. Einen bestimmten Bericht öffnet „Mehr zum Projekt …“ › „Asbestbericht öffnen“ / „Brandbericht öffnen“.</label></li>
         <li><input type="checkbox" id="pz4c"><label for="pz4c">Die Kachel <b>„Abrechnung“</b> öffnet BelegKit („Abrechnung“).</label></li>
-        <li><input type="checkbox" id="pz4d"><label for="pz4d">Anlagen: unter „Mehr zum Projekt …“ <b>„Anlage Probenahme …“</b> (sobald ein Plan da ist); <b>„Anlage PN 98 / Brandgeruch · Erstellen …“</b> steht unter den Kacheln, sobald LabelKit solche Proben hat – die Datei liegt danach in „Mitteilungen“.</label></li>
+        <li><input type="checkbox" id="pz4d"><label for="pz4d">Anlagen: unter „Mehr zum Projekt …“ <b>„Anlage Probenahme …“</b> (sobald ein Plan da ist); <b>„Anlage PN 98 / Brandgeruch · Erstellen …“</b> steht unter den Kacheln, sobald LabelKit solche Proben hat – die Datei liegt danach in „Mitteilungen“. Für den Brandbericht ist die Brandgeruch-Anlage nicht mehr nötig (die Tabelle steht in 5.6, BerichtKit 1.25.0).</label></li>
       </ul>
     </div><div>
       <div class="tipp">In Word an der gewünschten Stelle „Einfügen › Objekt › Text aus Datei“.</div>
@@ -1231,13 +1231,13 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <ol class="schritte" aria-label="Schritte"></ol>
 
   <div class="karte schritt" data-schritt="1" data-titel="iPhone">
-    <div class="schritt-kopf"><h2>1 · Vorher: iPhone einstellen</h2><span class="ort vorort">vor Ort</span><span class="dauer">einmal</span></div>
+    <div class="schritt-kopf"><h2>1 · Vorher: iPhone-Fotos</h2><span class="ort vorort">vor Ort</span><span class="dauer">einmal</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="fk1a"><label for="fk1a">Am iPhone: <b>Einstellungen → Kamera → Formate → „Maximale Kompatibilität“</b>.</label></li>
+        <li><input type="checkbox" id="fk1a"><label for="fk1a">Am iPhone muss <b>nichts umgestellt</b> werden – „Maximale Kompatibilität“ ist nicht nötig. Liegen iPhone-Fotos (HEIC) im Ordner, steht über den Fotos <b>„n iPhone-Fotos umwandeln“</b>: ein Klick, und FotoKit macht daraus JPG.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Der Browser kann iPhone-Fotos im Format HEIC nicht lesen.</div>
+      <div class="tipp">Seit FotoKit 2.3.0 wandelt FotoKit HEIC auf Klick in JPG um (Aufnahmedatum, Gerät und GPS bleiben). Das Original kommt unverändert nach <code>_Originale</code> – bei Fotos in einem Unterordner nach <code>&lt;Ordner&gt;/_Originale</code>.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="2" data-titel="Öffnen">
@@ -1247,10 +1247,12 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk2a"><label for="fk2a">In der Projektzentrale die Kachel <b>„Fotos“</b> – oder in FotoKit „Projekt öffnen …“ (bzw. unten „Mehr …“ › „Anderen Ordner öffnen …“) und den Projektordner wählen (z. B. <code>26.0123 Köln</code>).</label></li>
         <li><input type="checkbox" id="fk2b"><label for="fk2b">Prüfen, dass oben im dunklen <b>Kopfband</b> Projektnummer und Ort groß stehen – daneben die sechs Schritte, „Fotos“ ist weiß umrandet.</label></li>
         <li><input type="checkbox" id="fk2c"><label for="fk2c">Steht über den Fotos „Projekt unbekannt“ (nur der Ordner „Fotos“ gewählt): <b>„Projekt zuordnen …“</b>.</label></li>
-        <li><input type="checkbox" id="fk2d"><label for="fk2d">Liegen Fotos von Kollegen noch in Unterordnern, steht über den Fotos eine Karte: <b>„Fotos übernehmen →“</b>. Neue Fotos später – auch nach einer schon erstellten Bilddokumentation – einfach in den Ordner „Fotos“ kopieren: Beim Zurückkommen ins Fenster meldet FotoKit <b>„n neue Fotos“</b> mit <b>„Jetzt einlesen“</b> (sonst „Mehr …“ › „Fotos neu einlesen“). Alles Eingetragene bleibt, die neuen Fotos kommen ans Ende.</label></li>
+        <li><input type="checkbox" id="fk2d"><label for="fk2d">Fotos von Kollegen in <b>Unterordnern</b> von „Fotos“ (z. B. „Bilder Stefan“, „fotos ka 20.08“) zeigt FotoKit von selbst – sie bleiben dort liegen und behalten ihren Namen; über den Kacheln jedes Ordners steht eine Zeile mit seinem Namen. „Fotos übernehmen“ gibt es nicht mehr. Neue Fotos später – auch nach einer schon erstellten Bilddokumentation – einfach in den Ordner „Fotos“ kopieren: Beim Zurückkommen ins Fenster meldet FotoKit <b>„n neue Fotos“</b> mit <b>„Jetzt einlesen“</b> (sonst „Mehr …“ › „Fotos neu einlesen“). Alles Eingetragene bleibt, die neuen Fotos kommen ans Ende.</label></li>
+        <li><input type="checkbox" id="fk2e"><label for="fk2e"><b>Mehrere Ortstermine</b> (in der Projektzentrale „+ Weiterer Ortstermin“): FotoKit fragt je Ordner einmal, zu welchem Termin er gehört, z. B. <b>„Ortstermin am 20.08.2026 (Nachbeprobung)? Ja“</b> – Vorschlag aus dem Datum im Ordnernamen, sonst dem Aufnahmedatum. Sonst <b>„anderer …“</b> wählen. Passt das Datum zu keinem Termin, legt <b>„Anlegen“</b> ihn in den Projektdaten an. Gelb gestrichelte Kacheln haben noch keinen Termin.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Den Ordner kann man auch einfach hineinziehen.</div>
+      <div class="tipp">FotoKit liest eine Ebene unter „Fotos“. Ordner mit „_“ vorn (<code>_aussortiert</code>, <code>_Originale</code>) zählen nicht; Fotos in tieferen Ordnern erscheinen nicht (eine Zeile sagt es). Über den Fotos wählt <b>„Termin 1 · Termin 2 · Alle“</b>, welche Fotos zu sehen sind – Bildnummern zählen je Termin.</div>
       <div class="tipp">Öffnen und Ansehen schreiben nichts: <code>_Bildumbenenner.json</code> und der Ordner „_Spektron/FotoKit“ entstehen erst mit der ersten Eingabe. Fehlen sie in einem neuen Projekt, ist das normal.</div>
       <a class="app-oeffnen" href="../Bildumbenenner/" target="bildumbenenner" rel="noopener">FotoKit öffnen ↗</a>
     </div></div>
@@ -1290,7 +1292,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="fk4c"><label for="fk4c">Schiefe Fotos mit <b>„↻ Drehen“</b> (Alt+R).</label></li>
       </ul>
     </div><div>
-      <div class="tipp">„Weg“ und der Haken sind dasselbe – zwei Wege zu einem Zustand. Ins Unterverzeichnis <code>_aussortiert</code> kommen Weg-Fotos erst mit „Dateien umbenennen“ (Schritt 7, wenn so eingestellt).</div>
+      <div class="tipp">„Weg“ und der Haken sind dasselbe – zwei Wege zu einem Zustand. Ins Unterverzeichnis <code>_aussortiert</code> kommen Weg-Fotos erst mit „Dateien umbenennen“ (Schritt 7, wenn so eingestellt) – und nur Fotos direkt in „Fotos“; in einem Unterordner ist „Weg“ nur eine Markierung.</div>
       <div class="tipp">Sortieren ändert keine Dateien.</div>
     </div></div>
   </div>
@@ -1317,7 +1319,9 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">Das PDF trägt nur die Firmenmarke: Kopf mit Logo und Anschrift, Deckblatt mit den Projektdaten.</div>
+      <div class="tipp"><b>Mehrere Ortstermine:</b> Der Dialog fragt zuerst <b>„Für welchen Termin?“</b> (oder „Alle Termine“). Das Deckblatt nennt Datum und Bezeichnung des Termins, die PDF trägt dessen Datum im Namen (z. B. <code>…_2026-08-20.pdf</code>), und FotoKit merkt sich je Termin eine Bilddokumentation – eine neue für Termin 2 lässt die von Termin 1 aktuell. Das Datum eines späteren Termins ändert man in der Projektzentrale, nicht im Deckblatt; ein im Deckblatt geändertes Datum von Termin 1 gilt sofort für Deckblatt und Dateinamen. Wird ein Termin entfernt, gehören seine Fotos zu Termin 1 – die Bilddokumentation von Termin 1 gilt dann als geändert und ist neu zu erstellen. Bis BerichtKit Termine kennt, für eine 2. Mitteilung die richtige Bilddoku dort von Hand anhaken.</div>
       <div class="tipp">Gesperrt, solange zwei Fotos denselben Dateinamen bekämen (rote Kachel „Dateiname doppelt“) – dann eine Beschreibung ändern.</div>
+      <div class="tipp"><b>iPhone-Fotos:</b> Sind in dieser Bilddokumentation noch iPhone-Fotos (HEIC), fragt FotoKit vorher, ob es sie umwandeln soll – gezählt und umgewandelt werden nur die Fotos dieser Doku (gewählter Termin, nicht „Weg“). Wählst du den Termin erst im Dialog, kommt die Frage beim Erstellen. „Ohne Umwandeln weiter“: sie stehen als Platzhalter im PDF.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="7" data-titel="Umbenennen">
@@ -1331,7 +1335,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="fk-name"><h3>Kurz üben: Wie heißt die Datei danach?</h3></div>
-      <div class="tipp">Originale werden nur umbenannt oder nach <code>_aussortiert</code> verschoben – nie verändert.</div>
+      <div class="tipp">Originale werden nur umbenannt oder nach <code>_aussortiert</code> verschoben – nie verändert. Fotos in Unterordnern von „Fotos“ behalten ihren Namen; ist nichts direkt in „Fotos“ umzubenennen, bietet der Dialog es auch nicht an.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="8" data-titel="Ergebnistabelle">
@@ -1621,7 +1625,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="br2a"><label for="br2a"><b>Projektzentrale</b>: Objekt, Auftraggeber, ggf. Versicherungsnehmer, Versicherer und Schaden-Nr., <b>Auftragsdatum</b>. Beim Brandbericht zusätzlich <b>Schadendatum</b> (oder „nicht bekannt“), <b>Ortstermin</b>, <b>Nutzung</b>, Schadenereignis und Brandgut.</label></li>
         <li><input type="checkbox" id="br2b"><label for="br2b"><b>LabelKit</b>: je Probe Probenahmedatum, <b>Raum / Ort</b> (wird die Entnahmestelle), bei Asbest <b>Bauteil / Material</b>. Brandgeruch: Bewertungen der fünf Prüfpersonen eingetragen und <b>aufgedeckt</b> – verdeckt kommt kein Ergebnis in den Bericht.</label></li>
         <li><input type="checkbox" id="br2c"><label for="br2c"><b>ResultKit</b>: Prüfberichte (XML und PDF) importiert und <b>„Ergebnisse übernehmen“</b> – BerichtKit liest nur die übernommenen Werte.</label></li>
-        <li><input type="checkbox" id="br2d"><label for="br2d"><b>FotoKit</b>: Fotos der Proben mit <b>Probe-Nr.</b>, Beschreibungen (werden Bildunterschriften), Bilddokumentation erstellt. <b>PlanKit</b>: Probenplan. Brandgeruch: in der Projektzentrale (unter den Kacheln <b>„Anlage PN 98 / Brandgeruch“ › „Erstellen …“</b>) die Anlage erstellen.</label></li>
+        <li><input type="checkbox" id="br2d"><label for="br2d"><b>FotoKit</b>: Fotos der Proben mit <b>Probe-Nr.</b>, Beschreibungen (werden Bildunterschriften), Bilddokumentation erstellt. <b>PlanKit</b>: Probenplan. Brandgeruch braucht <b>keine Anlage</b> mehr – die Einzelbewertungen der Prüfpersonen stehen als Tabelle in 5.6 des Berichts (ab BerichtKit 1.25.0).</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-quelle"><h3>Kurz üben: Wo wird das nachgetragen?</h3></div>
@@ -1654,7 +1658,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-kmf"><h3>Kurz üben: KI-Wert und Einbaujahr</h3></div>
-      <div class="tipp achtung">Laborwerte und Probenbezeichnungen werden nie geändert. Stimmt etwas nicht, klärt das das Labor – nicht der Bericht. Chlorid- und PAK-Werte ordnet BerichtKit nach VdS 2357 ein, genau wie ResultKit.</div>
+      <div class="tipp achtung">Laborwerte und Probenbezeichnungen werden nie geändert. Stimmt etwas nicht, klärt das das Labor – nicht der Bericht. Chlorid- und PAK-Werte ordnet BerichtKit nach VdS 2357 ein, genau wie ResultKit. <b>Einzige Ausnahme:</b> Chlorid-Wischproben stehen im Bericht immer in <b>µg/cm²</b> – gibt der Prüfbericht mg/m² an, verschiebt BerichtKit das Komma um eine Stelle (47 mg/m² → 4,7 µg/cm², ohne Rundung). Im Bericht steht dazu kein eigener Satz; die Seitenleiste zeigt „Chlorid: Der Prüfbericht gibt mg/m² an – im Bericht in µg/cm² umgerechnet.“</div>
       <div class="tipp">Nimmt BerichtKit eine Probe als Freimessung oder Referenzprobe an, steht sie als Annahme mit <b>„✓ stimmt“</b> da; ist sie in Wahrheit eine gewöhnliche Probe: <b>„Normale Probe“</b> (die Bezeichnung bleibt). Passt die Entnahmestelle in LabelKit nicht zum Prüfbericht, steht ein Hinweis („Entnahmestelle passt nicht …“) – er sperrt nichts: in LabelKit oder beim Labor klären.</div>
     </div></div>
   </div>
@@ -1717,7 +1721,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-kopf"><h2>9 · Speichern und ans Büro übergeben</h2><span class="ort sv">Sachverständige</span><span class="dauer">→ Ordner „Mitteilungen“ · Projektzentrale</span></div>
     <div class="schritt-grid"><div>
       <ul class="check">
-        <li><input type="checkbox" id="br9a"><label for="br9a"><b>Anlagen</b> prüfen: Prüfberichte, Bilddokumentation, Probenplan, beim Brandbericht die Anlage Brandgeruch. Fehlt eine oder ist sie veraltet, sagt ein Hinweis, wo du sie neu erstellst (FotoKit, PlanKit, Projektzentrale). Weitere Datei aus dem Projekt: <b>„+ Weitere Datei …“</b>.</label></li>
+        <li><input type="checkbox" id="br9a"><label for="br9a"><b>Anlagen</b> prüfen: Prüfberichte, Bilddokumentation, Probenplan (eine Anlage Brandgeruch gibt es ab BerichtKit 1.25.0 nicht mehr – eine alte Datei in „Mitteilungen“ hängt BerichtKit nicht an). Fehlt eine oder ist sie veraltet, sagt ein Hinweis, wo du sie neu erstellst (FotoKit, PlanKit). Weitere Datei aus dem Projekt: <b>„+ Weitere Datei …“</b>.</label></li>
         <li><input type="checkbox" id="br9b"><label for="br9b">Unten rechts <b>„Brandbericht als Word speichern →“</b> (bzw. „Asbestbericht …“) – Datei <code>&lt;n&gt;._Mitteilung_&lt;Nr&gt;.docx</code>. Gibt es sie schon: <b>Ersetzen</b>, <b>Daneben als „(2)“ speichern</b> oder <b>Abbrechen</b>. Ist sie schon beim Büro (oder lässt sich das nicht prüfen: „Büro-Stand unklar“), gibt es kein Ersetzen, sondern „Als n. Mitteilung speichern“.</label></li>
         <li><input type="checkbox" id="br9c"><label for="br9c">Gesperrt? Dann heißt der Knopf unten rechts <b>„Entwurf herunterladen →“</b> (Kopfzeile „ENTWURF – nicht versenden“) – erst die Daten in der anderen App richtigstellen.</label></li>
         <li><input type="checkbox" id="br9d"><label for="br9d">In Word gegenlesen, dann <b>„Ans Büro übergeben →“</b>: Die Projektzentrale öffnet die Übergabe mit dieser Mitteilung und den Anlagen. Die Projektzentrale öffnet sich im <b>eigenen Fenster</b>, BerichtKit bleibt offen. Unten rechts steht jetzt <b>„Ans Büro übergeben →“</b> (daneben „Erneut speichern“); im Kopfband hat der Bericht einen <b>Haken</b>, „Weiter“ zeigt „Ans Büro übergeben →“.</label></li>
@@ -1733,7 +1737,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
   <div class="nav-schritte"><button type="button" class="schritt-zurueck">← Zurück</button><button type="button" class="schritt-weiter primaer">Weiter →</button></div>
   <h2>Gut zu wissen</h2>
   <p><b>Asbestbericht:</b> Veranlassung, Probenahme und Untersuchung, Befund mit Tabelle 1 (immer, auch bei einer Probe), Schlussfolgerungen nach GefStoffV und TRGS 519, bei KMF nach TRGS 905 und TRGS 521.</p>
-  <p><b>Brandbericht:</b> 1. Veranlassung, 2. Aufgabenstellung, 3. Ortsbesichtigung, 4. Probenahme, 5. Befund (5.1 Brandlast und Schadenbild, dann je nach Proben Chlorid, PAK, KMF, Asbest, Brandgeruch, weitere Untersuchungen), 6. Sanierungsmaßnahmen bzw. Schlussfolgerungen, 7. Arbeitsschutzmaßnahmen nach VdS 2357, 8. Zusammenfassung Sanierungsmaßnahmen. Abbildungen sind durch den ganzen Bericht nummeriert; jeder Prüfbericht ist eine eigene Anlage.</p>
+  <p><b>Brandbericht:</b> 1. Veranlassung, 2. Aufgabenstellung, 3. Ortsbesichtigung, 4. Probenahme, 5. Befund (5.1 Brandlast und Schadenbild, dann je nach Proben Chlorid, PAK, KMF, Asbest, Brandgeruch mit Tabelle der Einzelbewertungen, weitere Untersuchungen; 4. verweist für den Brandgeruch auf diesen Abschnitt), 6. Sanierungsmaßnahmen bzw. Schlussfolgerungen, 7. Arbeitsschutzmaßnahmen nach VdS 2357, 8. Zusammenfassung Sanierungsmaßnahmen. Abbildungen sind durch den ganzen Bericht nummeriert; jeder Prüfbericht ist eine eigene Anlage.</p>
   <p>BerichtKit liest nur; geschrieben werden die Word-Datei in „Mitteilungen“, die eigenen Angaben in <code>_Spektron/BerichtKit</code> (auch, welche Mitteilung als Asbest- oder Brandbericht gespeichert wurde) und die Einstellungen im Archivordner.</p>
 </section>
 
@@ -1814,7 +1818,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       <ul class="check">
         <li><input type="checkbox" id="bk6a"><label for="bk6a">Reiter <b>„Bericht &amp; Fotos“</b>: die Berichte in „Mitteilungen“ unter „abrechnen“ ankreuzen.</label></li>
         <li><input type="checkbox" id="bk6b"><label for="bk6b">Seitenzahl mit „PDF: n Seiten übernehmen“ bestätigen oder eintragen.</label></li>
-        <li><input type="checkbox" id="bk6c"><label for="bk6c">Gezählt werden die Fotos direkt in „Fotos“, ohne die in FotoKit auf „Weg“ gelegten.</label></li>
+        <li><input type="checkbox" id="bk6c"><label for="bk6c">Gezählt werden die Fotos in „Fotos“ <b>und in seinen Unterordnern</b> (eine Ebene, wie FotoKit sie zeigt; nicht „_aussortiert“, „_Originale“) – ohne die in FotoKit auf „Weg“ gelegten. Bilder noch eine Ebene tiefer zählen nicht, ein Hinweis nennt sie.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Word speichert die Seitenzahl nicht zuverlässig – aus einer PDF-Fassung wird sie gezählt.</div>
@@ -2616,7 +2620,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.33.1';
+const VERSION = '0.34.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
