@@ -68,6 +68,12 @@ const root = path.join(__dirname, '..');
       assert.ok(await page.locator(`#${id} .quiz`).count() >= 1, id + ': mindestens eine Übung');
       for (const q of await page.locator(`#${id} .quiz`).all()) assert.ok(await q.locator('[data-a]').count() >= 2, id + ': Übung hat Antworten');
     }
+    // 0.35.0: Projektzentrale 1.54.0 – Mitteilungen als Ebene, zwei Tipps ohne neue Haken (Schritt 4 und 6)
+    await page.goto(base + '#app-projektzentrale');
+    assert.match(await page.locator('#app-projektzentrale [data-schritt="4"] .tipp').last().innerText(), /mehr als eine Mitteilung.*„Weitere Mitteilung beginnen …“/s);
+    assert.match(await page.locator('#app-projektzentrale [data-schritt="6"] .tipp').first().innerText(), /Anlagen der gewählten Mitteilung.*Reihenfolge des Berichts/s);
+    assert.equal(await page.locator('#app-projektzentrale [data-schritt="4"] input[type=checkbox]').count(), 4, 'keine neuen Haken in Schritt 4');
+    assert.equal(await page.locator('#app-projektzentrale [data-schritt="6"] input[type=checkbox]').count(), 5, 'keine neuen Haken in Schritt 6');
     // LagerKit: Schritte, Menü, Startseite, eine Übung
     await page.goto(base + '#app-lagerkit');
     assert.deepEqual(await page.locator('#app-lagerkit .schritte button').allInnerTexts().then(t => t.map(x => x.replace(/^\D*\d+\s*·?\s*/, '').replace(/\s*✓$/, '').trim())), ['Einrichten', 'Erfassen', 'Etikett', 'Frist', 'Scannen', 'Einsammeln', 'Inventur', 'Altbestand & Blanko']);
