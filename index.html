@@ -1143,7 +1143,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     <div class="schritt-grid"><div>
       <ul class="check">
         <li><input type="checkbox" id="lk3a"><label for="lk3a">„Welche Proben hast du genommen?“ – die <b>Kachel</b> der Probenart wählen (PAK-Wischproben, Chlorid-Wischproben, Asbestproben, Brandgeruch; Sonstige, Bohrkerne, PN 98 unter „+ Weitere Art …“).</label></li>
-        <li><input type="checkbox" id="lk3b"><label for="lk3b"><b>„+ Probe“</b> oder <b>„+ 5“</b> über der Tabelle – oder <b>„Vorbelegung …“</b>: Anzahl, Probenahmedatum, cm² → „Neue Proben hinzufügen“. Als <b>Probenahmedatum</b> nimmt LabelKit das der vorigen Probe der Liste, sonst den <b>Ortstermin</b> aus der Projektzentrale (ohne Ortstermin: heute) – kurz prüfen.</label></li>
+        <li><input type="checkbox" id="lk3b"><label for="lk3b"><b>„+ Probe“</b> oder <b>„+ 5“</b> über der Tabelle – oder <b>„Vorbelegung …“</b>: Anzahl, Probenahmedatum, cm² → „Neue Proben hinzufügen“. Als <b>Probenahmedatum</b> nimmt LabelKit das der vorigen Probe der Liste, sonst den <b>Ortstermin</b> aus der Projektzentrale (ohne Ortstermin: heute) – kurz prüfen. Gibt es in der Projektzentrale <b>mehrere Ortstermine</b>, bekommt jede neue Probe das Datum des <b>neuesten Termins bis heute</b> (ab LabelKit 5.5.0).</label></li>
         <li><input type="checkbox" id="lk3c"><label for="lk3c">Im selben Dialog: fehlende Angaben mit „Leere Angaben ergänzen“, vorhandene mit „Bestehende Angaben ändern …“ (erst nach der Vorschau mit „Genannte Angaben jetzt ändern“).</label></li>
         <li><input type="checkbox" id="lk3d"><label for="lk3d">Oder Probe für Probe mit der <b>Geführten Eingabe</b> – großer Knopf bei leerer Tabelle, sonst „Mehr …“ › „Geführte Eingabe“ (Strg+Shift+E).</label></li>
       </ul>
@@ -1164,6 +1164,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="lk-pflicht"><h3>Kurz üben: Welche Zellen sind Pflicht?</h3></div>
+      <div class="tipp">Gelbe Zeilen über der Tabelle (ab LabelKit 5.5.0): <b>„Probenahmedatum passt zu keinem Ortstermin“</b> – das Datum prüfen, die Termine stehen in der Projektzentrale (nur bei mehreren Terminen). <b>„Schon beim Labor – im Eurofins-Portal steht der alte Text“</b> – die Probe wurde nach dem Laborauftrag geändert; im Portal angleichen oder hier zurückändern, sonst nennt der Prüfbericht den alten Text. <b>„Gilt als neue Probe“</b> – die Probe trägt einen Laborauftrag, der nicht zur Liste passt (z. B. mit einem älteren LabelKit kopiert); sie geht mit dem nächsten Nachauftrag hinaus.</div>
       <div class="tipp">Gelb blockiert nichts. Vorlagen, Karten-Ansicht und „Projektdatei laden …“ stehen unter „Mehr …“; leere Datumsfelder füllt „Mehr …“ › „Ortstermin/heute in leere Datumsfelder“.</div>
       <div class="tipp">Bis zum Speichern hält LabelKit eine <b>Kopie im Browser</b> – auch auf dem iPad ohne Ordnerzugriff. Steht rot „Eingaben NICHT im Browser gesichert“, bald speichern. Auf dem iPad lädt „Speichern“ die Projektdatei herunter; am PC dann in LabelKit „Mehr …“ › „Projektdatei laden …“ und speichern.</div>
     </div></div>
@@ -1202,6 +1203,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="lk7b"><label for="lk7b"><b>„Alle Etiketten drucken →“</b> – oder je Art „Nur diese drucken“ bzw. „Als PDF“ (für den Bypass-Druck empfohlen).</label></li>
         <li><input type="checkbox" id="lk7c"><label for="lk7c">Druck: <b>Skalierung 100 %</b>, <b>Ränder: keine</b>, Papierfach „Bypass / Manuell“ (unter „Mehr …“ › „Druckeinstellungen …“).</label></li>
         <li><input type="checkbox" id="lk7d"><label for="lk7d">Bohrkerne: hier auch <b>„✂ Schnittpläne drucken“</b> – je Kern ein Blatt, dem Kern beilegen.</label></li>
+        <li><input type="checkbox" id="lk7e"><label for="lk7e"><b>Zweite Probenrunde (Nachauftrag):</b> Gab es schon einen Laborauftrag, fragt LabelKit beim ersten Öffnen von ② oder ③ einmal <b>„Welche Proben sind schon beim Labor?“</b> – Vorschlag aus den Laborübergaben in „Laboraufträge“, mit „ändern …“ prüfen, dann <b>„Übernehmen“</b>. Oben steht danach <b>„Welche Proben?“</b> mit <b>„Nachauftrag: nur die neuen“</b> vorgewählt – gedruckt werden nur deren Etiketten.</label></li>
       </ul>
     </div><div>
       <div class="tipp achtung">Wird die Nummer einer Probe <b>fest</b> (🔒), ändert sich ab dann <b>keine angezeigte Nummer</b> im Projekt mehr – auch nicht die von Proben, die noch nicht gedruckt sind. Fest wird sie, sobald du Etiketten druckst, das Etiketten-PDF öffnest, Proben ans Labor übergibst (Excel, Kopieren, Drucken, Abschluss) oder die Auftragsübersicht bzw. den Schnittplan erzeugst. Neue Proben bekommen die höchste Nummer + 1; statt zu löschen heißt der Knopf in der Zeile <b>„stornieren“</b>, die Nummer bleibt vergeben. Nur eine ganz leere Zeile wird noch gelöscht.</div>
@@ -1215,10 +1217,13 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="lk8b"><label for="lk8b">Je Probenart <b>„Kopieren (für Eurofins)“</b> und ins Eurofins-System einfügen – die Spalten kommen in der gewohnten Reihenfolge. Kommt <b>„Nicht kopiert …“</b>, noch einmal klicken und vorher <i>nichts</i> einfügen – in der Zwischenablage steht sonst noch der vorige Inhalt.</label></li>
         <li><input type="checkbox" id="lk8c"><label for="lk8c">Unten rechts <b>„Laborauftrag speichern →“</b>: Laborübergaben (Excel), Brandgeruch- und PN 98-Protokolle landen in „Laboraufträge“, die Projektdatei in „_Spektron/LabelKit“ (ältere, noch nicht umgezogene Projekte: „Laboraufträge“). <b>„Excel“</b> bei einer Probenart schreibt dieselbe Laborübergabe nach „Laboraufträge“.</label></li>
         <li><input type="checkbox" id="lk8d"><label for="lk8d">Danach <b>„Weiter: Fotos →“</b> (wie „Weiter“ im Kopfband).</label></li>
+        <li><input type="checkbox" id="lk8e"><label for="lk8e"><b>Nachauftrag:</b> In der Ansicht „nur die neuen“ kopieren, „Excel“ und „Laborauftrag speichern“ nur die neuen Proben. Beim ersten davon wird der Nachauftrag <b>fest</b> – für alle neuen Proben, auch die der anderen Arten; die Ansicht heißt dann „Auftrag 2 (…)“. Die Laborübergaben heißen <b>„…_22.8.2026_Auftrag-2_Laborübergabe.xls“</b>; Arten ohne neue Proben bekommen keine Datei.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="lk-ampel"><h3>Kurz üben: Vollständig oder nicht?</h3></div>
       <div class="tipp achtung">Bei kritischen Problemen heißt der Knopf „Erst … beheben“; „Trotzdem speichern …“ geht nur mit Rückfrage.</div>
+      <div class="tipp achtung"><b>Nichts doppelt ans Labor:</b> „alle Proben“ geht im Nachauftrag nur mit Rückfrage („P1–P13 … sind schon beim Labor – trotzdem alle?“). Versehentlich „Kopieren“ geklickt? Unter „Welche Proben?“ <b>„Auftrag 2 zurücknehmen …“</b> – geht, solange noch keine Laborübergabe-Datei dieses Auftrags gespeichert ist. Kommt nach dem Auftrag noch eine Probe dazu, sagt eine gelbe Zeile „Nach Auftrag 2 … dazugekommen“ – eigener Nachauftrag oder versehentlich? In Schritt ① steht dann in der Nummernspalte klein <b>A1</b>/<b>A2</b>.</div>
+      <div class="tipp">Steht oben <b>„Diese Projektdatei stammt von LabelKit … – neuer als dieses Fenster“</b>: die Seite neu laden (Strg+F5). Bis dahin speichert und übergibt LabelKit dort nichts.</div>
     </div></div>
   </div>
 
@@ -2622,7 +2627,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.35.0';
+const VERSION = '0.36.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
