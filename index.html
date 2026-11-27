@@ -1042,6 +1042,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp">In Word an der gewünschten Stelle „Einfügen › Objekt › Text aus Datei“.</div>
+      <div class="tipp">Hat das Projekt <b>mehr als eine Mitteilung</b> (z. B. 2. Mitteilung nach einer Nachbeprobung), steht über „Jetzt dran“ eine Zeile mit einem Reiter je Mitteilung und ihrem Stand (in Arbeit · Entwurf · beim Büro · versandt am). Die gewählte Mitteilung bestimmt „Jetzt dran“ und den Text unter den Kacheln – gelb, wenn für <i>sie</i> etwas fehlt; das ✓ bleibt wie oben in den Apps. Eine weitere Mitteilung beginnt mit <b>„+“</b> in der Zeile oder unter „Mehr zum Projekt …“ › <b>„Weitere Mitteilung beginnen …“</b>: eine Rückfrage, welcher Ortstermin zu welcher Mitteilung gehört (ab Projektzentrale 1.54.0).</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="5" data-titel="Stand">
@@ -1069,6 +1070,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pz6d"><label for="pz6d">Optional <b>„Fällig bis“</b> und Hinweis fürs Büro, dann <b>„Ans Büro übergeben“</b>.</label></li>
       </ul>
     </div><div>
+      <div class="tipp">Bei <b>mehreren Mitteilungen</b> zeigt die Karte die <b>Anlagen der gewählten Mitteilung</b>: Nummer, Art, Datei und woher sie kommt (aus BerichtKit, aus dem Termin, noch in keiner Mitteilung, von Hand). Jede Zeile lässt sich bis zur Übergabe ändern oder entfernen, „+ Datei zuordnen“ nimmt weitere dazu, Fehlendes steht gelb. Übergeben wird nur mit der Word-Datei dieser Mitteilung; eine versandte Mitteilung zeigt nur, was hinausging. Die Anlagen gehen immer in der Reihenfolge des Berichts ans Büro (Prüfberichte, Bilddokumentation, Probenplan, Weiteres) – auch bei nur einer Mitteilung (ab Projektzentrale 1.54.0).</div>
       <div class="tipp">Die Papiermappe geht wie immer ans Büro. Die Karte „Ans Büro“ zeigt danach, was noch offen ist (Gegenlesen · PDF · Versand · Rechnung). Stellt das Büro eine <b>Rückfrage</b>, steht sie oben am Projekt – dort direkt beantworten.</div>
     </div></div>
   </div>
@@ -2620,7 +2622,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.34.0';
+const VERSION = '0.35.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
