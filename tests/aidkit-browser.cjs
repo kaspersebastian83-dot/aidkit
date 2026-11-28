@@ -70,7 +70,9 @@ const root = path.join(__dirname, '..');
     }
     // 0.35.0: Projektzentrale 1.54.0 – Mitteilungen als Ebene, zwei Tipps ohne neue Haken (Schritt 4 und 6)
     await page.goto(base + '#app-projektzentrale');
-    assert.match(await page.locator('#app-projektzentrale [data-schritt="4"] .tipp').last().innerText(), /mehr als eine Mitteilung.*„Weitere Mitteilung beginnen …“/s);
+    assert.match(await page.locator('#app-projektzentrale [data-schritt="4"] .tipp').filter({ hasText: 'mehr als eine Mitteilung' }).innerText(), /mehr als eine Mitteilung.*„Weitere Mitteilung beginnen …“/s);
+    // 0.38.0: Laboraufträge je Mitteilung (Projektzentrale 1.55.0)
+    assert.match(await page.locator('#app-projektzentrale [data-schritt="4"] .tipp').last().innerText(), /^Laboraufträge je Mitteilung \(ab Projektzentrale 1\.55\.0\).*„Gehört zu keiner Mitteilung … – zuordnen …“.*„Auftrag unbekannt: …“/s);
     assert.match(await page.locator('#app-projektzentrale [data-schritt="6"] .tipp').first().innerText(), /Anlagen der gewählten Mitteilung.*Reihenfolge des Berichts/s);
     assert.equal(await page.locator('#app-projektzentrale [data-schritt="4"] input[type=checkbox]').count(), 4, 'keine neuen Haken in Schritt 4');
     assert.equal(await page.locator('#app-projektzentrale [data-schritt="6"] input[type=checkbox]').count(), 5, 'keine neuen Haken in Schritt 6');

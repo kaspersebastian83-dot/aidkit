@@ -1043,6 +1043,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </div><div>
       <div class="tipp">In Word an der gewünschten Stelle „Einfügen › Objekt › Text aus Datei“.</div>
       <div class="tipp">Hat das Projekt <b>mehr als eine Mitteilung</b> (z. B. 2. Mitteilung nach einer Nachbeprobung), steht über „Jetzt dran“ eine Zeile mit einem Reiter je Mitteilung und ihrem Stand (in Arbeit · Entwurf · beim Büro · versandt am). Die gewählte Mitteilung bestimmt „Jetzt dran“ und den Text unter den Kacheln – gelb, wenn für <i>sie</i> etwas fehlt; das ✓ bleibt wie oben in den Apps. Eine weitere Mitteilung beginnt mit <b>„+“</b> in der Zeile oder unter „Mehr zum Projekt …“ › <b>„Weitere Mitteilung beginnen …“</b>: eine Rückfrage, welcher Ortstermin zu welcher Mitteilung gehört (ab Projektzentrale 1.54.0).</div>
+      <div class="tipp"><b>Laboraufträge je Mitteilung</b> (ab Projektzentrale 1.55.0): Gibt es in LabelKit einen Nachauftrag, fragt dieselbe Rückfrage unter den Ortsterminen auch, <b>welcher Laborauftrag zu welcher Mitteilung gehört</b> – vorgewählt nach dem Datum des Auftrags, ein Satz darunter sagt, warum. Danach schlägt die Karte der Mitteilung nur die Prüfberichte ihrer Aufträge vor („aus Auftrag 2“). Gehört ein neuer Ortstermin oder Laborauftrag noch zu keiner Mitteilung, steht eine <b>gelbe Zeile „Gehört zu keiner Mitteilung … – zuordnen …“</b> – nichts wird von selbst zugeordnet, erst mit „Übernehmen“. Steht bei einem Prüfbericht <b>„Auftrag unbekannt: …“</b>, kann die Projektzentrale ihn gerade keinem Auftrag sicher zuordnen (meist: in ResultKit erneut übernehmen) – er wird dann wie bisher allen offenen Mitteilungen angeboten, bitte selbst prüfen. Eine gelbe Zeile „laut Laborauftrag … zur 2. Mitteilung“ heißt: BerichtKit nennt einen Prüfbericht der anderen Mitteilung – in BerichtKit abwählen oder hier entfernen.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="5" data-titel="Stand">
@@ -2628,7 +2629,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.37.0';
+const VERSION = '0.38.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
