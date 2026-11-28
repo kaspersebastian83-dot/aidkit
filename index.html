@@ -1723,7 +1723,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="br-luecken"><h3>Kurz üben: Gelbe Stellen</h3></div>
-      <div class="tipp">Lücken sperren das Speichern nicht – BerichtKit fragt nur nach. Gesperrt (nur „Entwurf herunterladen“) wird bei Datenfehlern: LabelKit-Datei aus einem anderen Projekt; <b>Prüfberichte in „Laborergebnisse“ seit der ResultKit-Übernahme geändert</b> (neu, geändert, nicht mehr da) – gelbe Zeile mit „In ResultKit erneut übernehmen ↗“, danach ist die Sperre beim Zurückkommen weg; Übernahme aus einem anderen Projekt; Asbestprobe ohne Ergebnis (oder unter den Proben abwählen); im Asbestbericht: alle Asbestproben storniert. Hat sich nur die LabelKit-Datei seit der Übernahme geändert, steht eine gelbe Zeile – keine Sperre. Fehlende Chlorid-/PAK-Ergebnisse sperren nicht – sie stehen als Lücke da. Weicht das Probenahmedatum in LabelKit vom Ortstermin ab, sagt ein Hinweis das (Brand- und Asbestbericht).</div>
+      <div class="tipp">Lücken sperren das Speichern nicht – BerichtKit fragt nur nach. Gesperrt (nur „Entwurf herunterladen“) wird bei Datenfehlern: LabelKit-Datei aus einem anderen Projekt; <b>Prüfberichte in „Laborergebnisse“ seit der ResultKit-Übernahme geändert</b> (neu, geändert, nicht mehr da) – gelbe Zeile mit „In ResultKit erneut übernehmen ↗“, danach ist die Sperre beim Zurückkommen weg; Übernahme aus einem anderen Projekt; Asbestprobe ohne Ergebnis (oder unter den Proben abwählen); im Asbestbericht: alle Asbestproben storniert. Hat sich nur die LabelKit-Datei seit der Übernahme geändert, steht eine gelbe Zeile – keine Sperre. Fehlende Chlorid-/PAK-Ergebnisse sperren nicht – sie stehen als Lücke da. Weicht das Probenahmedatum in LabelKit vom Ortstermin ab, sagt ein Hinweis das (Brand- und Asbestbericht). Gibt es in der Projektzentrale <b>mehrere Ortstermine</b>, zählt jeder davon: Der Hinweis „passt zu keinem Ortstermin“ nennt nur die Daten, die zu keinem Termin passen (ab BerichtKit 1.26.0) – kein Hinweis, wenn jedes Datum zu einem Termin passt.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="9" data-titel="Speichern">
@@ -2629,7 +2629,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.38.0';
+const VERSION = '0.38.1';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
