@@ -1071,7 +1071,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pz6d"><label for="pz6d">Optional <b>„Fällig bis“</b> und Hinweis fürs Büro, dann <b>„Ans Büro übergeben“</b>.</label></li>
       </ul>
     </div><div>
-      <div class="tipp">Bei <b>mehreren Mitteilungen</b> zeigt die Karte die <b>Anlagen der gewählten Mitteilung</b>: Nummer, Art, Datei und woher sie kommt (aus BerichtKit, aus dem Termin, noch in keiner Mitteilung, von Hand). Jede Zeile lässt sich bis zur Übergabe ändern oder entfernen, „+ Datei zuordnen“ nimmt weitere dazu, Fehlendes steht gelb. Übergeben wird nur mit der Word-Datei dieser Mitteilung; eine versandte Mitteilung zeigt nur, was hinausging. Die Anlagen gehen immer in der Reihenfolge des Berichts ans Büro (Prüfberichte, Bilddokumentation, Probenplan, Weiteres) – auch bei nur einer Mitteilung (ab Projektzentrale 1.54.0).</div>
+      <div class="tipp">Bei <b>mehreren Mitteilungen</b> zeigt die Karte die <b>Anlagen der gewählten Mitteilung</b>: Nummer, Art, Datei und woher sie kommt (aus BerichtKit, aus dem Termin, noch in keiner Mitteilung, von Hand). Jede Zeile lässt sich bis zur Übergabe ändern oder entfernen, „+ Datei zuordnen“ nimmt weitere dazu, Fehlendes steht gelb. Übergeben wird nur mit der Word-Datei dieser Mitteilung; eine versandte Mitteilung zeigt nur, was hinausging. Die Anlagen gehen immer in der Reihenfolge des Berichts ans Büro (Prüfberichte, Bilddokumentation, Probenplan, Weiteres) – auch bei nur einer Mitteilung (ab Projektzentrale 1.54.0). Den <b>Probenplan</b> schlägt sie je Mitteilung nach deren Ortstermin vor („aus Termin 20.08.“, ab 1.56.0 mit PlanKit 2.7.0); ein eigener Plan, dessen Termin im Namen nicht lesbar ist, steht gelb als „nicht zugeordnet“ – in PlanKit neu ausgeben.</div>
       <div class="tipp">Die Papiermappe geht wie immer ans Büro. Die Karte „Ans Büro“ zeigt danach, was noch offen ist (Gegenlesen · PDF · Versand · Rechnung). Stellt das Büro eine <b>Rückfrage</b>, steht sie oben am Projekt – dort direkt beantworten.</div>
     </div></div>
   </div>
@@ -1514,6 +1514,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
       </ul>
     </div><div>
       <div class="tipp achtung">Entzerren entfernt Maßstab und Nordrichtung – danach neu setzen.</div>
+      <div class="tipp"><b>Name eines Plans</b> (ab PlanKit 2.7.0): „Termin 20.08.2026“, „alle Termine“ und alles mit „Ergebniskarte“ geht nicht – BerichtKit und die Projektzentrale würden darin einen Ortstermin bzw. eine Ergebniskarte lesen. Ein älterer Plan mit so einem Namen steht gelb mit „bitte umbenennen“; PlanKit benennt nie selbst um. „Termine“, „2. Termin“ oder „Terminal“ sind erlaubt.</div>
       <div class="tipp"><b>Räume nachzeichnen</b> (Schritt ①, bei Bild- und PDF-Plänen): Räume, Wände, Türen und Fenster über den Plan legen – erst ausrichten, dann nachzeichnen (danach sind Ausrichten und Entzerren gesperrt). Zum Schluss <b>„Nachzeichnung prüfen“</b> mit Kürzel: Erst eine geprüfte Nachzeichnung zeigt <a href="#app-glaskit">GlasKit</a> mit Wänden; ungeprüft bleibt das Geschoss dort flach.</div>
     </div></div>
   </div>
@@ -1552,9 +1553,12 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pk6b"><label for="pk6b"><b>„Überspringen“</b> nimmt die nächste Probe, <b>„Pause“</b> (oder Esc) hält an, <b>„Weiter setzen“</b> macht weiter. Eine andere Probe rechts antippen = diese als Nächstes; oder sie auf den Plan ziehen.</label></li>
         <li><input type="checkbox" id="pk6c"><label for="pk6c">Ein Tipp auf einen <b>vorhandenen Punkt</b> setzt keine Probe darauf, sondern zeigt rechts die Karte „Probe P3“.</label></li>
         <li><input type="checkbox" id="pk6d"><label for="pk6d">Lieber eine Probe nach der anderen selbst wählen? „Mehr …“ › „Nach jeder Probe gleich die nächste wählen“ ausschalten.</label></li>
+        <li><input type="checkbox" id="pk6e"><label for="pk6e"><b>Mehrere Ortstermine</b> (in der Projektzentrale eingetragen): Über der Liste steht <b>„Ortstermin“</b> – vorgewählt der neueste Tag mit Proben, <b>frühere Termine grau</b> (oder „ausblenden“), dazu „Alle Termine“. In der Liste steht an jeder Probe klein ihr Tag; die Karte zeigt dasselbe wie die Ausgabe, was dort fehlt, ist blass.</label></li>
+        <li><input type="checkbox" id="pk6f"><label for="pk6f">Gelb <b>„ohne Termin“</b> an einer Probe: Ihr Probenahmedatum passt zu keinem Ortstermin (Maus darauf zeigt den Grund) – oder sie ist <b>von Hand gesetzt</b> und hat gar kein Datum. Abhilfe: das <b>Datum in LabelKit berichtigen</b> (dann zählt es hier von selbst) oder den Ortstermin in der Projektzentrale ergänzen.</label></li>
       </ul>
     </div><div>
       <div class="tipp">Ziehen an einer freien Stelle verschiebt die Ansicht – das Setzen läuft weiter. Strg+Z nimmt einen Punkt zurück.</div>
+      <div class="tipp"><b>Woher der Termin kommt:</b> Für den Tag einer Probe zählt das <b>Probenahmedatum in LabelKit</b> – nicht das Datum aus dem Prüfbericht und nie „der nächste Termin“. Steht am Punkt ein Datum, das zu einem anderen Termin führt (z. B. aus dem Prüfbericht), sagt eine gelbe Zeile über der Liste „P14: laut LabelKit 20.08., am Punkt 21.08. – Proben übernehmen“. Zwei Ortstermine am selben Tag zählen als einer.</div>
     </div></div>
   </div>
   <div class="karte schritt" data-schritt="7" data-titel="Markieren">
@@ -1579,10 +1583,14 @@ a.app-oeffnen:hover{background:var(--accent-l)}
         <li><input type="checkbox" id="pk8b"><label for="pk8b">Dateiformat: im Projekt ist <b>„Word · Anlage Probenahme“</b> vorgewählt – dann <b>„Bezeichnung der Anlage“ mit Nummer</b> (z. B. „Anlage 3“) und „Fotos je Probe“. Sonst „PDF · A4/A3“, „PNG“, „JPG“; „Darstellung“ und „Umfang“ wie gewohnt.</label></li>
         <li><input type="checkbox" id="pk8c"><label for="pk8c">Unten rechts <b>„Anlage Probenahme speichern →“</b> (bzw. „PDF speichern →“ / „Bild speichern →“). Danach „✓ gespeichert in „Mitteilungen““ bzw. „Pläne“ und <b>„Weiter: Bericht →“</b>.</label></li>
         <li><input type="checkbox" id="pk8d"><label for="pk8d">„Darstellung“: Punktgröße, Beschriftung, Oberflächenart und Messwerte am Plan; aufklappbar <b>„Ergebniskarte einstellen“</b> (Parameter, Nutzung / VdS-Referenz, Skalen). Ergebnisfarben an/aus in ② unter der Liste (K).</label></li>
+        <li><input type="checkbox" id="pk8e"><label for="pk8e"><b>Mehrere Ortstermine:</b> Über „Darstellung“ steht dieselbe Wahl <b>„Ortstermin“</b> wie in ② und ein Satz wie „Ausgabe für den Ortstermin am 20.08.2026 – 8 Proben, 10 frühere grau“. Plan, Ergebniskarte und Anlage Probenahme folgen ihr; die Legende nennt nur die Proben des Tages und „grau: Proben vom 12.08.2026“, das Schriftfeld den Termin.</label></li>
+        <li><input type="checkbox" id="pk8f"><label for="pk8f">Der <b>Dateiname trägt den Termin</b>: „Probenplan … - Termin 20.08.2026.pdf“, „… - alle Termine.pdf“, die Anlage „…_Termin-20-08-2026_Probenahme_….docx“. Der Plan eines anderen Termins wird so <b>nie ersetzt</b>; der alte Plan ohne Zusatz bleibt liegen und gilt als Plan des ersten Termins.</label></li>
+        <li><input type="checkbox" id="pk8g"><label for="pk8g">Fehlen Proben „ohne Termin“ in der Ausgabe für einen Tag, <b>fragt PlanKit vorher</b> und nennt sie – „OK“ gibt trotzdem aus, „Abbrechen“ nicht. „Alle Pläne“ lässt Geschosse ohne Probe dieses Tages weg und sagt welche.</label></li>
       </ul>
     </div><div>
       <div class="uebung quiz" data-quiz="pk-legende"><h3>Kurz üben: In welche Legendengruppe kommt der Wert?</h3></div>
       <div class="tipp">Ändert sich nach dem Speichern noch etwas am Plan, heißt der Knopf wieder „… speichern →“ – dann noch einmal ausgeben.</div>
+      <div class="tipp"><b>Aus der Projektzentrale für eine Mitteilung geöffnet</b> (z. B. 2. Mitteilung nach einer Nachbeprobung)? Dann ist der Termin dieser Mitteilung schon vorgewählt – umfasst sie alle Termine, „Alle Termine“. Du kannst jederzeit umstellen. Raumbuch und Wandansichten bleiben über alle Termine (gelbe Zeile im Dialog).</div>
       <div class="tipp">Beim Drucken eines maßstäblichen PDFs „Tatsächliche Größe“ (100 %) wählen. Die VdS-Werte für Σ16 EPA-PAK auf Oberflächen sind Hintergrundreferenzen – keine pauschalen Freigabe- oder Sanierungsgrenzwerte.</div>
       <div class="tipp">Chlorid nach VdS 2357: 5–10 µg/cm² ist die korrosionschemisch relevante Größenordnung – grün unter 5, amber 5 bis 10 (genau 10 gehört noch dazu), rot erst über 10 µg/cm², unabhängig von der Nutzung (in ResultKit, PlanKit und FotoKit gleich). Korrodieren können nur Metalle; wir wenden die Spanne auch auf Beton, Putz und andere Oberflächen an – dort als Hinweis auf das Korrosionspotenzial in der Umgebung, nicht als Befund am Metall selbst. Ältere Berichte in mg/m² werden umgerechnet (1 µg/cm² = 10 mg/m²). Anpassbar wie die PAK-Referenz.</div>
     </div></div>
@@ -1738,6 +1746,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
     </div><div>
       <div class="tipp"><b>Nur für Fachkundige:</b> Bei Bilddokumentation oder Probenplan heißt <b>„veraltet“</b>: nach dem Erstellen in FotoKit bzw. PlanKit geändert (BerichtKit erkennt eine veraltete Bilddokumentation inzwischen auch selbst). Sie ist dann nicht angehakt – neu erstellen oder bewusst „trotzdem anhaken“. <b>„Plan unklar“</b> heißt: BerichtKit kann die Plan-PDF nicht eindeutig zuordnen (früherer Ordnername, oder den Plan gibt es in PlanKit nicht) – in PlanKit neu exportieren (und den alten Plan löschen) oder trotzdem anhaken.</div>
       <div class="tipp">Ohne Ordnerzugriff: <b>„Mehr …“ › „Word nur herunterladen“</b> speichert die Word-Datei im Download-Ordner. Entwürfe kommen nie in den Projektordner.</div>
+      <div class="tipp"><b>Probenpläne für mehrere Ortstermine</b> („… - Termin 20.08.2026.pdf“ aus PlanKit 2.7.0): BerichtKit hakt keinen davon vor, nennt alle und schlägt den neuesten vor – den Plan für diese Mitteilung selbst anhaken. Pläne, deren Termin im Namen nicht lesbar ist, stehen gelb als „nicht zugeordnet“.</div>
       <div class="tipp">Gleich nach dem Speichern gegenlesen: <b>„Gegenlesen (LektorKit) ↗“</b> neben „Ans Büro übergeben →“ – <a href="#app-lektorkit">LektorKit Schritt für Schritt</a>.</div>
       <div class="tipp">Weiter mit <a href="#brandschaden">Brandschaden</a> Schritt 8 und <a href="#buero-uebergabe">Übergabe ans Büro &amp; Rechnung</a>.</div>
     </div></div>
@@ -2629,7 +2638,7 @@ a.app-oeffnen:hover{background:var(--accent-l)}
 <script src="konventionen.js"></script>
 <script>
 'use strict';
-const VERSION = '0.38.1';
+const VERSION = '0.39.0';
 const K = window.SpektronKonventionen;
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
